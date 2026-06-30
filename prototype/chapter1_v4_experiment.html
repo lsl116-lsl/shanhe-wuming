@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>山河无名 V4：变世轮回版</title>
+  <style>
+    :root {
+      --bg: #13100b;
+      --panel: #251b12;
+      --text: #f6ecd8;
+      --muted: #bcae96;
+      --accent: #d7aa62;
+      --accent2: #e7c685;
+      --good: #83a66e;
+      --danger: #c7654d;
+      --blue: #83a4bd;
+      --purple: #c59adf;
+      --line: rgba(255,255,255,0.13);
+      --shadow: rgba(0,0,0,0.38);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Serif SC", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(215,170,98,0.16), transparent 24%),
+        radial-gradient(circle at 88% 14%, rgba(131,164,189,0.12), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(197,154,223,0.10), transparent 30%),
+        linear-gradient(135deg, #0d0a07, var(--bg));
+      overflow-x: hidden;
+    }
+
+    .app {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 28px 18px 52px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      border-left: 5px solid var(--accent);
+      padding-left: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 58px);
+      letter-spacing: 0.1em;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button {
+      cursor: pointer;
+      border: 1px solid rgba(215,170,98,0.45);
+      background: linear-gradient(180deg, #4d351c, #2b1e12);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 15px;
+      transition: transform .08s ease, border-color .15s ease, background .15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      background: linear-gradient(180deg, #604324, #352415);
+    }
+
+    button.secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,0.22);
+      color: var(--muted);
+    }
+
+    button.secondary:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(49,36,22,0.94), rgba(29,21,14,0.94));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 16px 40px var(--shadow);
+    }
+
+    .side {
+      padding: 18px;
+      position: sticky;
+      top: 16px;
+      align-self: start;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+    }
+
+    .main {
+      padding: 22px;
+      min-height: 720px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #20160c;
+      background: var(--accent);
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .life-meta {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .life-meta strong { color: var(--text); }
+
+    .section-title {
+      margin: 20px 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .stat { margin: 8px 0; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 76px 1fr 34px;
+      gap: 8px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 8px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.10);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #84623a, var(--accent));
+      border-radius: inherit;
+      transition: width .2s ease;
+    }
+
+    .bar.context > span { background: linear-gradient(90deg, #586f48, var(--good)); }
+    .bar.danger > span { background: linear-gradient(90deg, #7d3029, var(--danger)); }
+    .bar.world > span { background: linear-gradient(90deg, #536e7e, var(--blue)); }
+
+    .event-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background:
+        linear-gradient(rgba(255,255,255,0.035), rgba(255,255,255,0.012)),
+        rgba(0,0,0,0.13);
+      padding: 22px;
+      margin-bottom: 16px;
+    }
+
+    .history-card {
+      border-color: rgba(131,164,189,0.38);
+      background:
+        radial-gradient(circle at top right, rgba(131,164,189,0.13), transparent 36%),
+        rgba(0,0,0,0.15);
+    }
+
+    .relation-card {
+      border-color: rgba(231,198,133,0.48);
+      background:
+        radial-gradient(circle at top left, rgba(231,198,133,0.13), transparent 38%),
+        rgba(0,0,0,0.16);
+    }
+
+    .karma-card {
+      border-color: rgba(197,154,223,0.45);
+      background:
+        radial-gradient(circle at top right, rgba(197,154,223,0.13), transparent 34%),
+        rgba(0,0,0,0.16);
+    }
+
+    .event-kicker {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+    }
+
+    .history-card .event-kicker { color: #a9c2d3; }
+    .karma-card .event-kicker { color: #d7a8ee; }
+
+    .event-title {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: 0.04em;
+    }
+
+    .event-text {
+      color: #eadcc4;
+      line-height: 2;
+      font-size: 17px;
+      white-space: pre-line;
+    }
+
+    .choices {
+      display: grid;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .choice {
+      text-align: left;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border-color: rgba(215,170,98,0.34);
+      background: rgba(0,0,0,0.22);
+    }
+
+    .choice:hover { background: rgba(215,170,98,0.12); }
+
+    .choice-title {
+      display: block;
+      color: var(--text);
+      font-weight: 900;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .choice-desc {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .log {
+      max-height: 190px;
+      overflow: auto;
+      padding-right: 5px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .log p {
+      margin: 0 0 9px;
+      padding-bottom: 9px;
+      border-bottom: 1px dashed rgba(255,255,255,0.10);
+    }
+
+    .imprint {
+      display: inline-block;
+      margin: 5px 6px 2px 0;
+      padding: 5px 9px;
+      border: 1px solid rgba(215,170,98,0.35);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(215,170,98,0.08);
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 2px 8px;
+      color: var(--muted);
+      margin: 2px 4px 2px 0;
+      font-size: 12px;
+    }
+
+    .scenario-card, .person-card, .cause-card {
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      padding: 10px;
+      background: rgba(0,0,0,0.13);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .scenario-card strong, .person-card strong, .cause-card strong {
+      color: var(--text);
+    }
+
+    .person-state {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      color: #1d150c;
+      background: var(--accent2);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .cause-card {
+      border-color: rgba(197,154,223,0.25);
+    }
+
+    .small-note {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .history-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.10);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .history-item strong { color: var(--text); }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+      .top-actions { justify-content: flex-start; }
+      .grid { grid-template-columns: 1fr; }
+      .side { position: static; max-height: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="title">
+        <h1>山河无名</h1>
+        <div class="subtitle">V4｜第一章：礼崩之世｜变世轮回 · 随机历史切片 · 因果回响</div>
+      </div>
+      <div class="top-actions">
+        <button onclick="startNewLife(false)">转入下一世</button>
+        <button class="secondary" onclick="resetAll()">清空轮回</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside class="panel side">
+        <div class="seal">卷一 · 礼崩之世</div>
+        <div class="life-meta" id="lifeMeta"></div>
+
+        <div class="section-title">此世历史切片</div>
+        <div id="scenarioBox"></div>
+
+        <div class="section-title">此世故人</div>
+        <div id="peopleList"></div>
+
+        <div class="section-title">因果蛛网</div>
+        <div id="causeList"></div>
+
+        <div class="section-title">个人能力</div>
+        <div id="abilityStats"></div>
+
+        <div class="section-title">精神倾向</div>
+        <div id="spiritStats"></div>
+
+        <div class="section-title">时代处境</div>
+        <div id="contextStats"></div>
+
+        <div class="section-title">天下局势</div>
+        <div id="worldStats"></div>
+
+        <div class="section-title">魂火印记</div>
+        <div id="imprints"></div>
+
+        <div class="section-title">本世行迹</div>
+        <div class="log" id="log"></div>
+      </aside>
+
+      <main class="panel main">
+        <div id="eventArea"></div>
+        <div class="choices" id="choices"></div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const abilityKeys = ["文才","武艺","医术","谋略","工艺","商识","声名"];
+    const spiritKeys = ["仁心","野望","忠义","清醒","风骨","机变","逐利","悲悯"];
+    const contextKeys = ["财富","人脉","民望","官府信任","权贵关注","百姓关系","危险值"];
+    const worldKeys = ["战乱","饥荒","变法","民怨","秦势","旧礼"];
+
+    const routeNames = ["隐士","仕官","谋士","武将","医者","戏子","商贾","工匠","吏官","农人"];
+
+    const scenarios = [
+      {
+        id:"luoyi",
+        name:"洛邑残钟",
+        period:"春秋末",
+        year:"约前520年",
+        place:"洛邑近郊",
+        state:"周",
+        mood:"旧礼尚在，王室已穷。人们还称天子，却先看诸侯脸色。",
+        tags:["旧礼","王畿","饥荒","礼崩"],
+        mods:{"旧礼":3,"饥荒":1,"民怨":1}
+      },
+      {
+        id:"qihuan",
+        name:"会盟之旗",
+        period:"春秋争霸",
+        year:"约前650年",
+        place:"齐鲁交界",
+        state:"齐",
+        mood:"霸主尊王，诸侯会盟。大义挂在旗上，私利藏在酒中。",
+        tags:["争霸","会盟","商路","征役"],
+        mods:{"旧礼":1,"战乱":2,"人脉":1}
+      },
+      {
+        id:"sanjin",
+        name:"晋国旧土",
+        period:"战国初",
+        year:"约前403年",
+        place:"晋阳旧地",
+        state:"赵 / 魏 / 韩",
+        mood:"旧国被新印重新盖过。每一本户籍，都像在替旧时代收尸。",
+        tags:["三家分晋","改籍","旧国","新贵"],
+        mods:{"旧礼":-1,"变法":1,"民怨":1}
+      },
+      {
+        id:"wei_reform",
+        name:"西河新学",
+        period:"战国初",
+        year:"约前390年",
+        place:"魏国西河",
+        state:"魏",
+        mood:"新学兴起，法度初明。寒门士人第一次觉得旧门第并非天命。",
+        tags:["变法","新学","军功","官吏"],
+        mods:{"变法":2,"官府信任":1,"野望":1}
+      },
+      {
+        id:"qin_fa",
+        name:"秦法入村",
+        period:"战国中期",
+        year:"约前350年",
+        place:"秦国栎阳外",
+        state:"秦",
+        mood:"户籍、连坐、军功、垦田，像四根钉子把每个人钉进国家机器。",
+        tags:["秦法","变法","军功","连坐"],
+        mods:{"变法":3,"秦势":1,"民怨":1,"旧礼":-1}
+      },
+      {
+        id:"jixia",
+        name:"稷下风起",
+        period:"战国中期",
+        year:"约前320年",
+        place:"齐国临淄",
+        state:"齐",
+        mood:"百家争鸣，士人如云。每个人都说自己能救天下，天下却仍在流血。",
+        tags:["百家","学宫","辩论","游士"],
+        mods:{"文才":1,"声名":1,"人脉":1,"战乱":1}
+      },
+      {
+        id:"zongheng",
+        name:"纵横夜谈",
+        period:"战国中后期",
+        year:"约前300年",
+        place:"韩魏边境驿亭",
+        state:"韩 / 魏",
+        mood:"合纵连横的使者彻夜不眠。地图上一条线，可能是十万人家的哭声。",
+        tags:["合纵","连横","说客","边境"],
+        mods:{"谋略":1,"机变":1,"危险值":1,"战乱":2}
+      },
+      {
+        id:"changping_before",
+        name:"长平之前",
+        period:"战国末",
+        year:"前262年",
+        place:"赵国上党",
+        state:"赵",
+        mood:"大战还未发生，但粮道、征兵、军令已经像阴云一样压来。",
+        tags:["长平","征兵","粮道","大战"],
+        mods:{"战乱":3,"饥荒":1,"危险值":1}
+      },
+      {
+        id:"changping_after",
+        name:"长平余烬",
+        period:"战国末",
+        year:"前260年后",
+        place:"赵国长平附近",
+        state:"赵",
+        mood:"谷地沉默，乌鸦比人更早知道胜负。战争没有结束，只是换成了活人的余生。",
+        tags:["长平","战后","流民","白骨"],
+        mods:{"战乱":3,"饥荒":2,"民怨":2,"悲悯":1}
+      },
+      {
+        id:"qin_end",
+        name:"函谷风急",
+        period:"战国末",
+        year:"前230年至前221年间",
+        place:"函谷以东",
+        state:"六国",
+        mood:"秦势东出，旧国一座座倾斜。有人盼统一，有人只想在改旗之前保住家人。",
+        tags:["秦势","灭国","统一","故国"],
+        mods:{"秦势":3,"战乱":2,"旧礼":-1,"危险值":1}
+      }
+    ];
+
+    const origins = [
+      "寒门士子之后", "佃农之子", "市井孤儿", "渔家少年", "小吏家中次子",
+      "戏班学徒", "工坊学徒", "边郡军户", "药铺杂役", "破落士族之后",
+      "商队遗孤", "能识字的农家女", "逃荒路上被收留的孩子"
+    ];
+
+    const routeWeights = {
+      "隐士": {"清醒":2, "文才":1.3, "风骨":1.5, "悲悯":0.8, "旧礼":0.5},
+      "仕官": {"文才":2, "官府信任":1.6, "声名":1.2, "忠义":1.1, "变法":0.8},
+      "谋士": {"谋略":2.2, "机变":1.6, "人脉":1.2, "野望":1.2},
+      "武将": {"武艺":2.2, "忠义":1.3, "野望":1.2, "声名":1.1, "战乱":0.9},
+      "医者": {"医术":2.2, "仁心":1.7, "悲悯":1.5, "百姓关系":1.2, "饥荒":0.5},
+      "戏子": {"声名":1.8, "风骨":1.4, "人脉":1.2, "机变":1.1, "文才":1.1},
+      "商贾": {"商识":2.3, "财富":1.6, "机变":1.1, "逐利":1.3},
+      "工匠": {"工艺":2.3, "清醒":1.1, "官府信任":0.8, "民望":0.8, "变法":0.5},
+      "吏官": {"文才":1.4, "官府信任":1.8, "清醒":1.2, "机变":1.2, "变法":0.9},
+      "农人": {"百姓关系":1.8, "仁心":1.2, "悲悯":1.2, "民望":1.2, "饥荒":0.9}
+    };
+
+    const personTemplates = {
+      mentor: [
+        { name:"季伯", role:"师父", title:"县衙老书吏", line:"案卷不是竹简，是人命压扁以后留下的形状。" },
+        { name:"柳娘", role:"师父", title:"戏班班主", line:"台上唱错一句，台下死的可不止一个角儿。" },
+        { name:"屠申", role:"师父", title:"退伍老兵", line:"你以为杀人会习惯？不会，只是后来不敢想。" },
+        { name:"扁叟", role:"师父", title:"乡野老医", line:"医者救不了天下，但可以不让眼前人死得太容易。" },
+        { name:"鲁砚", role:"师父", title:"工坊师傅", line:"木头不会说谎，铁也不会。说谎的是用它们的人。" }
+      ],
+      hometown: [
+        { name:"阿稷", role:"同乡", title:"农家少年", line:"我不懂天下，我只想今年别饿死人。" },
+        { name:"禾安", role:"同乡", title:"田边少女", line:"你们说天下，我只知道井边少了三个人。" },
+        { name:"阿芦", role:"同乡", title:"河边织户之女", line:"人若离了乡，连梦里的水声都会变。" }
+      ],
+      era: [
+        { name:"韩宁", role:"故人", title:"旧臣遗孤", line:"你们都说大势，可我父亲死的时候，大势没有替他收尸。" },
+        { name:"青缗", role:"故人", title:"商队账房", line:"账算得清，人情算不清。可不算，又会死人。" },
+        { name:"申不疑", role:"权贵", title:"新贵门客", line:"旧国已经死了。你要给死人守孝，还是给活人铺路？" },
+        { name:"荀白", role:"故人", title:"游学士人", line:"人若只求活，也许能活久些；若还想问道，就总会活得难些。" }
+      ],
+      route: {
+        "隐士": { name:"南郭生", role:"徒弟", title:"山中少年", line:"先生若不下山，山下的人会不会怪你？" },
+        "仕官": { name:"公孙砚", role:"权贵", title:"新法官员", line:"你若想救人，先要让法令听你的。" },
+        "谋士": { name:"苏离", role:"知己", title:"游说士人", line:"说出口的话，会走得比人更远，也害得比刀更深。" },
+        "武将": { name:"魏梁", role:"袍泽", title:"同伍新卒", line:"若我回不去，你替我看一眼家乡的麦。" },
+        "医者": { name:"小蓟", role:"徒弟", title:"药童", line:"师父，药若只够一人，是不是就要选一个人死？" },
+        "戏子": { name:"阿檀", role:"知己", title:"戏班搭档", line:"他们说我们唱的是假，可我每次哭都是真的。" },
+        "商贾": { name:"白圭子", role:"伙伴", title:"年轻行商", line:"钱能买路，也能买命，但买不回睡得安稳。" },
+        "工匠": { name:"墨童", role:"徒弟", title:"工坊孤儿", line:"我想造一件不会杀人的东西。" },
+        "吏官": { name:"小孟", role:"同僚", title:"县衙小吏", line:"这一笔下去，是税，是债，还是命？" },
+        "农人": { name:"阿禾", role:"牵挂", title:"邻家幼妹", line:"等麦熟了，你还会回来吗？" }
+      }
+    };
+
+    const prologuePool = [
+      {
+        title:"未定之人",
+        text:"你还没有被时代命名。\n\n有人叫你读书，有人叫你习武，有人说乱世只认粮和钱，也有人说人若没有一点仁心，活下来也只是空壳。\n\n你站在此世的入口，听见远处的车马声。",
+        choices:[
+          {text:"读书识字", desc:"先看懂这天下如何被写下。", delta:{"文才":2,"清醒":1,"旧礼":1}},
+          {text:"练习弓矛", desc:"至少别让自己轻易死在路上。", delta:{"武艺":2,"忠义":1,"危险值":1}},
+          {text:"学习账目", desc:"粮、钱、路，才是乱世暗处的骨头。", delta:{"商识":2,"机变":1,"财富":1}},
+          {text:"照顾病人与老人", desc:"你想先学会不让眼前人倒下。", delta:{"医术":1,"仁心":2,"悲悯":1,"百姓关系":1}}
+        ]
+      },
+      {
+        title:"尘土中的声音",
+        text:"这一带的风声与上一世不同。\n\n有时是王畿的残钟，有时是边境的战鼓，有时是新法木牌钉入村口的声音。\n\n同样是少年起身，脚下的土却已经换了。",
+        choices:[
+          {text:"跟随师父学一门手艺", desc:"器物不会说谎，手艺也许能养活人。", delta:{"工艺":2,"清醒":1,"财富":1}},
+          {text:"听游士辩论天下", desc:"你想知道一句话能不能改变局势。", delta:{"谋略":2,"文才":1,"人脉":1}},
+          {text:"帮戏班搭台", desc:"台上是戏，台下是真人间。", delta:{"声名":1,"风骨":1,"机变":1}},
+          {text:"留在田里看收成", desc:"天下再大，也要落到一亩田上。", delta:{"百姓关系":2,"仁心":1,"民望":1}}
+        ]
+      },
+      {
+        title:"第一封来信",
+        text:"你收到一封来自故地的信。\n\n信上没有大事，只有某人病了、某家欠税、村口的树被砍、有人从军后再没回来。\n\n你忽然明白：历史不只发生在王城，也发生在每一封没人会收进史书的家书里。",
+        choices:[
+          {text:"回信安慰故人", desc:"有人记挂，便不算完全流落。", delta:{"悲悯":1,"仁心":1,"百姓关系":1}},
+          {text:"把信收好，继续远行", desc:"牵挂不能挡路。", delta:{"野望":1,"清醒":1}},
+          {text:"托商队带些粮钱回去", desc:"不多，但至少是活路。", delta:{"财富":-1,"仁心":1,"民望":1}},
+          {text:"从信中推测当地局势", desc:"小事里藏着大势。", delta:{"谋略":1,"清醒":2}}
+        ]
+      }
+    ];
+
+    const historyPool = [
+      {
+        title:"王畿求粮", tags:["旧礼","王畿","饥荒"], kicker:"历史切片 · 周室余音",
+        text:"王室使者来求粮。天子的名义仍在，仓中的粟却要向诸侯与百姓讨。\n\n{place}的人低声议论：若周室都要借粮，旧礼还能护住谁？",
+        choices:[
+          {text:"捐粮助王室", desc:"旧名分仍有其重量。", delta:{"旧礼":2,"忠义":1,"财富":-1}, causeType:"传承"},
+          {text:"劝乡人先顾自家", desc:"礼再大，也不能让孩子饿死。", delta:{"清醒":2,"百姓关系":1,"旧礼":-1}, causeType:"伏因"},
+          {text:"记录王室窘状", desc:"后人该知道钟声是如何变轻的。", delta:{"文才":2,"风骨":1}, causeType:"传承"}
+        ]
+      },
+      {
+        title:"会盟征役", tags:["争霸","会盟","征役"], kicker:"历史切片 · 霸主之下",
+        text:"诸侯会盟，{place}被征发役夫修路运粮。\n\n贵人的车轮从泥中驶过，留下的脚印却属于役夫。",
+        choices:[
+          {text:"服役求安", desc:"小民先求平安归来。", delta:{"清醒":1,"危险值":-1,"民怨":1}},
+          {text:"帮乡人逃避额外征发", desc:"会盟是贵人的事，苦役却是百姓的命。", delta:{"仁心":1,"民望":2,"危险值":1}, causeType:"恩义"},
+          {text:"趁会盟结交各国来人", desc:"人流之处，消息也流。", delta:{"人脉":2,"商识":1,"机变":1}}
+        ]
+      },
+      {
+        title:"新印改籍", tags:["三家分晋","改籍","旧国","新贵"], kicker:"历史切片 · 旧国重写",
+        text:"旧国案卷被搬到县衙前，新的印章放在案上。\n\n{place}的人排队等待重登记。有人失去爵位，有人多出税粮，也有人从此改换门庭。",
+        choices:[
+          {text:"保存旧案副本", desc:"案卷若死，真相就死。", delta:{"文才":1,"风骨":2,"危险值":2}, causeType:"传承"},
+          {text:"投靠新贵", desc:"旧屋梁塌了，先找新梁。", delta:{"野望":2,"人脉":2,"风骨":-1}, causeType:"伏因"},
+          {text:"替贫户少报田亩", desc:"一笔墨，可能救一家人。", delta:{"仁心":1,"百姓关系":2,"危险值":1}, causeType:"恩义"}
+        ]
+      },
+      {
+        title:"西河问学", tags:["变法","新学","官吏","百家"], kicker:"历史切片 · 新学",
+        text:"{place}聚集了士人、法吏、兵家与游说者。\n\n他们争论强国之术，也争论人究竟该服从法令，还是服从心中的道。",
+        choices:[
+          {text:"学习法令制度", desc:"想救人，先要懂权力如何运作。", delta:{"文才":1,"变法":2,"官府信任":1}},
+          {text:"质疑酷法伤民", desc:"强国不该把人都磨成齿轮。", delta:{"风骨":2,"民望":1,"危险值":1}, causeType:"执念"},
+          {text:"结交游学士人", desc:"思想也是一种路。", delta:{"人脉":2,"声名":1,"谋略":1}}
+        ]
+      },
+      {
+        title:"秦法木牌", tags:["秦法","变法","连坐","军功"], kicker:"历史切片 · 法入人间",
+        text:"新法木牌钉在村口，什伍连坐、军功授爵、垦田纳税写得清清楚楚。\n\n{place}的人第一次觉得，国家不再远在城中，而是站在自家门口数人头。",
+        choices:[
+          {text:"严格遵从新法", desc:"乱世需要可计算的秩序。", delta:{"变法":2,"官府信任":1,"民怨":1}},
+          {text:"教乡人避开苛罚", desc:"懂法，不是为了害人。", delta:{"仁心":1,"机变":1,"百姓关系":2}, causeType:"恩义"},
+          {text:"借军功寻上升之路", desc:"旧门第挡不住刀上功名。", delta:{"武艺":1,"野望":2,"危险值":1}}
+        ]
+      },
+      {
+        title:"稷下夜辩", tags:["百家","学宫","辩论","游士"], kicker:"历史切片 · 百家争鸣",
+        text:"临淄夜深，学宫灯火不灭。\n\n儒者谈仁义，法家谈赏罚，纵横家谈利害，道者谈无为。每个人都像握着一把能救天下的钥匙。",
+        choices:[
+          {text:"追问仁义能否救乱世", desc:"你不愿只谈强弱。", delta:{"仁心":1,"文才":1,"风骨":1}},
+          {text:"学习纵横利害", desc:"先活下来，才有资格谈道。", delta:{"谋略":2,"机变":1}},
+          {text:"写下诸家争论", desc:"让后世看看他们如何各自相信自己。", delta:{"文才":2,"清醒":1}, causeType:"传承"}
+        ]
+      },
+      {
+        title:"纵横夜谈", tags:["合纵","连横","说客","边境"], kicker:"历史切片 · 一言之重",
+        text:"一位说客借宿驿亭。\n\n他说合纵可以抗秦，也说连横可以活命。他一夜换了三套说辞，每一套都像真理。",
+        choices:[
+          {text:"随他说遍列国", desc:"一言可以兴邦，也可以误国。", delta:{"谋略":2,"人脉":1,"危险值":1}},
+          {text:"提醒乡人莫被空言裹挟", desc:"说客走后，留下兵灾的是百姓。", delta:{"清醒":2,"民望":1}},
+          {text:"利用列国博弈谋商路", desc:"大势也可以是路引。", delta:{"商识":2,"机变":1,"财富":1}}
+        ]
+      },
+      {
+        title:"征兵名册", tags:["长平","征兵","大战","粮道"], kicker:"历史切片 · 大战将至",
+        text:"征兵名册送到{place}。\n\n名字写得很整齐，像一列列尚未倒下的墓碑。",
+        choices:[
+          {text:"照名册服从征发", desc:"国若亡，家何存？", delta:{"忠义":1,"武艺":1,"危险值":2}},
+          {text:"拖延名册", desc:"给人一点逃命时间。", delta:{"仁心":2,"危险值":2,"官府信任":-1}, causeType:"恩义"},
+          {text:"研究粮道与军需", desc:"战争首先吃掉的是粮食。", delta:{"谋略":1,"商识":1,"清醒":1}}
+        ]
+      },
+      {
+        title:"白骨之地", tags:["长平","战后","流民","白骨"], kicker:"历史切片 · 战后",
+        text:"{place}的风里有铁锈味。\n\n大战的胜负已经写入各国奏报，但这里留下的不是胜负，是无人认领的骨头与寻找亲人的活人。",
+        choices:[
+          {text:"掩埋无名尸骨", desc:"死者也该有归处。", delta:{"悲悯":2,"风骨":1,"民望":1}, causeType:"传承"},
+          {text:"救助伤卒流民", desc:"大战的痛不止在战场。", delta:{"医术":1,"仁心":2,"危险值":1}, causeType:"恩义"},
+          {text:"发誓投向能终结战争的一方", desc:"若统一能止战，你愿付代价。", delta:{"秦势":2,"野望":1,"清醒":-1}}
+        ]
+      },
+      {
+        title:"故国将灭", tags:["秦势","灭国","统一","故国"], kicker:"历史切片 · 山河改色",
+        text:"秦军的消息一日日逼近。\n\n{place}的人开始收拾宗庙、账本、孩子和逃亡路上能带走的粮。王旗还在城头，心却已经先乱了。",
+        choices:[
+          {text:"劝开城保民", desc:"城池可以换旗，人命不能重来。", delta:{"仁心":2,"秦势":1,"风骨":-1}, causeType:"恩义"},
+          {text:"守旧国不降", desc:"若人人只求活，山河何来风骨？", delta:{"忠义":2,"风骨":2,"危险值":2}, causeType:"执念"},
+          {text:"趁乱护送故人离城", desc:"王朝如何更替，你先保住眼前人。", delta:{"机变":1,"仁心":1,"危险值":1}, causeType:"恩义"}
+        ]
+      }
+    ];
+
+    const routeEventPool = {
+      "隐士": [
+        ["山门之外","你本想避世，却有人带着乱世的消息跪在门前。",["继续闭门著书","下山看一眼","收留来人"]],
+        ["旧书与新法","弟子问你，新法兴起后，旧书还有没有用。",["整理旧书","研读新法","烧去无用虚文"]],
+        ["山中来客","权贵门客请你出山，说清醒者不能只看云。",["拒绝出山","入府三日","先要求赈民"]]
+      ],
+      "仕官": [
+        ["县中第一案","饥民偷粮，律令要罚，粮仓却还有余。",["依律重罚","开仓平粜","私下补粮"]],
+        ["上官密令","上官要你改一份数字，让灾荒看起来轻些。",["照令修改","保存副本","当面拒绝"]],
+        ["升迁之门","权贵愿意提拔你，但要你牺牲一户无靠之家。",["接受提拔","拒绝交换","另寻折中"]]
+      ],
+      "谋士": [
+        ["三寸之舌","你被派去说服敌方退兵。",["以利害说服","以百姓生死相劝","暗中离间"]],
+        ["主君疑心","你的计策奏效，也让主君开始怕你。",["表忠自保","反查告密者","辞别另寻明主"]],
+        ["一计之价","你的计策能胜，但会牺牲一村人。",["献计取胜","隐瞒此计","改为更慢的方案"]]
+      ],
+      "武将": [
+        ["第一次冲阵","战鼓响起，对面也是与你一样的农家子。",["率先夺旗","护住新卒","等待破绽"]],
+        ["屠城之令","城破之后，主将下令震慑四方。",["执行军令","抗命护民","暗放妇孺"]],
+        ["夜守孤城","援军未至，城中粮草只够三日。",["死守","突围","开仓安民"]]
+      ],
+      "医者": [
+        ["疫村","官府封路，村中老幼求你入内。",["入村诊治","村外设药棚","请求官府调药"]],
+        ["贵人的病","权贵囤药，城外却有人无药可用。",["专救贵人","要求分药","暗转药材"]],
+        ["药不够","药箱只剩一剂，两个病人都在等。",["救更可能活者","救更痛苦者","冒险试新方"]]
+      ],
+      "戏子": [
+        ["堂会之戏","席上酒肉满案，门外饥民被赶走。",["唱太平喜戏","暗改讽词","把饥民藏进唱词"]],
+        ["军营夜唱","士卒明日出征，火边有人偷哭。",["唱故乡","唱忠勇","唱乱世无常"]],
+        ["禁戏木牌","官府不许聚众讽政，戏班必须登记唱词。",["删去危险词","暗中夜演","藏讽于神鬼"]]
+      ],
+      "商贾": [
+        ["粮价三倍","你的仓中有粟，门外有人饿。",["高价售粮","平价开仓","半卖半赈"]],
+        ["边市之路","利润极高的商路也有盗匪与军队。",["贩运军需","只走民货","贿赂开路"]],
+        ["账本之外","伙伴劝你两边供货，不问旗帜。",["两边都卖","只供民用","建立消息网"]]
+      ],
+      "工匠": [
+        ["新犁","你改良的农具能省很多力，官府却要你造弩。",["继续农具","入官坊造弩","两边都做"]],
+        ["水渠图","你的图能救三村旱田，豪族想买断。",["卖图纸","公开图纸","说服豪族"]],
+        ["铁与血","你造的器物被用在战场上。",["继续精进","转造民器","记录器物去向"]]
+      ],
+      "吏官": [
+        ["一笔户籍","逃荒错过登记的一家跪在案前。",["照实登记","替她补籍","找里正作保"]],
+        ["粮册作假","上官命你把亏空推给灾民。",["奉命修改","暗藏副本","当堂拒笔"]],
+        ["无名案卷","许多死者无人认领，你负责归档。",["照例归档","逐一寻访","另写无名录"]]
+      ],
+      "农人": [
+        ["征粮","秋收刚过，县中便来催粮。",["照数缴粮","藏下口粮","联合请求减免"]],
+        ["逃荒路","旱灾第二年，村中有人离乡。",["带家人逃","留下守田","加入乡勇护送流民"]],
+        ["村口争粮","流民涌入乡里，粮食不够。",["收留一部分","关闭村口","组织开荒"]]
+      ]
+    };
+
+    const optionDeltas = {
+      "继续闭门著书":{"清醒":2,"文才":1,"风骨":1},
+      "下山看一眼":{"仁心":1,"人脉":1,"危险值":1},
+      "收留来人":{"仁心":2,"悲悯":1,"危险值":1},
+      "整理旧书":{"文才":2,"旧礼":1,"风骨":1},
+      "研读新法":{"清醒":2,"变法":1},
+      "烧去无用虚文":{"旧礼":-1,"清醒":1,"风骨":1},
+      "拒绝出山":{"风骨":2,"清醒":1},
+      "入府三日":{"人脉":2,"谋略":1,"危险值":1},
+      "先要求赈民":{"仁心":2,"民望":1,"危险值":1},
+      "依律重罚":{"官府信任":2,"百姓关系":-2,"民怨":1},
+      "开仓平粜":{"仁心":2,"民望":2,"危险值":1},
+      "私下补粮":{"机变":2,"仁心":1,"财富":-1},
+      "照令修改":{"官府信任":2,"风骨":-1},
+      "保存副本":{"风骨":2,"文才":1,"危险值":2},
+      "当面拒绝":{"风骨":3,"危险值":3},
+      "接受提拔":{"野望":2,"人脉":2,"风骨":-1},
+      "拒绝交换":{"风骨":2,"危险值":1},
+      "另寻折中":{"谋略":1,"机变":2},
+      "以利害说服":{"谋略":2,"机变":2},
+      "以百姓生死相劝":{"仁心":2,"悲悯":1,"声名":1},
+      "暗中离间":{"谋略":2,"机变":1,"风骨":-1},
+      "表忠自保":{"官府信任":2,"风骨":-1},
+      "反查告密者":{"谋略":2,"危险值":1},
+      "辞别另寻明主":{"清醒":2,"人脉":1},
+      "献计取胜":{"谋略":2,"野望":1,"悲悯":-1},
+      "隐瞒此计":{"风骨":1,"危险值":1},
+      "改为更慢的方案":{"仁心":1,"清醒":1},
+      "率先夺旗":{"武艺":2,"声名":2,"危险值":2},
+      "护住新卒":{"忠义":2,"仁心":1},
+      "等待破绽":{"谋略":1,"清醒":1,"武艺":1},
+      "执行军令":{"官府信任":2,"仁心":-2,"风骨":-1},
+      "抗命护民":{"仁心":2,"风骨":2,"危险值":2},
+      "暗放妇孺":{"机变":2,"仁心":1,"危险值":1},
+      "死守":{"忠义":2,"风骨":1,"危险值":2},
+      "突围":{"武艺":1,"机变":1,"危险值":1},
+      "开仓安民":{"仁心":2,"民望":1,"危险值":1},
+      "入村诊治":{"医术":2,"仁心":2,"危险值":2},
+      "村外设药棚":{"医术":1,"清醒":2,"百姓关系":1},
+      "请求官府调药":{"官府信任":1,"人脉":1,"危险值":1},
+      "专救贵人":{"声名":2,"财富":2,"仁心":-1},
+      "要求分药":{"风骨":2,"仁心":2,"危险值":2},
+      "暗转药材":{"机变":2,"悲悯":1,"危险值":1},
+      "救更可能活者":{"医术":2,"清醒":2,"悲悯":-1},
+      "救更痛苦者":{"悲悯":2,"仁心":1},
+      "冒险试新方":{"医术":2,"危险值":1},
+      "唱太平喜戏":{"财富":2,"声名":1,"风骨":-1},
+      "暗改讽词":{"风骨":2,"声名":1,"危险值":2},
+      "把饥民藏进唱词":{"文才":1,"悲悯":2,"声名":1},
+      "唱故乡":{"悲悯":2,"声名":1},
+      "唱忠勇":{"忠义":2,"官府信任":1},
+      "唱乱世无常":{"清醒":2,"风骨":1},
+      "删去危险词":{"官府信任":1,"风骨":-1},
+      "暗中夜演":{"风骨":2,"危险值":2,"民望":1},
+      "藏讽于神鬼":{"机变":2,"文才":1},
+      "高价售粮":{"财富":3,"逐利":2,"民怨":2},
+      "平价开仓":{"仁心":2,"民望":2,"财富":-1},
+      "半卖半赈":{"商识":2,"清醒":1,"民望":1},
+      "贩运军需":{"财富":2,"商识":2,"危险值":2},
+      "只走民货":{"风骨":1,"财富":1},
+      "贿赂开路":{"机变":2,"人脉":2,"危险值":1},
+      "两边都卖":{"财富":2,"逐利":1,"风骨":-1},
+      "只供民用":{"风骨":1,"商识":1},
+      "建立消息网":{"商识":2,"谋略":1,"机变":1},
+      "继续农具":{"工艺":2,"仁心":1,"百姓关系":1},
+      "入官坊造弩":{"工艺":2,"官府信任":2},
+      "两边都做":{"工艺":2,"机变":1,"危险值":1},
+      "卖图纸":{"财富":3,"逐利":1},
+      "公开图纸":{"民望":2,"工艺":1,"仁心":1},
+      "说服豪族":{"谋略":1,"人脉":2,"清醒":1},
+      "继续精进":{"工艺":2,"清醒":1},
+      "转造民器":{"仁心":1,"工艺":1,"风骨":1},
+      "记录器物去向":{"文才":1,"清醒":1,"风骨":1},
+      "照实登记":{"官府信任":2,"清醒":1},
+      "替她补籍":{"仁心":2,"百姓关系":2,"危险值":1},
+      "找里正作保":{"机变":2,"人脉":1},
+      "奉命修改":{"官府信任":2,"风骨":-2},
+      "暗藏副本":{"清醒":2,"风骨":1,"危险值":2},
+      "当堂拒笔":{"风骨":3,"危险值":3},
+      "照例归档":{"官府信任":1},
+      "逐一寻访":{"悲悯":2,"百姓关系":2,"财富":-1},
+      "另写无名录":{"文才":2,"风骨":1},
+      "照数缴粮":{"官府信任":1,"财富":-2},
+      "藏下口粮":{"机变":1,"财富":1,"危险值":1},
+      "联合请求减免":{"民望":2,"百姓关系":2,"危险值":1},
+      "带家人逃":{"悲悯":1,"危险值":1,"财富":-1},
+      "留下守田":{"忠义":1,"百姓关系":1,"财富":1},
+      "加入乡勇护送流民":{"武艺":1,"仁心":2,"危险值":2},
+      "收留一部分":{"仁心":2,"悲悯":1,"财富":-2},
+      "关闭村口":{"清醒":1,"财富":1,"悲悯":-1},
+      "组织开荒":{"民望":2,"百姓关系":2,"危险值":1}
+    };
+
+    let game = null;
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+    function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+    function clamp(v, min=-5, max=18) { return Math.max(min, Math.min(max, v)); }
+
+    function defaultStats() {
+      const stats = {};
+      [...abilityKeys, ...spiritKeys, ...contextKeys, ...worldKeys].forEach(k => stats[k] = 0);
+      stats["财富"] = 2;
+      stats["百姓关系"] = 1;
+      return stats;
+    }
+
+    function loadLegacy() {
+      try {
+        return JSON.parse(localStorage.getItem("swh_legacy_v4")) || { lives:0, imprints:[], causes:[], chronicles:[] };
+      } catch {
+        return { lives:0, imprints:[], causes:[], chronicles:[] };
+      }
+    }
+
+    function saveLegacy(legacy) {
+      localStorage.setItem("swh_legacy_v4", JSON.stringify(legacy));
+    }
+
+    function applyDelta(delta) {
+      Object.entries(delta || {}).forEach(([k, v]) => {
+        game.stats[k] = clamp((game.stats[k] || 0) + v);
+      });
+    }
+
+    function chooseScenario(legacy) {
+      const recent = (legacy.chronicles || []).slice(0, 2).map(c => c.scenarioId);
+      let pool = scenarios.filter(s => !recent.includes(s.id));
+      if (!pool.length) pool = scenarios;
+
+      const causes = legacy.causes || [];
+      const hasWarDebt = causes.some(c => /仇恨|亏欠|白骨|粮/.test(c.type + c.name));
+      const hasRecord = causes.some(c => /传承|名册|残卷|记录/.test(c.type + c.name));
+      const hasQin = causes.some(c => /秦|统一/.test(c.name + c.source));
+
+      if (hasWarDebt && Math.random() < 0.35) {
+        const warPool = pool.filter(s => s.tags.includes("长平") || s.tags.includes("战后") || s.tags.includes("流民"));
+        if (warPool.length) return pick(warPool);
+      }
+      if (hasRecord && Math.random() < 0.35) {
+        const recordPool = pool.filter(s => s.tags.includes("旧国") || s.tags.includes("学宫") || s.tags.includes("百家"));
+        if (recordPool.length) return pick(recordPool);
+      }
+      if (hasQin && Math.random() < 0.35) {
+        const qinPool = pool.filter(s => s.tags.includes("秦法") || s.tags.includes("秦势"));
+        if (qinPool.length) return pick(qinPool);
+      }
+      return pick(pool);
+    }
+
+    function applyImprints(stats, imprints) {
+      const map = {
+        "仁心":["仁心","医术","百姓关系"],
+        "野望":["野望","谋略","声名"],
+        "忠义":["忠义","武艺","官府信任"],
+        "清醒":["清醒","文才","谋略"],
+        "风骨":["风骨","声名","清醒"],
+        "机变":["机变","商识","谋略"],
+        "逐利":["逐利","商识","财富"],
+        "悲悯":["悲悯","仁心","医术"]
+      };
+      imprints.slice(-5).forEach(m => (map[m] || []).forEach(k => stats[k] = (stats[k] || 0) + 1));
+    }
+
+    function clonePerson(tpl, id) {
+      return { id, name:tpl.name, role:tpl.role, title:tpl.title, line:tpl.line, trust:1, tie:1, debt:0, rift:0, status:"同行", alive:true };
+    }
+
+    function generatePeople() {
+      game.people = [
+        clonePerson(pick(personTemplates.mentor), "mentor"),
+        clonePerson(pick(personTemplates.hometown), "hometown"),
+        clonePerson(pick(personTemplates.era), "era")
+      ];
+    }
+
+    function addRoutePerson() {
+      if (!game.route || game.people.some(p => p.id === "route")) return;
+      game.people.push(clonePerson(personTemplates.route[game.route], "route"));
+    }
+
+    function personById(id) { return game.people.find(p => p.id === id); }
+
+    function updatePerson(id, changes) {
+      const p = personById(id);
+      if (!p) return;
+      ["trust","tie","debt","rift"].forEach(k => {
+        if (changes[k]) p[k] = clamp((p[k] || 0) + changes[k], -3, 9);
+      });
+      if (changes.status) p.status = changes.status;
+    }
+
+    function addCause(name, type, source, strength=1, personId=null) {
+      const p = personId ? personById(personId) : null;
+      const c = {
+        id:"cause_" + Date.now() + "_" + Math.floor(Math.random()*9999),
+        name, type, source, strength,
+        person:p ? p.name : "",
+        scenario:game.scenario.name,
+        scenarioId:game.scenario.id,
+        route:game.route || "未定",
+        life:game.lifeNo,
+        state:"潜伏"
+      };
+      game.causes.unshift(c);
+      game.causes = game.causes.slice(0, 12);
+      return c;
+    }
+
+    function inferCause(ev, choice) {
+      if (choice.causeType) return addCause(`${ev.title}：${choice.causeType}之因`, choice.causeType, choice.text, 1, choice.personId);
+      const text = choice.text + " " + (choice.desc || "");
+      if (/救|收留|保护|分粮|开仓|护送|藏/.test(text)) return addCause(`${ev.title}：恩义之因`, "恩义", choice.text);
+      if (/高价|交出|屠|销毁|利用|严惩/.test(text)) return addCause(`${ev.title}：亏欠之因`, "亏欠", choice.text);
+      if (/记录|保存|写下|名册|整理/.test(text)) return addCause(`${ev.title}：传承之因`, "传承", choice.text);
+      if (/拒|抗|守旧|死守/.test(text)) return addCause(`${ev.title}：执念之因`, "执念", choice.text);
+      return null;
+    }
+
+    function startNewLife(resetLegacy) {
+      const legacy = resetLegacy ? { lives:0, imprints:[], causes:[], chronicles:[] } : loadLegacy();
+      if (resetLegacy) saveLegacy(legacy);
+
+      const scenario = chooseScenario(legacy);
+      const stats = defaultStats();
+      applyImprints(stats, legacy.imprints);
+      applyDeltaTo(stats, scenario.mods);
+
+      game = {
+        lifeNo: legacy.lives + 1,
+        scenario,
+        origin: pick(origins),
+        age: 13,
+        phase:"prologue",
+        step:0,
+        route:null,
+        stats,
+        people:[],
+        causes:[],
+        log:[],
+        deckHistory:[],
+        deckRoute:[],
+        currentEvent:null,
+        karmaPlayed:false,
+        ended:false
+      };
+
+      generatePeople();
+
+      const legacyCauses = legacy.causes || [];
+      if (legacyCauses.length && Math.random() < 0.85) {
+        showEvent(getKarmaEvent(pick(legacyCauses)));
+        game.karmaPlayed = true;
+      } else {
+        showEvent(getPrologueEvent());
+      }
+      render();
+    }
+
+    function applyDeltaTo(stats, delta) {
+      Object.entries(delta || {}).forEach(([k,v]) => stats[k] = clamp((stats[k] || 0) + v));
+    }
+
+    function getPrologueEvent() {
+      const ev = pick(prologuePool);
+      return {
+        type:"life",
+        title:ev.title,
+        kicker:"起身 · " + game.scenario.period,
+        text:ev.text + `\n\n此世你生在${game.scenario.place}，正逢「${game.scenario.name}」。\n\n${game.scenario.mood}`,
+        choices:shuffle(ev.choices).slice(0,3)
+      };
+    }
+
+    function getKarmaEvent(cause) {
+      return {
+        type:"karma",
+        title:"蛛网上的旧因",
+        kicker:"因果蛛网 · 前世回响",
+        text:`你尚未真正入世，便反复梦见一段前世未尽的因果。\n\n「${cause.name}」\n\n它来自上一段山河，也许与${cause.person || "某个无名之人"}有关。你醒来后记不清细节，只觉得此世的风里，有一根看不见的丝牵着你。\n\n这一次，你未必还会走到同一个地方。`,
+        choices:[
+          {text:"顺着牵引，尝试弥补", desc:"不知道欠了谁，也愿先向人间低头。", delta:{"仁心":1,"悲悯":1,"清醒":1}, causeType:"轮回果"},
+          {text:"把它当作警示", desc:"前世不可追，今生少犯同样的错。", delta:{"清醒":2,"机变":1}, causeType:"伏因"},
+          {text:"斩断旧梦", desc:"若因果无穷无尽，人还如何重新开始？", delta:{"野望":1,"风骨":1}, causeType:"执念"}
+        ]
+      };
+    }
+
+    function determineRoute() {
+      let best = "农人", bestScore = -999;
+      routeNames.forEach(route => {
+        const weights = routeWeights[route];
+        let score = Math.random() * 2.2;
+        Object.entries(weights).forEach(([k,w]) => score += (game.stats[k] || 0) * w);
+        if (score > bestScore) { bestScore = score; best = route; }
+      });
+      return best;
+    }
+
+    function buildDecks() {
+      const tags = game.scenario.tags;
+      const matched = historyPool.filter(e => e.tags.some(t => tags.includes(t)));
+      const fallback = historyPool.filter(e => !matched.includes(e));
+      game.deckHistory = shuffle([...matched, ...shuffle(fallback).slice(0, 4)]).slice(0, 5);
+      game.deckRoute = shuffle(routeEventPool[game.route]).slice(0, 4);
+    }
+
+    function nextEvent() {
+      if (game.phase === "prologue") {
+        if (game.currentEvent && game.currentEvent.type === "karma") {
+          showEvent(getPrologueEvent());
+          return;
+        }
+
+        game.step += 1;
+        if (game.step < 2) {
+          showEvent(getPrologueEvent());
+          return;
+        }
+
+        game.route = determineRoute();
+        addRoutePerson();
+        buildDecks();
+        game.log.unshift(`道路渐显：你这一世更接近「${game.route}」。`);
+        game.phase = "main";
+        game.step = 0;
+        showEvent(makeHistoryEvent(game.deckHistory.shift()));
+        return;
+      }
+
+      if (game.phase === "main") {
+        game.step += 1;
+        if (game.step >= 8) {
+          endLife();
+          return;
+        }
+
+        if (game.step === 3 || game.step === 6) {
+          showEvent(makeRelationEvent());
+          return;
+        }
+
+        if (game.step % 2 === 1 && game.deckRoute.length) {
+          showEvent(makeRouteEvent(game.deckRoute.shift()));
+          return;
+        }
+
+        if (game.deckHistory.length) {
+          showEvent(makeHistoryEvent(game.deckHistory.shift()));
+          return;
+        }
+
+        if (game.deckRoute.length) {
+          showEvent(makeRouteEvent(game.deckRoute.shift()));
+          return;
+        }
+
+        endLife();
+      }
+    }
+
+    function andFalse(){ return false; }
+
+    function makeHistoryEvent(raw) {
+      return {
+        ...raw,
+        type:"history",
+        text:raw.text.replaceAll("{place}", game.scenario.place),
+        choices:shuffle(raw.choices).slice(0,3)
+      };
+    }
+
+    function makeRouteEvent(raw) {
+      const [title, body, opts] = raw;
+      const choices = shuffle(opts).slice(0,3).map(o => ({
+        text:o,
+        desc:routeChoiceDesc(o),
+        delta:optionDeltas[o] || {"清醒":1}
+      }));
+      return {
+        type:"route",
+        title,
+        kicker:`人生线 · ${game.route}`,
+        text:`${body}\n\n此时你走在「${game.route}」之路上，但${game.scenario.name}的风仍在推着你。你不是在空白世界里选择，而是在${game.scenario.place}的尘土里承担选择。`,
+        choices
+      };
+    }
+
+    function routeChoiceDesc(text) {
+      const map = {
+        "高价售粮":"利益清楚，代价也清楚。",
+        "平价开仓":"你让铜钱退到人命之后。",
+        "执行军令":"军令如山，人命如草。",
+        "抗命护民":"这一刻，你把刀口转向了命令。",
+        "暗改讽词":"一句唱词，可能比刀更危险。",
+        "保存副本":"真相先活下来，人才有来日。",
+        "另写无名录":"没有名字的人，也该有一笔。",
+        "公开图纸":"你把技术交给需要它的人。",
+        "顺着牵引，尝试弥补":"你不知道自己欠了谁。"
+      };
+      return map[text] || "这不是唯一的路，但会成为一个因。";
+    }
+
+    function makeRelationEvent() {
+      const p = pick(game.people.filter(p => p.alive));
+      return {
+        type:"relation",
+        personId:p.id,
+        title:`${p.name}的请求`,
+        kicker:`故人系统 · ${p.role}`,
+        text:`${p.name}，${p.title}。\n\n你们在这一世相识。${p.name}曾说：“${p.line}”\n\n如今正逢「${game.scenario.name}」。历史车轮从${game.scenario.place}碾过，${p.name}把一件难事交到你面前。\n\n你知道，这不只是关系选择，也会成为因果网上的一根丝。`,
+        choices:[
+          {text:`答应${p.name}，将此事扛下来`, desc:"你把这个人的命运接到自己身上。", delta:{"仁心":1,"悲悯":1,"危险值":1}, rel:{[p.id]:{trust:2,tie:1,debt:-1}}, causeType:"恩义", personId:p.id},
+          {text:`拒绝${p.name}，让他自己承受`, desc:"你没有义务替每个人挡住时代。", delta:{"清醒":1,"危险值":-1}, rel:{[p.id]:{trust:-1,rift:2,debt:1}}, causeType:"亏欠", personId:p.id},
+          {text:`给${p.name}一条退路，但不亲自入局`, desc:"不冷眼旁观，也不把自己全部押上。", delta:{"机变":1,"清醒":1}, rel:{[p.id]:{trust:1,tie:1}}, causeType:"伏因", personId:p.id},
+          {text:`利用${p.name}，换取更大的机会`, desc:"乱世里，人情也会被放上秤盘。", delta:{"野望":1,"机变":1,"人脉":1}, rel:{[p.id]:{trust:-2,rift:2,debt:2}}, causeType:"仇恨", personId:p.id}
+        ]
+      };
+    }
+
+    function choose(i) {
+      if (!game || game.ended) return;
+      const ev = game.currentEvent;
+      const c = ev.choices[i];
+
+      applyDelta(c.delta || {});
+      if (c.rel) Object.entries(c.rel).forEach(([id, ch]) => updatePerson(id, ch));
+      const born = inferCause(ev, c);
+      if (born) game.log.unshift(`因果已生：${born.name}`);
+      game.log.unshift(`【${ev.title}】${c.text}`);
+      game.age += Math.floor(Math.random()*4) + 2;
+
+      nextEvent();
+      render();
+    }
+
+    function showEvent(ev) {
+      game.currentEvent = ev;
+      let cls = "event-card";
+      if (ev.type === "history") cls = "event-card history-card";
+      if (ev.type === "relation") cls = "event-card relation-card";
+      if (ev.type === "karma") cls = "event-card karma-card";
+
+      document.getElementById("eventArea").innerHTML = `
+        <section class="${cls}">
+          <div class="event-kicker">${ev.kicker}</div>
+          <h2 class="event-title">${ev.title}</h2>
+          <div class="event-text">${ev.text}</div>
+        </section>
+      `;
+
+      document.getElementById("choices").innerHTML = ev.choices.map((c, i) => `
+        <button class="choice" onclick="choose(${i})">
+          <span class="choice-title">${c.text}</span>
+          <span class="choice-desc">${c.desc || ""}</span>
+        </button>
+      `).join("");
+    }
+
+    function topSpirits() {
+      return spiritKeys
+        .map(k => [k, game.stats[k] || 0])
+        .sort((a,b) => b[1] - a[1])
+        .slice(0,3)
+        .map(x => x[0]);
+    }
+
+    function relationshipEnding() {
+      const sorted = [...game.people].sort((a,b) => (b.tie + b.trust + b.debt + b.rift) - (a.tie + a.trust + a.debt + a.rift));
+      const p = sorted[0];
+      if (!p) return "这一世，没有人真正记住你。";
+      if (p.rift >= 4) return `故人回望：${p.name}没有原谅你。有人提起你的名字，${p.name}只说：“他也曾有选择。”`;
+      if (p.debt >= 3) return `故人回望：你始终欠着${p.name}一件事。那件事没有写进史书，却在你临终前反复回来。`;
+      if (p.trust >= 4) return `故人回望：${p.name}一直相信你。你死后，${p.name}替你收起遗物，说：“他这一世，没有白走。”`;
+      if (p.tie >= 4) return `故人回望：乱世把你和${p.name}推向不同方向，但牵挂没有断。`;
+      return `故人回望：${p.name}记得你。记得并不轰烈，只是在某个黄昏忽然想起，你们曾一同走过一段乱世。`;
+    }
+
+    function causeEndingText() {
+      if (!game.causes.length) return "此世因果：足迹很浅，尘土很快盖住了它。";
+      return "此世因果：\n" + game.causes.slice(0,3).map(c => {
+        const tail = c.type === "恩义" ? "此因或将结为援手。" :
+          c.type === "亏欠" ? "此因或将结为遗憾。" :
+          c.type === "仇恨" ? "此因或将结为清算。" :
+          c.type === "传承" ? "此因或将结为后世残卷。" :
+          c.type === "轮回果" ? "此因已跨过一世，仍未止息。" :
+          "此因潜伏，尚未结果。";
+        return `你种下「${c.name}」。${tail}`;
+      }).join("\n");
+    }
+
+    function endingTone() {
+      const s = game.stats;
+      if ((s["秦势"] || 0) >= 5) return "这一世，你多次看向西方。你未必相信秦，却知道旧天下已经很难自己修好裂缝。";
+      if ((s["旧礼"] || 0) >= 5) return "这一世，你始终听见旧礼的回声。哪怕它已残破，你仍不愿它被彻底嘲笑。";
+      if ((s["民怨"] || 0) >= 5 || (s["饥荒"] || 0) >= 4) return "这一世，你见过太多底层的苦。诸侯谈天下，百姓谈明日有没有粮。";
+      if ((s["变法"] || 0) >= 5) return "这一世，你看见新法如刀。它削开旧贵族，也削痛了普通人的骨头。";
+      return "这一世，你被历史车轮推着向前。你不能决定天下如何转动，却决定自己如何站立。";
+    }
+
+    const endingByRoute = {
+      "隐士":"你在山林与竹简之间度过此生。有人说你逃避乱世，也有人因你的文字保住一点清明。",
+      "仕官":"你曾相信制度能救天下。后来你见过律令救人，也见过律令杀人。",
+      "谋士":"你以言语入局，以谋略改命。临终才觉得天下不像棋盘，棋子不会哭，人会。",
+      "武将":"你从卒伍中起身，见过战旗如云，也见过尸骨塞路。刀兵能定山河，却不能回答山河为何而定。",
+      "医者":"你救过的人大多不会出现在史书里。可病人的手总是一样冷，你握过那些手，此生便没有白活。",
+      "戏子":"你在台上演过忠臣、逆贼、亡国人、归乡客。戏里说的，有时才是世上最真的话。",
+      "商贾":"你算过无数账。到最后才明白，天下还有一种账不写在竹简上。",
+      "工匠":"你造过犁、渠、弩、车、器。有些救人，有些杀人。器物有声，只是史书少听。",
+      "吏官":"你不是高官，却最知道王朝如何抵达百姓门前：一张税单，一笔户籍，一卷案册。",
+      "农人":"你承受了王朝最沉的重量。史书写王侯，土地记百姓。"
+    };
+
+    function endLife() {
+      game.ended = true;
+      const marks = topSpirits();
+      const legacy = loadLegacy();
+      legacy.lives = game.lifeNo;
+      legacy.imprints = [...(legacy.imprints || []), ...marks].slice(-18);
+      legacy.causes = [...(legacy.causes || []), ...(game.causes || [])].slice(-30);
+      legacy.chronicles.unshift({
+        lifeNo:game.lifeNo,
+        route:game.route,
+        scenario:game.scenario.name,
+        scenarioId:game.scenario.id,
+        place:game.scenario.place,
+        marks,
+        causes:game.causes.slice(0,3).map(c => c.name)
+      });
+      legacy.chronicles = legacy.chronicles.slice(0,10);
+      saveLegacy(legacy);
+
+      document.getElementById("eventArea").innerHTML = `
+        <section class="event-card karma-card">
+          <div class="event-kicker">终章 · ${game.route} · ${game.scenario.name}</div>
+          <h2 class="event-title">此世归尘</h2>
+          <div class="event-text">${endingByRoute[game.route] || ""}
+
+${endingTone()}
+
+这一世，你留下的魂火印记是：${marks.join("、")}。
+
+${relationshipEnding()}
+
+${causeEndingText()}
+
+你无名，但你确实在${game.scenario.place}活过。而你种下的因，会在某一世继续震动蛛网。</div>
+        </section>
+      `;
+
+      document.getElementById("choices").innerHTML = `
+        <button class="choice" onclick="startNewLife(false)">
+          <span class="choice-title">转入下一世</span>
+          <span class="choice-desc">保留魂火与因果，让下一世不再只是重复。</span>
+        </button>
+        <button class="choice" onclick="resetAll()">
+          <span class="choice-title">清空轮回，重新开始</span>
+          <span class="choice-desc">删除本地存档、印记与因果蛛网。</span>
+        </button>
+      `;
+      render();
+    }
+
+    function renderStats(containerId, keys, type) {
+      const el = document.getElementById(containerId);
+      el.innerHTML = keys.map(k => {
+        const val = game ? (game.stats[k] || 0) : 0;
+        const pct = Math.max(0, Math.min(100, (val + 5) / 23 * 100));
+        const cls = k === "危险值" ? "danger" : type;
+        return `
+          <div class="stat">
+            <div class="stat-row">
+              <span>${k}</span>
+              <div class="bar ${cls}"><span style="width:${pct}%"></span></div>
+              <span>${val}</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderPeople() {
+      document.getElementById("peopleList").innerHTML = game.people.map(p => `
+        <div class="person-card">
+          <strong>${p.name}</strong>｜${p.role}<br/>
+          ${p.title}<br/>
+          <span class="person-state">${p.status}</span>
+          <div>信任${p.trust}｜牵挂${p.tie}｜亏欠${p.debt}｜裂痕${p.rift}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderCauses(legacy) {
+      const merged = [...(game.causes || []).slice(0,4), ...((legacy.causes || []).slice(-3).reverse())].slice(0,6);
+      document.getElementById("causeList").innerHTML = merged.length ? merged.map(c => `
+        <div class="cause-card">
+          <strong>${c.name}</strong><br/>
+          ${c.type}｜${c.scenario || "未知"}${c.person ? "｜" + c.person : ""}
+          <div>状态：${c.state || "潜伏"}｜强度：${c.strength || 1}</div>
+        </div>
+      `).join("") : `<div class="small-note">蛛网尚空。重大选择会成为因，未来某一世或会结果。</div>`;
+    }
+
+    function renderScenario() {
+      const s = game.scenario;
+      document.getElementById("scenarioBox").innerHTML = `
+        <div class="scenario-card">
+          <strong>${s.name}</strong><br/>
+          ${s.period}｜${s.year}<br/>
+          地点：${s.place}<br/>
+          势力：${s.state}<br/>
+          <div style="margin-top:6px;">${s.mood}</div>
+        </div>
+      `;
+    }
+
+    function render() {
+      if (!game) return;
+      const legacy = loadLegacy();
+      document.getElementById("lifeMeta").innerHTML = `
+        <div><strong>第 ${game.lifeNo} 世</strong>｜${game.scenario.state}</div>
+        <div>出身：<strong>${game.origin}</strong></div>
+        <div>年龄：<strong>${game.age}</strong> 岁</div>
+        <div>道路：${game.route ? `<span class="tag">${game.route}</span>` : "<strong>尚未显形</strong>"}</div>
+        <div><span class="tag">${game.phase === "prologue" ? "起身" : "入世"}</span><span class="tag">${game.currentEvent?.kicker || ""}</span></div>
+      `;
+
+      renderScenario();
+      renderPeople();
+      renderCauses(legacy);
+      renderStats("abilityStats", abilityKeys, "");
+      renderStats("spiritStats", spiritKeys, "");
+      renderStats("contextStats", contextKeys, "context");
+      renderStats("worldStats", worldKeys, "world");
+
+      document.getElementById("imprints").innerHTML = legacy.imprints?.length
+        ? legacy.imprints.map(m => `<span class="imprint">${m}</span>`).join("")
+        : `<div class="small-note">尚无。每一世终结后，会留下魂火印记。</div>`;
+
+      document.getElementById("log").innerHTML = game.log.length
+        ? game.log.map(x => `<p>${x}</p>`).join("")
+        : `<p>这一世还没有留下行迹。</p>`;
+
+      const old = document.getElementById("chronicles");
+      if (old) old.remove();
+      if (legacy.chronicles && legacy.chronicles.length) {
+        const div = document.createElement("div");
+        div.id = "chronicles";
+        div.innerHTML = `
+          <div class="section-title">轮回小史</div>
+          ${legacy.chronicles.map(c => `
+            <div class="history-item">
+              <strong>第${c.lifeNo}世 · ${c.route}</strong><br/>
+              ${c.scenario}｜${c.place}<br/>
+              印记：${c.marks.join("、")}<br/>
+              因：${(c.causes || []).slice(0,2).join("；") || "未明"}
+            </div>
+          `).join("")}
+        `;
+        document.querySelector(".side").appendChild(div);
+      }
+    }
+
+    function resetAll() {
+      if (confirm("确定清空《山河无名 V4》的本地轮回存档吗？")) {
+        localStorage.removeItem("swh_legacy_v4");
+        startNewLife(true);
+      }
+    }
+
+    startNewLife(false);
+  </script>
+</body>
+</html>

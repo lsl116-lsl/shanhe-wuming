@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Node / frontend future use
+node_modules/
+dist/
+build/
+
+# Python local server / tools
+__pycache__/
+*.pyc
+
+# Temporary exports
+*.tmp
+*.bak
+
+# Local notes
+.local/

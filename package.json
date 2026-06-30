@@ -1,0 +1,10 @@
+{
+  "name": "shanhe-wuming",
+  "version": "0.3.0",
+  "private": true,
+  "description": "山河无名：中文历史叙事游戏。苏醒者、跨朝代因果、无名者到人民。",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "prototype": "python -m http.server 8000"
+  }
+}
