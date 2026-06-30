@@ -3,6 +3,8 @@ AGENTS.md
 README.md
 ROADMAP.md
 docs/00_项目总框架_V0.2.md
+docs/00_项目总框架_V0.3.md
+docs/00_项目总框架_V0.4.md
 docs/01_跨朝代因果总表_V0.1.md
 docs/02_第一章_礼崩之世_主线大纲_V0.1.md
 docs/02_第一章_礼崩之世_主线大纲_模板.md
@@ -10,6 +12,8 @@ docs/03_第一章_人物关系表_V0.1.md
 docs/04_第一章_职业线嵌入表_V0.1.md
 docs/05_第一章_因果节点表_V0.1.md
 docs/06_第一章_记忆碎片表_V0.1.md
+docs/07_第一章至第二章_衔接过渡文_V0.1.md
+docs/08_项目落地方案_V0.1.md
 package.json
 planning/codex_first_prompt.md
 prototype/chapter1_v4_experiment.html
