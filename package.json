@@ -1,0 +1,9 @@
+{
+  "name": "shanhe-wuming",
+  "version": "0.2.0",
+  "private": true,
+  "description": "山河无名：第一章·礼崩之世。中国历史轮回式人生体验游戏网页原型。",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  }
+}

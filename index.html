@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>山河无名：第一章·礼崩之世</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="title">
+        <h1>山河无名</h1>
+        <div class="subtitle">第一章：礼崩之世｜春秋战国历史车轮版</div>
+      </div>
+      <div class="top-actions">
+        <button onclick="startNewLife(false)">转入下一世</button>
+        <button class="secondary" onclick="resetAll()">清空轮回</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside class="panel side">
+        <div class="seal">卷一 · 礼崩之世</div>
+        <div class="life-meta" id="lifeMeta"></div>
+
+        <div class="section-title">历史车轮</div>
+        <div class="timeline" id="timeline"></div>
+
+        <div class="section-title">个人能力</div>
+        <div id="abilityStats"></div>
+
+        <div class="section-title">精神倾向</div>
+        <div id="spiritStats"></div>
+
+        <div class="section-title">时代处境</div>
+        <div id="contextStats"></div>
+
+        <div class="section-title">天下局势</div>
+        <div id="worldStats"></div>
+
+        <div class="section-title">魂火印记</div>
+        <div id="imprints"></div>
+
+        <div class="section-title">本世行迹</div>
+        <div class="log" id="log"></div>
+      </aside>
+
+      <main class="panel main">
+        <div id="eventArea"></div>
+        <div class="choices" id="choices"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./src/game.js"></script>
+</body>
+</html>
