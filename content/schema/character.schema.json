@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shanhe://schema/character",
+  "title": "山河无名人物",
+  "type": "object",
+  "required": ["schemaVersion", "characters"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "role",
+          "voice",
+          "desire",
+          "fear",
+          "color",
+          "initialRelationship"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "voice": { "type": "string" },
+          "desire": { "type": "string" },
+          "fear": { "type": "string" },
+          "color": { "type": "string" },
+          "initialRelationship": {
+            "type": "object",
+            "required": ["trust", "sharedDebt", "rift"],
+            "properties": {
+              "trust": { "type": "number" },
+              "sharedDebt": { "type": "number" },
+              "rift": { "type": "number" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

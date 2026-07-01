@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "channels": [
+    {
+      "id": "official",
+      "name": "官档",
+      "description": "便于调粮、安置与追责；也最容易成为征用和追索依据。"
+    },
+    {
+      "id": "private",
+      "name": "私录",
+      "description": "保留具体关系与异议，但依赖少数保管者，容易散失。"
+    },
+    {
+      "id": "oral",
+      "name": "口述",
+      "description": "越过识字门槛，传播更广；姓名、次序与因果也更容易变形。"
+    }
+  ]
+}

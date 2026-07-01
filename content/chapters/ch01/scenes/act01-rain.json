@@ -1,0 +1,1010 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "CH01-ACT01-SC001",
+  "title": "雨后流民",
+  "estimatedMinutes": 12,
+  "startNode": "CH01-ACT01-N001",
+  "nodes": [
+    {
+      "id": "CH01-ACT01-N001",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "洛水暮雨",
+      "speaker": "旁白",
+      "location": "洛水渡口",
+      "time": "前 286 年 · 暮色前",
+      "paragraphs": [
+        "雨水从车辙里漫出来，裹着草屑、血和被泡散的墨。你在一辆翻倒的车旁醒来，不记得姓名，只记得很远的地方曾有一声钟响。",
+        "一支亡国流民队伍刚到渡口。病者在发热，死者无人辨认，几卷旧籍泡在泥里。天黑以前，人手只够先做一件事。"
+      ],
+      "visual": {
+        "motif": "river",
+        "caption": "洛水渡口，雨没有停。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C001-CONTINUE",
+          "label": "走近泥里的车辙",
+          "detail": "先看看这一世把你放在了谁的身边。",
+          "tone": "caution",
+          "effects": [],
+          "next": "CH01-ACT01-N002"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N002",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "半个名字",
+      "speaker": "旁白",
+      "location": "翻倒的流民车旁",
+      "time": "暮色尚余五刻",
+      "paragraphs": [
+        "一枚湿透的竹简卡在泥里，只剩半个姓名，国名被人用刀刮去。几步外，一个孩子压在车辕下；更远处，季伯正在问还能开口的人叫什么。",
+        "你还没有责任，也没有身份。可第一步已经会让别人认识你。"
+      ],
+      "visual": {
+        "motif": "slip",
+        "caption": "被刮去的国名，比留下的字更深。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C002-TAKE-SLIP",
+          "label": "先拾起湿简",
+          "detail": "字再泡一刻便会散掉；活人还能够再次开口。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "testimony.learn",
+              "key": "sawHalfNameSlip",
+              "value": true,
+              "label": "你看清了半个姓名与刮削痕迹"
+            },
+            {
+              "type": "flag.set",
+              "key": "openingInstinct",
+              "value": "record",
+              "label": "第一反应显影：先留证"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "trust",
+              "amount": 1,
+              "label": "韩宁注意到你护住了残简"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-002",
+              "label": "因果激活：半名残简"
+            }
+          ],
+          "next": "CH01-ACT01-N003"
+        },
+        {
+          "id": "CH01-C002-LIFT-CHILD",
+          "label": "先抬开车辕",
+          "detail": "孩子的呼吸正变轻；泥里的字不会喊疼。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "childLiftedFromCart",
+              "value": true,
+              "label": "事实改变：孩子被及时抬出"
+            },
+            {
+              "type": "resource.change",
+              "key": "strength",
+              "amount": -1,
+              "label": "体力消耗 1"
+            },
+            {
+              "type": "flag.set",
+              "key": "openingInstinct",
+              "value": "care",
+              "label": "第一反应显影：先救人"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安记住了你伸出的手"
+            }
+          ],
+          "next": "CH01-ACT01-N003"
+        },
+        {
+          "id": "CH01-C002-CALL-NAMES",
+          "label": "先高声询问谁认识他们",
+          "detail": "让流民互相回应，也让所有人听见谁不敢回应。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "testimony.learn",
+              "key": "heardRefugeeVoices",
+              "value": true,
+              "label": "你记住了几种互不相同的自称"
+            },
+            {
+              "type": "flag.set",
+              "key": "openingInstinct",
+              "value": "collective",
+              "label": "第一反应显影：让众人互认"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 1,
+              "label": "季伯认可你先问当事人"
+            }
+          ],
+          "next": "CH01-ACT01-N003"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N003",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "最后一点光",
+      "speaker": "季伯、禾安与韩宁",
+      "location": "渡口旧库前",
+      "time": "暮色尚余四刻",
+      "paragraphs": [
+        "季伯抱着湿简，说人若没了，总得让后来人知道少的是谁。禾安抢过空陶罐去烧水，说人还没没，你先把手伸过来。韩宁跪在泥里，说活人还会再说，死人不会。",
+        "三个人都没有错。他们争夺的是同一批人手、最后一点粮和正在消失的光。你只能把自己交给其中一件事。"
+      ],
+      "visual": {
+        "motif": "river",
+        "caption": "同一场雨里，救人和留名第一次相撞。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C003-CARE",
+          "label": "跟禾安抬病者进旧库",
+          "detail": "让病者先熬过今夜；两名死者可能再也无人辨认。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "firstDuty",
+              "value": "care",
+              "label": "首要责任：救治"
+            },
+            {
+              "type": "fact.set",
+              "key": "sickSheltered",
+              "value": true,
+              "label": "事实改变：十一名病者被安置"
+            },
+            {
+              "type": "fact.set",
+              "key": "unconfirmedDead",
+              "value": 2,
+              "label": "事实留下：两名死者未能确认"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -2,
+              "label": "暮色消耗 2"
+            },
+            {
+              "type": "resource.change",
+              "key": "grain",
+              "amount": -1,
+              "label": "煮粥用粮 1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 2,
+              "label": "禾安信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "与禾安形成共同救治之债"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-SHELTER",
+                "title": "旧库安置数",
+                "text": "病者十一，已入旧库；死者二，姓名未详。",
+                "source": "季伯临时登记",
+                "confidence": "partial",
+                "sensitivity": "low"
+              },
+              "label": "官档写入：病者有数，死者无名"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-UNNAMED",
+                "title": "来不及辨认的人",
+                "text": "禾安记得其中一人左腕有旧绳痕，另一人鞋底缝着青线。",
+                "source": "禾安口授，玩家私记",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "私录写入：两名死者仍有可辨痕迹"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-004",
+              "label": "因果激活：第一份流民名册"
+            }
+          ],
+          "next": "CH01-ACT01-N004A"
+        },
+        {
+          "id": "CH01-C003-RECORD",
+          "label": "替季伯抢救湿简",
+          "detail": "尽可能留住姓名；病者要在冷雨里再等一刻。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "firstDuty",
+              "value": "record",
+              "label": "首要责任：留证"
+            },
+            {
+              "type": "fact.set",
+              "key": "slipsRecovered",
+              "value": 7,
+              "label": "事实改变：七枚湿简得以辨读"
+            },
+            {
+              "type": "fact.set",
+              "key": "careDelayed",
+              "value": true,
+              "label": "事实留下：救治延迟"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -2,
+              "label": "暮色消耗 2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 2,
+              "label": "季伯信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "trust",
+              "amount": 1,
+              "label": "韩宁信任 +1"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-NAMES",
+                "title": "可辨姓名七",
+                "text": "湿简七枚可辨，四人到场，三人未归。",
+                "source": "季伯临时登记",
+                "confidence": "partial",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：七个姓名进入可追索名单"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-HALFNAME",
+                "title": "半名残简",
+                "text": "姓名只剩左半，国名有反复刮削痕；韩宁认得笔势，却拒绝当众说明。",
+                "source": "玩家与韩宁共同辨认",
+                "confidence": "contested",
+                "sensitivity": "high"
+              },
+              "label": "私录写入：半名残简仍存争议"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-002",
+              "label": "因果激活：半名残简"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-004",
+              "label": "因果激活：第一份流民名册"
+            }
+          ],
+          "next": "CH01-ACT01-N004B"
+        },
+        {
+          "id": "CH01-C003-ROLLCALL",
+          "label": "让流民彼此点名",
+          "detail": "记录来自众人；一个使用假名的人也可能因此暴露。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "firstDuty",
+              "value": "collective",
+              "label": "首要责任：互认"
+            },
+            {
+              "type": "fact.set",
+              "key": "collectiveRollCall",
+              "value": true,
+              "label": "事实改变：流民开始互相确认"
+            },
+            {
+              "type": "fact.set",
+              "key": "fugitiveExposed",
+              "value": true,
+              "label": "事实留下：一名逃亡者的假名被听出"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -3,
+              "label": "争论与互认消耗暮色 3"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 1,
+              "label": "季伯信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安信任 +1"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-ROLLCALL",
+                "title": "渡口互认名册",
+                "text": "姓名二十三，绰号六，籍贯互有冲突；一人拒绝说明。",
+                "source": "季伯据众人口述登记",
+                "confidence": "contested",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：最完整也最危险的名册"
+            },
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-VOICES",
+                "title": "众人的点名",
+                "text": "有人以乳名应答，有人替死者应答，也有人保持沉默。",
+                "source": "渡口众人",
+                "confidence": "contested",
+                "sensitivity": "medium"
+              },
+              "label": "口述写入：同一个人可能有不止一个名字"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-004",
+              "label": "因果激活：第一份流民名册"
+            }
+          ],
+          "next": "CH01-ACT01-N004C"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N004A",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "有人活过今夜",
+      "speaker": "禾安",
+      "location": "旧礼器库",
+      "time": "入夜前",
+      "paragraphs": [
+        "热水终于冒出白气。最重的病者在旧席上缓过一口气，禾安把最后一点粟分成十一份。",
+        "季伯从门外回来，只说两名死者没能等到认识他们的人。禾安没有向你道谢，她把一条湿布递来：先把活人的额头擦干。"
+      ],
+      "visual": {
+        "motif": "river",
+        "caption": "救下的人有呼吸，失去的名字没有声音。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C004A-CONTINUE",
+          "label": "去看季伯带回的残简",
+          "detail": "救治没有结束，记录也不会自己回来。",
+          "tone": "caution",
+          "effects": [],
+          "next": "CH01-ACT01-N005"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N004B",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "字留了下来",
+      "speaker": "季伯",
+      "location": "旧库檐下",
+      "time": "入夜前",
+      "paragraphs": [
+        "季伯把湿简一枚枚平码在干布上。七个姓名勉强留住，三个人却没有出现在队伍里。",
+        "旧库内传来病者的咳声。禾安看了你一眼，没有责骂，只把已经凉掉的水重新架上火。季伯低声说：这一笔，是我们欠他们的。"
+      ],
+      "visual": {
+        "motif": "slip",
+        "caption": "字迹被救下时，另一些人正在等待。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C004B-CONTINUE",
+          "label": "与韩宁辨认半名残简",
+          "detail": "她一直在等你承认，这枚简可能关系到活人的安全。",
+          "tone": "caution",
+          "effects": [],
+          "next": "CH01-ACT01-N005"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N004C",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "有人没有应答",
+      "speaker": "旁白",
+      "location": "渡口众人之间",
+      "time": "入夜前",
+      "paragraphs": [
+        "名字从不同口音里传过来。有人用乳名应答，有人替死者应答。季伯的册上第一次出现了绰号、旧名和一句“本人拒绝说明”。",
+        "人群散开时，一个年轻人已经不见了。有人说他本就可疑，也有人说是这场点名逼走了他。最完整的名册，先留下了第一个无法核实的后果。"
+      ],
+      "visual": {
+        "motif": "slip",
+        "caption": "众人共同留下姓名，也共同看见沉默。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C004C-CONTINUE",
+          "label": "把那句“拒绝说明”保留下来",
+          "detail": "空白也有原因，不能被擅自填满。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "refusalPreserved",
+              "value": true,
+              "label": "事实原则：拒绝说明不是无名"
+            }
+          ],
+          "next": "CH01-ACT01-N005"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N005",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "无人敲钟",
+      "speaker": "韩宁",
+      "location": "旧礼器库深处",
+      "time": "夜",
+      "paragraphs": [
+        "旧库漏雨。一口裂钟立在黑暗里，没有人靠近，你却听见短促的一响。水仿佛从钟身裂缝中流出，又像来自一个不属于今夜的梦。",
+        "韩宁从阴影里伸手：把残简给我。她没有说那是谁的笔迹，也没有保证会把知道的事告诉你。"
+      ],
+      "visual": {
+        "motif": "bell",
+        "caption": "钟没有被敲响，你却记得它的声音。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C005-GIVE",
+          "label": "立即交给韩宁",
+          "detail": "承认它可能首先关系到她，而不是你的谜题。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "slipKeeper",
+              "value": "HANNING",
+              "label": "残简由韩宁保管"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "trust",
+              "amount": 2,
+              "label": "韩宁信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "韩宁欠下说明残简来历的共同债"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-BELL-01",
+              "label": "记忆触发：水从钟缝流出"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-001",
+              "label": "因果激活：裂钟"
+            }
+          ],
+          "next": "CH01-ACT01-N006"
+        },
+        {
+          "id": "CH01-C005-SHARED",
+          "label": "要求共同辨认",
+          "detail": "不占有残简，也不把判断完全交给一个人。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "slipKeeper",
+              "value": "SHARED",
+              "label": "残简由你与韩宁共同辨认"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "trust",
+              "amount": 1,
+              "label": "韩宁信任 +1"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "fatherHandPossibility",
+              "value": true,
+              "label": "韩宁承认：笔势像她的父亲"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-BELL-01",
+              "label": "记忆触发：水从钟缝流出"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-001",
+              "label": "因果激活：裂钟"
+            }
+          ],
+          "next": "CH01-ACT01-N006"
+        },
+        {
+          "id": "CH01-C005-HIDE",
+          "label": "暂时藏起残简",
+          "detail": "先弄清它为何让你听见钟声；韩宁会记得你替她决定了风险。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "slipKeeper",
+              "value": "PLAYER",
+              "label": "残简被你暂时藏起"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "rift",
+              "amount": 1,
+              "label": "韩宁裂痕 +1"
+            },
+            {
+              "type": "flag.set",
+              "key": "withheldSlip",
+              "value": true,
+              "label": "选择显影：以保护之名替别人决定"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-BELL-01",
+              "label": "记忆触发：水从钟缝流出"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-001",
+              "label": "因果激活：裂钟"
+            }
+          ],
+          "next": "CH01-ACT01-N006"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N006",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "没有国名的歌",
+      "speaker": "柳娘",
+      "location": "旧库告祭火旁",
+      "time": "深夜",
+      "paragraphs": [
+        "柳娘为死者唱起旧曲，唱到国名处忽然停下。旧国遗民要她补回，队伍里另一些人却向后退了一步：唱出国名，他们便可能被认出、被追索。",
+        "柳娘问的不是爱不爱旧国。她问，今夜这支曲子先替谁留下声音。"
+      ],
+      "variants": [
+        {
+          "conditions": [
+            { "path": "player.flags.firstDuty", "operator": "equals", "value": "care" }
+          ],
+          "paragraphs": [
+            "禾安从旧库出来，手上仍沾着病者的热汗：若要唱，先唱活人还能听懂的名字。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "player.flags.firstDuty", "operator": "equals", "value": "record" }
+          ],
+          "paragraphs": [
+            "季伯把湿简摊在火光外，提醒你：曲子传得远，错误也会传得远。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "player.flags.firstDuty", "operator": "equals", "value": "collective" }
+          ],
+          "paragraphs": [
+            "人群里有人提议每家各补一句，立刻又有人反对：嗓门最大的人不该决定所有版本。"
+          ]
+        }
+      ],
+      "visual": {
+        "motif": "song",
+        "caption": "旋律可以越过纸页，也会把危险带得更远。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C006-NAMES",
+          "label": "今夜先唱死者姓名",
+          "detail": "不补国名，让曲子先记住具体的人。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-NAMES",
+                "title": "渡口点名曲",
+                "text": "曲中先唱已确认姓名，再唱衣物、伤痕与亲属的称呼；国名处留一拍空白。",
+                "source": "柳娘与流民共同改词",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "口述写入：死者姓名进入旧曲"
+            },
+            {
+              "type": "relationship.change",
+              "character": "LIUNIANG",
+              "field": "trust",
+              "amount": 2,
+              "label": "柳娘信任 +2"
+            },
+            {
+              "type": "fact.set",
+              "key": "songForm",
+              "value": "NAMES_FIRST",
+              "label": "旧曲形态：先记人名"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-003",
+              "label": "因果激活：亡国旧曲"
+            }
+          ],
+          "next": "CH01-ACT01-N007"
+        },
+        {
+          "id": "CH01-C006-SILENCE",
+          "label": "允许假名者保持沉默",
+          "detail": "保留空拍和身体特征，不逼任何人用真名换取悼念。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-ANON",
+                "title": "留有空拍的旧曲",
+                "text": "第三段原有一名自称，因本人拒绝公开而隐去；同行者只保留他曾在此的证明。",
+                "source": "柳娘口传",
+                "confidence": "contested",
+                "sensitivity": "high"
+              },
+              "label": "口述写入：留下匿名者存在的证明"
+            },
+            {
+              "type": "record.redact",
+              "channel": "oral",
+              "recordId": "REC-ORAL-ANON",
+              "label": "口述删隐：不传播匿名者自称"
+            },
+            {
+              "type": "relationship.change",
+              "character": "LIUNIANG",
+              "field": "trust",
+              "amount": 1,
+              "label": "柳娘信任 +1"
+            },
+            {
+              "type": "fact.set",
+              "key": "songForm",
+              "value": "PROTECTED_SILENCE",
+              "label": "旧曲形态：保留沉默权"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-003",
+              "label": "因果激活：亡国旧曲"
+            }
+          ],
+          "next": "CH01-ACT01-N007"
+        },
+        {
+          "id": "CH01-C006-KINGDOM",
+          "label": "补回被刮去的国名",
+          "detail": "旧国遗民得到完整悼歌；另一群人的现实风险上升。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-KINGDOM",
+                "title": "复名的亡国曲",
+                "text": "国名被补回，死者被解释为旧国之民；无法归入旧国的人没有进入主歌。",
+                "source": "旧国遗民与柳娘",
+                "confidence": "contested",
+                "sensitivity": "high"
+              },
+              "label": "口述写入：国名恢复，人名被重新归类"
+            },
+            {
+              "type": "relationship.change",
+              "character": "LIUNIANG",
+              "field": "rift",
+              "amount": 1,
+              "label": "柳娘裂痕 +1"
+            },
+            {
+              "type": "fact.set",
+              "key": "songForm",
+              "value": "KINGDOM_RESTORED",
+              "label": "旧曲形态：恢复国名"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-003",
+              "label": "因果激活：亡国旧曲"
+            }
+          ],
+          "next": "CH01-ACT01-N007"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N007",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "名册交给谁",
+      "speaker": "季伯",
+      "location": "告祭后的旧库",
+      "time": "夜将尽",
+      "paragraphs": [
+        "临时名册已经不再是一张中立的纸。交给季伯，它能换来粮与暂居，也能被官署追索；交给韩宁，它更安全，却可能只服务她寻找父亲；交给柳娘，名字会走得更远，也会在传唱中变形。",
+        "你也可以把不同版本分给几个人。分散能避免一次尽毁，却让后人再也找不到唯一原本。"
+      ],
+      "visual": {
+        "motif": "archive",
+        "caption": "保管从来不是结尾，而是下一段因果的起点。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C007-OFFICIAL",
+          "label": "交给季伯，换取安置凭据",
+          "detail": "官档最容易发挥现实作用，也最容易用于追索。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "registerKeeper",
+              "value": "OFFICIAL",
+              "label": "名册去向：季伯与临时官档"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-CUSTODY",
+                "title": "流民暂居凭据",
+                "text": "据渡口临时名册发给旧库暂居与两日口粮；拒绝说明者另列待核。",
+                "source": "季伯",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：名册开始换取现实权利"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "季伯承担使用名册的责任"
+            }
+          ],
+          "next": "CH01-ACT01-N008"
+        },
+        {
+          "id": "CH01-C007-PRIVATE",
+          "label": "交给韩宁，只留一份暗册",
+          "detail": "降低公开追索，却让一段公共记录依赖一个人的命运。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "registerKeeper",
+              "value": "PRIVATE",
+              "label": "名册去向：韩宁暗册"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-CUSTODY",
+                "title": "韩宁暗册",
+                "text": "保留渡口原始姓名、拒绝说明与刮削痕；不交掌事者。",
+                "source": "韩宁",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "私录写入：原始异议得到保留"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "韩宁承担保管与失散风险"
+            }
+          ],
+          "next": "CH01-ACT01-N008"
+        },
+        {
+          "id": "CH01-C007-ORAL",
+          "label": "交给柳娘，藏进曲子",
+          "detail": "越过纸面和关卡，接受姓名与次序会逐渐变化。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "registerKeeper",
+              "value": "ORAL",
+              "label": "名册去向：柳娘旧曲"
+            },
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-CUSTODY",
+                "title": "二十三人节拍",
+                "text": "以长短拍记人数，以重复句记亲属，以空拍记不愿公开者。",
+                "source": "柳娘与阿檀",
+                "confidence": "contested",
+                "sensitivity": "low"
+              },
+              "label": "口述写入：名册被改成可携带的节拍"
+            },
+            {
+              "type": "relationship.change",
+              "character": "LIUNIANG",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "柳娘承担改词与误传之债"
+            }
+          ],
+          "next": "CH01-ACT01-N008"
+        },
+        {
+          "id": "CH01-C007-DISTRIBUTE",
+          "label": "拆成三份，分别交给他们",
+          "detail": "没有唯一原本；三份记录会互相纠错，也会互相争真。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "registerKeeper",
+              "value": "DISTRIBUTED",
+              "label": "名册去向：分散保管"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -1,
+              "label": "连夜抄分耗尽最后精力"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-DISTRIBUTED",
+                "title": "暂居摘要",
+                "text": "只录领粮所需姓名与人数，拒绝说明者不入主栏。",
+                "source": "季伯",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "官档写入：可执行摘要"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-DISTRIBUTED",
+                "title": "刮削与异议本",
+                "text": "记录原名、旧名、拒绝说明和谁改过哪一笔。",
+                "source": "韩宁",
+                "confidence": "contested",
+                "sensitivity": "high"
+              },
+              "label": "私录写入：刮削与异议"
+            },
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-DISTRIBUTED",
+                "title": "渡口节拍",
+                "text": "保留人数、亲属称呼和空拍，不保证字形与次序。",
+                "source": "柳娘",
+                "confidence": "contested",
+                "sensitivity": "low"
+              },
+              "label": "口述写入：可携带的节拍"
+            }
+          ],
+          "next": "CH01-ACT01-N008"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT01-N008",
+      "sceneId": "CH01-ACT01-SC001",
+      "act": "ACT01",
+      "title": "本世档案 · 第一页",
+      "speaker": "旁白",
+      "location": "洛水旧渡",
+      "time": "次日清晨",
+      "paragraphs": [
+        "雨停了。裂钟被抬到告祭中央，却发不出完整的声音。你留下了第一份不完整的名册，也第一次知道：救下一个人、写下一个名字、公开一段事实，并不总是同一件事。",
+        "没有正确答案替你收走代价。档案会把事实、官档、私录和口述并列，让下一章继续追问：谁得到身份，谁因记录暴露，谁只在别人的声音里活下来。"
+      ],
+      "visual": {
+        "motif": "archive",
+        "caption": "无名录尚未出现，它的第一页已经种下。"
+      },
+      "choices": [],
+      "ending": true
+    }
+  ]
+}

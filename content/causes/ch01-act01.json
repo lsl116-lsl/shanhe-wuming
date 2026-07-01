@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "causes": [
+    {
+      "id": "SW-CH01-001",
+      "name": "裂钟",
+      "description": "现实旧器与不属于本世的熟悉感第一次重合。",
+      "firstAct": "ACT01",
+      "futureReturn": "ACT08 决定物质去向；后世持续回响。"
+    },
+    {
+      "id": "SW-CH01-002",
+      "name": "半名残简",
+      "description": "一枚只剩半个姓名、国名被刮去的湿简。",
+      "firstAct": "ACT01",
+      "futureReturn": "ACT03 揭示父亲笔迹；ACT07 并入无名录。"
+    },
+    {
+      "id": "SW-CH01-003",
+      "name": "亡国旧曲",
+      "description": "旋律能够越过文字，也可能被权力改词。",
+      "firstAct": "ACT01",
+      "futureReturn": "历章持续变调，最终转为人民共同发声。"
+    },
+    {
+      "id": "SW-CH01-004",
+      "name": "第一份流民名册",
+      "description": "决定谁暂时有名、谁保持沉默、谁因此暴露。",
+      "firstAct": "ACT01",
+      "futureReturn": "ACT02 与新籍比对；ACT07 成为无名录底本。"
+    }
+  ]
+}

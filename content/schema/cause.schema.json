@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shanhe://schema/cause",
+  "title": "山河无名因果节点",
+  "type": "object",
+  "required": ["schemaVersion", "causes"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "causes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "firstAct", "futureReturn"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "firstAct": { "type": "string" },
+          "futureReturn": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

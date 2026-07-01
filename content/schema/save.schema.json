@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shanhe://schema/save",
+  "title": "山河无名存档",
+  "type": "object",
+  "required": [
+    "saveVersion",
+    "contentVersion",
+    "runtimeVersion",
+    "chapterId",
+    "currentNode",
+    "stateSnapshot",
+    "eventLog",
+    "chapterHandoffs",
+    "playtimeSeconds",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "saveVersion": { "type": "string" },
+    "contentVersion": { "type": "string" },
+    "runtimeVersion": { "type": "string" },
+    "chapterId": { "type": "string" },
+    "currentNode": { "type": "string" },
+    "stateSnapshot": { "type": "object" },
+    "eventLog": { "type": "array" },
+    "chapterHandoffs": { "type": "array" },
+    "playtimeSeconds": { "type": "number", "minimum": 0 },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  },
+  "additionalProperties": false
+}

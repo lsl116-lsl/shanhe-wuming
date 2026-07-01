@@ -1,10 +1,21 @@
 {
   "name": "shanhe-wuming",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "description": "山河无名：中文历史叙事游戏。苏醒者、跨朝代因果、无名者到人民。",
   "scripts": {
-    "start": "python -m http.server 8000",
+    "start": "vite --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "audit": "tsx tools/route-auditor/src/index.ts",
+    "test": "pnpm typecheck && pnpm run audit && pnpm build",
     "prototype": "python -m http.server 8000"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0"
   }
 }

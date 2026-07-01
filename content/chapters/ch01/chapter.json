@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "0.1.0",
+  "runtimeVersion": "0.1.0",
+  "id": "CH01",
+  "title": "礼崩之世",
+  "subtitle": "第一章 · 裂钟之梦",
+  "sampleTitle": "雨后流民",
+  "description": "在暮色前救人、留名，或让流民彼此辨认。你无法保住一切，只能决定谁先承担代价。",
+  "sceneFiles": ["/chapters/ch01/scenes/act01-rain.json"],
+  "characterFile": "/characters/ch01-act01.json",
+  "causeFile": "/causes/ch01-act01.json",
+  "recordFile": "/records/ch01-act01.json"
+}

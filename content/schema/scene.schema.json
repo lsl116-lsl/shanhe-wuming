@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shanhe://schema/scene",
+  "title": "山河无名场景",
+  "type": "object",
+  "required": ["schemaVersion", "id", "title", "estimatedMinutes", "startNode", "nodes"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "estimatedMinutes": { "type": "integer", "minimum": 1 },
+    "startNode": { "type": "string" },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "sceneId",
+          "act",
+          "title",
+          "speaker",
+          "location",
+          "time",
+          "paragraphs",
+          "visual",
+          "choices"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "sceneId": { "type": "string" },
+          "act": { "type": "string" },
+          "title": { "type": "string" },
+          "speaker": { "type": "string" },
+          "location": { "type": "string" },
+          "time": { "type": "string" },
+          "paragraphs": { "type": "array", "items": { "type": "string" } },
+          "variants": { "type": "array" },
+          "visual": {
+            "type": "object",
+            "required": ["motif", "caption"],
+            "properties": {
+              "motif": { "enum": ["river", "slip", "bell", "song", "archive"] },
+              "caption": { "type": "string" }
+            }
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "detail", "effects", "next"],
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "detail": { "type": "string" },
+                "tone": { "enum": ["care", "record", "collective", "caution"] },
+                "conditions": { "type": "array" },
+                "effects": { "type": "array" },
+                "next": { "type": "string" }
+              }
+            }
+          },
+          "ending": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

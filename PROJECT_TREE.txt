@@ -3,7 +3,37 @@ AGENTS.md
 README.md
 ROADMAP.md
 package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
 PROJECT_TREE.txt
+tsconfig.json
+vite.config.ts
+
+apps/
+  web/
+    index.html
+    src/
+      main.ts
+      styles.css
+
+content/
+  schema/                              # chapter / scene / character / cause / record / save
+  chapters/ch01/
+    chapter.json
+    scenes/act01-rain.json
+  characters/ch01-act01.json
+  causes/ch01-act01.json
+  records/ch01-act01.json
+
+packages/
+  story-core/src/
+    types.ts
+    engine.ts
+    save.ts
+    validation.ts
+
+tools/
+  route-auditor/src/index.ts
 
 docs/
   00_项目总框架_V0.2.md               # 历史版本
@@ -12,6 +42,7 @@ docs/
   01_跨朝代因果总表_V0.1.md
   08_项目落地方案_V0.1.md
   09_章节包制作规范_V0.1.md
+  10_阶段A技术样片说明_V0.1.md
   chapters/
     README.md                           # 章节包导航
     CH01_礼崩之世/

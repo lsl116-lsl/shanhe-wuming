@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shanhe://schema/record",
+  "title": "山河无名记录分层",
+  "type": "object",
+  "required": ["schemaVersion", "channels"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "channels": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": { "enum": ["official", "private", "oral"] },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
