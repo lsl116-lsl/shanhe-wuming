@@ -9,12 +9,14 @@
 3. docs/00_项目总框架_V0.4.md
 4. docs/08_项目落地方案_V0.1.md
 5. docs/01_跨朝代因果总表_V0.1.md
-6. docs/02_第一章_礼崩之世_主线大纲_V0.1.md
-7. docs/03_第一章_人物关系表_V0.1.md
-8. docs/04_第一章_职业线嵌入表_V0.1.md
-9. docs/05_第一章_因果节点表_V0.1.md
-10. docs/06_第一章_记忆碎片表_V0.1.md
-11. docs/07_第一章至第二章_衔接过渡文_V0.1.md
+6. docs/09_章节包制作规范_V0.1.md
+7. docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md
+8. docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md
+9. docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md
+10. docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md
+11. docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md
+12. docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md
+13. docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md
 
 下一任务是建立 ACT01 技术样片和最小故事运行器。
 

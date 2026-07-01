@@ -2,19 +2,43 @@
 AGENTS.md
 README.md
 ROADMAP.md
-docs/00_项目总框架_V0.2.md
-docs/00_项目总框架_V0.3.md
-docs/00_项目总框架_V0.4.md
-docs/01_跨朝代因果总表_V0.1.md
-docs/02_第一章_礼崩之世_主线大纲_V0.1.md
-docs/02_第一章_礼崩之世_主线大纲_模板.md
-docs/03_第一章_人物关系表_V0.1.md
-docs/04_第一章_职业线嵌入表_V0.1.md
-docs/05_第一章_因果节点表_V0.1.md
-docs/06_第一章_记忆碎片表_V0.1.md
-docs/07_第一章至第二章_衔接过渡文_V0.1.md
-docs/08_项目落地方案_V0.1.md
 package.json
-planning/codex_first_prompt.md
-prototype/chapter1_v4_experiment.html
-scripts/git_setup_commands.md
+PROJECT_TREE.txt
+
+docs/
+  00_项目总框架_V0.2.md               # 历史版本
+  00_项目总框架_V0.3.md               # 历史版本
+  00_项目总框架_V0.4.md               # 当前总框架
+  01_跨朝代因果总表_V0.1.md
+  08_项目落地方案_V0.1.md
+  09_章节包制作规范_V0.1.md
+  chapters/
+    README.md                           # 章节包导航
+    CH01_礼崩之世/
+      00_章节定位与史实边界_V0.1.md
+      01_主线大纲_V0.1.md
+      02_人物关系表_V0.1.md
+      03_职业线嵌入表_V0.1.md
+      04_因果节点表_V0.1.md
+      05_记忆碎片表_V0.1.md
+      06_故事剧本_V0.1.md
+      07_至CH02衔接过渡文_V0.1.md
+    CH02_大一统之梦/                 # 00—07 完整章节包
+    CH03_裂土与风骨/                 # 00—07 完整章节包
+    CH04_长安与边塞/                 # 00—07 完整章节包
+    CH05_文治与铁骑/                 # 00—07 完整章节包
+    CH06_旧梦与海潮/                 # 00—07 完整章节包
+    CH07_山河重铸/                   # 00—07 完整章节包
+    FINAL_无名者有名/                # 定位、主线、人物、职业汇流、回收、记忆、剧本、尾声
+
+planning/
+  codex_first_prompt.md
+
+prototype/
+  chapter1_v4_experiment.html         # 历史机制实验
+
+scripts/
+  git_setup_commands.md
+
+outputs/                              # 用户交付物
+work/                                 # 临时工作文件
