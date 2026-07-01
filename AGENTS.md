@@ -47,17 +47,24 @@
 4. `docs/01_跨朝代因果总表_V0.1.md`
 5. `docs/09_章节包制作规范_V0.1.md`
 6. `docs/13_人物塑造规则_V0.1.md`
-7. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
-8. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
-9. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
-10. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
-11. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
-12. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
-13. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
-14. `docs/10_阶段A技术样片说明_V0.1.md`
-15. `docs/11_阶段B网页核心原型说明_V0.1.md`
-16. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
-17. `docs/chapters/CH01_礼崩之世/08_序章补强稿_V0.4.md`
+7. `docs/chapters/PROLOGUE_雨来之前/README.md`
+8. `docs/chapters/PROLOGUE_雨来之前/00_序章定位与边界_V0.1.md`
+9. `docs/chapters/PROLOGUE_雨来之前/01_主线大纲_V0.1.md`
+10. `docs/chapters/PROLOGUE_雨来之前/02_人物关系表_V0.1.md`
+11. `docs/chapters/PROLOGUE_雨来之前/03_因果与伏笔表_V0.1.md`
+12. `docs/chapters/PROLOGUE_雨来之前/04_记忆碎片表_V0.1.md`
+13. `docs/chapters/PROLOGUE_雨来之前/05_故事剧本_V0.1.md`
+14. `docs/chapters/PROLOGUE_雨来之前/06_至ACT01_雨后流民_过渡文_V0.1.md`
+15. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
+16. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
+17. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
+18. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
+19. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
+20. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
+21. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
+22. `docs/10_阶段A技术样片说明_V0.1.md`
+23. `docs/11_阶段B网页核心原型说明_V0.1.md`
+24. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
 
 处理其他章节时，必须继续阅读目标 `docs/chapters/<章节>/` 下全部文件，不得只凭总框架续写。
 
