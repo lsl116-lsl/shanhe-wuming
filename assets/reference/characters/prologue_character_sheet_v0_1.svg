@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <style>
+      .bg{fill:#efe7d4}.panel{fill:#f8f2e5;stroke:#3a3026;stroke-width:2}.line{fill:none;stroke:#2c2723;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.thin{fill:none;stroke:#2c2723;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ink{fill:#2c2723}.title{font-family:serif;font-size:32px;font-weight:700;fill:#251f1a}.h{font-family:serif;font-size:23px;font-weight:700;fill:#251f1a}.t{font-family:serif;font-size:17px;fill:#251f1a}.note{font-family:serif;font-size:14px;fill:#4f463d}.skin{fill:#d7b993;stroke:#2c2723;stroke-width:3}.wood{fill:#7e5d38;stroke:#2c2723;stroke-width:3}.c1{fill:#6f766e;stroke:#2c2723;stroke-width:3}.c2{fill:#9a7a48;stroke:#2c2723;stroke-width:3}.c3{fill:#4e5653;stroke:#2c2723;stroke-width:3}.c4{fill:#5f5a4c;stroke:#2c2723;stroke-width:3}.c5{fill:#8c6b5d;stroke:#2c2723;stroke-width:3}.c6{fill:#8f5d4e;stroke:#2c2723;stroke-width:3}.c7{fill:#827b6c;stroke:#2c2723;stroke-width:3}.rust{fill:#48675d;stroke:#2c2723;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="1050"/>
+  <text class="title" x="42" y="58">《山河无名》序章人物原型参考（简画版）</text>
+  <text class="note" x="42" y="88">用途：给 Codex、动画拆分、立绘与场景小人参考。星座只作内部人格底色，不在战国剧情里明说。</text>
+
+  <rect class="panel" x="35" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="55" y="155">主角 10岁</text><text class="note" x="55" y="180">天秤型：称量、观察</text>
+  <circle class="skin" cx="140" cy="235" r="38"/><path class="ink" d="M104 230 q18-42 64-33 q30 5 40 35 q-30-20-80-6 q-12 4-24 4z"/><path class="thin" d="M123 242 q6-5 12 0 M158 242 q6-5 12 0 M134 263 q16 7 30 0"/>
+  <path class="c1" d="M92 303 q48-25 96 0 l25 105 q-76 38-146 0z"/><path class="line" d="M104 322 l77 65 M188 322 l-82 68"/><rect class="wood" x="174" y="302" width="36" height="92" rx="4" transform="rotate(-8 192 348)"/><path class="rust" d="M95 398 q12 9 25 0 q-4 22-20 19 q-12-2-5-19z"/>
+  <text class="t" x="55" y="450">木牍、空白、青铜锈</text><text class="note" x="55" y="475">动作：停顿后落笔</text>
+
+  <rect class="panel" x="265" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="285" y="155">禾安 10岁</text><text class="note" x="285" y="180">白羊型：行动、火、直接</text>
+  <circle class="skin" cx="370" cy="235" r="37"/><path class="ink" d="M335 229 q19-43 68-25 q16 7 21 30 q-24-14-58-4 q-18 5-31-1z"/><path class="ink" d="M385 196 q22-22 36-2 q-17 5-26 18z"/><path class="thin" d="M354 243 q6-5 12 0 M388 243 q6-5 12 0 M364 263 q16 5 29-3"/>
+  <path class="c2" d="M318 304 q48-23 97 0 l23 104 q-72 36-142 0z"/><path class="line" d="M330 323 l80 60 M417 323 l-83 63"/><path class="wood" d="M295 310 l128-18 l8 22 l-128 22z"/><path class="wood" d="M306 345 l126-5 l4 22 l-128 8z"/>
+  <text class="t" x="285" y="450">抱柴、卷袖、灶灰</text><text class="note" x="285" y="475">动作：先动起来</text>
+
+  <rect class="panel" x="495" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="515" y="155">辛衡 约50岁</text><text class="note" x="515" y="180">旧书吏：停笔、墨痕</text>
+  <circle class="skin" cx="600" cy="235" r="40"/><path class="ink" d="M563 219 q30-40 76 0 q-30-12-76 0z"/><path class="thin" d="M582 245 q7-6 14 0 M614 245 q7-6 14 0 M592 270 q17 8 32 0 M584 276 q18 20 42 0"/>
+  <path class="c3" d="M545 306 q55-26 108 0 l23 112 q-78 36-154 0z"/><path class="line" d="M560 328 l74 65 M642 328 l-80 68"/><rect class="wood" x="535" y="412" width="120" height="24" rx="4"/><path class="thin" d="M650 310 l22-32"/>
+  <text class="t" x="515" y="450">笔、木牍、停笔</text><text class="note" x="515" y="475">动作：笔尖悬着</text>
+
+  <rect class="panel" x="725" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="745" y="155">韩宁 12-13岁</text><text class="note" x="745" y="180">警惕、护母、袖中木片</text>
+  <circle class="skin" cx="830" cy="235" r="37"/><path class="ink" d="M794 230 q10-45 56-42 q25 4 36 28 q-32-9-74 14z"/><path class="thin" d="M814 244 q7-7 14 0 M844 244 q7-7 14 0 M821 268 q18 4 30-8"/>
+  <path class="c4" d="M778 303 q50-26 104 0 l25 107 q-74 40-154 0z"/><path class="line" d="M792 326 l78 62 M876 326 l-82 60"/><rect class="wood" x="858" y="302" width="30" height="80" rx="3" transform="rotate(-12 873 342)"/><path class="line" d="M798 330 q33 38 70 21"/>
+  <text class="t" x="745" y="450">按袖口、残简</text><text class="note" x="745" y="475">动作：身体退，眼神不退</text>
+
+  <rect class="panel" x="955" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="975" y="155">韩宁母亲</text><text class="note" x="975" y="180">疲惫、护子、先按木片</text>
+  <circle class="skin" cx="1060" cy="235" r="37"/><path class="ink" d="M1025 231 q13-43 57-38 q24 4 33 30 q-35-14-72 2z"/><path class="thin" d="M1043 244 q6-5 12 0 M1075 244 q6-5 12 0 M1050 268 q17 5 31 0"/>
+  <path class="c5" d="M1008 304 q51-25 103 0 l26 110 q-72 36-154 0z"/><path class="line" d="M1022 327 l74 63 M1104 327 l-80 60"/><rect class="wood" x="1104" y="301" width="34" height="88" rx="4" transform="rotate(-7 1121 345)"/><path class="line" d="M1032 344 q50 48 86 10"/>
+  <text class="t" x="975" y="450">挡在韩宁前面</text><text class="note" x="975" y="475">动作：先护住手</text>
+
+  <rect class="panel" x="1185" y="120" width="210" height="390" rx="8"/>
+  <text class="h" x="1205" y="155">柳娘 约28-30</text><text class="note" x="1205" y="180">旧曲、发簪、戏箱</text>
+  <circle class="skin" cx="1290" cy="235" r="37"/><path class="ink" d="M1255 229 q17-42 64-31 q25 7 31 31 q-32-15-74-3z"/><path class="thin" d="M1272 243 q6-5 12 0 M1305 243 q6-5 12 0 M1282 266 q16 4 30-2 M1312 199 l47-13"/>
+  <path class="c6" d="M1238 304 q52-25 104 0 l25 110 q-72 36-154 0z"/><path class="line" d="M1252 327 l74 63 M1334 327 l-80 60"/><rect class="wood" x="1324" y="330" width="50" height="78" rx="4"/><path class="thin" d="M1332 350 h32 M1332 373 h32 M1332 396 h32"/>
+  <text class="t" x="1205" y="450">地名处停住</text><text class="note" x="1205" y="475">动作：发簪端正</text>
+
+  <rect class="panel" x="1415" y="120" width="150" height="390" rx="8"/>
+  <text class="h" x="1430" y="155">主角母亲</text><text class="note" x="1430" y="180">数米、望河</text>
+  <circle class="skin" cx="1490" cy="235" r="35"/><path class="ink" d="M1458 232 q11-39 51-34 q20 4 28 27 q-28-11-64 1z"/><path class="thin" d="M1475 244 q6-5 11 0 M1504 244 q6-5 11 0 M1483 268 q15 4 25-2"/>
+  <path class="c7" d="M1440 304 q48-23 95 0 l20 110 q-65 34-134 0z"/><ellipse class="wood" cx="1490" cy="396" rx="48" ry="16"/>
+  <text class="t" x="1430" y="450">不说等</text><text class="note" x="1430" y="475">动作：手数米，眼望河</text>
+
+  <rect class="panel" x="35" y="545" width="520" height="210" rx="8"/>
+  <text class="h" x="60" y="585">主角 × 禾安：内部原型关系</text>
+  <text class="t" x="60" y="625">主角（天秤）：怕落错一笔，常停住、看两边、听远处。</text>
+  <text class="t" x="60" y="660">禾安（白羊）：怕晚伸一只手，先动起来，嘴上急，手上快。</text>
+  <text class="t" x="60" y="695">两人的张力不是恋爱：一个称量，一个点火。</text>
+  <text class="t" x="60" y="730">创作句：主角怕落错一笔，禾安怕晚伸一只手。</text>
+
+  <rect class="panel" x="585" y="545" width="470" height="210" rx="8"/>
+  <text class="h" x="610" y="585">序章动画动作关键词</text>
+  <text class="t" x="610" y="625">主角：写名停顿、掌心青铜锈、回头听钟。</text>
+  <text class="t" x="610" y="660">禾安：抱柴小跑、倒碎米、拖热水桶。</text>
+  <text class="t" x="610" y="695">辛衡：笔尖悬停、木牍推近、递空木牍。</text>
+  <text class="t" x="610" y="730">韩宁：按袖口、扑湿简、被母亲按住。</text>
+
+  <rect class="panel" x="1085" y="545" width="480" height="210" rx="8"/>
+  <text class="h" x="1110" y="585">主角父亲：缺席形象</text>
+  <rect class="wood" x="1130" y="625" width="85" height="45" rx="6"/><path class="thin" d="M1138 640 h68 M1138 658 h68"/>
+  <path class="line" d="M1245 675 l72-52"/><path class="wood" d="M1340 675 q85-18 138 0 q-55 28-138 0z"/>
+  <text class="t" x="1130" y="725">旧笔盒 / 磨旧笔杆 / 官粮车辙 / 河道尽头空镜头</text>
+
+  <rect class="panel" x="35" y="790" width="1530" height="210" rx="8"/>
+  <text class="h" x="60" y="830">旧渡普通人群像（示例轮廓）</text>
+  <text class="t" x="60" y="870">渡户：绳、宽肩、手粗。</text>
+  <text class="t" x="320" y="870">船主：关验袋、水痕。</text>
+  <text class="t" x="590" y="870">登记人：木片、半懂风险。</text>
+  <text class="t" x="890" y="870">老人：拐杖、弯背。</text>
+  <text class="t" x="1140" y="870">流民：包袱、湿衣、警惕。</text>
+  <text class="t" x="60" y="930">视觉关键词：低饱和、旧麻布、泥水、灶灰、木牍、草绳、青铜锈。</text>
+  <text class="note" x="60" y="965">不要古偶化，不要教材插图化；人物应第一眼普通，第二眼有记忆点，第三眼像真的在旧渡生活过。</text>
+</svg>
