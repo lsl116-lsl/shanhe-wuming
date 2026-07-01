@@ -59,16 +59,17 @@
 16. `docs/chapters/PROLOGUE_雨来之前/07_动画化叙事与轻交互规格_V0.1.md`
 17. `docs/chapters/PROLOGUE_雨来之前/08_人物星座原型与视觉参考_V0.1.md`
 18. `docs/chapters/CH01_礼崩之世/08_名籍与人生主线架构_V0.1.md`
-19. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
-20. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
-21. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
-22. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
-23. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
-24. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
-25. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
-26. `docs/10_阶段A技术样片说明_V0.1.md`
-27. `docs/11_阶段B网页核心原型说明_V0.1.md`
-28. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
+19. `docs/chapters/CH01_礼崩之世/09_关键人物星座原型_V0.1.md`
+20. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
+21. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
+22. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
+23. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
+24. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
+25. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
+26. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
+27. `docs/10_阶段A技术样片说明_V0.1.md`
+28. `docs/11_阶段B网页核心原型说明_V0.1.md`
+29. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
 
 处理其他章节时，必须继续阅读目标 `docs/chapters/<章节>/` 下全部文件，不得只凭总框架续写。
 
@@ -136,6 +137,8 @@
 ```
 
 写第一章时必须记住：名字只是线头，真正危险的是名字后面连出的故里、父母、亲属、田亩、债役和可追索关系。
+
+第一章关键人物的内部人格原型见：`docs/chapters/CH01_礼崩之世/09_关键人物星座原型_V0.1.md`。星座只作为创作发动机，不得在战国剧情中直接作为标签出现。
 
 建议八幕结构：
 
