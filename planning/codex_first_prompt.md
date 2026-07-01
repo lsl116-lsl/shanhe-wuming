@@ -18,12 +18,12 @@
 12. docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md
 13. docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md
 
-阶段 B ACT01—ACT02 网页核心原型已经完成。
+阶段 B 序章—ACT02 网页核心原型已经完成。
 
 下一任务是根据用户首轮试玩反馈修订核心原型，并在评审通过后设计 ACT03 职业入口。
 
 要求：
-1. 先阅读 docs/10_阶段A技术样片说明_V0.1.md、docs/11_阶段B网页核心原型说明_V0.1.md 并运行 pnpm test。
+1. 先阅读 docs/10_阶段A技术样片说明_V0.1.md、docs/11_阶段B网页核心原型说明_V0.1.md、docs/12_序章设计与剧情逻辑说明_V0.1.md 并运行 pnpm test。
 2. 保留 prototype/chapter1_v4_experiment.html 作为历史实验，不直接修改。
 3. 先处理用户反馈，不在未评审前直接扩大 ACT04—ACT06 内容量。
 4. 复用现有 scene、character、cause、record、memory、save 契约。

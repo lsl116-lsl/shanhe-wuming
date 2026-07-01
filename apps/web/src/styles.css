@@ -744,6 +744,67 @@ button:focus-visible {
   border-left: 2px solid var(--memory);
 }
 
+.text-entry {
+  padding: 18px;
+  border: 1px solid rgba(178, 138, 74, 0.32);
+  border-left: 2px solid var(--bronze);
+  background: rgba(178, 138, 74, 0.045);
+}
+
+.text-entry label {
+  color: var(--paper);
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text-entry p {
+  margin: 7px 0 14px;
+  color: var(--paper-dim);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.text-entry > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.text-entry input {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid rgba(231, 221, 198, 0.18);
+  border-radius: 2px;
+  outline: none;
+  background: rgba(9, 8, 7, 0.56);
+  color: var(--paper);
+  font-family: "Noto Serif SC", serif;
+  font-size: 13px;
+}
+
+.text-entry input:focus {
+  border-color: var(--bronze);
+  box-shadow: 0 0 0 2px rgba(178, 138, 74, 0.1);
+}
+
+.text-entry button {
+  padding: 0 15px;
+  border: 1px solid var(--bronze);
+  border-radius: 2px;
+  cursor: pointer;
+  background: var(--bronze);
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.text-entry small {
+  display: block;
+  margin-top: 9px;
+  color: rgba(191, 179, 156, 0.5);
+  font-size: 8px;
+}
+
 .ending-card {
   align-items: center;
   gap: 16px;
@@ -1101,6 +1162,14 @@ button:focus-visible {
   .save-actions .text-button:nth-of-type(3),
   .save-actions .text-button:nth-of-type(4) {
     display: none;
+  }
+
+  .text-entry > div {
+    grid-template-columns: 1fr;
+  }
+
+  .text-entry button {
+    min-height: 40px;
   }
 
   .game-layout {

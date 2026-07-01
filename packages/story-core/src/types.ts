@@ -10,6 +10,7 @@ export interface StoryEffect {
   type:
     | "fact.set"
     | "flag.set"
+    | "profile.set"
     | "resource.set"
     | "resource.change"
     | "relationship.change"
@@ -47,6 +48,18 @@ export interface TextVariant {
   paragraphs: string[];
 }
 
+export interface StoryTextEntry {
+  id: string;
+  label: string;
+  detail: string;
+  placeholder: string;
+  key: string;
+  defaultValue: string;
+  minLength: number;
+  maxLength: number;
+  next: string;
+}
+
 export interface StoryNode {
   id: string;
   sceneId: string;
@@ -70,6 +83,7 @@ export interface StoryNode {
     caption: string;
   };
   choices: StoryChoice[];
+  textEntry?: StoryTextEntry;
   ending?: boolean;
 }
 
@@ -193,6 +207,7 @@ export interface StoryState {
   currentNode: string;
   world: Record<string, Primitive>;
   player: {
+    profile: Record<string, string>;
     resources: Record<string, number>;
     flags: Record<string, Primitive>;
   };
@@ -208,7 +223,7 @@ export interface StoryState {
 
 export interface StoryEvent {
   id: number;
-  type: StoryEffect["type"] | "scene.enter" | "choice.select";
+  type: StoryEffect["type"] | "scene.enter" | "choice.select" | "text.submit";
   at: string;
   nodeId: string;
   choiceId?: string;

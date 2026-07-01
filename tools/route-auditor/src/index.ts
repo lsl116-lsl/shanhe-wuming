@@ -88,6 +88,12 @@ function auditRoutes(bundle: ContentBundle): AuditStats {
       return;
     }
     const choices = engine.getAvailableChoices();
+    if (node.textEntry) {
+      const branch = engine.fork();
+      branch.submitText(node.textEntry.id, node.textEntry.defaultValue);
+      visit(branch, [...path, `${node.textEntry.id}=${node.textEntry.defaultValue}`]);
+      return;
+    }
     if (!choices.length) throw new Error(`路线在 ${node.id} 无法继续`);
     for (const choice of choices) {
       const branch = engine.fork();
@@ -113,7 +119,7 @@ async function main(): Promise<void> {
   }
 
   const stats = auditRoutes(bundle);
-  console.log("《山河无名》ACT01—ACT02 核心原型路线审计通过");
+  console.log("《山河无名》序章—ACT02 核心原型路线审计通过");
   console.log(`- 场景文件：${bundle.scenes.length}`);
   console.log(`- 节点：${bundle.scenes.reduce((total, scene) => total + scene.nodes.length, 0)}`);
   console.log(

@@ -4,7 +4,7 @@
     {
       "id": "MEM-CH01-001",
       "title": "裂钟落水",
-      "act": "ACT01",
+      "act": "PROLOGUE",
       "type": "dream",
       "revealLevel": "M0",
       "mandatory": true,

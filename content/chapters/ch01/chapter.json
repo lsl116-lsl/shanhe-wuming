@@ -1,13 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "contentVersion": "0.2.0",
-  "runtimeVersion": "0.2.0",
+  "contentVersion": "0.3.0",
+  "runtimeVersion": "0.3.0",
   "id": "CH01",
   "title": "礼崩之世",
-  "subtitle": "第一章 · 裂钟之梦 / 旧礼无声",
-  "sampleTitle": "ACT01—ACT02 网页核心原型",
-  "description": "从雨后流民到旧仓新籍：救人、留名与获得粮食都要求有人承担无法抹去的代价。",
+  "subtitle": "序章 · 雨来之前 / 第一章 · 裂钟之梦",
+  "sampleTitle": "序章—ACT02 网页核心原型",
+  "description": "先写下本世姓名，再从宋亡、渡口隐名与裂钟回声进入一段关于救人、留名和责任的完整开端。",
   "sceneFiles": [
+    "/chapters/ch01/scenes/prologue-before-rain.json",
     "/chapters/ch01/scenes/act01-rain.json",
     "/chapters/ch01/scenes/act02-granary.json"
   ],

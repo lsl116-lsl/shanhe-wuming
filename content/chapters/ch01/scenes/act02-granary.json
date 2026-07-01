@@ -14,7 +14,7 @@
       "location": "洛水近郊聚落",
       "time": "前 282 年 · 夏末",
       "paragraphs": [
-        "雨夜之后第四年，渡口边的草棚长成了半座聚落。孩子认得井绳上的每一个结，老人仍把这里叫作“暂住之地”。你跟季伯学会了辨字，也学会了同一笔墨在不同册里会把人送往不同方向。",
+        "雨夜之后第四年，渡口边的草棚长成了半座聚落。孩子认得井绳上的每一个结，老人仍把这里叫作“暂住之地”。你跟辛衡学会了辨字，也学会了同一笔墨在不同册里会把人送往不同方向。",
         "今年旱得早。禾安家拆掉最后一件旧农具换了种，田里却只冒出稀薄的青。旧礼器库后那座仓仍锁着，门缝里有陈粮的气味。"
       ],
       "visual": {
@@ -24,7 +24,7 @@
       "choices": [
         {
           "id": "CH01-C101-WALK-GRANARY",
-          "label": "跟季伯走向旧仓",
+          "label": "跟辛衡走向旧仓",
           "detail": "仓里有粮；门外的人缺的不是锁钥，而是一种被承认的身份。",
           "tone": "caution",
           "effects": [
@@ -44,12 +44,12 @@
       "sceneId": "CH01-ACT02-SC001",
       "act": "ACT02",
       "title": "仓中有粮",
-      "speaker": "季伯、禾安、青缗与公孙砚",
+      "speaker": "辛衡、禾安、青缗与公孙砚",
       "location": "旧仓门前",
       "time": "夏末 · 距播种误期尚余五日",
       "paragraphs": [
         "仓门前排着二十三户人。旧仓掌事把木牍放在膝上：祭粮可以赈恤，但领粮者必须有旧族担保。第一份流民名册证明这些人曾来过，却不能证明他们属于这里。",
-        "季伯带来按旧礼写成的请恤牍；商队掌计者青缗愿意先借八石粮；年轻法吏公孙砚则把一束新木片放在案上——重新编户，写下田、役和连带责任，今日便可开仓。",
+        "辛衡带来按旧礼写成的请恤牍；商队掌计者青缗愿意先借八石粮；年轻法吏公孙砚则把一束新木片放在案上——重新编户，写下田、役和连带责任，今日便可开仓。",
         "禾安捏着一粒干瘪的种子问你：哪一种办法，会把来年也算进去？"
       ],
       "visual": {
@@ -83,17 +83,17 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "trust",
               "amount": 2,
-              "label": "季伯信任 +2"
+              "label": "辛衡信任 +2"
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "sharedDebt",
               "amount": 1,
-              "label": "你与季伯共同承担延误之债"
+              "label": "你与辛衡共同承担延误之债"
             },
             {
               "type": "relationship.change",
@@ -109,7 +109,7 @@
                 "id": "REC-OFF-OLD-RITE-PETITION",
                 "title": "旧仓请恤牍",
                 "text": "请先恤孤寡、流亡与失籍者，不以旧族担保为唯一凭据；掌事收牍，未署放粮之日。",
-                "source": "季伯具名，玩家递交",
+                "source": "辛衡具名，玩家递交",
                 "confidence": "confirmed",
                 "sensitivity": "low"
               },
@@ -168,10 +168,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "rift",
               "amount": 1,
-              "label": "季伯裂痕 +1：救济册开始成为征发册"
+              "label": "辛衡裂痕 +1：救济册开始成为征发册"
             },
             {
               "type": "relationship.change",
@@ -258,10 +258,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "rift",
               "amount": 1,
-              "label": "季伯裂痕 +1：没有公开责任人"
+              "label": "辛衡裂痕 +1：没有公开责任人"
             },
             {
               "type": "record.write",
@@ -291,12 +291,12 @@
       "sceneId": "CH01-ACT02-SC001",
       "act": "ACT02",
       "title": "文书在等，人也在等",
-      "speaker": "季伯与禾安",
+      "speaker": "辛衡与禾安",
       "location": "旧仓门前",
       "time": "请恤后的第二夜",
       "paragraphs": [
         "掌事把请恤牍收进匣中，说要等旧族议定。第二夜，仓门仍闭着。有人把留作来年的种磨成了粥，一名老人把自己的半碗推给孙女。",
-        "季伯逐字核对请恤牍，像只要字足够准确，门后的人就会承担责任。禾安没有责怪他，只把一把没能下地的种摊在你们中间。"
+        "辛衡逐字核对请恤牍，像只要字足够准确，门后的人就会承担责任。禾安没有责怪他，只把一把没能下地的种摊在你们中间。"
       ],
       "visual": {
         "motif": "warehouse",
@@ -469,10 +469,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "trust",
               "amount": 1,
-              "label": "季伯信任 +1"
+              "label": "辛衡信任 +1"
             }
           ],
           "next": "CH01-ACT02-N105"
@@ -546,13 +546,13 @@
       "sceneId": "CH01-ACT02-SC001",
       "act": "ACT02",
       "title": "被划去的人",
-      "speaker": "季伯",
+      "speaker": "辛衡",
       "location": "旧礼器库侧室",
       "time": "次日午后",
       "paragraphs": [
-        "季伯把雨夜名册、新籍和青缗的粮账并排铺开。第一册上的二十三个姓名，如今只剩十四个还能一一对应。",
+        "辛衡把雨夜名册、新籍和青缗的粮账并排铺开。第一册上的二十三个姓名，如今只剩十四个还能一一对应。",
         "有人已经死亡；有人换名入籍；有人为逃债改了自称；还有两笔被同一道旧族担保印压住，像写下他们本身就是一项冒犯。",
-        "季伯问：要把删改理由写在哪里？写进官册，后来人能查，也能追；写进私册，活人安全些，却可能随保管者一起消失；交给众人互认，版本会变，但不是只有一支笔说了算。"
+        "辛衡问：要把删改理由写在哪里？写进官册，后来人能查，也能追；写进私册，活人安全些，却可能随保管者一起消失；交给众人互认，版本会变，但不是只有一支笔说了算。"
       ],
       "variants": [
         {
@@ -604,7 +604,7 @@
                 "id": "REC-OFF-DELETED-MARGINS",
                 "title": "名册删改旁注",
                 "text": "逐项记死亡、改名、拒绝说明、担保排除与去向不明；两名改名者的旧称仍可辨认。",
-                "source": "玩家执笔，季伯核对",
+                "source": "玩家执笔，辛衡核对",
                 "confidence": "partial",
                 "sensitivity": "high"
               },
@@ -612,10 +612,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "trust",
               "amount": 1,
-              "label": "季伯信任 +1"
+              "label": "辛衡信任 +1"
             },
             {
               "type": "relationship.change",
@@ -635,7 +635,7 @@
         {
           "id": "CH01-C105-PRIVATE-COPY",
           "label": "另抄一份只记差异的私册",
-          "detail": "官册保持可执行，异议不被抹掉；季伯和你成为这份记录失散时的责任人。",
+          "detail": "官册保持可执行，异议不被抹掉；辛衡和你成为这份记录失散时的责任人。",
           "tone": "caution",
           "effects": [
             {
@@ -651,7 +651,7 @@
                 "id": "REC-PRI-DELETED-COPY",
                 "title": "雨夜名册异同抄",
                 "text": "只记三册之间的差异：何处换名、何处留白、何处被担保印遮住；不抄可直接追人的住处。",
-                "source": "季伯与玩家私藏",
+                "source": "辛衡与玩家私藏",
                 "confidence": "partial",
                 "sensitivity": "medium"
               },
@@ -659,10 +659,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "sharedDebt",
               "amount": 2,
-              "label": "你与季伯共同承担私册保管之债"
+              "label": "你与辛衡共同承担私册保管之债"
             },
             {
               "type": "cause.activate",
@@ -726,12 +726,12 @@
       "sceneId": "CH01-ACT02-SC001",
       "act": "ACT02",
       "title": "三册之外",
-      "speaker": "禾安与季伯",
+      "speaker": "禾安与辛衡",
       "location": "旧仓侧门",
       "time": "日落前",
       "paragraphs": [
         "三册对完，仍有一户不在任何版本里：一名腿伤的织工、她的弟弟和一个只肯说乳名的孩子。他们住在仓墙后废弃的守夜屋，替聚落补过四个冬天的衣，却没有参加雨夜点名。",
-        "不是有人把他们划去。他们从未被任何一支笔写进去。季伯说，漏记有时比删名更难追责，因为每个人都能说自己没有见过。"
+        "不是有人把他们划去。他们从未被任何一支笔写进去。辛衡说，漏记有时比删名更难追责，因为每个人都能说自己没有见过。"
       ],
       "variants": [
         {
@@ -747,7 +747,7 @@
             { "path": "player.flags.memoryResponse", "operator": "notEquals", "value": "PURSUE" }
           ],
           "paragraphs": [
-            "是季伯从一处连续四年的针线支出里找到他们。梦没有指路，留下来的现实痕迹仍把人带到了门前。"
+            "是辛衡从一处连续四年的针线支出里找到他们。梦没有指路，留下来的现实痕迹仍把人带到了门前。"
           ]
         }
       ],
@@ -979,14 +979,14 @@
       "id": "CH01-ACT02-N108",
       "sceneId": "CH01-ACT02-SC001",
       "act": "ACT02",
-      "title": "季伯的一笔",
-      "speaker": "季伯",
+      "title": "辛衡的一笔",
+      "speaker": "辛衡",
       "location": "旧礼器库灯下",
       "time": "深夜",
       "paragraphs": [
-        "回到旧库，季伯没有收起三册。他指着两处被旧族担保印遮住的名字，说那种划法自己年轻时也用过。",
+        "回到旧库，辛衡没有收起三册。他指着两处被旧族担保印遮住的名字，说那种划法自己年轻时也用过。",
         "当年上官命他把逃散者写作“从未到籍”，免得仓粮继续发给找不到的人。他照做了。后来有人活着回来，却因册上从未存在，既领不到旧田，也无法证明亲属死在哪里。",
-        "“我总说要把名字写下。”季伯看着自己的手，“因为我知道，不写和删掉，有时出自同一支笔。”"
+        "“我总说要把名字写下。”辛衡看着自己的手，“因为我知道，不写和删掉，有时出自同一支笔。”"
       ],
       "variants": [
         {
@@ -1027,18 +1027,18 @@
           "effects": [
             {
               "type": "testimony.learn",
-              "key": "jiboDeletedNames",
+              "key": "xinhengDeletedNames",
               "value": true,
-              "label": "季伯承认曾奉命把逃散者写成从未到籍"
+              "label": "辛衡承认曾奉命把逃散者写成从未到籍"
             },
             {
               "type": "record.write",
               "channel": "private",
               "record": {
-                "id": "REC-PRI-JIBO-ADMISSION",
-                "title": "季伯自记",
+                "id": "REC-PRI-XINHENG-ADMISSION",
+                "title": "辛衡自记",
                 "text": "昔奉令，以逃散者为未尝到籍。今知删名与不记皆能绝人归路；此后每一留白，须记由谁决定。",
-                "source": "季伯口述，玩家见证",
+                "source": "辛衡口述，玩家见证",
                 "confidence": "confirmed",
                 "sensitivity": "high"
               },
@@ -1046,10 +1046,10 @@
             },
             {
               "type": "relationship.change",
-              "character": "JIBO",
+              "character": "XINHENG",
               "field": "sharedDebt",
               "amount": 1,
-              "label": "季伯把副本保管责任交给你一半"
+              "label": "辛衡把副本保管责任交给你一半"
             },
             {
               "type": "cause.activate",
@@ -1071,7 +1071,7 @@
       "time": "秋初",
       "paragraphs": [
         "新名册终于写成。它不再只是证明谁在雨夜来过：它能开仓、分田、计役、追债，也能让一户在不同版本之间消失。",
-        "季伯把副本包好时，韩宁从渡口归来。她带回另一枚旧简，上面有与半名残简相同的笔势，却把同一户拆成了三个姓名。",
+        "辛衡把副本包好时，韩宁从渡口归来。她带回另一枚旧简，上面有与半名残简相同的笔势，却把同一户拆成了三个姓名。",
         "“我父亲留下的不是藏宝图。”她把旧简放在三册旁，“他留下的是一群被人改过名字的人。可我还不知道，他改名是为救他们，还是为了让另一册更好用。”"
       ],
       "variants": [

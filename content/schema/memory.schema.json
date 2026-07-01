@@ -25,7 +25,7 @@
         "properties": {
           "id": { "type": "string", "pattern": "^MEM-CH[0-9]{2}-[0-9]{3}$" },
           "title": { "type": "string" },
-          "act": { "type": "string", "pattern": "^ACT[0-9]{2}$" },
+          "act": { "type": "string", "pattern": "^(PROLOGUE|ACT[0-9]{2})$" },
           "type": {
             "enum": ["dream", "emotion", "resonance", "misrecognition", "prompt"]
           },

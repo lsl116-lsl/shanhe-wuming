@@ -11,14 +11,14 @@
     {
       "id": "SW-CH01-002",
       "name": "半名残简",
-      "description": "一枚只剩半个姓名、国名被刮去的湿简。",
+      "description": "一枚只剩半个姓名、故邑与户属被反复刮去的湿简。",
       "firstAct": "ACT01",
       "futureReturn": "ACT03 揭示父亲笔迹；ACT07 并入无名录。"
     },
     {
       "id": "SW-CH01-003",
       "name": "亡国旧曲",
-      "description": "旋律能够越过文字，也可能被权力改词。",
+      "description": "宋亡可以明说，具体故邑、旧姓和里名却可能在传唱中保护或暴露活人。",
       "firstAct": "ACT01",
       "futureReturn": "历章持续变调，最终转为人民共同发声。"
     },

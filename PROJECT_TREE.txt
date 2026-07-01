@@ -20,6 +20,7 @@ content/
   schema/                              # chapter / scene / character / cause / record / memory / save
   chapters/ch01/
     chapter.json
+    scenes/prologue-before-rain.json
     scenes/act01-rain.json
     scenes/act02-granary.json
   characters/ch01-act01-act02.json
@@ -46,6 +47,7 @@ docs/
   09_章节包制作规范_V0.1.md
   10_阶段A技术样片说明_V0.1.md
   11_阶段B网页核心原型说明_V0.1.md
+  12_序章设计与剧情逻辑说明_V0.1.md
   chapters/
     README.md                           # 章节包导航
     CH01_礼崩之世/

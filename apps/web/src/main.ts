@@ -19,8 +19,8 @@ import type {
   StoryState
 } from "../../../packages/story-core/src/types";
 
-const MANUAL_SAVE_KEY = "shanhe-wuming:ch01-act01-act02:manual-save";
-const AUTO_SAVE_KEY = "shanhe-wuming:ch01-act01-act02:auto-save";
+const MANUAL_SAVE_KEY = "shanhe-wuming:ch01-prologue-act02:manual-save";
+const AUTO_SAVE_KEY = "shanhe-wuming:ch01-prologue-act02:auto-save";
 const sessionStartedAt = Date.now();
 let savedCreatedAt: string | undefined;
 let engine: StoryEngine;
@@ -108,15 +108,46 @@ function labelForFact(key: string): string {
     deletedNameHandling: "被划姓名处理",
     overlookedHousehold: "仓后漏记一户",
     overlookedHouseholdPlan: "漏记户安置",
-    seasonOutcome: "本季结果"
+    seasonOutcome: "本季结果",
+    currentLifeIdentity: "本世身份",
+    fatherRecord: "父亲的渡册状态",
+    songFallen: "宋国灭亡",
+    refugeeHouseholds: "抵达渡口的宋地人家",
+    publicNameRule: "渡口登记原则",
+    preparedForRefugees: "渡口接应准备"
   };
   return labels[key] ?? key;
+}
+
+function formatFactValue(value: unknown): string {
+  if (value === true) return "是";
+  if (value === false) return "否";
+  const labels: Record<string, string> = {
+    SELF_DECLARED: "只记本人愿意公开的称呼",
+    OLD_RITE: "依旧礼请恤",
+    NEW_REGISTER: "接受暂编新籍",
+    PRIVATE_GRAIN: "商队私下调粮",
+    OFFICIAL_MARGIN: "官册留旁注",
+    PRIVATE_COPY: "私册保留差异",
+    COMMON_WITNESS: "各户共同作证",
+    PROVISIONAL: "补入暂籍",
+    HEAN_SHELTER: "禾安家私下收留",
+    FIVE_HOUSEHOLDS: "五户共同作证",
+    HANNING: "韩宁",
+    SHARED: "共同辨认",
+    PLAYER: "玩家暂存",
+    OFFICIAL: "官档",
+    PRIVATE: "私录",
+    ORAL: "口述",
+    DISTRIBUTED: "分散保管"
+  };
+  return labels[String(value)] ?? String(value);
 }
 
 function renderResources(state: StoryState): void {
   const act = engine.getCurrentNode().act;
   const names: Record<string, string> = {
-    daylight: act === "ACT01" ? "暮色" : "农时",
+    daylight: act === "PROLOGUE" ? "晨光" : act === "ACT01" ? "暮色" : "农时",
     grain: "粮",
     strength: "体力"
   };
@@ -141,12 +172,18 @@ function renderResources(state: StoryState): void {
 
 function renderCharacters(state: StoryState): void {
   const act = engine.getCurrentNode().act;
-  const visibleCharacters =
-    act === "ACT01"
-      ? bundle.characters.filter((character) =>
-          ["JIBO", "HEAN", "HANNING", "LIUNIANG"].includes(character.id)
-        )
-      : bundle.characters;
+  const stateHasRefugees = state.visitedNodes.includes("CH01-PROLOGUE-N004");
+  const visibleIds =
+    act === "PROLOGUE"
+      ? stateHasRefugees
+        ? ["XINHENG", "HEAN", "HANNING", "LIUNIANG"]
+        : ["XINHENG", "HEAN"]
+      : act === "ACT01"
+        ? ["XINHENG", "HEAN", "HANNING", "LIUNIANG"]
+        : bundle.characters.map((character) => character.id);
+  const visibleCharacters = bundle.characters.filter((character) =>
+    visibleIds.includes(character.id)
+  );
   $("#character-list").innerHTML = visibleCharacters
     .map((character) => {
       const relation = state.relations[character.id];
@@ -191,7 +228,7 @@ function renderRecords(state: StoryState): void {
           ? facts
               .map(
                 ([key, value]) =>
-                  `<p><b>${escapeHtml(labelForFact(key))}</b> · ${escapeHtml(value)}</p>`
+                  `<p><b>${escapeHtml(labelForFact(key))}</b> · ${escapeHtml(formatFactValue(value))}</p>`
               )
               .join("")
           : '<div class="empty-state">尚未形成可确认事实</div>'
@@ -256,7 +293,7 @@ function renderMemories(state: StoryState): void {
     <p class="panel-intro">记忆只改变你会注意、追问和告诉谁，不提供预知或正确答案。</p>
     <div class="memory-progress">
       <span>本章已触发 <b>${triggered.length}</b> / ${bundle.memories.length}</span>
-      <span>当前上限 ${engine.getCurrentNode().act === "ACT01" ? "M0" : "M1"}</span>
+      <span>当前上限 ${["PROLOGUE", "ACT01"].includes(engine.getCurrentNode().act) ? "M0" : "M1"}</span>
     </div>
     ${bundle.memories
       .map((memory) => {
@@ -320,7 +357,10 @@ function renderStory(): void {
   const choices = engine.getAvailableChoices();
 
   $("#game").setAttribute("aria-busy", "false");
-  $("#act-label").textContent = `第一章 · ${node.act} · ${scene.title}`;
+  $("#act-label").textContent =
+    node.act === "PROLOGUE"
+      ? `序章 · ${scene.title}`
+      : `第一章 · ${node.act} · ${scene.title}`;
   $("#scene-progress").textContent = `已作 ${state.selectedChoices.length} 次行动`;
   $("#location-label").textContent = node.location;
   $("#time-label").textContent = node.time;
@@ -333,24 +373,60 @@ function renderStory(): void {
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
     .join("");
 
-  $("#choice-list").innerHTML = choices
-    .map(
-      (choice) => `
-        <button class="choice" type="button" data-choice="${escapeHtml(choice.id)}" data-tone="${escapeHtml(choice.tone ?? "caution")}">
-          <strong>${escapeHtml(choice.label)}</strong>
-          <small>${escapeHtml(choice.detail)}</small>
-        </button>`
-    )
-    .join("");
-  $("#choice-list")
-    .querySelectorAll<HTMLButtonElement>("[data-choice]")
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        engine.choose(button.dataset.choice ?? "");
+  if (node.textEntry) {
+    const entry = node.textEntry;
+    $("#choice-list").innerHTML = `
+      <section class="text-entry" data-entry="${escapeHtml(entry.id)}">
+        <label for="story-text-entry">${escapeHtml(entry.label)}</label>
+        <p>${escapeHtml(entry.detail)}</p>
+        <div>
+          <input
+            id="story-text-entry"
+            type="text"
+            autocomplete="off"
+            maxlength="${entry.maxLength}"
+            placeholder="${escapeHtml(entry.placeholder)}"
+            aria-describedby="story-text-entry-help"
+          />
+          <button type="button" data-submit-entry="${escapeHtml(entry.id)}">写下这个名字</button>
+        </div>
+        <small id="story-text-entry-help">${entry.minLength}—${entry.maxLength} 个字；它属于本世，不回答记忆来自哪里。</small>
+      </section>`;
+    const input = $("#story-text-entry") as HTMLInputElement;
+    const submit = (): void => {
+      try {
+        engine.submitText(entry.id, input.value);
         autoSave();
         window.scrollTo({ top: 0, behavior: "smooth" });
-      });
+      } catch (error) {
+        showToast(error instanceof Error ? error.message : "姓名无法写入");
+      }
+    };
+    $(`[data-submit-entry="${entry.id}"]`).addEventListener("click", submit);
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") submit();
     });
+    window.setTimeout(() => input.focus(), 0);
+  } else {
+    $("#choice-list").innerHTML = choices
+      .map(
+        (choice) => `
+          <button class="choice" type="button" data-choice="${escapeHtml(choice.id)}" data-tone="${escapeHtml(choice.tone ?? "caution")}">
+            <strong>${escapeHtml(engine.formatText(choice.label))}</strong>
+            <small>${escapeHtml(engine.formatText(choice.detail))}</small>
+          </button>`
+      )
+      .join("");
+    $("#choice-list")
+      .querySelectorAll<HTMLButtonElement>("[data-choice]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          engine.choose(button.dataset.choice ?? "");
+          autoSave();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+  }
 
   $("#ending-card").toggleAttribute("hidden", !node.ending);
   const endingTitle = $("#ending-card strong");
@@ -435,7 +511,7 @@ function resetStory(): void {
   localStorage.removeItem(AUTO_SAVE_KEY);
   wireEngine();
   renderStory();
-  showToast("已回到洛水暮雨。");
+  showToast("已回到洛水旧渡的清晨。");
 }
 
 function wireEngine(): void {

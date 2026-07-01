@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "CH01-PROLOGUE-SC001",
+  "title": "雨来之前",
+  "estimatedMinutes": 9,
+  "startNode": "CH01-PROLOGUE-N001",
+  "nodes": [
+    {
+      "id": "CH01-PROLOGUE-N001",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "先写自己的名字",
+      "speaker": "辛衡",
+      "location": "洛水旧渡 · 礼器库侧屋",
+      "time": "前 286 年 · 暴雨前的清晨",
+      "paragraphs": [
+        "母亲天未亮便去渡口补缆，只留下一束待核的渡册。你十岁，生在洛邑近郊的旧渡；父亲一年前随官运粮船离开，此后未归。官册不知道该写“亡”还是“逃”，母亲不肯让任何一笔替他决定。",
+        "退下来的书吏辛衡把一块空白木片推到你面前。他教你辨姓名、数粮袋，也教你每次落笔前先问：这一笔以后会找到谁。",
+        "“先写你自己的。”他说，“本世的名字，不能也让旁人替你省掉。”"
+      ],
+      "visual": {
+        "motif": "wood",
+        "caption": "先知道这一世站在哪里，才能分辨哪些记忆不属于今晨。"
+      },
+      "choices": [],
+      "textEntry": {
+        "id": "CH01-T001-NAME",
+        "label": "本世姓名",
+        "detail": "这是你在洛水旧渡生活了十年的名字，不是等待揭晓的前世谜底。",
+        "placeholder": "输入一至六个字",
+        "key": "name",
+        "defaultValue": "洛生",
+        "minLength": 1,
+        "maxLength": 6,
+        "next": "CH01-PROLOGUE-N002"
+      }
+    },
+    {
+      "id": "CH01-PROLOGUE-N002",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "这一世的名字",
+      "speaker": "辛衡与禾安",
+      "location": "礼器库侧屋",
+      "time": "清晨",
+      "paragraphs": [
+        "你在木片上写下「{{playerName}}」。辛衡没有夸字好，只用指节敲了敲最后一笔：“这一笔是你。往后若有人要改，先问他改了以后，谁要替你受那份差役。”",
+        "禾安抱着一捆晒干的井绳闯进来，鞋底还沾着自家田泥。她与你在旧渡一同长大，知道你父亲未归，也知道母亲每逢官船靠岸都会多看一眼。",
+        "“东边来的船到了。”她把井绳扔上案，“帆上的旗全割了，船主说后面还有人。”"
+      ],
+      "visual": {
+        "motif": "archive",
+        "caption": "你有本世的姓名、家和故人；异常只存在于那声尚未响起的钟里。"
+      },
+      "choices": [
+        {
+          "id": "CH01-P001-CHECK-FERRY-ROLL",
+          "label": "带上渡册，和他们去看东来的船",
+          "detail": "你认识辛衡和禾安，也知道自己为何能帮忙核对姓名与数目。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "currentLifeIdentity",
+              "value": "洛水旧渡十岁孩童",
+              "label": "本世身份确认：洛水旧渡十岁孩童"
+            },
+            {
+              "type": "fact.set",
+              "key": "fatherRecord",
+              "value": "随官运粮后未归",
+              "label": "家庭事实：父亲未归，官册尚未定为亡或逃"
+            },
+            {
+              "type": "relationship.change",
+              "character": "XINHENG",
+              "field": "trust",
+              "amount": 1,
+              "label": "辛衡信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "你与禾安共同记得父亲未归"
+            }
+          ],
+          "next": "CH01-PROLOGUE-N003"
+        }
+      ]
+    },
+    {
+      "id": "CH01-PROLOGUE-N003",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "宋亡的消息",
+      "speaker": "东来船主与辛衡",
+      "location": "洛水旧渡",
+      "time": "上午",
+      "paragraphs": [
+        "东来的商船没有挂旗，船舷上却留着仓促割断绳结的毛边。船主从怀里取出三枚互不相同的关验：同一批货，沿途已经被齐、魏、楚的人分别查过。",
+        "“宋亡了。”他说，“睢阳的旗落了，宋王死了。有人说齐人接城，有人说魏、楚也在分地。我们只知道后面有二十三户人，沿着商路往西走，昨夜还淋在雨里。”",
+        "辛衡把三枚关验并排放好：“你听见的是一个国亡了。后面的人遇到的，是田、债、差役和亲属忽然换了写法。”"
+      ],
+      "visual": {
+        "motif": "river",
+        "caption": "国名可以在一日里消失，人的旧账和归路不会。"
+      },
+      "choices": [
+        {
+          "id": "CH01-P002-ASK-HOUSEHOLDS",
+          "label": "先问清后面有多少老人、孩子和伤者",
+          "detail": "列国如何分宋尚是传闻；渡口眼下能准备的是热水、空屋和能写下多少人的木牍。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "songFallen",
+              "value": true,
+              "label": "历史事实进入本世：宋国灭亡"
+            },
+            {
+              "type": "fact.set",
+              "key": "refugeeHouseholds",
+              "value": 23,
+              "label": "已知二十三户宋地流民正在接近旧渡"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "songNewsIsFragmented",
+              "value": true,
+              "label": "消息来源分层：列国接管细节仍互相矛盾"
+            }
+          ],
+          "next": "CH01-PROLOGUE-N004"
+        }
+      ]
+    },
+    {
+      "id": "CH01-PROLOGUE-N004",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "不要叫出旧名",
+      "speaker": "韩宁、柳娘与辛衡",
+      "location": "旧渡外的遮雨棚",
+      "time": "午后",
+      "paragraphs": [
+        "先到的几个人挤在遮雨棚下。一名母亲把孩子颈上的里籍木片翻过来，刮去里名，只教他回答新取的乳名。有人在路边喊了一声旧称，孩子下意识回头，母亲立刻按住他的肩。",
+        "辛衡低声告诉你：姓名后面牵着户、田、债、役和亲属。旧主可能按册追逃人，新接管者也会用旧册找粮、找劳力。藏名不是因为宋亡不可说，而是具体里名、户属和旧债会把官差带到活人面前。",
+        "一个十三岁的女孩只说自己现在愿意公开的名字是韩宁。她父亲曾管过地方名册，旧主说他失职，新来的人说他藏户。她身旁的乐人柳娘把故邑唱词改成一拍停顿，让同行者自己决定是否接上。"
+      ],
+      "visual": {
+        "motif": "slip",
+        "caption": "“宋人”是众人都知道的来处；真正危险的是哪一户、哪一里、欠谁什么。"
+      },
+      "choices": [
+        {
+          "id": "CH01-P003-USE-PUBLIC-NAMES",
+          "label": "渡册只记他们愿意公开的称呼",
+          "detail": "人数和照护需求可以公开；旧里、旧姓与追索关系暂不在渡口高声核验。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "publicNameRule",
+              "value": "SELF_DECLARED",
+              "label": "渡口登记原则：先使用本人愿意公开的称呼"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "whyNamesAreHidden",
+              "value": true,
+              "label": "你理解了旧里、户属、债役与亲属为何需要隐藏"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HANNING",
+              "field": "trust",
+              "amount": 1,
+              "label": "韩宁信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "LIUNIANG",
+              "field": "trust",
+              "amount": 1,
+              "label": "柳娘信任 +1"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-SONG-ARRIVALS",
+                "title": "宋地来客暂称",
+                "text": "先记本人愿意公开的称呼、同行关系与照护所需；旧里、旧姓、债役和亲属去向暂不抄入渡册。",
+                "source": "辛衡口授，玩家核记",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "私录写入：知道有人来过，不替他们公开全部来处"
+            }
+          ],
+          "next": "CH01-PROLOGUE-N005"
+        }
+      ]
+    },
+    {
+      "id": "CH01-PROLOGUE-N005",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "雨来之前",
+      "speaker": "禾安",
+      "location": "旧礼器库与渡口之间",
+      "time": "暮色前",
+      "paragraphs": [
+        "雨云压到洛水上方。辛衡去旧库腾空屋、备木牍；禾安烧水、找干草；柳娘带先到的人支起遮雨布；韩宁站在路口，等载着湿简和伤者的最后一辆车。",
+        "他们不是突然出现在你身边的陌生名字。辛衡是教你落笔的人，禾安与你一起守过旧渡，韩宁正在保护一批会牵连活人的旧册，柳娘则让无法公开的来处仍有另一种记法。",
+        "第一滴雨落下时，旧礼器库深处传来铜锈受冷般的轻响。库中那口裂钟多年没有人敲过。"
+      ],
+      "visual": {
+        "motif": "warehouse",
+        "caption": "每个人都已经在做自己的事，暴雨只是把这些责任推到同一处。"
+      },
+      "choices": [
+        {
+          "id": "CH01-P004-CARRY-SUPPLIES",
+          "label": "把空木牍和热水一起搬到渡口",
+          "detail": "救人和留名从一开始就是两件都要准备、临场却未必能同时完成的事。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "preparedForRefugees",
+              "value": true,
+              "label": "事实确认：渡口已准备热水、空屋与记录木牍"
+            }
+          ],
+          "next": "CH01-PROLOGUE-N006"
+        }
+      ]
+    },
+    {
+      "id": "CH01-PROLOGUE-N006",
+      "sceneId": "CH01-PROLOGUE-SC001",
+      "act": "PROLOGUE",
+      "title": "裂钟落水",
+      "speaker": "记忆回声",
+      "location": "旧礼器库门前",
+      "time": "暴雨初至",
+      "paragraphs": [
+        "黑暗里先有一声钟响，不是从远处传来，更像贴着骨头裂开。冷水从看不见的缝里涌出。你伸手去堵，摸到的不是水，是一圈冰凉的铜锈。",
+        "你清楚记得自己叫「{{playerName}}」，记得母亲、旧渡、辛衡和禾安。正因如此，你也清楚这片水声不属于自己在洛水生活的十年。",
+        "现实里没有钟响。渡口方向却传来车辕折断和人群惊呼。最后一辆流民车在雨中翻了。"
+      ],
+      "visual": {
+        "motif": "bell",
+        "caption": "本世身份没有消失；无法解释的是另一段经验为何与你重合。"
+      },
+      "choices": [
+        {
+          "id": "CH01-P005-RUN-TO-FERRY",
+          "label": "循着惊呼跑向渡口",
+          "detail": "先处理现实中的翻车、病者和湿简；钟声的来处不会替你做选择。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-001",
+              "label": "记忆触发：裂钟落水"
+            }
+          ],
+          "next": "CH01-ACT01-N001"
+        }
+      ]
+    }
+  ]
+}

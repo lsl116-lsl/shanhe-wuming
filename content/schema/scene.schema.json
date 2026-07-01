@@ -72,6 +72,32 @@
               }
             }
           },
+          "textEntry": {
+            "type": "object",
+            "required": [
+              "id",
+              "label",
+              "detail",
+              "placeholder",
+              "key",
+              "defaultValue",
+              "minLength",
+              "maxLength",
+              "next"
+            ],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "detail": { "type": "string" },
+              "placeholder": { "type": "string" },
+              "key": { "type": "string" },
+              "defaultValue": { "type": "string" },
+              "minLength": { "type": "integer", "minimum": 1 },
+              "maxLength": { "type": "integer", "minimum": 1 },
+              "next": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
           "ending": { "type": "boolean" }
         }
       }

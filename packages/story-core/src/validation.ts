@@ -3,6 +3,7 @@ import type { ContentBundle, StoryEffect, ValidationIssue } from "./types";
 const effectRequirements: Partial<Record<StoryEffect["type"], (keyof StoryEffect)[]>> = {
   "fact.set": ["key"],
   "flag.set": ["key"],
+  "profile.set": ["key", "value"],
   "resource.set": ["key", "value"],
   "resource.change": ["key", "amount"],
   "relationship.change": ["character", "field", "amount"],
@@ -23,6 +24,7 @@ export function validateBundle(bundle: ContentBundle): ValidationIssue[] {
   const causeIds = new Set(bundle.causes.map((cause) => cause.id));
   const memoryIds = new Set(bundle.memories.map((memory) => memory.id));
   const choiceIds = allNodes.flatMap((node) => node.choices.map((choice) => choice.id));
+  const textEntryIds = allNodes.flatMap((node) => (node.textEntry ? [node.textEntry.id] : []));
 
   if (bundle.scenes.length === 0) {
     issues.push({ level: "error", code: "NO_SCENES", message: "内容包没有场景文件" });
@@ -95,6 +97,9 @@ export function validateBundle(bundle: ContentBundle): ValidationIssue[] {
   if (new Set(choiceIds).size !== choiceIds.length) {
     issues.push({ level: "error", code: "DUPLICATE_CHOICE", message: "存在重复选择 ID" });
   }
+  if (new Set(textEntryIds).size !== textEntryIds.length) {
+    issues.push({ level: "error", code: "DUPLICATE_TEXT_ENTRY", message: "存在重复文字输入 ID" });
+  }
 
   for (const scene of bundle.scenes) {
     for (const node of scene.nodes) {
@@ -106,13 +111,42 @@ export function validateBundle(bundle: ContentBundle): ValidationIssue[] {
           location: node.id
         });
       }
-    if (!node.ending && node.choices.length === 0) {
+    if (!node.ending && node.choices.length === 0 && !node.textEntry) {
       issues.push({
         level: "error",
         code: "DEAD_END",
         message: "非结局节点没有选择",
         location: node.id
       });
+    }
+    if (node.textEntry && node.choices.length > 0) {
+      issues.push({
+        level: "error",
+        code: "AMBIGUOUS_INTERACTION",
+        message: "节点不能同时提供选择和文字输入",
+        location: node.id
+      });
+    }
+    if (node.textEntry) {
+      if (!nodeIds.has(node.textEntry.next)) {
+        issues.push({
+          level: "error",
+          code: "MISSING_TEXT_NEXT",
+          message: `文字输入 ${node.textEntry.id} 指向不存在的节点 ${node.textEntry.next}`,
+          location: node.id
+        });
+      }
+      if (
+        node.textEntry.minLength < 1 ||
+        node.textEntry.maxLength < node.textEntry.minLength
+      ) {
+        issues.push({
+          level: "error",
+          code: "INVALID_TEXT_LENGTH",
+          message: `文字输入 ${node.textEntry.id} 的长度约束无效`,
+          location: node.id
+        });
+      }
     }
     for (const choice of node.choices) {
       if (!nodeIds.has(choice.next)) {
@@ -183,6 +217,7 @@ export function validateBundle(bundle: ContentBundle): ValidationIssue[] {
     reachable.add(id);
     const node = allNodes.find((candidate) => candidate.id === id);
     node?.choices.forEach((choice) => queue.push(choice.next));
+    if (node?.textEntry) queue.push(node.textEntry.next);
   }
   for (const node of allNodes) {
     if (!reachable.has(node.id)) {

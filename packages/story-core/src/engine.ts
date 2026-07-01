@@ -63,6 +63,7 @@ export function createInitialState(bundle: ContentBundle): StoryState {
       daylight: "暮色将近"
     },
     player: {
+      profile: {},
       resources: {
         daylight: 5,
         grain: 3,
@@ -96,6 +97,7 @@ export function reduceEvent(state: StoryState, event: StoryEvent): StoryState {
     ...state,
     world: { ...state.world },
     player: {
+      profile: { ...state.player.profile },
       resources: { ...state.player.resources },
       flags: { ...state.player.flags }
     },
@@ -129,11 +131,16 @@ export function reduceEvent(state: StoryState, event: StoryEvent): StoryState {
       }
       break;
     }
+    case "text.submit":
+      break;
     case "fact.set":
       setAtPath(next.facts, String(payload.key), payload.value as Primitive);
       break;
     case "flag.set":
       setAtPath(next.player.flags, String(payload.key), payload.value as Primitive);
+      break;
+    case "profile.set":
+      next.player.profile[String(payload.key)] = String(payload.value);
       break;
     case "testimony.learn":
       setAtPath(next.knowledge, String(payload.key), payload.value as Primitive);
@@ -256,7 +263,14 @@ export class StoryEngine {
     return [
       ...node.paragraphs,
       ...matching.flatMap((variant) => variant.paragraphs)
-    ];
+    ].map((paragraph) => this.formatText(paragraph));
+  }
+
+  formatText(value: string): string {
+    return value.replaceAll(
+      "{{playerName}}",
+      this.state.player.profile.name?.trim() || "无名"
+    );
   }
 
   getAvailableChoices(node = this.getCurrentNode()): StoryChoice[] {
@@ -273,6 +287,35 @@ export class StoryEngine {
       this.dispatch(effect.type, node.id, effect.label, effectPayload(effect), choice.id);
     }
     this.enterNode(choice.next, `进入「${this.findNode(choice.next).title}」`);
+    this.emit();
+  }
+
+  submitText(entryId: string, rawValue: string): void {
+    const node = this.getCurrentNode();
+    const entry = node.textEntry;
+    if (!entry || entry.id !== entryId) {
+      throw new Error(`节点 ${node.id} 没有文字输入 ${entryId}`);
+    }
+
+    const value = rawValue.trim();
+    const length = Array.from(value).length;
+    if (length < entry.minLength || length > entry.maxLength) {
+      throw new Error(`${entry.label}需要 ${entry.minLength}—${entry.maxLength} 个字`);
+    }
+
+    this.dispatch(
+      "text.submit",
+      node.id,
+      `${entry.label}：${value}`,
+      { entryId, value }
+    );
+    this.dispatch(
+      "profile.set",
+      node.id,
+      `本世姓名写作「${value}」`,
+      { key: entry.key, value }
+    );
+    this.enterNode(entry.next, `进入「${this.findNode(entry.next).title}」`);
     this.emit();
   }
 
