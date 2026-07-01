@@ -47,25 +47,26 @@
 4. `docs/01_跨朝代因果总表_V0.1.md`
 5. `docs/09_章节包制作规范_V0.1.md`
 6. `docs/13_人物塑造规则_V0.1.md`
-7. `docs/chapters/PROLOGUE_雨来之前/README.md`
-8. `docs/chapters/PROLOGUE_雨来之前/00_序章定位与边界_V0.1.md`
-9. `docs/chapters/PROLOGUE_雨来之前/01_主线大纲_V0.1.md`
-10. `docs/chapters/PROLOGUE_雨来之前/02_人物关系表_V0.1.md`
-11. `docs/chapters/PROLOGUE_雨来之前/03_因果与伏笔表_V0.1.md`
-12. `docs/chapters/PROLOGUE_雨来之前/04_记忆碎片表_V0.1.md`
-13. `docs/chapters/PROLOGUE_雨来之前/05_故事剧本_V0.1.md`
-14. `docs/chapters/PROLOGUE_雨来之前/06_至ACT01_雨后流民_过渡文_V0.1.md`
-15. `docs/chapters/CH01_礼崩之世/08_名籍与人生主线架构_V0.1.md`
-16. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
-17. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
-18. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
-19. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
-20. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
-21. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
-22. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
-23. `docs/10_阶段A技术样片说明_V0.1.md`
-24. `docs/11_阶段B网页核心原型说明_V0.1.md`
-25. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
+7. `docs/14_可移动探索与眼前代价系统_V0.1.md`
+8. `docs/chapters/PROLOGUE_雨来之前/README.md`
+9. `docs/chapters/PROLOGUE_雨来之前/00_序章定位与边界_V0.1.md`
+10. `docs/chapters/PROLOGUE_雨来之前/01_主线大纲_V0.1.md`
+11. `docs/chapters/PROLOGUE_雨来之前/02_人物关系表_V0.1.md`
+12. `docs/chapters/PROLOGUE_雨来之前/03_因果与伏笔表_V0.1.md`
+13. `docs/chapters/PROLOGUE_雨来之前/04_记忆碎片表_V0.1.md`
+14. `docs/chapters/PROLOGUE_雨来之前/05_故事剧本_V0.1.md`
+15. `docs/chapters/PROLOGUE_雨来之前/06_至ACT01_雨后流民_过渡文_V0.1.md`
+16. `docs/chapters/CH01_礼崩之世/08_名籍与人生主线架构_V0.1.md`
+17. `docs/chapters/CH01_礼崩之世/01_主线大纲_V0.1.md`
+18. `docs/chapters/CH01_礼崩之世/02_人物关系表_V0.1.md`
+19. `docs/chapters/CH01_礼崩之世/03_职业线嵌入表_V0.1.md`
+20. `docs/chapters/CH01_礼崩之世/04_因果节点表_V0.1.md`
+21. `docs/chapters/CH01_礼崩之世/05_记忆碎片表_V0.1.md`
+22. `docs/chapters/CH01_礼崩之世/06_故事剧本_V0.1.md`
+23. `docs/chapters/CH01_礼崩之世/07_至CH02衔接过渡文_V0.1.md`
+24. `docs/10_阶段A技术样片说明_V0.1.md`
+25. `docs/11_阶段B网页核心原型说明_V0.1.md`
+26. `docs/12_序章设计与剧情逻辑说明_V0.1.md`
 
 处理其他章节时，必须继续阅读目标 `docs/chapters/<章节>/` 下全部文件，不得只凭总框架续写。
 
@@ -155,7 +156,39 @@
 - 长平白骨
 - “这不是你第一次看见山河改色”
 
-## 七、语言风格
+## 七、交互设计规则
+
+《山河无名》后续定位为：
+
+```text
+2D 可移动探索式历史叙事 AVG
+```
+
+玩家可以移动、调查、对话、触发事件，但游戏核心仍是叙事、人物、名籍记录、因果回响和历史处境，不是战斗、装备、连招或开放世界乱跑。
+
+所有可移动关键场景必须遵守：
+
+```text
+移动负责让玩家看见。
+互动负责让玩家承担。
+```
+
+玩家可以不知道最终结果，但必须看见眼前代价。不能让玩家因为没有天眼而被事后惩罚。
+
+关键场景应遵守：
+
+```text
+先看见问题
+→ 再走向问题
+→ 靠近后获得更多信息
+→ 最后确认行动
+```
+
+重大因果必须由明确互动触发，不得因为玩家无意走位就锁死路线。
+
+更多规范见：`docs/14_可移动探索与眼前代价系统_V0.1.md`。
+
+## 八、语言风格
 
 保持中文历史叙事质感。
 
@@ -188,7 +221,7 @@
 - 过早神秘化主角
 - 让苏醒者像开挂穿越者一样全知全能
 
-## 八、最终母题处理
+## 九、最终母题处理
 
 终章方向已确定：
 
@@ -205,7 +238,7 @@
 - 真正托起山河的是人民
 - 苏醒者并不是帝王将相，而是一世世普通人
 
-## 九、产品与代码原则
+## 十、产品与代码原则
 
 项目是章节式历史叙事人生 RPG / AVG：
 
@@ -238,7 +271,7 @@ tools/
 不要把故事条件和效果写死在 UI 中。
 所有状态变化通过事件记录，并为存档升级和路线审计保留接口。
 
-## 十、推荐下一个 Codex 任务
+## 十一、推荐下一个 Codex 任务
 
 当前已完成：
 
