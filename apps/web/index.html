@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="《山河无名》阶段 A 技术样片：第一章 ACT01 雨后流民。"
+      content="《山河无名》阶段 B 网页核心原型：第一章 ACT01—ACT02。"
     />
-    <title>山河无名 · 雨后流民</title>
+    <title>山河无名 · 裂钟之梦 / 旧礼无声</title>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="山河无名技术样片首页">
+        <a class="brand" href="/" aria-label="山河无名网页核心原型首页">
           <span class="brand-mark" aria-hidden="true">無</span>
           <span>
             <strong>山河无名</strong>
-            <small>阶段 A · 技术样片</small>
+            <small>阶段 B · 网页核心原型</small>
           </span>
         </a>
 
@@ -98,10 +98,12 @@
             <button class="tab active" data-tab="records" role="tab" aria-selected="true">
               档案
             </button>
+            <button class="tab" data-tab="memories" role="tab" aria-selected="false">记忆</button>
             <button class="tab" data-tab="causes" role="tab" aria-selected="false">因果</button>
             <button class="tab" data-tab="events" role="tab" aria-selected="false">事件</button>
           </div>
           <div class="tab-panel active" id="records-panel" role="tabpanel"></div>
+          <div class="tab-panel" id="memories-panel" role="tabpanel"></div>
           <div class="tab-panel" id="causes-panel" role="tabpanel"></div>
           <div class="tab-panel" id="events-panel" role="tabpanel"></div>
         </aside>

@@ -8,6 +8,7 @@ import type {
   ChapterManifest,
   CharacterFile,
   ContentBundle,
+  MemoryFile,
   RecordFile,
   SceneFile
 } from "../../../packages/story-core/src/types";
@@ -22,58 +23,81 @@ async function readJson<T>(path: string): Promise<T> {
 
 async function loadBundle(): Promise<ContentBundle> {
   const manifest = await readJson<ChapterManifest>("chapters/ch01/chapter.json");
-  const [scene, characters, causes, records] = await Promise.all([
-    readJson<SceneFile>(manifest.sceneFiles[0] ?? ""),
+  const [scenes, characters, causes, records, memories] = await Promise.all([
+    Promise.all(manifest.sceneFiles.map((path) => readJson<SceneFile>(path))),
     readJson<CharacterFile>(manifest.characterFile),
     readJson<CauseFile>(manifest.causeFile),
-    readJson<RecordFile>(manifest.recordFile)
+    readJson<RecordFile>(manifest.recordFile),
+    readJson<MemoryFile>(manifest.memoryFile)
   ]);
   return {
     manifest,
-    scene,
+    scenes,
     characters: characters.characters,
     causes: causes.causes,
-    recordChannels: records.channels
+    recordChannels: records.channels,
+    memories: memories.memories
   };
 }
 
-interface RouteResult {
-  choices: string[];
-  endingNode: string;
-  eventCount: number;
-  recordCount: number;
+interface AuditStats {
+  routeCount: number;
+  endingNodes: Set<string>;
+  minimumEvents: number;
+  maximumEvents: number;
+  minimumRecords: number;
+  maximumRecords: number;
+  replayedSaves: number;
 }
 
-function playRoute(bundle: ContentBundle, choiceIds: string[]): StoryEngine {
-  const engine = new StoryEngine(bundle);
-  choiceIds.forEach((choiceId) => engine.choose(choiceId));
-  return engine;
-}
+function auditRoutes(bundle: ContentBundle): AuditStats {
+  const stats: AuditStats = {
+    routeCount: 0,
+    endingNodes: new Set(),
+    minimumEvents: Number.POSITIVE_INFINITY,
+    maximumEvents: 0,
+    minimumRecords: Number.POSITIVE_INFINITY,
+    maximumRecords: 0,
+    replayedSaves: 0
+  };
 
-function enumerateRoutes(bundle: ContentBundle): RouteResult[] {
-  const results: RouteResult[] = [];
-  const visit = (path: string[]): void => {
-    const engine = playRoute(bundle, path);
+  const visit = (engine: StoryEngine, path: string[]): void => {
     const node = engine.getCurrentNode();
     if (node.ending) {
       const state = engine.getState();
-      results.push({
-        choices: path,
-        endingNode: node.id,
-        eventCount: engine.getEvents().length,
-        recordCount: Object.values(state.records).reduce(
-          (total, channel) => total + channel.entries.length,
-          0
-        )
-      });
+      const eventCount = engine.getEvents().length;
+      const recordCount = Object.values(state.records).reduce(
+        (total, channel) => total + channel.entries.length,
+        0
+      );
+      if (recordCount === 0) throw new Error(`路线 ${path.join(" > ")} 没有生成记录`);
+
+      const save = createSave(engine, 300);
+      const saveErrors = validateSave(bundle, save);
+      if (saveErrors.length) {
+        throw new Error(`路线 ${path.join(" > ")} 存档回放失败：${saveErrors.join("；")}`);
+      }
+
+      stats.routeCount += 1;
+      stats.endingNodes.add(node.id);
+      stats.minimumEvents = Math.min(stats.minimumEvents, eventCount);
+      stats.maximumEvents = Math.max(stats.maximumEvents, eventCount);
+      stats.minimumRecords = Math.min(stats.minimumRecords, recordCount);
+      stats.maximumRecords = Math.max(stats.maximumRecords, recordCount);
+      stats.replayedSaves += 1;
       return;
     }
     const choices = engine.getAvailableChoices();
     if (!choices.length) throw new Error(`路线在 ${node.id} 无法继续`);
-    for (const choice of choices) visit([...path, choice.id]);
+    for (const choice of choices) {
+      const branch = engine.fork();
+      branch.choose(choice.id);
+      visit(branch, [...path, choice.id]);
+    }
   };
-  visit([]);
-  return results;
+
+  visit(new StoryEngine(bundle), []);
+  return stats;
 }
 
 async function main(): Promise<void> {
@@ -88,29 +112,18 @@ async function main(): Promise<void> {
     return;
   }
 
-  const routes = enumerateRoutes(bundle);
-  const endings = new Set(routes.map((route) => route.endingNode));
-  const zeroRecordRoutes = routes.filter((route) => route.recordCount === 0);
-  if (zeroRecordRoutes.length) throw new Error(`${zeroRecordRoutes.length} 条路线没有生成记录`);
-
-  for (const route of routes) {
-    const engine = playRoute(bundle, route.choices);
-    const save = createSave(engine, 300);
-    const saveErrors = validateSave(bundle, save);
-    if (saveErrors.length) {
-      throw new Error(`路线 ${route.choices.join(" > ")} 存档回放失败：${saveErrors.join("；")}`);
-    }
-  }
-
-  const eventCounts = routes.map((route) => route.eventCount);
-  const recordCounts = routes.map((route) => route.recordCount);
-  console.log("《山河无名》阶段 A 路线审计通过");
-  console.log(`- 节点：${bundle.scene.nodes.length}`);
-  console.log(`- 完整路线：${routes.length}`);
-  console.log(`- 结局节点：${endings.size}`);
-  console.log(`- 单路线事件：${Math.min(...eventCounts)}—${Math.max(...eventCounts)}`);
-  console.log(`- 单路线记录：${Math.min(...recordCounts)}—${Math.max(...recordCounts)}`);
-  console.log(`- 存档回放：${routes.length}/${routes.length}`);
+  const stats = auditRoutes(bundle);
+  console.log("《山河无名》ACT01—ACT02 核心原型路线审计通过");
+  console.log(`- 场景文件：${bundle.scenes.length}`);
+  console.log(`- 节点：${bundle.scenes.reduce((total, scene) => total + scene.nodes.length, 0)}`);
+  console.log(
+    `- 预计时长：${bundle.scenes.reduce((total, scene) => total + scene.estimatedMinutes, 0)} 分钟`
+  );
+  console.log(`- 完整路线：${stats.routeCount}`);
+  console.log(`- 结局节点：${stats.endingNodes.size}`);
+  console.log(`- 单路线事件：${stats.minimumEvents}—${stats.maximumEvents}`);
+  console.log(`- 单路线记录：${stats.minimumRecords}—${stats.maximumRecords}`);
+  console.log(`- 存档回放：${stats.replayedSaves}/${stats.routeCount}`);
   if (issues.length) console.log(`- 非阻断提示：${issues.length}`);
 }
 

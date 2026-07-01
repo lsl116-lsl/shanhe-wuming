@@ -11,6 +11,7 @@ import type {
   ChapterManifest,
   CharacterFile,
   ContentBundle,
+  MemoryFile,
   RecordChannel,
   RecordFile,
   SaveFile,
@@ -18,8 +19,8 @@ import type {
   StoryState
 } from "../../../packages/story-core/src/types";
 
-const MANUAL_SAVE_KEY = "shanhe-wuming:stage-a:manual-save";
-const AUTO_SAVE_KEY = "shanhe-wuming:stage-a:auto-save";
+const MANUAL_SAVE_KEY = "shanhe-wuming:ch01-act01-act02:manual-save";
+const AUTO_SAVE_KEY = "shanhe-wuming:ch01-act01-act02:auto-save";
 const sessionStartedAt = Date.now();
 let savedCreatedAt: string | undefined;
 let engine: StoryEngine;
@@ -40,18 +41,20 @@ async function loadJson<T>(path: string): Promise<T> {
 
 async function loadBundle(): Promise<ContentBundle> {
   const manifest = await loadJson<ChapterManifest>("/chapters/ch01/chapter.json");
-  const [scene, characterFile, causeFile, recordFile] = await Promise.all([
-    loadJson<SceneFile>(manifest.sceneFiles[0] ?? ""),
+  const [scenes, characterFile, causeFile, recordFile, memoryFile] = await Promise.all([
+    Promise.all(manifest.sceneFiles.map((path) => loadJson<SceneFile>(path))),
     loadJson<CharacterFile>(manifest.characterFile),
     loadJson<CauseFile>(manifest.causeFile),
-    loadJson<RecordFile>(manifest.recordFile)
+    loadJson<RecordFile>(manifest.recordFile),
+    loadJson<MemoryFile>(manifest.memoryFile)
   ]);
   return {
     manifest,
-    scene,
+    scenes,
     characters: characterFile.characters,
     causes: causeFile.causes,
-    recordChannels: recordFile.channels
+    recordChannels: recordFile.channels,
+    memories: memoryFile.memories
   };
 }
 
@@ -96,14 +99,32 @@ function labelForFact(key: string): string {
     refusalPreserved: "拒绝说明得到保留",
     slipKeeper: "半名残简保管",
     songForm: "旧曲形态",
-    registerKeeper: "临时名册去向"
+    registerKeeper: "临时名册去向",
+    yearsSinceRain: "渡口雨夜之后",
+    grainSolution: "旧仓赈粮办法",
+    grainReleased: "本季放粮",
+    grainDebt: "聚落粮债",
+    provisionalHouseholds: "暂编户数",
+    deletedNameHandling: "被划姓名处理",
+    overlookedHousehold: "仓后漏记一户",
+    overlookedHouseholdPlan: "漏记户安置",
+    seasonOutcome: "本季结果"
   };
   return labels[key] ?? key;
 }
 
 function renderResources(state: StoryState): void {
-  const names: Record<string, string> = { daylight: "暮色", grain: "粮", strength: "体力" };
-  const maximums: Record<string, number> = { daylight: 5, grain: 3, strength: 4 };
+  const act = engine.getCurrentNode().act;
+  const names: Record<string, string> = {
+    daylight: act === "ACT01" ? "暮色" : "农时",
+    grain: "粮",
+    strength: "体力"
+  };
+  const maximums: Record<string, number> = {
+    daylight: 5,
+    grain: act === "ACT01" ? 3 : 5,
+    strength: act === "ACT01" ? 4 : 5
+  };
   $("#resource-list").innerHTML = Object.entries(state.player.resources)
     .map(([key, value]) => {
       const max = maximums[key] ?? 5;
@@ -119,7 +140,14 @@ function renderResources(state: StoryState): void {
 }
 
 function renderCharacters(state: StoryState): void {
-  $("#character-list").innerHTML = bundle.characters
+  const act = engine.getCurrentNode().act;
+  const visibleCharacters =
+    act === "ACT01"
+      ? bundle.characters.filter((character) =>
+          ["JIBO", "HEAN", "HANNING", "LIUNIANG"].includes(character.id)
+        )
+      : bundle.characters;
+  $("#character-list").innerHTML = visibleCharacters
     .map((character) => {
       const relation = state.relations[character.id];
       const score = (relation?.trust ?? 0) + (relation?.sharedDebt ?? 0) - (relation?.rift ?? 0);
@@ -131,7 +159,10 @@ function renderCharacters(state: StoryState): void {
             <strong class="character-name">${escapeHtml(character.name)}</strong>
             <small class="character-role">${escapeHtml(character.role)}</small>
           </span>
-          <span class="relation-delta">关系<strong>${scoreLabel}</strong></span>
+          <span class="relation-delta" aria-label="信任 ${relation?.trust ?? 0}，共同债 ${relation?.sharedDebt ?? 0}，裂痕 ${relation?.rift ?? 0}">
+            关系<strong>${scoreLabel}</strong>
+            <small>信 ${relation?.trust ?? 0} · 债 ${relation?.sharedDebt ?? 0} · 裂 ${relation?.rift ?? 0}</small>
+          </span>
         </article>`;
     })
     .join("");
@@ -139,6 +170,19 @@ function renderCharacters(state: StoryState): void {
 
 function renderRecords(state: StoryState): void {
   const facts = Object.entries(state.facts);
+  const totalRecords = Object.values(state.records).reduce(
+    (total, channel) => total + channel.entries.length,
+    0
+  );
+  const solution = state.facts.grainSolution;
+  const comparison =
+    solution === "OLD_RITE"
+      ? "请恤文书承认流民应被救济，仓册却仍把他们留在名籍之外。"
+      : solution === "NEW_REGISTER"
+        ? "新籍让一部分人领到粮，也同时把田、役与连带责任写进每一户。"
+        : solution === "PRIVATE_GRAIN"
+          ? "官档没有发生赈粮，商旅私账却留下了一笔无法只用粮价结清的债。"
+          : "故事继续后，这里会并列事实、官档、私录与口述的差异。";
   const factsHtml = `
     <section class="fact-card">
       <div class="record-group-header"><strong>真实发生</strong><span>${facts.length} 项</span></div>
@@ -163,7 +207,17 @@ function renderRecords(state: StoryState): void {
             <article class="record-entry ${entry.redacted ? "redacted" : ""}">
               <strong>${escapeHtml(entry.title)}${entry.redacted ? " · 已删隐" : ""}</strong>
               <p>${escapeHtml(entry.text)}</p>
-              <small>${escapeHtml(entry.source)} · ${escapeHtml(entry.confidence)}</small>
+              <small>
+                ${escapeHtml(entry.source)}
+                · ${escapeHtml(
+                  entry.confidence === "confirmed"
+                    ? "已确认"
+                    : entry.confidence === "partial"
+                      ? "部分确认"
+                      : "存在争议"
+                )}
+                ${entry.sensitivity ? ` · ${escapeHtml(entry.sensitivity === "high" ? "高暴露" : entry.sensitivity === "medium" ? "中暴露" : "低暴露")}` : ""}
+              </small>
             </article>`
         )
         .join("");
@@ -172,8 +226,8 @@ function renderRecords(state: StoryState): void {
           <div class="record-group-header">
             <strong>${escapeHtml(definition.name)}</strong>
             <span class="meter-pair">
-              <i>完整 ${channel.integrity}/5</i>
-              <i class="${channel.exposure > 2 ? "risk" : ""}">风险 ${channel.exposure}/5</i>
+              <i>完整 ${channel.integrity}/10</i>
+              <i class="${channel.exposure > 5 ? "risk" : ""}">风险 ${channel.exposure}/10</i>
             </span>
           </div>
           <p class="panel-intro">${escapeHtml(definition.description)}</p>
@@ -184,7 +238,40 @@ function renderRecords(state: StoryState): void {
 
   $("#records-panel").innerHTML = `
     <p class="panel-intro">同一件事会留下互不相同的版本。完整不等于安全，公开也不自动等于正义。</p>
+    <section class="archive-summary">
+      <span><b>${facts.length}</b> 项事实</span>
+      <span><b>${totalRecords}</b> 份记录</span>
+      <span><b>${state.visitedNodes.length}</b> 个现场</span>
+    </section>
+    <section class="record-conflict">
+      <small>当前版本差异</small>
+      <p>${escapeHtml(comparison)}</p>
+    </section>
     ${factsHtml}${recordGroups}`;
+}
+
+function renderMemories(state: StoryState): void {
+  const triggered = bundle.memories.filter((memory) => state.memories[memory.id] === "triggered");
+  $("#memories-panel").innerHTML = `
+    <p class="panel-intro">记忆只改变你会注意、追问和告诉谁，不提供预知或正确答案。</p>
+    <div class="memory-progress">
+      <span>本章已触发 <b>${triggered.length}</b> / ${bundle.memories.length}</span>
+      <span>当前上限 ${engine.getCurrentNode().act === "ACT01" ? "M0" : "M1"}</span>
+    </div>
+    ${bundle.memories
+      .map((memory) => {
+        const seen = state.memories[memory.id] === "triggered";
+        return `
+          <article class="memory-card ${seen ? "triggered" : "locked"}">
+            <div class="memory-header">
+              <strong>${escapeHtml(seen ? memory.title : "尚未触发的回声")}</strong>
+              <span>${escapeHtml(memory.act)} · ${escapeHtml(memory.revealLevel)}</span>
+            </div>
+            <p>${escapeHtml(seen ? memory.perceivedContent : memory.mandatory ? "它会在本幕找到兜底入口。" : "它只回应特定做法，不影响主线通行。")}</p>
+            ${seen ? `<small>现实作用：${escapeHtml(memory.realityEffect)}</small>` : ""}
+          </article>`;
+      })
+      .join("")}`;
 }
 
 function renderCauses(state: StoryState): void {
@@ -218,7 +305,7 @@ function renderEvents(): void {
             <span class="event-index">${event.id.toString().padStart(2, "0")}</span>
             <div class="event-header">
               <span class="event-type">${escapeHtml(event.type)}</span>
-              <span>${escapeHtml(event.nodeId.replace("CH01-ACT01-", ""))}</span>
+              <span>${escapeHtml(event.nodeId.replace("CH01-", ""))}</span>
             </div>
             <p>${escapeHtml(event.label)}</p>
           </article>`
@@ -229,11 +316,12 @@ function renderEvents(): void {
 function renderStory(): void {
   const state = engine.getState();
   const node = engine.getCurrentNode();
+  const scene = engine.getCurrentScene();
   const choices = engine.getAvailableChoices();
 
   $("#game").setAttribute("aria-busy", "false");
-  $("#act-label").textContent = `${bundle.manifest.subtitle} · ${bundle.manifest.sampleTitle}`;
-  $("#scene-progress").textContent = `${state.selectedChoices.length} / 7 次选择`;
+  $("#act-label").textContent = `第一章 · ${node.act} · ${scene.title}`;
+  $("#scene-progress").textContent = `已作 ${state.selectedChoices.length} 次行动`;
   $("#location-label").textContent = node.location;
   $("#time-label").textContent = node.time;
   $("#node-title").textContent = node.title;
@@ -265,9 +353,20 @@ function renderStory(): void {
     });
 
   $("#ending-card").toggleAttribute("hidden", !node.ending);
+  const endingTitle = $("#ending-card strong");
+  const endingCopy = $("#ending-card p");
+  if (node.ending) {
+    endingTitle.textContent =
+      node.act === "ACT02" ? "核心原型已抵达 ACT02 结尾" : "本世档案已经生成第一行";
+    endingCopy.textContent =
+      node.act === "ACT02"
+        ? "打开“档案”和“记忆”，比较这次活命如何进入不同版本。"
+        : "打开右侧“档案”，比较真实发生、官档、私录与口述。";
+  }
   renderResources(state);
   renderCharacters(state);
   renderRecords(state);
+  renderMemories(state);
   renderCauses(state);
   renderEvents();
 }
@@ -296,10 +395,14 @@ function loadLocalSave(): void {
     showToast("还没有可读取的本地存档。");
     return;
   }
-  const save = JSON.parse(raw) as SaveFile;
-  restoreSave(engine, save);
-  savedCreatedAt = save.createdAt;
-  showToast(`已读取${manual ? "手动存档" : "自动存档"} · ${save.eventLog.length} 条事件。`);
+  try {
+    const save = JSON.parse(raw) as SaveFile;
+    restoreSave(engine, save);
+    savedCreatedAt = save.createdAt;
+    showToast(`已读取${manual ? "手动存档" : "自动存档"} · ${save.eventLog.length} 条事件。`);
+  } catch (error) {
+    showToast(error instanceof Error ? error.message : "本地存档无法读取");
+  }
 }
 
 function exportSave(): void {
@@ -332,7 +435,7 @@ function resetStory(): void {
   localStorage.removeItem(AUTO_SAVE_KEY);
   wireEngine();
   renderStory();
-  showToast("已回到雨后的洛水渡口。");
+  showToast("已回到洛水暮雨。");
 }
 
 function wireEngine(): void {
@@ -386,7 +489,9 @@ async function bootstrap(): Promise<void> {
     $("#content-version").textContent =
       `内容 ${bundle.manifest.contentVersion} · 运行时 ${bundle.manifest.runtimeVersion}`;
     $("#validation-status").textContent =
-      issues.length === 0 ? "内容校验通过 · 0 个断点" : `校验通过 · ${issues.length} 个提示`;
+      issues.length === 0
+        ? `内容校验通过 · ${bundle.scenes.length} 个场景文件`
+        : `校验通过 · ${issues.length} 个提示`;
   } catch (error) {
     $("#fatal-error").toggleAttribute("hidden", false);
     $("#fatal-message").textContent = error instanceof Error ? error.message : String(error);

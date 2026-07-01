@@ -1,0 +1,1135 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "CH01-ACT02-SC001",
+  "title": "旧礼无声",
+  "estimatedMinutes": 20,
+  "startNode": "CH01-ACT02-N101",
+  "nodes": [
+    {
+      "id": "CH01-ACT02-N101",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "四年后的旱风",
+      "speaker": "旁白",
+      "location": "洛水近郊聚落",
+      "time": "前 282 年 · 夏末",
+      "paragraphs": [
+        "雨夜之后第四年，渡口边的草棚长成了半座聚落。孩子认得井绳上的每一个结，老人仍把这里叫作“暂住之地”。你跟季伯学会了辨字，也学会了同一笔墨在不同册里会把人送往不同方向。",
+        "今年旱得早。禾安家拆掉最后一件旧农具换了种，田里却只冒出稀薄的青。旧礼器库后那座仓仍锁着，门缝里有陈粮的气味。"
+      ],
+      "visual": {
+        "motif": "field",
+        "caption": "人已经在这里过了四个冬天，名籍仍说他们只是路过。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C101-WALK-GRANARY",
+          "label": "跟季伯走向旧仓",
+          "detail": "仓里有粮；门外的人缺的不是锁钥，而是一种被承认的身份。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "droughtYear",
+              "value": -282,
+              "label": "事实确认：旱情与征敛同时逼近洛水聚落"
+            }
+          ],
+          "next": "CH01-ACT02-N102"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N102",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "仓中有粮",
+      "speaker": "季伯、禾安、青缗与公孙砚",
+      "location": "旧仓门前",
+      "time": "夏末 · 距播种误期尚余五日",
+      "paragraphs": [
+        "仓门前排着二十三户人。旧仓掌事把木牍放在膝上：祭粮可以赈恤，但领粮者必须有旧族担保。第一份流民名册证明这些人曾来过，却不能证明他们属于这里。",
+        "季伯带来按旧礼写成的请恤牍；商队掌计者青缗愿意先借八石粮；年轻法吏公孙砚则把一束新木片放在案上——重新编户，写下田、役和连带责任，今日便可开仓。",
+        "禾安捏着一粒干瘪的种子问你：哪一种办法，会把来年也算进去？"
+      ],
+      "visual": {
+        "motif": "warehouse",
+        "caption": "三把钥匙都能开门，每一把都把锁留在不同的人身上。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C102-OLD-RITE",
+          "label": "依旧礼请恤，逼掌事公开答复",
+          "detail": "保住“无籍者也应受恤”的名分；若继续拖延，错过播种的人先承担代价。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "grainSolution",
+              "value": "OLD_RITE",
+              "label": "旧仓办法：依旧礼请恤"
+            },
+            {
+              "type": "fact.set",
+              "key": "grainReleased",
+              "value": false,
+              "label": "即时事实：仓门没有在当日打开"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -2,
+              "label": "请命与等待耗去两日农时"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 2,
+              "label": "季伯信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "你与季伯共同承担延误之债"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "rift",
+              "amount": 1,
+              "label": "禾安裂痕 +1：她家没有余粮再等"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-OLD-RITE-PETITION",
+                "title": "旧仓请恤牍",
+                "text": "请先恤孤寡、流亡与失籍者，不以旧族担保为唯一凭据；掌事收牍，未署放粮之日。",
+                "source": "季伯具名，玩家递交",
+                "confidence": "confirmed",
+                "sensitivity": "low"
+              },
+              "label": "官档写入：请恤有文，放粮无期"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-005",
+              "label": "因果激活：旧仓之粮"
+            }
+          ],
+          "next": "CH01-ACT02-N103A"
+        },
+        {
+          "id": "CH01-C102-NEW-REGISTER",
+          "label": "接受暂编新籍，当日开仓",
+          "detail": "十七户能立即领粮；田亩、役责与连带清查也从今天进入每一家。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "grainSolution",
+              "value": "NEW_REGISTER",
+              "label": "旧仓办法：接受暂编新籍"
+            },
+            {
+              "type": "fact.set",
+              "key": "grainReleased",
+              "value": true,
+              "label": "即时事实：旧仓当日放粮"
+            },
+            {
+              "type": "fact.set",
+              "key": "provisionalHouseholds",
+              "value": 17,
+              "label": "十七户接受暂编"
+            },
+            {
+              "type": "resource.change",
+              "key": "grain",
+              "amount": 2,
+              "label": "聚落可用粮 +2"
+            },
+            {
+              "type": "resource.change",
+              "key": "daylight",
+              "amount": -1,
+              "label": "登记耗去一日农时"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安信任 +1：种子没有再等"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "rift",
+              "amount": 1,
+              "label": "季伯裂痕 +1：救济册开始成为征发册"
+            },
+            {
+              "type": "relationship.change",
+              "character": "GONGSUNYAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "公孙砚信任 +1"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-PROVISIONAL-REGISTER",
+                "title": "洛水暂编新籍",
+                "text": "暂编十七户，各领种粮；秋后核田，来岁计役，逃亡与拒不说明者另列待查。",
+                "source": "公孙砚署记",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：粮、田与役责同日落笔"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-005",
+              "label": "因果激活：旧仓之粮"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-006",
+              "label": "因果激活：新籍初编"
+            }
+          ],
+          "next": "CH01-ACT02-N103B"
+        },
+        {
+          "id": "CH01-C102-PRIVATE-GRAIN",
+          "label": "接青缗的粮，由聚落共担商债",
+          "detail": "绕过官署先保住播种；债息、关卡风险与一户被隐藏的事实由商队和聚落承担。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "grainSolution",
+              "value": "PRIVATE_GRAIN",
+              "label": "旧仓办法：商队私下调粮"
+            },
+            {
+              "type": "fact.set",
+              "key": "grainReleased",
+              "value": false,
+              "label": "即时事实：官仓仍未放粮"
+            },
+            {
+              "type": "fact.set",
+              "key": "grainDebt",
+              "value": 8,
+              "label": "聚落背负八石粮债"
+            },
+            {
+              "type": "resource.change",
+              "key": "grain",
+              "amount": 1,
+              "label": "商粮使聚落可用粮 +1"
+            },
+            {
+              "type": "resource.change",
+              "key": "strength",
+              "amount": -1,
+              "label": "连夜卸粮消耗体力 1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "QINGMIN",
+              "field": "trust",
+              "amount": 2,
+              "label": "青缗信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "QINGMIN",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "你与青缗共同背下调粮风险"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "rift",
+              "amount": 1,
+              "label": "季伯裂痕 +1：没有公开责任人"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-GRAIN-DEBT",
+                "title": "青缗粮债木牍",
+                "text": "借粮八石，分至二十三户；利息暂不写，若关卡追查，由青缗商队先认作途中损耗。",
+                "source": "青缗与玩家共同核数",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "私录写入：一笔暂时不写利息的救命债"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-005",
+              "label": "因果激活：旧仓之粮"
+            }
+          ],
+          "next": "CH01-ACT02-N103C"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N103A",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "文书在等，人也在等",
+      "speaker": "季伯与禾安",
+      "location": "旧仓门前",
+      "time": "请恤后的第二夜",
+      "paragraphs": [
+        "掌事把请恤牍收进匣中，说要等旧族议定。第二夜，仓门仍闭着。有人把留作来年的种磨成了粥，一名老人把自己的半碗推给孙女。",
+        "季伯逐字核对请恤牍，像只要字足够准确，门后的人就会承担责任。禾安没有责怪他，只把一把没能下地的种摊在你们中间。"
+      ],
+      "visual": {
+        "motif": "warehouse",
+        "caption": "名分没有错，饥饿也没有因此停下。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C103A-SLEEP",
+          "label": "守着请恤牍等到夜深",
+          "detail": "现实后果已经发生；梦不会替你撤回这两日。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "seasonOutcome",
+              "value": "PETITION_DELAY",
+              "label": "本季结果：请命保住了名分，也延误了播种"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-003",
+              "label": "记忆触发：空白木片"
+            }
+          ],
+          "next": "CH01-ACT02-N104"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N103B",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "粮从门里出来",
+      "speaker": "公孙砚与禾安",
+      "location": "旧仓内外",
+      "time": "开仓当夜",
+      "paragraphs": [
+        "量粮的斗一遍遍刮平。十七户领到了种和三日口粮，禾安终于把那粒干瘪的种收回掌心。与此同时，公孙砚在每户木片后添上田数、成年劳力与来岁役次。",
+        "两户拒绝说明旧名，没有领粮；还有一名老人发现自己的儿子被写进了另一个同名户。仓门打开了，名字开始比人更快地移动。"
+      ],
+      "visual": {
+        "motif": "wood",
+        "caption": "同一块木片先带来粮，下一笔将带来什么，没人能只写一半。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C103B-SLEEP",
+          "label": "在成束的新木片旁睡下",
+          "detail": "你记得每一户领了多少，却梦见自己没有可写在木片上的名字。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "seasonOutcome",
+              "value": "REGISTERED_RELIEF",
+              "label": "本季结果：十七户得粮，新的役责同时成立"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-003",
+              "label": "记忆触发：空白木片"
+            }
+          ],
+          "next": "CH01-ACT02-N104"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N103C",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "没有发生过的放粮",
+      "speaker": "青缗",
+      "location": "商队停靠的河滩",
+      "time": "调粮当夜",
+      "paragraphs": [
+        "商队在夜里卸下八石粮。青缗让伙计把封泥砸碎，再把空车赶去另一条路，日后若有人查问，这批粮便算作雨水浸坏。",
+        "二十三户都分到了一点。官仓的册上，这一夜什么也没有发生；青缗的私账却记着每一斗粮落在谁手里。他笑着说利息以后再算，眼睛没有看任何人。"
+      ],
+      "visual": {
+        "motif": "field",
+        "caption": "粮到了人手里，责任却被留在一条不能公开的路上。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C103C-SLEEP",
+          "label": "枕着未结清的粮账睡下",
+          "detail": "没有官档承认这次救济；梦里却有人举着空白木片排队。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "seasonOutcome",
+              "value": "PRIVATE_DEBT",
+              "label": "本季结果：聚落得粮，商队与二十三户共同背债"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-003",
+              "label": "记忆触发：空白木片"
+            }
+          ],
+          "next": "CH01-ACT02-N104"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N104",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "空白木片",
+      "speaker": "记忆回声",
+      "location": "梦中的仓门",
+      "time": "夜",
+      "paragraphs": [
+        "仓门外站着许多看不清面孔的人。每个人都举着一块写有姓名的木片，门开一次，队伍便向前一步。",
+        "轮到你时，掌心的木片一片空白。门里的人没有赶你走，只问：没有写下来的人，凭什么证明自己也在等粮？",
+        "你醒来时，现实仓门仍在原处。梦没有给答案，只把一个问题留到了白天。"
+      ],
+      "visual": {
+        "motif": "wood",
+        "caption": "空白不是无事发生，而是没有一种书写愿意负责。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C104-PURSUE",
+          "label": "追问：没有登记的人是否就不存在",
+          "detail": "公孙砚会回答可执行的资格；这个问题也会让官署注意谁拒绝说明。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "memoryResponse",
+              "value": "PURSUE",
+              "label": "记忆回应：追索资格"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "askedUnregisteredQualification",
+              "value": true,
+              "label": "你问清：未入籍者只能由担保、体貌或共同证言暂记"
+            },
+            {
+              "type": "relationship.change",
+              "character": "GONGSUNYAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "公孙砚信任 +1：问题具体到可执行"
+            }
+          ],
+          "next": "CH01-ACT02-N105"
+        },
+        {
+          "id": "CH01-C104-COMPARE",
+          "label": "把梦与第一份流民名册对照",
+          "detail": "不解释梦的来历，先检查谁从现实记录里消失。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "memoryResponse",
+              "value": "COMPARE",
+              "label": "记忆回应：与现实记录对照"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "comparedFirstAndNewRegister",
+              "value": true,
+              "label": "你开始逐项比对雨夜名册与当前新籍"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 1,
+              "label": "季伯信任 +1"
+            }
+          ],
+          "next": "CH01-ACT02-N105"
+        },
+        {
+          "id": "CH01-C104-TELL-HEAN",
+          "label": "把梦告诉禾安",
+          "detail": "她不会替你解释，只会带你去看哪些人今天没领到粮。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "memoryResponse",
+              "value": "TELL_HEAN",
+              "label": "记忆回应：告诉禾安"
+            },
+            {
+              "type": "flag.set",
+              "key": "memoryWitness",
+              "value": "HEAN",
+              "label": "禾安知道空白木片之梦"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 2,
+              "label": "禾安信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "禾安答应与你共同查漏记者"
+            }
+          ],
+          "next": "CH01-ACT02-N105"
+        },
+        {
+          "id": "CH01-C104-SUPPRESS",
+          "label": "先不讲梦，只记下木片的形状",
+          "detail": "降低他人把你当作神异的风险；你仍需从现实痕迹中发现漏项。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "flag.set",
+              "key": "memoryResponse",
+              "value": "SUPPRESS",
+              "label": "记忆回应：压下不提"
+            },
+            {
+              "type": "testimony.learn",
+              "key": "sketchedBlankTablet",
+              "value": true,
+              "label": "你只记录了木片尺寸与握持姿势"
+            },
+            {
+              "type": "resource.change",
+              "key": "strength",
+              "amount": 1,
+              "label": "把余下精力留给白日查册"
+            }
+          ],
+          "next": "CH01-ACT02-N105"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N105",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "被划去的人",
+      "speaker": "季伯",
+      "location": "旧礼器库侧室",
+      "time": "次日午后",
+      "paragraphs": [
+        "季伯把雨夜名册、新籍和青缗的粮账并排铺开。第一册上的二十三个姓名，如今只剩十四个还能一一对应。",
+        "有人已经死亡；有人换名入籍；有人为逃债改了自称；还有两笔被同一道旧族担保印压住，像写下他们本身就是一项冒犯。",
+        "季伯问：要把删改理由写在哪里？写进官册，后来人能查，也能追；写进私册，活人安全些，却可能随保管者一起消失；交给众人互认，版本会变，但不是只有一支笔说了算。"
+      ],
+      "variants": [
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "OLD_RITE" }
+          ],
+          "paragraphs": [
+            "请恤牍称他们为应受救济之人，仓册仍写“名外”。同一官署在两份文书里同时承认并拒绝了他们。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "NEW_REGISTER" }
+          ],
+          "paragraphs": [
+            "新籍把十七户写得比从前清楚，也把拒绝说明旧名的人另列待查。完整与暴露在同一笔里增长。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "PRIVATE_GRAIN" }
+          ],
+          "paragraphs": [
+            "官仓册没有放粮记录，青缗私账却比官册多出九个称呼。救济发生了，却没有一个公开责任人。"
+          ]
+        }
+      ],
+      "visual": {
+        "motif": "archive",
+        "caption": "三册都没有全错；三册合在一起，也仍有一个人不见了。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C105-OFFICIAL-MARGIN",
+          "label": "在官册边逐项写明删改理由",
+          "detail": "后来者更容易追查；逃债者、改名者和拒绝说明者的暴露风险同时上升。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "deletedNameHandling",
+              "value": "OFFICIAL_MARGIN",
+              "label": "被划姓名：官册留旁注"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-DELETED-MARGINS",
+                "title": "名册删改旁注",
+                "text": "逐项记死亡、改名、拒绝说明、担保排除与去向不明；两名改名者的旧称仍可辨认。",
+                "source": "玩家执笔，季伯核对",
+                "confidence": "partial",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：删改有因，活人可被追索"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "trust",
+              "amount": 1,
+              "label": "季伯信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "GONGSUNYAN",
+              "field": "rift",
+              "amount": 1,
+              "label": "公孙砚裂痕 +1：旁注超出核定范围"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-006",
+              "label": "因果激活：新籍初编"
+            }
+          ],
+          "next": "CH01-ACT02-N106"
+        },
+        {
+          "id": "CH01-C105-PRIVATE-COPY",
+          "label": "另抄一份只记差异的私册",
+          "detail": "官册保持可执行，异议不被抹掉；季伯和你成为这份记录失散时的责任人。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "deletedNameHandling",
+              "value": "PRIVATE_COPY",
+              "label": "被划姓名：私册保留差异"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-DELETED-COPY",
+                "title": "雨夜名册异同抄",
+                "text": "只记三册之间的差异：何处换名、何处留白、何处被担保印遮住；不抄可直接追人的住处。",
+                "source": "季伯与玩家私藏",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "私录写入：异议存续，原名不全部公开"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "sharedDebt",
+              "amount": 2,
+              "label": "你与季伯共同承担私册保管之债"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-006",
+              "label": "因果激活：新籍初编"
+            }
+          ],
+          "next": "CH01-ACT02-N106"
+        },
+        {
+          "id": "CH01-C105-COMMON-WITNESS",
+          "label": "让各户只证明谁曾在这里",
+          "detail": "不强求旧名，把存在交给共同证言；版本会变，也会让作证者共同承担清查压力。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "deletedNameHandling",
+              "value": "COMMON_WITNESS",
+              "label": "被划姓名：由各户共同作证"
+            },
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-DELETED-NAMES",
+                "title": "雨夜来过的人",
+                "text": "各户依次说明谁曾同住、同食、同葬或同路；拒绝公开旧名者只保留与谁同行的关系。",
+                "source": "洛水聚落共同口述",
+                "confidence": "contested",
+                "sensitivity": "medium"
+              },
+              "label": "口述写入：证明来过，不强迫交出旧名"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "QINGMIN",
+              "field": "trust",
+              "amount": 1,
+              "label": "青缗信任 +1"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-006",
+              "label": "因果激活：新籍初编"
+            }
+          ],
+          "next": "CH01-ACT02-N106"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N106",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "三册之外",
+      "speaker": "禾安与季伯",
+      "location": "旧仓侧门",
+      "time": "日落前",
+      "paragraphs": [
+        "三册对完，仍有一户不在任何版本里：一名腿伤的织工、她的弟弟和一个只肯说乳名的孩子。他们住在仓墙后废弃的守夜屋，替聚落补过四个冬天的衣，却没有参加雨夜点名。",
+        "不是有人把他们划去。他们从未被任何一支笔写进去。季伯说，漏记有时比删名更难追责，因为每个人都能说自己没有见过。"
+      ],
+      "variants": [
+        {
+          "conditions": [
+            { "path": "player.flags.memoryResponse", "operator": "equals", "value": "PURSUE" }
+          ],
+          "paragraphs": [
+            "你走近侧门时又听见梦里的呼吸。现实里，门后正有人压着咳嗽，不敢让掌仓者发现。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "player.flags.memoryResponse", "operator": "notEquals", "value": "PURSUE" }
+          ],
+          "paragraphs": [
+            "是季伯从一处连续四年的针线支出里找到他们。梦没有指路，留下来的现实痕迹仍把人带到了门前。"
+          ]
+        }
+      ],
+      "visual": {
+        "motif": "warehouse",
+        "caption": "他们没有被划去；他们只是从来没有进入过可被划去的地方。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C106-FOLLOW-BREATH",
+          "label": "循着门后的呼吸找到他们",
+          "detail": "记忆只促使你回头；是谁、如何安置，仍由现实证言与下一步行动决定。",
+          "tone": "care",
+          "conditions": [
+            { "path": "player.flags.memoryResponse", "operator": "equals", "value": "PURSUE" }
+          ],
+          "effects": [
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-004",
+              "label": "可选记忆触发：仓门后的呼吸"
+            },
+            {
+              "type": "fact.set",
+              "key": "overlookedHousehold",
+              "value": true,
+              "label": "事实确认：三册之外仍有一户三人"
+            }
+          ],
+          "next": "CH01-ACT02-N107"
+        },
+        {
+          "id": "CH01-C106-FOLLOW-STITCHES",
+          "label": "沿着四年的针线支出找到他们",
+          "detail": "不依赖梦的解释；共同生活本身留下了可以互相证明的痕迹。",
+          "tone": "record",
+          "conditions": [
+            { "path": "player.flags.memoryResponse", "operator": "notEquals", "value": "PURSUE" }
+          ],
+          "effects": [
+            {
+              "type": "testimony.learn",
+              "key": "foundHouseholdByStitchLedger",
+              "value": true,
+              "label": "你用针线支出与邻户证言确认了漏记一户"
+            },
+            {
+              "type": "fact.set",
+              "key": "overlookedHousehold",
+              "value": true,
+              "label": "事实确认：三册之外仍有一户三人"
+            }
+          ],
+          "next": "CH01-ACT02-N107"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N107",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "谁替这一户作证",
+      "speaker": "公孙砚、禾安与青缗",
+      "location": "守夜屋门前",
+      "time": "日落",
+      "paragraphs": [
+        "公孙砚可以把这一户补进暂籍，但必须写下体貌、亲属和居处，日后清查会最先找到他们。禾安愿意让三人先住进自家草棚，代价是她家本就不足的口粮和一项隐匿责任。青缗提出由五户共同证明他们在此劳作，只写乳名与手艺，不交旧来处。",
+        "织工没有求你替她决定。她只说：孩子要吃粮；弟弟不能再被抓回原来的债主那里；至于她自己的真名，等活过这一季再谈。"
+      ],
+      "visual": {
+        "motif": "field",
+        "caption": "让一个人被看见，与让所有人都能找到她，不是同一件事。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C107-PROVISIONAL",
+          "label": "补入暂籍，只写可核验的现状",
+          "detail": "三人获得当季粮与合法居处；官署也得到未来可以追索他们的路径。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "overlookedHouseholdPlan",
+              "value": "PROVISIONAL",
+              "label": "漏记户安置：补入暂籍"
+            },
+            {
+              "type": "fact.set",
+              "key": "provisionalHouseholds",
+              "value": 18,
+              "label": "暂编户数更新为十八户"
+            },
+            {
+              "type": "resource.change",
+              "key": "grain",
+              "amount": 1,
+              "label": "补录后获得当季口粮"
+            },
+            {
+              "type": "record.write",
+              "channel": "official",
+              "record": {
+                "id": "REC-OFF-OVERLOOKED-HOUSE",
+                "title": "守夜屋暂籍补录",
+                "text": "织工一、弟一、幼者一；以体貌、手艺和现居核验，不记旧来处，秋后复查。",
+                "source": "公孙砚补录，玩家与邻户作证",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "官档写入：三人获得资格，也留下追索路径"
+            },
+            {
+              "type": "relationship.change",
+              "character": "GONGSUNYAN",
+              "field": "trust",
+              "amount": 2,
+              "label": "公孙砚信任 +2"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "rift",
+              "amount": 1,
+              "label": "禾安裂痕 +1：她担心复查先于收成"
+            }
+          ],
+          "next": "CH01-ACT02-N108"
+        },
+        {
+          "id": "CH01-C107-HIDE-WITH-HEAN",
+          "label": "先由禾安家收留，不交官署",
+          "detail": "三人的旧来处暂时安全；禾安一家承担口粮、清查与邻户受罚风险。",
+          "tone": "care",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "overlookedHouseholdPlan",
+              "value": "HEAN_SHELTER",
+              "label": "漏记户安置：禾安家私下收留"
+            },
+            {
+              "type": "resource.change",
+              "key": "grain",
+              "amount": -1,
+              "label": "禾安家分出一份口粮"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-OVERLOOKED-HOUSE",
+                "title": "禾安草棚里的三双鞋",
+                "text": "不记旧名与债主，只记织工腿伤、弟弟会修井绳、孩子以乳名回应；若清查，先转去河湾。",
+                "source": "禾安与玩家约定",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "私录写入：三人藏入一户本就紧张的生活"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "sharedDebt",
+              "amount": 2,
+              "label": "你与禾安共同承担藏人之债"
+            }
+          ],
+          "next": "CH01-ACT02-N108"
+        },
+        {
+          "id": "CH01-C107-FIVE-HOUSEHOLDS",
+          "label": "让五户共同证明其劳作与乳名",
+          "detail": "三人的存在不依赖一名保管者；五户同时成为担保者，也可能一起受清查。",
+          "tone": "collective",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "overlookedHouseholdPlan",
+              "value": "FIVE_HOUSEHOLDS",
+              "label": "漏记户安置：五户共同作证"
+            },
+            {
+              "type": "record.write",
+              "channel": "oral",
+              "record": {
+                "id": "REC-ORAL-OVERLOOKED-HOUSE",
+                "title": "五户共证",
+                "text": "五户分别记住一项不可互相替代的事实：腿伤、井绳结、乳名、冬衣针脚与守夜屋的位置。",
+                "source": "禾安、青缗与四户邻人",
+                "confidence": "partial",
+                "sensitivity": "medium"
+              },
+              "label": "口述写入：存在被分成五项共同证言"
+            },
+            {
+              "type": "relationship.change",
+              "character": "HEAN",
+              "field": "trust",
+              "amount": 1,
+              "label": "禾安信任 +1"
+            },
+            {
+              "type": "relationship.change",
+              "character": "QINGMIN",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "青缗与五户共同承担作证风险"
+            },
+            {
+              "type": "relationship.change",
+              "character": "GONGSUNYAN",
+              "field": "rift",
+              "amount": 1,
+              "label": "公孙砚裂痕 +1：共同证言缺少唯一责任人"
+            }
+          ],
+          "next": "CH01-ACT02-N108"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N108",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "季伯的一笔",
+      "speaker": "季伯",
+      "location": "旧礼器库灯下",
+      "time": "深夜",
+      "paragraphs": [
+        "回到旧库，季伯没有收起三册。他指着两处被旧族担保印遮住的名字，说那种划法自己年轻时也用过。",
+        "当年上官命他把逃散者写作“从未到籍”，免得仓粮继续发给找不到的人。他照做了。后来有人活着回来，却因册上从未存在，既领不到旧田，也无法证明亲属死在哪里。",
+        "“我总说要把名字写下。”季伯看着自己的手，“因为我知道，不写和删掉，有时出自同一支笔。”"
+      ],
+      "variants": [
+        {
+          "conditions": [
+            { "path": "facts.deletedNameHandling", "operator": "equals", "value": "OFFICIAL_MARGIN" }
+          ],
+          "paragraphs": [
+            "他没有阻止你把理由写进官册，只要求在两名改名者旧称旁再添一道遮痕。你们第一次公开承认删改，也第一次共同决定什么仍不能公开。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.deletedNameHandling", "operator": "equals", "value": "PRIVATE_COPY" }
+          ],
+          "paragraphs": [
+            "他另取一束旧简，开始抄不交官署的副本。每抄一笔，便在边上写下由谁核过；私藏不再被说成没有代价的善举。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.deletedNameHandling", "operator": "equals", "value": "COMMON_WITNESS" }
+          ],
+          "paragraphs": [
+            "他听完各户证言，没有把不同称呼强并成一个名字，只在空处刻了一道短痕：这里不是无人，而是无人有权替他决定唯一称呼。"
+          ]
+        }
+      ],
+      "visual": {
+        "motif": "archive",
+        "caption": "记录者承认自己也曾制造空白，档案才第一次拥有责任人。"
+      },
+      "choices": [
+        {
+          "id": "CH01-C108-WATCH-COPY",
+          "label": "留下来，看他抄完第一行副本",
+          "detail": "你不能替过去的人补回全部名字，但可以让这一笔带着执笔者的责任继续。",
+          "tone": "record",
+          "effects": [
+            {
+              "type": "testimony.learn",
+              "key": "jiboDeletedNames",
+              "value": true,
+              "label": "季伯承认曾奉命把逃散者写成从未到籍"
+            },
+            {
+              "type": "record.write",
+              "channel": "private",
+              "record": {
+                "id": "REC-PRI-JIBO-ADMISSION",
+                "title": "季伯自记",
+                "text": "昔奉令，以逃散者为未尝到籍。今知删名与不记皆能绝人归路；此后每一留白，须记由谁决定。",
+                "source": "季伯口述，玩家见证",
+                "confidence": "confirmed",
+                "sensitivity": "high"
+              },
+              "label": "私录写入：记录者为自己的旧笔负责"
+            },
+            {
+              "type": "relationship.change",
+              "character": "JIBO",
+              "field": "sharedDebt",
+              "amount": 1,
+              "label": "季伯把副本保管责任交给你一半"
+            },
+            {
+              "type": "cause.activate",
+              "causeId": "SW-CH01-006",
+              "label": "因果确认：新籍初编"
+            }
+          ],
+          "next": "CH01-ACT02-N109"
+        }
+      ]
+    },
+    {
+      "id": "CH01-ACT02-N109",
+      "sceneId": "CH01-ACT02-SC001",
+      "act": "ACT02",
+      "title": "旧礼无声",
+      "speaker": "韩宁",
+      "location": "洛水旧渡",
+      "time": "秋初",
+      "paragraphs": [
+        "新名册终于写成。它不再只是证明谁在雨夜来过：它能开仓、分田、计役、追债，也能让一户在不同版本之间消失。",
+        "季伯把副本包好时，韩宁从渡口归来。她带回另一枚旧简，上面有与半名残简相同的笔势，却把同一户拆成了三个姓名。",
+        "“我父亲留下的不是藏宝图。”她把旧简放在三册旁，“他留下的是一群被人改过名字的人。可我还不知道，他改名是为救他们，还是为了让另一册更好用。”"
+      ],
+      "variants": [
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "OLD_RITE" }
+          ],
+          "paragraphs": [
+            "旧礼请恤牍最终换来一部分补粮，十一户却已误了播种。它留下了一项可公开追责的拒绝，也留下无法用文书追回的农时。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "NEW_REGISTER" }
+          ],
+          "paragraphs": [
+            "十七户靠新籍熬过荒年；来岁的田、役和清查也已有明确去处。获救者与未来承担者写在同一束木片上。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.grainSolution", "operator": "equals", "value": "PRIVATE_GRAIN" }
+          ],
+          "paragraphs": [
+            "二十三户没有错过播种，青缗的商队却失去一处关卡信用。官档仍说本季未曾放粮，私账开始替这段活命事实承担风险。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.overlookedHouseholdPlan", "operator": "equals", "value": "PROVISIONAL" }
+          ],
+          "paragraphs": [
+            "守夜屋三人以现状入籍，孩子第一次领到写着乳名的木片；织工把木片藏进衣领，既像凭据，也像一条将来会找到她的路。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.overlookedHouseholdPlan", "operator": "equals", "value": "HEAN_SHELTER" }
+          ],
+          "paragraphs": [
+            "禾安家的草棚多了三双鞋，粮缸少得更快。官署没有获得他们的名字，风险没有消失，只被一户具体的人接了过去。"
+          ]
+        },
+        {
+          "conditions": [
+            { "path": "facts.overlookedHouseholdPlan", "operator": "equals", "value": "FIVE_HOUSEHOLDS" }
+          ],
+          "paragraphs": [
+            "五户把一家的存在拆成五项证言。没人掌握全部真相，也没有任何一户可以在清查时假装自己从未见过。"
+          ]
+        }
+      ],
+      "visual": {
+        "motif": "bell",
+        "caption": "旧礼没有回答，新籍也没有结束问题；下一幕将追问谁有权改写一个人的来处。"
+      },
+      "choices": [],
+      "ending": true
+    }
+  ]
+}

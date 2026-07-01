@@ -41,7 +41,18 @@
             "type": "object",
             "required": ["motif", "caption"],
             "properties": {
-              "motif": { "enum": ["river", "slip", "bell", "song", "archive"] },
+              "motif": {
+                "enum": [
+                  "river",
+                  "slip",
+                  "bell",
+                  "song",
+                  "archive",
+                  "warehouse",
+                  "field",
+                  "wood"
+                ]
+              },
               "caption": { "type": "string" }
             }
           },

@@ -10,6 +10,7 @@ export interface StoryEffect {
   type:
     | "fact.set"
     | "flag.set"
+    | "resource.set"
     | "resource.change"
     | "relationship.change"
     | "record.write"
@@ -57,7 +58,15 @@ export interface StoryNode {
   paragraphs: string[];
   variants?: TextVariant[];
   visual: {
-    motif: "river" | "slip" | "bell" | "song" | "archive";
+    motif:
+      | "river"
+      | "slip"
+      | "bell"
+      | "song"
+      | "archive"
+      | "warehouse"
+      | "field"
+      | "wood";
     caption: string;
   };
   choices: StoryChoice[];
@@ -125,6 +134,24 @@ export interface RecordFile {
   channels: RecordChannelDefinition[];
 }
 
+export interface MemoryDefinition {
+  id: string;
+  title: string;
+  act: string;
+  type: "dream" | "emotion" | "resonance" | "misrecognition" | "prompt";
+  revealLevel: "M0" | "M1" | "M2" | "M3" | "M4";
+  mandatory: boolean;
+  perceivedContent: string;
+  realityEffect: string;
+  linkedCauses: string[];
+  repeatLine: string;
+}
+
+export interface MemoryFile {
+  schemaVersion: string;
+  memories: MemoryDefinition[];
+}
+
 export interface ChapterManifest {
   schemaVersion: string;
   contentVersion: string;
@@ -138,14 +165,16 @@ export interface ChapterManifest {
   characterFile: string;
   causeFile: string;
   recordFile: string;
+  memoryFile: string;
 }
 
 export interface ContentBundle {
   manifest: ChapterManifest;
-  scene: SceneFile;
+  scenes: SceneFile[];
   characters: CharacterDefinition[];
   causes: CauseDefinition[];
   recordChannels: RecordChannelDefinition[];
+  memories: MemoryDefinition[];
 }
 
 export interface RelationshipState {

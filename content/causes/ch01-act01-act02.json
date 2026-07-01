@@ -28,6 +28,20 @@
       "description": "决定谁暂时有名、谁保持沉默、谁因此暴露。",
       "firstAct": "ACT01",
       "futureReturn": "ACT02 与新籍比对；ACT07 成为无名录底本。"
+    },
+    {
+      "id": "SW-CH01-005",
+      "name": "旧仓之粮",
+      "description": "旧礼、重新编户或私人借粮分别把活命代价交给不同的人。",
+      "firstAct": "ACT02",
+      "futureReturn": "ACT04 以粮与身份交换的后果回收；ACT08 结算家庭命运。"
+    },
+    {
+      "id": "SW-CH01-006",
+      "name": "新籍初编",
+      "description": "救济名册开始变成能够授粮、征役、追责的治理名册。",
+      "firstAct": "ACT02",
+      "futureReturn": "ACT04 新法木牌直接读取；秦汉编户现实再次回收。"
     }
   ]
 }

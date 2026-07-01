@@ -51,6 +51,9 @@ export function createInitialState(bundle: ContentBundle): StoryState {
     bundle.characters.map((character) => [character.id, clone(character.initialRelationship)])
   );
   const causes = Object.fromEntries(bundle.causes.map((cause) => [cause.id, "dormant" as const]));
+  const memories = Object.fromEntries(
+    bundle.memories.map((memory) => [memory.id, "locked" as const])
+  );
 
   return {
     currentNode: "",
@@ -76,9 +79,7 @@ export function createInitialState(bundle: ContentBundle): StoryState {
       oral: { integrity: 0, exposure: 0, entries: [] }
     },
     causes,
-    memories: {
-      "MEM-CH01-BELL-01": "locked"
-    },
+    memories,
     visitedNodes: [],
     selectedChoices: []
   };
@@ -91,7 +92,28 @@ function upsertRecord(entries: RecordEntry[], record: RecordEntry): RecordEntry[
 }
 
 export function reduceEvent(state: StoryState, event: StoryEvent): StoryState {
-  const next = clone(state);
+  const next: StoryState = {
+    ...state,
+    world: { ...state.world },
+    player: {
+      resources: { ...state.player.resources },
+      flags: { ...state.player.flags }
+    },
+    relations: Object.fromEntries(
+      Object.entries(state.relations).map(([id, relation]) => [id, { ...relation }])
+    ),
+    facts: { ...state.facts },
+    knowledge: { ...state.knowledge },
+    records: {
+      official: { ...state.records.official, entries: [...state.records.official.entries] },
+      private: { ...state.records.private, entries: [...state.records.private.entries] },
+      oral: { ...state.records.oral, entries: [...state.records.oral.entries] }
+    },
+    causes: { ...state.causes },
+    memories: { ...state.memories },
+    visitedNodes: [...state.visitedNodes],
+    selectedChoices: [...state.selectedChoices]
+  };
   const payload = event.payload;
 
   switch (event.type) {
@@ -116,6 +138,11 @@ export function reduceEvent(state: StoryState, event: StoryEvent): StoryState {
     case "testimony.learn":
       setAtPath(next.knowledge, String(payload.key), payload.value as Primitive);
       break;
+    case "resource.set": {
+      const key = String(payload.key);
+      next.player.resources[key] = Number(payload.value);
+      break;
+    }
     case "resource.change": {
       const key = String(payload.key);
       next.player.resources[key] = (next.player.resources[key] ?? 0) + Number(payload.amount);
@@ -132,11 +159,11 @@ export function reduceEvent(state: StoryState, event: StoryEvent): StoryState {
       const channel = String(payload.channel) as RecordChannel;
       const record = payload.record as unknown as RecordEntry;
       next.records[channel].entries = upsertRecord(next.records[channel].entries, record);
-      next.records[channel].integrity = Math.min(5, next.records[channel].integrity + 1);
+      next.records[channel].integrity = Math.min(10, next.records[channel].integrity + 1);
       if (record.sensitivity === "high") {
-        next.records[channel].exposure = Math.min(5, next.records[channel].exposure + 2);
+        next.records[channel].exposure = Math.min(10, next.records[channel].exposure + 2);
       } else if (record.sensitivity === "medium") {
-        next.records[channel].exposure = Math.min(5, next.records[channel].exposure + 1);
+        next.records[channel].exposure = Math.min(10, next.records[channel].exposure + 1);
       }
       break;
     }
@@ -186,7 +213,9 @@ export class StoryEngine {
 
   constructor(private readonly bundle: ContentBundle) {
     this.state = createInitialState(bundle);
-    this.enterNode(bundle.scene.startNode, "样片开始");
+    const startNode = bundle.scenes[0]?.startNode;
+    if (!startNode) throw new Error("内容包没有可进入的起点");
+    this.enterNode(startNode, "核心原型开始");
   }
 
   getBundle(): ContentBundle {
@@ -201,15 +230,33 @@ export class StoryEngine {
     return clone(this.events);
   }
 
+  fork(): StoryEngine {
+    const branch = new StoryEngine(this.bundle);
+    branch.state = clone(this.state);
+    branch.events = clone(this.events);
+    branch.sequence = this.sequence;
+    return branch;
+  }
+
   getCurrentNode(): StoryNode {
-    const node = this.bundle.scene.nodes.find((candidate) => candidate.id === this.state.currentNode);
+    const node = this.findNode(this.state.currentNode);
     if (!node) throw new Error(`找不到当前节点：${this.state.currentNode}`);
     return node;
   }
 
+  getCurrentScene() {
+    const node = this.getCurrentNode();
+    const scene = this.bundle.scenes.find((candidate) => candidate.id === node.sceneId);
+    if (!scene) throw new Error(`找不到节点 ${node.id} 所属场景 ${node.sceneId}`);
+    return scene;
+  }
+
   getVisibleParagraphs(node = this.getCurrentNode()): string[] {
-    const matching = node.variants?.find((variant) => matchesAll(this.state, variant.conditions));
-    return matching ? [...node.paragraphs, ...matching.paragraphs] : node.paragraphs;
+    const matching = node.variants?.filter((variant) => matchesAll(this.state, variant.conditions)) ?? [];
+    return [
+      ...node.paragraphs,
+      ...matching.flatMap((variant) => variant.paragraphs)
+    ];
   }
 
   getAvailableChoices(node = this.getCurrentNode()): StoryChoice[] {
@@ -247,7 +294,9 @@ export class StoryEngine {
   }
 
   private findNode(nodeId: string): StoryNode {
-    const node = this.bundle.scene.nodes.find((candidate) => candidate.id === nodeId);
+    const node = this.bundle.scenes
+      .flatMap((scene) => scene.nodes)
+      .find((candidate) => candidate.id === nodeId);
     if (!node) throw new Error(`内容引用了不存在的节点：${nodeId}`);
     return node;
   }

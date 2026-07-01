@@ -27,7 +27,13 @@
           "label": "走近泥里的车辙",
           "detail": "先看看这一世把你放在了谁的身边。",
           "tone": "caution",
-          "effects": [],
+          "effects": [
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-001",
+              "label": "记忆触发：裂钟落水"
+            }
+          ],
           "next": "CH01-ACT01-N002"
         }
       ]
@@ -78,6 +84,11 @@
               "type": "cause.activate",
               "causeId": "SW-CH01-002",
               "label": "因果激活：半名残简"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-002",
+              "label": "记忆触发：湿简与无脸之手"
             }
           ],
           "next": "CH01-ACT01-N003"
@@ -112,6 +123,11 @@
               "field": "trust",
               "amount": 1,
               "label": "禾安记住了你伸出的手"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-002",
+              "label": "记忆兜底：季伯递来湿简时，那双手再次重合"
             }
           ],
           "next": "CH01-ACT01-N003"
@@ -140,6 +156,11 @@
               "field": "trust",
               "amount": 1,
               "label": "季伯认可你先问当事人"
+            },
+            {
+              "type": "memory.trigger",
+              "memoryId": "MEM-CH01-002",
+              "label": "记忆兜底：点名后接过湿简，那双手再次重合"
             }
           ],
           "next": "CH01-ACT01-N003"
@@ -543,7 +564,7 @@
             },
             {
               "type": "memory.trigger",
-              "memoryId": "MEM-CH01-BELL-01",
+              "memoryId": "MEM-CH01-001",
               "label": "记忆触发：水从钟缝流出"
             },
             {
@@ -581,7 +602,7 @@
             },
             {
               "type": "memory.trigger",
-              "memoryId": "MEM-CH01-BELL-01",
+              "memoryId": "MEM-CH01-001",
               "label": "记忆触发：水从钟缝流出"
             },
             {
@@ -619,7 +640,7 @@
             },
             {
               "type": "memory.trigger",
-              "memoryId": "MEM-CH01-BELL-01",
+              "memoryId": "MEM-CH01-001",
               "label": "记忆触发：水从钟缝流出"
             },
             {
@@ -1003,8 +1024,41 @@
         "motif": "archive",
         "caption": "无名录尚未出现，它的第一页已经种下。"
       },
-      "choices": [],
-      "ending": true
+      "choices": [
+        {
+          "id": "CH01-C008-TURN-PAGE",
+          "label": "翻到四年后的下一页",
+          "detail": "雨夜留下的人已经在洛水边生活数年；旧名册将第一次与粮、田和役责相撞。",
+          "tone": "caution",
+          "effects": [
+            {
+              "type": "fact.set",
+              "key": "yearsSinceRain",
+              "value": 4,
+              "label": "时间推进：洛水雨夜之后四年"
+            },
+            {
+              "type": "resource.set",
+              "key": "daylight",
+              "value": 5,
+              "label": "农时重置为 5"
+            },
+            {
+              "type": "resource.set",
+              "key": "grain",
+              "value": 2,
+              "label": "聚落余粮重置为 2"
+            },
+            {
+              "type": "resource.set",
+              "key": "strength",
+              "value": 4,
+              "label": "体力重置为 4"
+            }
+          ],
+          "next": "CH01-ACT02-N101"
+        }
+      ]
     }
   ]
 }

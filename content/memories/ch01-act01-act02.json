@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "memories": [
+    {
+      "id": "MEM-CH01-001",
+      "title": "裂钟落水",
+      "act": "ACT01",
+      "type": "dream",
+      "revealLevel": "M0",
+      "mandatory": true,
+      "perceivedContent": "黑暗里先有钟响，冷水从看不见的裂缝涌出；你摸到的不是水，是冰凉铜锈。",
+      "realityEffect": "使你主动注意现实裂钟，但不能判断它来自何时。",
+      "linkedCauses": ["SW-CH01-001"],
+      "repeatLine": "你又听见裂纹里的水声。"
+    },
+    {
+      "id": "MEM-CH01-002",
+      "title": "湿简与无脸之手",
+      "act": "ACT01",
+      "type": "resonance",
+      "revealLevel": "M0",
+      "mandatory": true,
+      "perceivedContent": "竹简上的水渗进指缝，另一双更粗、更冷的手仿佛与你握在同一处。",
+      "realityEffect": "使你注意残简上的敏感身份信息，以及公开它会伤到谁。",
+      "linkedCauses": ["SW-CH01-002", "SW-CH01-004"],
+      "repeatLine": "那双无脸之人的手仍托着湿简。"
+    },
+    {
+      "id": "MEM-CH01-003",
+      "title": "空白木片",
+      "act": "ACT02",
+      "type": "dream",
+      "revealLevel": "M1",
+      "mandatory": true,
+      "perceivedContent": "仓门外的无脸人依次举起姓名木片；轮到你时，手里的木片一片空白。",
+      "realityEffect": "解锁对未入籍者资格、漏记者和名册用途的追问。",
+      "linkedCauses": ["SW-CH01-005", "SW-CH01-006"],
+      "repeatLine": "那块空白木片再次从人群中举起。"
+    },
+    {
+      "id": "MEM-CH01-004",
+      "title": "仓门后的呼吸",
+      "act": "ACT02",
+      "type": "emotion",
+      "revealLevel": "M1",
+      "mandatory": false,
+      "perceivedContent": "仓门合拢时，门后仍有一口急促呼吸；你回头，门边却没有人。",
+      "realityEffect": "促使你检查未获粮者，并发现一户被三种名册同时漏去。",
+      "linkedCauses": ["SW-CH01-004", "SW-CH01-005"],
+      "repeatLine": "木门后仍有人呼吸。"
+    }
+  ]
+}

@@ -38,10 +38,32 @@ export function validateSave(bundle: ContentBundle, save: SaveFile): string[] {
   const errors: string[] = [];
   if (save.saveVersion !== SAVE_VERSION) errors.push(`不支持的存档版本 ${save.saveVersion}`);
   if (save.chapterId !== bundle.manifest.id) errors.push("存档章节与当前内容不一致");
+  if (save.runtimeVersion !== bundle.manifest.runtimeVersion) {
+    errors.push(
+      `运行时版本不一致：存档 ${save.runtimeVersion} / 当前 ${bundle.manifest.runtimeVersion}`
+    );
+  }
   if (save.contentVersion !== bundle.manifest.contentVersion) {
     errors.push(`内容版本不一致：存档 ${save.contentVersion} / 当前 ${bundle.manifest.contentVersion}`);
   }
-  const replayed = replayEvents(bundle, save.eventLog);
+  if (save.eventLog.length === 0) errors.push("存档没有事件日志");
+  const invalidSequence = save.eventLog.find((event, index) => event.id !== index + 1);
+  if (invalidSequence) errors.push(`事件序号在 ${invalidSequence.id} 处不连续`);
+  const firstEvent = save.eventLog[0];
+  if (
+    firstEvent &&
+    (firstEvent.type !== "scene.enter" ||
+      firstEvent.nodeId !== bundle.scenes[0]?.startNode)
+  ) {
+    errors.push("存档没有从当前章节起点开始");
+  }
+  let replayed: StoryState;
+  try {
+    replayed = replayEvents(bundle, save.eventLog);
+  } catch (error) {
+    errors.push(`事件日志无法回放：${error instanceof Error ? error.message : String(error)}`);
+    return errors;
+  }
   if (stableState(replayed) !== stableState(save.stateSnapshot)) {
     errors.push("事件回放结果与存档快照不一致");
   }

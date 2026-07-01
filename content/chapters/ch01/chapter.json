@@ -1,14 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "contentVersion": "0.1.0",
-  "runtimeVersion": "0.1.0",
+  "contentVersion": "0.2.0",
+  "runtimeVersion": "0.2.0",
   "id": "CH01",
   "title": "礼崩之世",
-  "subtitle": "第一章 · 裂钟之梦",
-  "sampleTitle": "雨后流民",
-  "description": "在暮色前救人、留名，或让流民彼此辨认。你无法保住一切，只能决定谁先承担代价。",
-  "sceneFiles": ["/chapters/ch01/scenes/act01-rain.json"],
-  "characterFile": "/characters/ch01-act01.json",
-  "causeFile": "/causes/ch01-act01.json",
-  "recordFile": "/records/ch01-act01.json"
+  "subtitle": "第一章 · 裂钟之梦 / 旧礼无声",
+  "sampleTitle": "ACT01—ACT02 网页核心原型",
+  "description": "从雨后流民到旧仓新籍：救人、留名与获得粮食都要求有人承担无法抹去的代价。",
+  "sceneFiles": [
+    "/chapters/ch01/scenes/act01-rain.json",
+    "/chapters/ch01/scenes/act02-granary.json"
+  ],
+  "characterFile": "/characters/ch01-act01-act02.json",
+  "causeFile": "/causes/ch01-act01-act02.json",
+  "recordFile": "/records/ch01-channels.json",
+  "memoryFile": "/memories/ch01-act01-act02.json"
 }

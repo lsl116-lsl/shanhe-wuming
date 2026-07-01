@@ -4,7 +4,7 @@
     {
       "id": "JIBO",
       "name": "季伯",
-      "role": "收留流民的旧吏",
+      "role": "收留流民的旧书吏",
       "voice": "短句，先问名字再问立场。",
       "desire": "留下一份后来人仍能查见的名册。",
       "fear": "自己再次奉命删去活人的名字。",
@@ -14,10 +14,10 @@
     {
       "id": "HEAN",
       "name": "禾安",
-      "role": "流民中的农人",
+      "role": "洛水边共同成长的农人",
       "voice": "只谈井水、热饭、劳力和下一季。",
-      "desire": "让还活着的人先熬过今夜。",
-      "fear": "自己只能在别人的记述里活一次。",
+      "desire": "让家人、种子和来年一起留下。",
+      "fear": "所有人都谈天下，最后却没人回来种田。",
       "color": "#73805c",
       "initialRelationship": { "trust": 0, "sharedDebt": 0, "rift": 0 }
     },
@@ -26,7 +26,7 @@
       "name": "韩宁",
       "role": "寻找亡父暗册的少女",
       "voice": "记日期和原话，不接受别人替父亲辩护。",
-      "desire": "确认半名残简是否出自父亲之手。",
+      "desire": "确认父亲为什么拆散百姓名册。",
       "fear": "父亲既是受害者，也曾伤害别人。",
       "color": "#66758a",
       "initialRelationship": { "trust": 0, "sharedDebt": 0, "rift": 0 }
@@ -39,6 +39,26 @@
       "desire": "把失去纸面身份的人送入口耳记忆。",
       "fear": "曲子活下来，人名却被改成颂辞。",
       "color": "#a64b3c",
+      "initialRelationship": { "trust": 0, "sharedDebt": 0, "rift": 0 }
+    },
+    {
+      "id": "QINGMIN",
+      "name": "青缗",
+      "role": "往来洛水的商队掌计者",
+      "voice": "先算车、路和日程，用玩笑遮住风险。",
+      "desire": "让商队和依靠道路生活的人都能回来。",
+      "fear": "自己算得越准，战争和征发就被供养得越久。",
+      "color": "#8b6f47",
+      "initialRelationship": { "trust": 0, "sharedDebt": 0, "rift": 0 }
+    },
+    {
+      "id": "GONGSUNYAN",
+      "name": "公孙砚",
+      "role": "新署文书的年轻法吏",
+      "voice": "精确到户、日和数量，不接受含糊承诺。",
+      "desire": "证明新籍至少能让旧礼救不到的人领到粮。",
+      "fear": "依法完成的一笔再次把无辜者送进绝路。",
+      "color": "#7b6656",
       "initialRelationship": { "trust": 0, "sharedDebt": 0, "rift": 0 }
     }
   ]
