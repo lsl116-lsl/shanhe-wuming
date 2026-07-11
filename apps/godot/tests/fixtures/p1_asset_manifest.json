@@ -1,0 +1,9 @@
+{
+  "manifest_version": "p1-test.1",
+  "runtime_assets": {
+    "actor.p1_test": "res://scenes/characters/P1TestActor.tscn",
+    "interaction.default": "res://scenes/core/InteractableArea2D.tscn",
+    "scene.p1_destination": "res://tests/scenes/P1Destination.tscn",
+    "audio.ui_confirm": "res://assets/audio/sfx/ui_confirm.wav"
+  }
+}

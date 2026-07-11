@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="320" viewBox="0 0 256 320">
+<defs>
+<linearGradient id="linen" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#cfc4ad"/>
+  <stop offset=".45" stop-color="#8e846f"/>
+  <stop offset="1" stop-color="#514b40"/>
+</linearGradient>
+<linearGradient id="warm_skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d7b58d"/>
+  <stop offset="1" stop-color="#a87858"/>
+</linearGradient>
+<linearGradient id="old_wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9a7a52"/>
+  <stop offset=".55" stop-color="#6d5138"/>
+  <stop offset="1" stop-color="#3d3028"/>
+</linearGradient>
+<linearGradient id="dawn_water" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8da6a5"/>
+  <stop offset=".45" stop-color="#617f82"/>
+  <stop offset="1" stop-color="#334f56"/>
+</linearGradient>
+<pattern id="cloth_threads" width="10" height="10" patternUnits="userSpaceOnUse">
+  <path d="M0 2 H10 M2 0 V10" stroke="#f2ead7" stroke-opacity=".10" stroke-width=".7"/>
+</pattern>
+<pattern id="wood_grain" width="34" height="12" patternUnits="userSpaceOnUse">
+  <path d="M1 7 C9 1 18 12 33 5 M3 11 C13 6 20 16 31 10"
+        fill="none" stroke="#d3b079" stroke-opacity=".20" stroke-width="1.4"/>
+</pattern>
+<pattern id="rice_specks" width="18" height="18" patternUnits="userSpaceOnUse">
+  <circle cx="5" cy="5" r="1.3" fill="#ead89c" fill-opacity=".75"/>
+  <circle cx="13" cy="11" r="1.1" fill="#c9b46e" fill-opacity=".55"/>
+</pattern>
+</defs>
+
+<g id="shadow">
+  <ellipse cx="128" cy="294" rx="58" ry="13" fill="#142328" fill-opacity=".34"/>
+  <ellipse cx="128" cy="291" rx="37" ry="6" fill="#2b3d40" fill-opacity=".25"/>
+</g>
+
+<g id="legs" stroke="#29241f" stroke-width="3" stroke-linejoin="round">
+  <path d="M98 220 L124 220 L119 285 Q109 297 94 287 Z" fill="#535952"/>
+  <path d="M128 220 L154 220 L164 286 Q148 297 137 285 Z" fill="#4b534d"/>
+  <path d="M90 284 q17 -8 35 1 l-1 11 h-35 Z" fill="#342f29"/>
+  <path d="M135 285 q18 -8 34 1 l2 10 h-36 Z" fill="#342f29"/>
+</g>
+<g id="torso" stroke="#29241f" stroke-width="3" stroke-linejoin="round">
+  <path d="M94 147 q34 -20 70 0 l8 79 q-40 24 -84 1 Z" fill="#596b68"/>
+  <path d="M99 149 q29 19 61 0" fill="none" stroke="#9aa696" stroke-width="5"/>
+  <path d="M111 151 L150 226" fill="none" stroke="#e9dfc8" stroke-opacity=".25" stroke-width="2"/>
+  <path d="M88 203 q40 18 83 0" fill="none" stroke="#6f4f35" stroke-width="7"/>
+  <path d="M95 147 h68 l8 79 q-40 24 -84 1 Z" fill="url(#cloth_threads)" stroke="none"/>
+</g>
+<g id="back_arm" stroke="#29241f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M96 158 q-23 26 -15 63 q13 16 27 -1 l8 -44 Z" fill="#667571"/>
+  <path d="M83 218 q5 17 20 15 q15 -9 3 -23 Z" fill="url(#warm_skin)"/>
+</g>
+<g id="tablet_strap" stroke="#544331" stroke-width="4" stroke-linecap="round">
+  <path d="M97 158 q35 38 72 68"/>
+</g>
+
+<g id="head">
+  <path d="M99 91 q-1 -34 29 -43 q36 3 35 45 l-7 33 q-12 18 -31 17
+           q-20 -3 -26 -20 Z" fill="url(#warm_skin)" stroke="#29241f" stroke-width="3"/>
+  <path d="M99 91 q-9 -26 11 -43 q26 -25 53 6 q16 20 -3 48
+           q-14 -24 -34 -28 q-15 17 -27 17 Z" fill="#29241f"/>
+  <path d="M111 55 q21 -22 48 -4" fill="none" stroke="#42382f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M112 101 q7 3 15 -1 M139 101 q7 3 14 -1" fill="none" stroke="#29241f" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M124 119 q10 2 22 0" fill="none" stroke="#70463c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M116 137 q13 9 27 0" fill="none" stroke="#d5b78c" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M122 140 L126 151 L145 143 L146 130" fill="#bf9871" stroke="#29241f" stroke-width="3"/>
+  <path d="M160 66 q18 3 18 16 q-6 14 -20 10" fill="#2f2925" stroke="#29241f" stroke-width="3"/>
+  <path d="M162 70 q15 -10 25 -1" fill="none" stroke="#8c8172" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<g id="held_prop" stroke="#29241f" stroke-linejoin="round">
+  <g transform="rotate(-7 176 195)">
+    <rect x="151" y="147" width="50" height="96" rx="4" fill="#74563a" stroke-width="3"/>
+    <rect x="159" y="156" width="34" height="80" rx="2" fill="#a27d50" stroke="#4a3828" stroke-width="1.5"/>
+    <path d="M165 171 L186 168 M164 185 L187 182 M163 199 L184 196 M162 214 L182 211"
+          stroke="#4a3828" stroke-width="2" stroke-linecap="round"/>
+    <path d="M167 231 q12 6 24 0" fill="none" stroke="#d8c191" stroke-opacity=".45" stroke-width="2"/>
+  </g>
+</g>
+<g id="front_arm" stroke="#29241f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M154 160 q21 20 13 49 l-14 8 q-15 -12 -11 -39 Z" fill="#5f706c"/>
+  <path d="M155 207 q14 -4 21 10 q-4 16 -18 12 q-11 -9 -3 -22 Z" fill="url(#warm_skin)"/>
+  <path d="M160 218 q8 5 17 -2" fill="none" stroke="#47746f" stroke-width="3"/>
+</g>
+<g id="ink_marks" fill="#223235" fill-opacity=".75">
+  <circle cx="162" cy="217" r="2.3"/><circle cx="170" cy="219" r="1.5"/>
+</g>
+
+</svg>

@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/prologue/old_ferry_test.gd" id="1_scene"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_far.svg" id="2_far"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_mid.svg" id="3_mid"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_near.svg" id="4_near"]
+[ext_resource type="Texture2D" path="res://assets/fx/p0/fog_front.svg" id="5_fog"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Player.tscn" id="6_player"]
+[ext_resource type="AudioStream" path="res://assets/audio/ambience/river_morning.wav" id="7_ambience"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/music_old_ferry_morning.wav" id="8_music"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/system_chinese_fallback.tres" id="9_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_subtitle"]
+bg_color = Color(0.065, 0.075, 0.078, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.439, 0.357, 0.251, 0.8)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SC01_OldFerry_Test" type="Node2D"]
+script = ExtResource("1_scene")
+
+[node name="Far" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+texture = ExtResource("2_far")
+z_index = -30
+
+[node name="Mid" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+texture = ExtResource("3_mid")
+z_index = -20
+
+[node name="Near" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+texture = ExtResource("4_near")
+z_index = -10
+
+[node name="Player" parent="." instance=ExtResource("6_player")]
+unique_name_in_owner = true
+position = Vector2(480, 555)
+z_index = 2
+
+[node name="FogFront" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+texture = ExtResource("5_fog")
+z_index = 10
+modulate = Color(1, 1, 1, 0.42)
+
+[node name="RiverMorning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ambience")
+volume_db = -4.0
+bus = &"Ambience"
+
+[node name="OldFerryMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_music")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LocationLabel" type="Label" parent="UI"]
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 430.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.91, 0.878, 0.824, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.06, 0.065, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 24
+text = "洛水旧渡 · P0 管线测试"
+
+[node name="ControlHint" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 32.0
+offset_right = -36.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.85, 0.82, 0.75, 0.92)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 17
+text = "A/D/W/S 移动 · E 调查 · Esc 返回"
+horizontal_alignment = 2
+
+[node name="InteractionPrompt" type="Label" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -185.0
+offset_right = 155.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.96, 0.86, 0.57, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 21
+text = "按 E 查看木桩"
+horizontal_alignment = 1
+
+[node name="SubtitlePanel" type="PanelContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -120.0
+offset_right = 500.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBox_subtitle")
+
+[node name="Margin" type="MarginContainer" parent="UI/SubtitlePanel"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 15
+
+[node name="SubtitleLabel" type="Label" parent="UI/SubtitlePanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.878, 0.824, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 22
+text = "洛水旧渡。河雾尚未散去。"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

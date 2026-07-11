@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
+<defs></defs>
+
+<ellipse cx="262" cy="209" rx="223" ry="31" fill="#5e7679" fill-opacity=".28"/>
+<g fill="#9b764c" stroke="#342921" stroke-width="4">
+  <rect x="68" y="86" width="76" height="146" rx="3" transform="rotate(-18 106 159)"/>
+  <rect x="170" y="64" width="76" height="156" rx="3" transform="rotate(7 208 142)"/>
+  <rect x="284" y="76" width="80" height="144" rx="3" transform="rotate(-6 324 148)"/>
+  <rect x="394" y="92" width="58" height="118" rx="3" transform="rotate(17 423 151)"/>
+</g>
+<g stroke="#1f1a16" stroke-opacity=".58" stroke-width="4">
+  <path d="M85 121 h42 M82 148 h45 M80 176 h43"/>
+  <path d="M191 102 h39 M192 130 h41 M191 157 h36"/>
+  <path d="M303 116 h45 M302 143 h41"/>
+</g>
+<g fill="#1f2222" fill-opacity=".32">
+  <ellipse cx="249" cy="154" rx="74" ry="20"/>
+  <ellipse cx="372" cy="181" rx="92" ry="23"/>
+</g>
+
+</svg>

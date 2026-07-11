@@ -1,0 +1,9 @@
+[gd_resource type="SystemFont" format=3]
+
+[resource]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "SimSun", "sans-serif")
+font_weight = 400
+font_stretch = 100
+antialiasing = 1
+generate_mipmaps = false
+multichannel_signed_distance_field = true

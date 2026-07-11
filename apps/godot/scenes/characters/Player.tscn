@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller_2d.gd" id="1_player"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/p6a/player_shadow.svg" id="2_shadow"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/p6a/player_body.svg" id="3_body"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/p6a/player_head.svg" id="4_head"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/p6a/player_front_arm_tablet.svg" id="5_arm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape_player"]
+radius = 22.0
+height = 118.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -58)
+shape = SubResource("CapsuleShape_player")
+
+[node name="Visual" type="Node2D" parent="."]
+position = Vector2(0, -140)
+
+[node name="Shadow" type="Sprite2D" parent="Visual"]
+texture = ExtResource("2_shadow")
+
+[node name="Body" type="Sprite2D" parent="Visual"]
+texture = ExtResource("3_body")
+
+[node name="Head" type="Sprite2D" parent="Visual"]
+texture = ExtResource("4_head")
+
+[node name="FrontArmTablet" type="Sprite2D" parent="Visual"]
+texture = ExtResource("5_arm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -200)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 720

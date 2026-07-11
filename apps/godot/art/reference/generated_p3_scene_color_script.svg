@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760">
+<defs></defs>
+
+<rect width="1100" height="760" fill="#111719"/>
+<g transform="translate(0 18) scale(.5)">
+  <image href="../../assets/environments/old_ferry/p3/shelter_evening_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p3/shelter_evening_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p3/shelter_evening_near.svg" width="2200" height="720"/>
+</g>
+<g transform="translate(0 390) scale(.5)">
+  <image href="../../assets/environments/ritual_storehouse/p3/storehouse_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/ritual_storehouse/p3/storehouse_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/ritual_storehouse/p3/storehouse_near.svg" width="2200" height="720"/>
+</g>
+<text x="24" y="378" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#e8e1d2">P3 傍晚流民棚：冷雨 / 灶火 / 临时名册</text>
+<text x="24" y="747" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#e8e1d2">P3 旧礼器库：暗木 / 铜绿 / 漏雨冷光</text>
+
+</svg>

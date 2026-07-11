@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="320" viewBox="0 0 256 320">
+<defs>
+<linearGradient id="linen" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#cfc4ad"/>
+  <stop offset=".45" stop-color="#8e846f"/>
+  <stop offset="1" stop-color="#514b40"/>
+</linearGradient>
+<linearGradient id="warm_skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d7b58d"/>
+  <stop offset="1" stop-color="#a87858"/>
+</linearGradient>
+<linearGradient id="old_wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9a7a52"/>
+  <stop offset=".55" stop-color="#6d5138"/>
+  <stop offset="1" stop-color="#3d3028"/>
+</linearGradient>
+<linearGradient id="dawn_water" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8da6a5"/>
+  <stop offset=".45" stop-color="#617f82"/>
+  <stop offset="1" stop-color="#334f56"/>
+</linearGradient>
+<pattern id="cloth_threads" width="10" height="10" patternUnits="userSpaceOnUse">
+  <path d="M0 2 H10 M2 0 V10" stroke="#f2ead7" stroke-opacity=".10" stroke-width=".7"/>
+</pattern>
+<pattern id="wood_grain" width="34" height="12" patternUnits="userSpaceOnUse">
+  <path d="M1 7 C9 1 18 12 33 5 M3 11 C13 6 20 16 31 10"
+        fill="none" stroke="#d3b079" stroke-opacity=".20" stroke-width="1.4"/>
+</pattern>
+<pattern id="rice_specks" width="18" height="18" patternUnits="userSpaceOnUse">
+  <circle cx="5" cy="5" r="1.3" fill="#ead89c" fill-opacity=".75"/>
+  <circle cx="13" cy="11" r="1.1" fill="#c9b46e" fill-opacity=".55"/>
+</pattern>
+</defs>
+
+<g id="held_prop" stroke="#29241f" stroke-linejoin="round">
+  <g transform="rotate(-7 176 195)">
+    <rect x="151" y="147" width="50" height="96" rx="4" fill="#74563a" stroke-width="3"/>
+    <rect x="159" y="156" width="34" height="80" rx="2" fill="#a27d50" stroke="#4a3828" stroke-width="1.5"/>
+    <path d="M165 171 L186 168 M164 185 L187 182 M163 199 L184 196 M162 214 L182 211"
+          stroke="#4a3828" stroke-width="2" stroke-linecap="round"/>
+    <path d="M167 231 q12 6 24 0" fill="none" stroke="#d8c191" stroke-opacity=".45" stroke-width="2"/>
+  </g>
+</g>
+<g id="front_arm" stroke="#29241f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M154 160 q21 20 13 49 l-14 8 q-15 -12 -11 -39 Z" fill="#5f706c"/>
+  <path d="M155 207 q14 -4 21 10 q-4 16 -18 12 q-11 -9 -3 -22 Z" fill="url(#warm_skin)"/>
+  <path d="M160 218 q8 5 17 -2" fill="none" stroke="#47746f" stroke-width="3"/>
+</g>
+<g id="ink_marks" fill="#223235" fill-opacity=".75">
+  <circle cx="162" cy="217" r="2.3"/><circle cx="170" cy="219" r="1.5"/>
+</g>
+
+</svg>

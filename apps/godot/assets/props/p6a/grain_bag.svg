@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="260" viewBox="0 0 250 260">
+<defs>
+<linearGradient id="linen" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#cfc4ad"/>
+  <stop offset=".45" stop-color="#8e846f"/>
+  <stop offset="1" stop-color="#514b40"/>
+</linearGradient>
+<linearGradient id="warm_skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d7b58d"/>
+  <stop offset="1" stop-color="#a87858"/>
+</linearGradient>
+<linearGradient id="old_wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9a7a52"/>
+  <stop offset=".55" stop-color="#6d5138"/>
+  <stop offset="1" stop-color="#3d3028"/>
+</linearGradient>
+<linearGradient id="dawn_water" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8da6a5"/>
+  <stop offset=".45" stop-color="#617f82"/>
+  <stop offset="1" stop-color="#334f56"/>
+</linearGradient>
+<pattern id="cloth_threads" width="10" height="10" patternUnits="userSpaceOnUse">
+  <path d="M0 2 H10 M2 0 V10" stroke="#f2ead7" stroke-opacity=".10" stroke-width=".7"/>
+</pattern>
+<pattern id="wood_grain" width="34" height="12" patternUnits="userSpaceOnUse">
+  <path d="M1 7 C9 1 18 12 33 5 M3 11 C13 6 20 16 31 10"
+        fill="none" stroke="#d3b079" stroke-opacity=".20" stroke-width="1.4"/>
+</pattern>
+<pattern id="rice_specks" width="18" height="18" patternUnits="userSpaceOnUse">
+  <circle cx="5" cy="5" r="1.3" fill="#ead89c" fill-opacity=".75"/>
+  <circle cx="13" cy="11" r="1.1" fill="#c9b46e" fill-opacity=".55"/>
+</pattern>
+</defs>
+
+<ellipse cx="123" cy="226" rx="82" ry="16" fill="#20292b" fill-opacity=".25"/>
+<path d="M62 34 Q122 58 184 35 L205 211 Q128 252 45 211 Z"
+      fill="#ad9975" stroke="#46392d" stroke-width="7"/>
+<path d="M61 52 Q123 74 186 51" fill="none" stroke="#68543e" stroke-width="8"/>
+<path d="M63 93 q58 16 121 1 M57 134 q66 19 135 0 M52 176 q71 23 145 0"
+      fill="none" stroke="#efe4c6" stroke-opacity=".18" stroke-width="3"/>
+<rect x="48" y="67" width="151" height="128" fill="url(#rice_specks)" opacity=".72"/>
+<path d="M168 37 q19 38 22 82" fill="none" stroke="#5b4632" stroke-width="5"/>
+
+</svg>

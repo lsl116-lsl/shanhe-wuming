@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760">
+<defs>
+<linearGradient id="linen" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#cfc4ad"/>
+  <stop offset=".45" stop-color="#8e846f"/>
+  <stop offset="1" stop-color="#514b40"/>
+</linearGradient>
+<linearGradient id="warm_skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d7b58d"/>
+  <stop offset="1" stop-color="#a87858"/>
+</linearGradient>
+<linearGradient id="old_wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9a7a52"/>
+  <stop offset=".55" stop-color="#6d5138"/>
+  <stop offset="1" stop-color="#3d3028"/>
+</linearGradient>
+<linearGradient id="dawn_water" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8da6a5"/>
+  <stop offset=".45" stop-color="#617f82"/>
+  <stop offset="1" stop-color="#334f56"/>
+</linearGradient>
+<pattern id="cloth_threads" width="10" height="10" patternUnits="userSpaceOnUse">
+  <path d="M0 2 H10 M2 0 V10" stroke="#f2ead7" stroke-opacity=".10" stroke-width=".7"/>
+</pattern>
+<pattern id="wood_grain" width="34" height="12" patternUnits="userSpaceOnUse">
+  <path d="M1 7 C9 1 18 12 33 5 M3 11 C13 6 20 16 31 10"
+        fill="none" stroke="#d3b079" stroke-opacity=".20" stroke-width="1.4"/>
+</pattern>
+<pattern id="rice_specks" width="18" height="18" patternUnits="userSpaceOnUse">
+  <circle cx="5" cy="5" r="1.3" fill="#ead89c" fill-opacity=".75"/>
+  <circle cx="13" cy="11" r="1.1" fill="#c9b46e" fill-opacity=".55"/>
+</pattern>
+</defs>
+
+<rect width="1180" height="760" fill="#202b33"/>
+<g transform="translate(0 24) scale(.536)">
+  <image href="../../assets/environments/old_ferry/p6a/morning_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p6a/morning_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p6a/morning_near.svg" width="2200" height="720"/>
+</g>
+<rect x="0" y="426" width="1180" height="334" fill="#2b3333"/>
+<text x="34" y="470" font-family="Microsoft YaHei, sans-serif" font-size="28" fill="#e8e1d2">P6-A 旧渡清晨视觉样片</text>
+<text x="34" y="504" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#cfc4ad">冷雾、湿木、旧屋檐、木缆、河面亮线；把“父亲未归”的压力留在母亲的动作和河道尽头。</text>
+<g transform="translate(42 532) scale(.34)">
+  <image href="../../assets/props/p6a/wood_boat.svg" width="660" height="280"/>
+</g>
+<g transform="translate(312 552) scale(.34)">
+  <image href="../../assets/props/p6a/wood_cable.svg" width="620" height="190"/>
+</g>
+<g transform="translate(572 528) scale(.42)">
+  <image href="../../assets/props/p6a/grain_bag.svg" width="250" height="260"/>
+</g>
+<g transform="translate(714 552) scale(.42)">
+  <image href="../../assets/props/p6a/pen_box.svg" width="320" height="180"/>
+</g>
+<g transform="translate(884 520) scale(.36)">
+  <image href="../../assets/props/p6a/xinheng_desk.svg" width="680" height="345"/>
+</g>
+<text x="34" y="734" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#cfc4ad">seed 286 · generator P6-A · no external downloaded media</text>
+
+</svg>

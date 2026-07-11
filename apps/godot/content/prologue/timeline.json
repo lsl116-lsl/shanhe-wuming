@@ -1,0 +1,1665 @@
+{
+  "content_version": "p5.0",
+  "scope": "P2_MORNING_THROUGH_P5_PROLOGUE_COMPLETE",
+  "dialogue_path": "res://content/prologue/dialogue.zh-CN.json",
+  "asset_manifest_path": "res://content/prologue/asset_manifest.json",
+  "start_scene": "SC01_Home_Morning",
+  "start_scene_asset_id": "scene.sc01_home_morning",
+  "stages": {
+    "SC01_Home_Morning": {
+      "objective": "看看半袋粟米、旧笔盒和河道，再去辛衡书案。",
+      "events": [
+        {
+          "id": "P2-MORNING-001",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 1.2,
+          "trace_step": "morning_fade_in"
+        },
+        {
+          "id": "P2-MORNING-002",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.river_morning",
+          "fade_duration": 1.4,
+          "trace_step": "morning_ambience"
+        },
+        {
+          "id": "P2-MORNING-003",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.old_ferry_morning",
+          "fade_duration": 2.0,
+          "trace_step": "morning_music"
+        },
+        {
+          "id": "P2-MORNING-004",
+          "type": "camera_move",
+          "target": [
+            1050,
+            360
+          ],
+          "duration": 1.9,
+          "trace_step": "camera_river_boat"
+        },
+        {
+          "id": "P2-MORNING-005",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.cable_creak",
+          "trace_step": "cable_creak"
+        },
+        {
+          "id": "P2-MORNING-006",
+          "type": "wait",
+          "duration": 1.4,
+          "trace_step": "river_narration"
+        },
+        {
+          "id": "P2-MORNING-007",
+          "type": "camera_focus",
+          "actor_id": "mother",
+          "offset": [
+            0,
+            -130
+          ],
+          "duration": 1.35,
+          "trace_step": "camera_mother"
+        },
+        {
+          "id": "P2-MORNING-008",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.basin_water",
+          "trace_step": "basin_water"
+        },
+        {
+          "id": "P2-MORNING-009",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "wash_basin",
+          "trace_step": "mother_wash_basin"
+        },
+        {
+          "id": "P2-MORNING-010",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "count_grain",
+          "trace_step": "mother_count_grain"
+        },
+        {
+          "id": "P2-MORNING-011",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "count_wood",
+          "trace_step": "mother_count_wood"
+        },
+        {
+          "id": "P2-MORNING-012",
+          "type": "wait",
+          "duration": 1.2,
+          "trace_step": "mother_counts_narration"
+        },
+        {
+          "id": "P2-MORNING-013",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.boat_hull",
+          "trace_step": "distant_boat_sound"
+        },
+        {
+          "id": "P2-MORNING-014",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "look_river",
+          "trace_step": "mother_look_river"
+        },
+        {
+          "id": "P2-MORNING-015",
+          "type": "wait",
+          "duration": 1.15,
+          "trace_step": "father_absence"
+        },
+        {
+          "id": "P2-MORNING-016",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "resume_work",
+          "trace_step": "mother_resume_work"
+        },
+        {
+          "id": "P2-MORNING-017",
+          "type": "camera_move",
+          "target": [
+            790,
+            360
+          ],
+          "duration": 1.0,
+          "trace_step": "camera_return_player"
+        },
+        {
+          "id": "P2-MORNING-018",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "morning_player_control"
+        }
+      ]
+    },
+    "SC02_Xinheng_Desk": {
+      "objective": "走到辛衡书案前，按住 E 落笔。",
+      "name_input": {
+        "title": "写下本世姓名",
+        "hint": "名字是称呼；这一笔先由你自己写。可输入 1—8 个字。",
+        "development_prefill": ""
+      },
+      "events": [
+        {
+          "id": "P2-NAME-001",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 0.8,
+          "trace_step": "desk_fade_in"
+        },
+        {
+          "id": "P2-NAME-002",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.river_morning",
+          "fade_duration": 1.0,
+          "trace_step": "desk_ambience"
+        },
+        {
+          "id": "P2-NAME-003",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.name_and_registry",
+          "fade_duration": 1.2,
+          "trace_step": "name_music"
+        },
+        {
+          "id": "P2-NAME-004",
+          "type": "camera_move",
+          "target": [
+            1120,
+            350
+          ],
+          "duration": 1.05,
+          "trace_step": "camera_wet_tablet"
+        },
+        {
+          "id": "P2-NAME-005",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "write",
+          "trace_step": "xinheng_write"
+        },
+        {
+          "id": "P2-NAME-006",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "hand_tablet",
+          "trace_step": "xinheng_hand_tablet"
+        },
+        {
+          "id": "P2-NAME-007",
+          "type": "dialogue",
+          "line_id": "P2_XINHENG_WRITE_NAME",
+          "wait_for_input": false,
+          "auto_duration": 2.5,
+          "trace_step": "xinheng_write_name_line"
+        },
+        {
+          "id": "P2-NAME-008",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "name_player_control"
+        }
+      ],
+      "after_name_events": [
+        {
+          "id": "P2-NAME-AFTER-001",
+          "type": "animation_play",
+          "actor_id": "player",
+          "animation": "write",
+          "trace_step": "player_writes_name"
+        },
+        {
+          "id": "P2-NAME-AFTER-001B",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.tablet_write",
+          "trace_step": "tablet_write_sound"
+        },
+        {
+          "id": "P2-NAME-AFTER-002",
+          "type": "wait",
+          "duration": 0.45,
+          "trace_step": "pen_pause"
+        },
+        {
+          "id": "P2-NAME-AFTER-003",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.name_memory",
+          "trace_step": "name_memory_water"
+        },
+        {
+          "id": "P2-NAME-AFTER-004",
+          "type": "animation_play",
+          "actor_id": "name_memory",
+          "animation": "flash",
+          "trace_step": "name_memory_flash"
+        },
+        {
+          "id": "P2-NAME-AFTER-005",
+          "type": "state_set",
+          "path": "prologue.name_memory_seen",
+          "value": true,
+          "trace_step": "name_memory_state"
+        },
+        {
+          "id": "P2-NAME-AFTER-006",
+          "type": "dialogue",
+          "line_id": "P2_NAME_MEMORY",
+          "wait_for_input": false,
+          "auto_duration": 2.6,
+          "trace_step": "name_memory_narration"
+        },
+        {
+          "id": "P2-NAME-AFTER-007",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "look_over_tablet",
+          "trace_step": "xinheng_reads_name"
+        },
+        {
+          "id": "P2-NAME-AFTER-008",
+          "type": "dialogue",
+          "line_id": "P2_XINHENG_THIS_LIFE",
+          "wait_for_input": false,
+          "auto_duration": 3.0,
+          "trace_step": "xinheng_this_life_line"
+        },
+        {
+          "id": "P2-NAME-AFTER-009",
+          "type": "character_enter",
+          "actor_id": "hean",
+          "asset_id": "actor.hean",
+          "from": [
+            1840,
+            606
+          ],
+          "position": [
+            1510,
+            606
+          ],
+          "duration": 1.25,
+          "trace_step": "hean_enters"
+        },
+        {
+          "id": "P2-NAME-AFTER-010",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "carry_firewood",
+          "trace_step": "hean_carries_firewood"
+        },
+        {
+          "id": "P2-NAME-AFTER-011",
+          "type": "dialogue",
+          "line_id": "P2_HEAN_BREAKFAST",
+          "wait_for_input": false,
+          "auto_duration": 2.5,
+          "trace_step": "hean_breakfast_line"
+        },
+        {
+          "id": "P2-NAME-AFTER-012",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.firewood_drop",
+          "trace_step": "firewood_drop"
+        },
+        {
+          "id": "P2-NAME-AFTER-013",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "place_porridge",
+          "trace_step": "hean_place_porridge"
+        },
+        {
+          "id": "P2-NAME-AFTER-014",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.bowl_place",
+          "trace_step": "bowl_place"
+        },
+        {
+          "id": "P2-NAME-AFTER-015",
+          "type": "state_set",
+          "path": "prologue.hean_arrived",
+          "value": true,
+          "trace_step": "hean_arrived_state"
+        },
+        {
+          "id": "P2-NAME-AFTER-016",
+          "type": "state_set",
+          "path": "prologue.porridge_placed",
+          "value": true,
+          "trace_step": "porridge_placed_state"
+        },
+        {
+          "id": "P2-NAME-AFTER-017",
+          "type": "dialogue",
+          "line_id": "P2_HEAN_PORRIDGE",
+          "wait_for_input": false,
+          "auto_duration": 2.8,
+          "trace_step": "hean_porridge_line"
+        },
+        {
+          "id": "P2-NAME-AFTER-018",
+          "type": "save_checkpoint",
+          "checkpoint": "name_and_porridge",
+          "trace_step": "name_porridge_checkpoint"
+        },
+        {
+          "id": "P2-NAME-AFTER-019",
+          "type": "transition",
+          "mode": "fade_out",
+          "duration": 0.75,
+          "trace_step": "desk_to_day"
+        },
+        {
+          "id": "P2-NAME-AFTER-020",
+          "type": "scene_change",
+          "asset_id": "scene.sc03_ferry_day",
+          "trace_step": "scene_to_ferry_day"
+        }
+      ]
+    },
+    "SC03_Ferry_Day": {
+      "objective": "走近船主、禾安、辛衡和旧渡人，听他们各自说什么。",
+      "auto_sequence": {
+        "requirements": [
+          "prologue.heard_boat_owner_fragment",
+          "prologue.heard_hean_fragment",
+          "prologue.heard_xinheng_fragment",
+          "prologue.heard_ferry_people_fragment"
+        ],
+        "event_key": "after_news_fragments_events",
+        "enable_interactions": [
+          "news.to_refugees"
+        ],
+        "objective_after": "沿旧渡向东，去接第一批宋地流民。"
+      },
+      "events": [
+        {
+          "id": "P2-NEWS-001",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 0.9,
+          "trace_step": "day_fade_in"
+        },
+        {
+          "id": "P2-NEWS-002",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.ferry_day",
+          "fade_duration": 1.4,
+          "trace_step": "ferry_day_ambience"
+        },
+        {
+          "id": "P2-NEWS-003",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.ferry_day_news",
+          "fade_duration": 1.8,
+          "trace_step": "ferry_day_music"
+        },
+        {
+          "id": "P2-NEWS-004",
+          "type": "camera_move",
+          "target": [
+            790,
+            360
+          ],
+          "duration": 0.7,
+          "trace_step": "camera_old_ferry_work"
+        },
+        {
+          "id": "P2-NEWS-005",
+          "type": "animation_play",
+          "actor_id": "ferry_worker",
+          "animation": "work_loop",
+          "wait_for_finish": false,
+          "trace_step": "worker_at_work"
+        },
+        {
+          "id": "P2-NEWS-006",
+          "type": "animation_play",
+          "actor_id": "ferry_woman",
+          "animation": "work_loop",
+          "wait_for_finish": false,
+          "trace_step": "ferry_woman_at_work"
+        },
+        {
+          "id": "P2-NEWS-007",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.boat_hull",
+          "trace_step": "east_boat_sound_first"
+        },
+        {
+          "id": "P2-NEWS-008",
+          "type": "animation_play",
+          "actor_id": "boat_owner",
+          "animation": "call_news",
+          "wait_for_finish": false,
+          "trace_step": "boat_owner_calls_offscreen"
+        },
+        {
+          "id": "P2-NEWS-009",
+          "type": "dialogue",
+          "line_id": "P2_BOAT_OWNER_CALL",
+          "wait_for_input": false,
+          "auto_duration": 2.1,
+          "trace_step": "song_land_is_in_chaos"
+        },
+        {
+          "id": "P2-NEWS-010",
+          "type": "camera_move",
+          "target": [
+            1535,
+            350
+          ],
+          "duration": 1.6,
+          "trace_step": "camera_find_east_boat"
+        },
+        {
+          "id": "P2-NEWS-011",
+          "type": "character_move",
+          "actor_id": "boat",
+          "position": [
+            1725,
+            398
+          ],
+          "duration": 2.0,
+          "trace_step": "merchant_boat_docks"
+        },
+        {
+          "id": "P2-NEWS-012",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.boat_dock",
+          "trace_step": "boat_dock_impact"
+        },
+        {
+          "id": "P2-NEWS-013",
+          "type": "animation_play",
+          "actor_id": "boat_owner",
+          "animation": "dock_brace",
+          "trace_step": "boat_owner_braces"
+        },
+        {
+          "id": "P2-NEWS-014",
+          "type": "animation_play",
+          "actor_id": "ferry_worker",
+          "animation": "react_stop",
+          "wait_for_finish": false,
+          "trace_step": "worker_stops"
+        },
+        {
+          "id": "P2-NEWS-015",
+          "type": "animation_play",
+          "actor_id": "ferry_woman",
+          "animation": "react_stop",
+          "wait_for_finish": false,
+          "trace_step": "ferry_woman_stops"
+        },
+        {
+          "id": "P2-NEWS-016",
+          "type": "animation_play",
+          "actor_id": "mother",
+          "animation": "look_river",
+          "wait_for_finish": false,
+          "trace_step": "mother_looks_to_boat"
+        },
+        {
+          "id": "P2-NEWS-017",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "pause_pen",
+          "wait_for_finish": false,
+          "trace_step": "xinheng_pushes_tablets"
+        },
+        {
+          "id": "P2-NEWS-018",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "count_jars",
+          "trace_step": "hean_counts_water_and_grain"
+        },
+        {
+          "id": "P2-NEWS-019",
+          "type": "dialogue",
+          "line_id": "P2_NEWS_OLD_FERRY_STOPS",
+          "wait_for_input": false,
+          "auto_duration": 2.8,
+          "trace_step": "old_ferry_stops"
+        },
+        {
+          "id": "P2-NEWS-020",
+          "type": "camera_move",
+          "target": [
+            1100,
+            360
+          ],
+          "duration": 1.1,
+          "trace_step": "camera_returns_for_exploration"
+        },
+        {
+          "id": "P2-NEWS-021",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "news_player_control"
+        }
+      ],
+      "after_news_fragments_events": [
+        {
+          "id": "P3-BRIDGE-001",
+          "type": "dialogue",
+          "line_id": "P3_REFUGEES_APPROACH",
+          "wait_for_input": false,
+          "auto_duration": 3.4,
+          "trace_step": "refugees_approach_old_ferry"
+        },
+        {
+          "id": "P3-BRIDGE-002",
+          "type": "state_set",
+          "path": "prologue.refugees_expected",
+          "value": true,
+          "trace_step": "refugees_expected"
+        }
+      ]
+    },
+    "SC04_Refugee_Shelter": {
+      "objective": "在流民棚里走一遍，听见没有说完的话。",
+      "auto_sequence": {
+        "requirements": [
+          "prologue.saw_hanning_sleeve",
+          "prologue.hanning_mother_blocked_question",
+          "prologue.saw_xinheng_pen_pause",
+          "prologue.heard_liuniang_song_stop",
+          "prologue.inspected_temporary_registry"
+        ],
+        "event_key": "after_exploration_events",
+        "enable_interactions": [
+          "shelter.to_storehouse"
+        ],
+        "objective_after": "钟声从旧礼器库传来。循声向东。",
+        "location_after": "洛水旧渡 · 流民棚 · 雨夜"
+      },
+      "events": [
+        {
+          "id": "P3-REFUGEE-001",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.refugee_shelter_evening",
+          "fade_duration": 0.8,
+          "trace_step": "refugee_shelter_ambience"
+        },
+        {
+          "id": "P3-REFUGEE-002",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.refugees_evening",
+          "fade_duration": 1.0,
+          "trace_step": "refugee_shelter_music"
+        },
+        {
+          "id": "P3-REFUGEE-003",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 1.0,
+          "trace_step": "refugee_shelter_fade_in"
+        },
+        {
+          "id": "P3-REFUGEE-004",
+          "type": "camera_move",
+          "target": [
+            1530,
+            360
+          ],
+          "duration": 1.2,
+          "trace_step": "camera_finds_first_refugees"
+        },
+        {
+          "id": "P3-REFUGEE-005",
+          "type": "animation_play",
+          "actor_id": "refugee_old",
+          "animation": "enter_burdened",
+          "wait_for_finish": false,
+          "trace_step": "old_refugee_staggers"
+        },
+        {
+          "id": "P3-REFUGEE-006",
+          "type": "character_move",
+          "actor_id": "refugee_old",
+          "position": [
+            1740,
+            606
+          ],
+          "duration": 1.7,
+          "trace_step": "old_refugee_helped_ashore"
+        },
+        {
+          "id": "P3-REFUGEE-007",
+          "type": "animation_play",
+          "actor_id": "refugee_mother",
+          "animation": "guard_burden",
+          "wait_for_finish": false,
+          "trace_step": "feverish_child_held_close"
+        },
+        {
+          "id": "P3-REFUGEE-008",
+          "type": "character_move",
+          "actor_id": "refugee_mother",
+          "position": [
+            1920,
+            606
+          ],
+          "duration": 1.4,
+          "trace_step": "mother_carries_feverish_child"
+        },
+        {
+          "id": "P3-REFUGEE-009",
+          "type": "animation_play",
+          "actor_id": "refugee_man",
+          "animation": "enter_burdened",
+          "wait_for_finish": false,
+          "trace_step": "wet_grain_burden"
+        },
+        {
+          "id": "P3-REFUGEE-010",
+          "type": "character_move",
+          "actor_id": "refugee_man",
+          "position": [
+            2065,
+            607
+          ],
+          "duration": 1.25,
+          "trace_step": "man_carries_wet_grain"
+        },
+        {
+          "id": "P3-REFUGEE-011",
+          "type": "animation_play",
+          "actor_id": "hanning",
+          "animation": "press_sleeve",
+          "wait_for_finish": false,
+          "trace_step": "hanning_presses_sleeve"
+        },
+        {
+          "id": "P3-REFUGEE-012",
+          "type": "character_move",
+          "actor_id": "hanning",
+          "position": [
+            1260,
+            604
+          ],
+          "duration": 1.35,
+          "trace_step": "hanning_enters_guarded"
+        },
+        {
+          "id": "P3-REFUGEE-013",
+          "type": "animation_play",
+          "actor_id": "hanning_mother",
+          "animation": "shield_hanning",
+          "wait_for_finish": false,
+          "trace_step": "hanning_mother_shields_him"
+        },
+        {
+          "id": "P3-REFUGEE-014",
+          "type": "character_move",
+          "actor_id": "hanning_mother",
+          "position": [
+            1365,
+            604
+          ],
+          "duration": 1.0,
+          "trace_step": "hanning_mother_steps_between"
+        },
+        {
+          "id": "P3-REFUGEE-015",
+          "type": "dialogue",
+          "line_id": "P3_FIRST_REFUGEES_ENTER",
+          "wait_for_input": false,
+          "auto_duration": 4.8,
+          "trace_step": "first_song_refugees_enter"
+        },
+        {
+          "id": "P3-REFUGEE-016",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "pause_pen",
+          "trace_step": "xinheng_pen_stops"
+        },
+        {
+          "id": "P3-REFUGEE-017",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.liuniang_old_song",
+          "trace_step": "liuniang_old_song_begins"
+        },
+        {
+          "id": "P3-REFUGEE-018",
+          "type": "animation_play",
+          "actor_id": "liuniang",
+          "animation": "sing_old_song",
+          "wait_for_finish": false,
+          "trace_step": "liuniang_sings"
+        },
+        {
+          "id": "P3-REFUGEE-019",
+          "type": "dialogue",
+          "line_id": "P3_LIUNIANG_OPENING_SONG",
+          "wait_for_input": false,
+          "auto_duration": 4.2,
+          "trace_step": "song_reaches_place_name"
+        },
+        {
+          "id": "P3-REFUGEE-020",
+          "type": "audio_stop",
+          "channel": "sfx",
+          "fade_duration": 0.08,
+          "trace_step": "old_song_cuts_off"
+        },
+        {
+          "id": "P3-REFUGEE-021",
+          "type": "animation_play",
+          "actor_id": "liuniang",
+          "animation": "song_stops",
+          "trace_step": "liuniang_stops_at_place_name"
+        },
+        {
+          "id": "P3-REFUGEE-022",
+          "type": "camera_move",
+          "target": [
+            1100,
+            360
+          ],
+          "duration": 1.0,
+          "trace_step": "camera_opens_refugee_exploration"
+        },
+        {
+          "id": "P3-REFUGEE-023",
+          "type": "state_set",
+          "path": "prologue.first_refugees_arrived",
+          "value": true,
+          "trace_step": "first_refugees_arrived"
+        },
+        {
+          "id": "P3-REFUGEE-024",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "refugee_exploration_control"
+        }
+      ],
+      "after_exploration_events": [
+        {
+          "id": "P3-NIGHT-001",
+          "type": "camera_focus",
+          "actor_id": "hean",
+          "offset": [
+            0,
+            -50
+          ],
+          "duration": 0.8,
+          "trace_step": "camera_finds_hean_at_pot"
+        },
+        {
+          "id": "P3-NIGHT-002",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.grain_last_scatter",
+          "trace_step": "last_broken_grain_sound"
+        },
+        {
+          "id": "P3-NIGHT-003",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "pour_broken_rice",
+          "trace_step": "hean_pours_broken_rice"
+        },
+        {
+          "id": "P3-NIGHT-004",
+          "type": "dialogue",
+          "line_id": "P3_HEAN_LAST_RICE",
+          "wait_for_input": false,
+          "auto_duration": 3.2,
+          "trace_step": "hean_says_that_is_all"
+        },
+        {
+          "id": "P3-NIGHT-005",
+          "type": "state_set",
+          "path": "prologue.hean_poured_broken_rice",
+          "value": true,
+          "trace_step": "broken_rice_committed"
+        },
+        {
+          "id": "P3-NIGHT-006",
+          "type": "animation_play",
+          "actor_id": "weather",
+          "animation": "evening_to_night",
+          "wait_for_finish": false,
+          "trace_step": "evening_turns_to_night"
+        },
+        {
+          "id": "P3-NIGHT-007",
+          "type": "dialogue",
+          "line_id": "P3_NIGHT_RAIN_BUILDS",
+          "wait_for_input": false,
+          "auto_duration": 5.2,
+          "trace_step": "rain_intensifies"
+        },
+        {
+          "id": "P3-NIGHT-008",
+          "type": "wait",
+          "duration": 1.8,
+          "trace_step": "night_settles_over_shelter"
+        },
+        {
+          "id": "P3-NIGHT-009",
+          "type": "state_set",
+          "path": "prologue.shelter_night_fallen",
+          "value": true,
+          "trace_step": "shelter_is_night"
+        },
+        {
+          "id": "P3-NIGHT-010",
+          "type": "state_set",
+          "path": "prologue.rain_intensified",
+          "value": true,
+          "trace_step": "rain_is_stronger"
+        },
+        {
+          "id": "P3-NIGHT-011",
+          "type": "camera_move",
+          "target": [
+            1580,
+            360
+          ],
+          "duration": 1.0,
+          "trace_step": "camera_turns_toward_storehouse"
+        },
+        {
+          "id": "P3-NIGHT-012",
+          "type": "spatial_audio_play",
+          "actor_id": "bell_lure",
+          "asset_id": "sfx.bell_body",
+          "bus": "SFX",
+          "max_distance": 1900,
+          "attenuation": 0.72,
+          "volume_db": -3.0,
+          "trace_step": "bell_calls_from_storehouse"
+        },
+        {
+          "id": "P3-NIGHT-013",
+          "type": "dialogue",
+          "line_id": "P3_BELL_FROM_STOREHOUSE",
+          "wait_for_input": false,
+          "auto_duration": 3.5,
+          "trace_step": "player_hears_storehouse_bell"
+        },
+        {
+          "id": "P3-NIGHT-014",
+          "type": "state_set",
+          "path": "prologue.heard_cracked_bell_lure",
+          "value": true,
+          "trace_step": "bell_lure_heard"
+        }
+      ],
+      "enter_storehouse_events": [
+        {
+          "id": "P3-ENTER-001",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "look_after_player",
+          "wait_for_finish": false,
+          "trace_step": "hean_looks_after_player"
+        },
+        {
+          "id": "P3-ENTER-002",
+          "type": "dialogue",
+          "line_id": "P3_HEAN_WHERE_ARE_YOU_GOING",
+          "wait_for_input": false,
+          "auto_duration": 2.4,
+          "trace_step": "hean_calls_where_are_you_going"
+        },
+        {
+          "id": "P3-ENTER-003",
+          "type": "transition",
+          "mode": "fade_out",
+          "duration": 0.65,
+          "trace_step": "storehouse_entry_fade"
+        },
+        {
+          "id": "P3-ENTER-004",
+          "type": "scene_change",
+          "asset_id": "scene.sc05_ritual_storehouse",
+          "trace_step": "enter_ritual_storehouse"
+        }
+      ]
+    },
+    "SC05_Ritual_Storehouse": {
+      "objective": "在旧礼器库中看清四件旧器。",
+      "after_bell_touch_events_objective": "记忆退去。裂钟仍在雨夜里，没有发光。",
+      "events": [
+        {
+          "id": "P3-STORE-001",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.ritual_storehouse_rain",
+          "fade_duration": 0.8,
+          "trace_step": "storehouse_rain_roomtone"
+        },
+        {
+          "id": "P3-STORE-002",
+          "type": "audio_stop",
+          "channel": "music",
+          "fade_duration": 0.8,
+          "trace_step": "music_withdraws_in_storehouse"
+        },
+        {
+          "id": "P3-STORE-003",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 1.0,
+          "trace_step": "storehouse_fade_in"
+        },
+        {
+          "id": "P3-STORE-004",
+          "type": "camera_move",
+          "target": [
+            760,
+            360
+          ],
+          "duration": 0.9,
+          "trace_step": "camera_broken_ding"
+        },
+        {
+          "id": "P3-STORE-005",
+          "type": "dialogue",
+          "line_id": "P3_STOREHOUSE_FIRST_LOOK",
+          "wait_for_input": false,
+          "auto_duration": 3.8,
+          "trace_step": "old_ritual_objects_revealed"
+        },
+        {
+          "id": "P3-STORE-006",
+          "type": "camera_move",
+          "target": [
+            1480,
+            360
+          ],
+          "duration": 1.2,
+          "trace_step": "camera_cracked_bell"
+        },
+        {
+          "id": "P3-STORE-007",
+          "type": "dialogue",
+          "line_id": "P3_CRACKED_BELL_WAITS",
+          "wait_for_input": false,
+          "auto_duration": 3.4,
+          "trace_step": "cracked_bell_waits_without_glow"
+        },
+        {
+          "id": "P3-STORE-008",
+          "type": "camera_move",
+          "target": [
+            1100,
+            360
+          ],
+          "duration": 0.9,
+          "trace_step": "storehouse_exploration_camera"
+        },
+        {
+          "id": "P3-STORE-009",
+          "type": "state_set",
+          "path": "prologue.entered_ritual_storehouse",
+          "value": true,
+          "trace_step": "ritual_storehouse_entered"
+        },
+        {
+          "id": "P3-STORE-010",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "storehouse_player_control"
+        }
+      ],
+      "after_bell_touch_events": [
+        {
+          "id": "P3-MEMORY-001",
+          "type": "camera_focus",
+          "actor_id": "cracked_bell",
+          "offset": [
+            0,
+            -40
+          ],
+          "duration": 0.8,
+          "trace_step": "camera_closes_on_cracked_bell"
+        },
+        {
+          "id": "P3-MEMORY-002",
+          "type": "state_set",
+          "path": "prologue.touched_cracked_bell",
+          "value": true,
+          "trace_step": "cracked_bell_touched"
+        },
+        {
+          "id": "P3-MEMORY-003",
+          "type": "audio_stop",
+          "channel": "ambience",
+          "fade_duration": 1.0,
+          "trace_step": "old_ferry_ambience_withdraws"
+        },
+        {
+          "id": "P3-MEMORY-004",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.cracked_bell_memory",
+          "fade_duration": 0.6,
+          "trace_step": "cracked_bell_memory_music"
+        },
+        {
+          "id": "P3-MEMORY-005",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.bell_memory_mix",
+          "trace_step": "multilayer_cracked_bell_sound"
+        },
+        {
+          "id": "P3-MEMORY-006",
+          "type": "animation_play",
+          "actor_id": "bell_memory",
+          "animation": "memory",
+          "wait_for_finish": false,
+          "trace_step": "cracked_bell_memory_animation_begins"
+        },
+        {
+          "id": "P3-MEMORY-007",
+          "type": "wait",
+          "duration": 23.0,
+          "trace_step": "memory_city_registry_and_water"
+        },
+        {
+          "id": "P3-MEMORY-008",
+          "type": "dialogue",
+          "line_id": "P3_MOUNTAINS_AND_RIVERS_CHANGE",
+          "wait_for_input": false,
+          "auto_duration": 4.0,
+          "trace_step": "not_first_time_mountains_rivers_changed"
+        },
+        {
+          "id": "P3-MEMORY-009",
+          "type": "audio_stop",
+          "channel": "music",
+          "fade_duration": 0.5,
+          "trace_step": "memory_music_recedes"
+        },
+        {
+          "id": "P3-MEMORY-010",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.ritual_storehouse_rain",
+          "fade_duration": 0.5,
+          "trace_step": "return_to_storehouse_rain"
+        },
+        {
+          "id": "P3-MEMORY-011",
+          "type": "state_set",
+          "path": "prologue.cracked_bell_memory_completed",
+          "value": true,
+          "trace_step": "cracked_bell_memory_completed"
+        },
+        {
+          "id": "P3-MEMORY-012",
+          "type": "save_checkpoint",
+          "checkpoint": "cracked_bell_memory",
+          "trace_step": "cracked_bell_checkpoint_saved"
+        },
+        {
+          "id": "P3-MEMORY-013",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "control_returns_after_memory"
+        }
+      ],
+      "after_memory_crash_events": [
+        {
+          "id": "P4-BRIDGE-001",
+          "type": "transition",
+          "mode": "fade_out",
+          "duration": 0.0,
+          "trace_step": "memory_cuts_to_black"
+        },
+        {
+          "id": "P4-BRIDGE-002",
+          "type": "wait",
+          "duration": 0.5,
+          "trace_step": "half_second_black_after_memory"
+        },
+        {
+          "id": "P4-BRIDGE-003",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.cart_wheel_break",
+          "trace_step": "cart_wheel_breaks_before_cut"
+        },
+        {
+          "id": "P4-BRIDGE-004",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.horse_panic",
+          "trace_step": "horse_panics_before_cut"
+        },
+        {
+          "id": "P4-BRIDGE-005",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.cart_impact_mud",
+          "trace_step": "cart_hits_mud_before_cut"
+        },
+        {
+          "id": "P4-BRIDGE-006",
+          "type": "scene_change",
+          "asset_id": "scene.sc06_cart_crash_rain",
+          "trace_step": "hard_cut_to_cart_crash"
+        }
+      ],
+      "memory_duration_seconds": 27.0
+    },
+    "SC06_Cart_Crash_Rain": {
+      "objective": "先看清现场。左是车下孩子，中间是湿简，右是失散的人群；按住 E 才会锁定行动。",
+      "choice_pressure": {
+        "initial_title": "雨夜翻车现场",
+        "initial_detail": "左侧火把下是车辕压住的孩子；中间泥水里有正在散墨的湿简；右侧棚下有人喊错亲属。移动只让你看见。",
+        "thresholds": [
+          {
+            "seconds": 3.0,
+            "text": "你刚看清三处压力。这里不会因为你还在辨认方向而暗中判败。"
+          },
+          {
+            "seconds": 10.0,
+            "text": "孩子哭声变轻，湿简墨迹更散，棚下有人开始喊错名字。"
+          }
+        ],
+        "directions": {
+          "rescue_child": {
+            "title": "左侧：车辕下的孩子",
+            "detail": "禾安用肩顶住木梁，脚在泥里滑了一下又站稳。孩子哭声断断续续。",
+            "costs": [
+              "雨水仍在冲刷湿简",
+              "棚下仍有人喊错名字"
+            ]
+          },
+          "save_records": {
+            "title": "中间：泥水里的湿简",
+            "detail": "韩宁挣着要扑过去，几片木牍在水里浮沉，墨线正在散开。",
+            "costs": [
+              "车下孩子的哭声断了一下",
+              "人群仍未完成互认"
+            ]
+          },
+          "mutual_recognition": {
+            "title": "右侧：失散人群",
+            "detail": "柳娘抱着孩子喊名，棚下有人把别家的孩子攥得太紧。",
+            "costs": [
+              "雨水还在泡湿简",
+              "车下孩子仍被压着"
+            ]
+          }
+        }
+      },
+      "events": [
+        {
+          "id": "P4-CRASH-001",
+          "type": "transition",
+          "mode": "fade_in",
+          "duration": 0.0,
+          "trace_step": "cart_crash_hard_cut_visual"
+        },
+        {
+          "id": "P4-CRASH-002",
+          "type": "audio_play",
+          "channel": "ambience",
+          "asset_id": "ambience.rain_night",
+          "fade_duration": 0.2,
+          "trace_step": "rain_night_ambience"
+        },
+        {
+          "id": "P4-CRASH-003",
+          "type": "audio_play",
+          "channel": "music",
+          "asset_id": "music.cart_crash_pressure",
+          "fade_duration": 0.25,
+          "trace_step": "cart_crash_pressure_music"
+        },
+        {
+          "id": "P4-CRASH-004",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.cart_wheel_break",
+          "trace_step": "cart_wheel_breaks"
+        },
+        {
+          "id": "P4-CRASH-005",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.horse_panic",
+          "trace_step": "horse_panic"
+        },
+        {
+          "id": "P4-CRASH-006",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.cart_impact_mud",
+          "trace_step": "cart_impact_mud"
+        },
+        {
+          "id": "P4-CRASH-007",
+          "type": "camera_shake",
+          "duration": 0.45,
+          "strength": 8.0,
+          "trace_step": "cart_crash_camera_shake"
+        },
+        {
+          "id": "P4-CRASH-008",
+          "type": "dialogue",
+          "line_id": "P4_CART_CRASH_HARD_CUT",
+          "wait_for_input": false,
+          "auto_duration": 2.4,
+          "trace_step": "people_shout_cart_overturned"
+        },
+        {
+          "id": "P4-CRASH-009",
+          "type": "camera_focus",
+          "actor_id": "choice_child",
+          "offset": [
+            0,
+            -50
+          ],
+          "duration": 0.95,
+          "trace_step": "scan_left_child_under_cart"
+        },
+        {
+          "id": "P4-CRASH-010",
+          "type": "spatial_audio_play",
+          "actor_id": "choice_child",
+          "asset_id": "sfx.child_cry_pressure",
+          "bus": "SFX",
+          "max_distance": 900,
+          "attenuation": 1.0,
+          "volume_db": -1.0,
+          "trace_step": "left_child_directional_cry"
+        },
+        {
+          "id": "P4-CRASH-011",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.water_bucket_drag",
+          "trace_step": "hean_bucket_scrapes_mud"
+        },
+        {
+          "id": "P4-CRASH-012",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "drag_bucket",
+          "trace_step": "hean_drags_hot_water_bucket"
+        },
+        {
+          "id": "P4-CRASH-013",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "brace_cart",
+          "wait_for_finish": false,
+          "trace_step": "hean_braces_cart_shafts"
+        },
+        {
+          "id": "P4-CRASH-014",
+          "type": "dialogue",
+          "line_id": "P4_SCAN_CHILD",
+          "wait_for_input": false,
+          "auto_duration": 3.0,
+          "trace_step": "scan_child_pressure"
+        },
+        {
+          "id": "P4-CRASH-015",
+          "type": "camera_focus",
+          "actor_id": "choice_records",
+          "offset": [
+            0,
+            -40
+          ],
+          "duration": 0.9,
+          "trace_step": "scan_middle_wet_records"
+        },
+        {
+          "id": "P4-CRASH-016",
+          "type": "spatial_audio_play",
+          "actor_id": "choice_records",
+          "asset_id": "sfx.wet_ink_spread",
+          "bus": "SFX",
+          "max_distance": 850,
+          "attenuation": 1.0,
+          "volume_db": -2.0,
+          "trace_step": "middle_records_directional_water"
+        },
+        {
+          "id": "P4-CRASH-017",
+          "type": "animation_play",
+          "actor_id": "hanning",
+          "animation": "rush_records",
+          "trace_step": "hanning_rushes_toward_records"
+        },
+        {
+          "id": "P4-CRASH-018",
+          "type": "animation_play",
+          "actor_id": "hanning",
+          "animation": "struggle",
+          "wait_for_finish": false,
+          "trace_step": "hanning_struggles_for_wet_records"
+        },
+        {
+          "id": "P4-CRASH-019",
+          "type": "dialogue",
+          "line_id": "P4_SCAN_RECORDS",
+          "wait_for_input": false,
+          "auto_duration": 3.0,
+          "trace_step": "scan_records_pressure"
+        },
+        {
+          "id": "P4-CRASH-020",
+          "type": "camera_focus",
+          "actor_id": "choice_crowd",
+          "offset": [
+            0,
+            -40
+          ],
+          "duration": 0.9,
+          "trace_step": "scan_right_separated_crowd"
+        },
+        {
+          "id": "P4-CRASH-021",
+          "type": "spatial_audio_play",
+          "actor_id": "choice_crowd",
+          "asset_id": "sfx.crowd_call_names",
+          "bus": "SFX",
+          "max_distance": 900,
+          "attenuation": 1.0,
+          "volume_db": -2.0,
+          "trace_step": "right_crowd_directional_names"
+        },
+        {
+          "id": "P4-CRASH-022",
+          "type": "animation_play",
+          "actor_id": "liuniang",
+          "animation": "hold_child",
+          "trace_step": "liuniang_holds_child"
+        },
+        {
+          "id": "P4-CRASH-023",
+          "type": "animation_play",
+          "actor_id": "liuniang",
+          "animation": "call_names",
+          "wait_for_finish": false,
+          "trace_step": "liuniang_calls_for_mutual_recognition"
+        },
+        {
+          "id": "P4-CRASH-024",
+          "type": "dialogue",
+          "line_id": "P4_SCAN_CROWD",
+          "wait_for_input": false,
+          "auto_duration": 3.0,
+          "trace_step": "scan_crowd_pressure"
+        },
+        {
+          "id": "P4-CRASH-025",
+          "type": "camera_focus",
+          "actor_id": "xinheng",
+          "offset": [
+            0,
+            -60
+          ],
+          "duration": 0.8,
+          "trace_step": "scan_xinheng_empty_tablet"
+        },
+        {
+          "id": "P4-CRASH-026",
+          "type": "animation_play",
+          "actor_id": "xinheng",
+          "animation": "hand_tablet",
+          "trace_step": "xinheng_hands_empty_tablet"
+        },
+        {
+          "id": "P4-CRASH-027",
+          "type": "dialogue",
+          "line_id": "P4_XINHENG_SEE_FIRST",
+          "wait_for_input": false,
+          "auto_duration": 2.6,
+          "trace_step": "xinheng_says_see_people_first"
+        },
+        {
+          "id": "P4-CRASH-028",
+          "type": "animation_play",
+          "actor_id": "player",
+          "animation": "choice_scan",
+          "trace_step": "player_scans_three_directions"
+        },
+        {
+          "id": "P4-CRASH-029",
+          "type": "camera_move",
+          "target": [
+            1100,
+            360
+          ],
+          "duration": 0.7,
+          "trace_step": "camera_returns_for_cart_choice"
+        },
+        {
+          "id": "P4-CRASH-030",
+          "type": "state_set",
+          "path": "prologue.cart_crash_seen",
+          "value": true,
+          "trace_step": "cart_crash_seen"
+        },
+        {
+          "id": "P4-CRASH-031",
+          "type": "state_set",
+          "path": "prologue.cart_scan_completed",
+          "value": true,
+          "trace_step": "cart_scan_completed"
+        },
+        {
+          "id": "P4-CRASH-032",
+          "type": "player_control",
+          "enabled": true,
+          "trace_step": "cart_choice_player_control"
+        }
+      ],
+      "choice_rescue_child_events": [
+        {
+          "id": "P4-RESCUE-001",
+          "type": "camera_focus",
+          "actor_id": "choice_child",
+          "offset": [
+            0,
+            -50
+          ],
+          "duration": 0.55,
+          "trace_step": "choice_rescue_child_focus"
+        },
+        {
+          "id": "P4-RESCUE-002",
+          "type": "animation_play",
+          "actor_id": "player",
+          "animation": "push_lift",
+          "wait_for_finish": false,
+          "trace_step": "player_lifts_cart_shaft"
+        },
+        {
+          "id": "P4-RESCUE-003",
+          "type": "animation_play",
+          "actor_id": "hean",
+          "animation": "brace_cart",
+          "trace_step": "hean_keeps_cart_braced"
+        },
+        {
+          "id": "P4-RESCUE-004",
+          "type": "dialogue",
+          "line_id": "P4_FEEDBACK_RESCUE_CHILD",
+          "wait_for_input": false,
+          "auto_duration": 4.6,
+          "trace_step": "rescue_child_immediate_feedback"
+        },
+        {
+          "id": "P4-RESCUE-005",
+          "type": "state_set",
+          "path": "prologue.rescue_child_feedback_seen",
+          "value": true,
+          "trace_step": "rescue_child_feedback_state"
+        },
+        {
+          "id": "P4-RESCUE-006",
+          "type": "state_set",
+          "path": "prologue.cart_choice_feedback_completed",
+          "value": true,
+          "trace_step": "cart_choice_feedback_completed_rescue"
+        },
+        {
+          "id": "P4-RESCUE-007",
+          "type": "save_checkpoint",
+          "checkpoint": "first_priority_rescue_child",
+          "trace_step": "first_priority_rescue_child_saved"
+        }
+      ],
+      "choice_save_records_events": [
+        {
+          "id": "P4-RECORDS-001",
+          "type": "camera_focus",
+          "actor_id": "choice_records",
+          "offset": [
+            0,
+            -45
+          ],
+          "duration": 0.55,
+          "trace_step": "choice_save_records_focus"
+        },
+        {
+          "id": "P4-RECORDS-002",
+          "type": "audio_play",
+          "channel": "sfx",
+          "asset_id": "sfx.tablet_splash",
+          "trace_step": "wet_tablet_splash"
+        },
+        {
+          "id": "P4-RECORDS-003",
+          "type": "animation_play",
+          "actor_id": "player",
+          "animation": "kneel_pickup",
+          "wait_for_finish": false,
+          "trace_step": "player_kneels_for_wet_records"
+        },
+        {
+          "id": "P4-RECORDS-004",
+          "type": "animation_play",
+          "actor_id": "hanning",
+          "animation": "kneel_records",
+          "trace_step": "hanning_kneels_for_records"
+        },
+        {
+          "id": "P4-RECORDS-005",
+          "type": "dialogue",
+          "line_id": "P4_FEEDBACK_SAVE_RECORDS",
+          "wait_for_input": false,
+          "auto_duration": 4.8,
+          "trace_step": "save_records_immediate_feedback"
+        },
+        {
+          "id": "P4-RECORDS-006",
+          "type": "state_set",
+          "path": "prologue.save_records_feedback_seen",
+          "value": true,
+          "trace_step": "save_records_feedback_state"
+        },
+        {
+          "id": "P4-RECORDS-007",
+          "type": "state_set",
+          "path": "prologue.cart_choice_feedback_completed",
+          "value": true,
+          "trace_step": "cart_choice_feedback_completed_records"
+        },
+        {
+          "id": "P4-RECORDS-008",
+          "type": "save_checkpoint",
+          "checkpoint": "first_priority_save_records",
+          "trace_step": "first_priority_save_records_saved"
+        }
+      ],
+      "choice_mutual_recognition_events": [
+        {
+          "id": "P4-RECOGNITION-001",
+          "type": "camera_focus",
+          "actor_id": "choice_crowd",
+          "offset": [
+            0,
+            -45
+          ],
+          "duration": 0.55,
+          "trace_step": "choice_mutual_recognition_focus"
+        },
+        {
+          "id": "P4-RECOGNITION-002",
+          "type": "animation_play",
+          "actor_id": "player",
+          "animation": "organize_crowd",
+          "wait_for_finish": false,
+          "trace_step": "player_organizes_crowd"
+        },
+        {
+          "id": "P4-RECOGNITION-003",
+          "type": "animation_play",
+          "actor_id": "liuniang",
+          "animation": "call_names",
+          "trace_step": "liuniang_calls_names_with_player"
+        },
+        {
+          "id": "P4-RECOGNITION-004",
+          "type": "dialogue",
+          "line_id": "P4_FEEDBACK_MUTUAL_RECOGNITION",
+          "wait_for_input": false,
+          "auto_duration": 4.8,
+          "trace_step": "mutual_recognition_immediate_feedback"
+        },
+        {
+          "id": "P4-RECOGNITION-005",
+          "type": "state_set",
+          "path": "prologue.mutual_recognition_feedback_seen",
+          "value": true,
+          "trace_step": "mutual_recognition_feedback_state"
+        },
+        {
+          "id": "P4-RECOGNITION-006",
+          "type": "state_set",
+          "path": "prologue.cart_choice_feedback_completed",
+          "value": true,
+          "trace_step": "cart_choice_feedback_completed_recognition"
+        },
+        {
+          "id": "P4-RECOGNITION-007",
+          "type": "save_checkpoint",
+          "checkpoint": "first_priority_mutual_recognition",
+          "trace_step": "first_priority_mutual_recognition_saved"
+        }
+      ],
+      "completion_scene_asset_id": "scene.sc07_prologue_end"
+    }
+  }
+}

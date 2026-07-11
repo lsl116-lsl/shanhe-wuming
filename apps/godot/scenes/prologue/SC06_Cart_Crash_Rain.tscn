@@ -1,0 +1,330 @@
+[gd_scene load_steps=29 format=3]
+
+[ext_resource type="Script" path="res://scripts/prologue/prologue_stage_director.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p4/crash_rain_far.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p4/crash_rain_mid.svg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p4/crash_rain_near.svg" id="4"]
+[ext_resource type="Texture2D" path="res://assets/fx/p4/rain_heavy.svg" id="5"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/overturned_cart.svg" id="6"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/trapped_child.svg" id="7"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/wet_tablets.svg" id="8"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/separated_crowd.svg" id="9"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/horse_shadow.svg" id="10"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/hot_water_bucket.svg" id="11"]
+[ext_resource type="Texture2D" path="res://assets/props/p4/wet_ink_spread.svg" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Player.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Xinheng.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Hean.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Hanning.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Liuniang.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/characters/RefugeeOld.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/characters/RefugeeMother.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/characters/RefugeeMan.tscn" id="20"]
+[ext_resource type="Script" path="res://scripts/prologue/choice_pressure_controller.gd" id="21"]
+[ext_resource type="Script" path="res://scripts/narrative/camera_director.gd" id="22"]
+[ext_resource type="Script" path="res://scripts/narrative/timeline_runner.gd" id="23"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueLayer.tscn" id="24"]
+[ext_resource type="PackedScene" path="res://scenes/ui/InteractionPrompt.tscn" id="25"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TransitionLayer.tscn" id="26"]
+[ext_resource type="Font" path="res://assets/ui/fonts/system_chinese_fallback.tres" id="27"]
+[ext_resource type="Texture2D" path="res://assets/ui/p2/objective_panel.svg" id="28"]
+
+[node name="SC06_Cart_Crash_Rain" type="Node2D"]
+
+[node name="CrashFar" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("2")
+z_index = -60
+
+[node name="CrashMid" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("3")
+z_index = -42
+
+[node name="RainBack" type="Sprite2D" parent="."]
+position = Vector2(1100, 270)
+texture = ExtResource("5")
+modulate = Color(0.82, 0.92, 0.93, 0.2)
+z_index = -34
+
+[node name="HorseShadowVisual" type="Sprite2D" parent="."]
+position = Vector2(690, 466)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("10")
+z_index = -4
+
+[node name="CrashNear" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("4")
+z_index = -20
+
+[node name="OverturnedCartVisual" type="Sprite2D" parent="."]
+position = Vector2(452, 470)
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("6")
+z_index = 2
+
+[node name="TrappedChildVisual" type="Sprite2D" parent="."]
+position = Vector2(522, 545)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("7")
+z_index = 3
+
+[node name="WetTabletsVisual" type="Sprite2D" parent="."]
+position = Vector2(1102, 548)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("8")
+z_index = 2
+
+[node name="WetInkFx" type="Sprite2D" parent="."]
+position = Vector2(1110, 574)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("12")
+modulate = Color(0.85, 0.95, 0.95, 0.78)
+z_index = 1
+
+[node name="SeparatedCrowdVisual" type="Sprite2D" parent="."]
+position = Vector2(1760, 504)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("9")
+z_index = 2
+
+[node name="HotWaterBucketVisual" type="Sprite2D" parent="."]
+position = Vector2(613, 568)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("11")
+z_index = 4
+
+[node name="Actors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="choice_child" type="Node2D" parent="Actors"]
+position = Vector2(500, 560)
+z_index = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Actors/choice_child"]
+bus = &"SFX"
+max_distance = 900.0
+attenuation = 1.0
+
+[node name="choice_records" type="Node2D" parent="Actors"]
+position = Vector2(1095, 560)
+z_index = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Actors/choice_records"]
+bus = &"SFX"
+max_distance = 850.0
+attenuation = 1.0
+
+[node name="choice_crowd" type="Node2D" parent="Actors"]
+position = Vector2(1760, 560)
+z_index = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Actors/choice_crowd"]
+bus = &"SFX"
+max_distance = 900.0
+attenuation = 1.0
+
+[node name="hean" parent="Actors" instance=ExtResource("15")]
+position = Vector2(520, 606)
+scale = Vector2(0.7, 0.7)
+z_index = 7
+
+[node name="hanning" parent="Actors" instance=ExtResource("16")]
+position = Vector2(1015, 606)
+scale = Vector2(0.69, 0.69)
+z_index = 7
+
+[node name="liuniang" parent="Actors" instance=ExtResource("17")]
+position = Vector2(1688, 606)
+scale = Vector2(0.7, 0.7)
+z_index = 7
+
+[node name="xinheng" parent="Actors" instance=ExtResource("14")]
+position = Vector2(930, 606)
+scale = Vector2(0.68, 0.68)
+z_index = 6
+
+[node name="refugee_old" parent="Actors" instance=ExtResource("18")]
+position = Vector2(1876, 606)
+scale = Vector2(0.64, 0.64)
+z_index = 5
+
+[node name="refugee_mother" parent="Actors" instance=ExtResource("19")]
+position = Vector2(1810, 606)
+scale = Vector2(0.64, 0.64)
+z_index = 5
+
+[node name="refugee_man" parent="Actors" instance=ExtResource("20")]
+position = Vector2(1970, 606)
+scale = Vector2(0.65, 0.65)
+z_index = 5
+
+[node name="Player" parent="." instance=ExtResource("13")]
+unique_name_in_owner = true
+position = Vector2(1080, 607)
+z_index = 9
+min_bounds = Vector2(250, 525)
+max_bounds = Vector2(2060, 635)
+
+[node name="RainFront" type="Sprite2D" parent="."]
+position = Vector2(1100, 240)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("5")
+modulate = Color(0.82, 0.92, 0.93, 0.28)
+z_index = 18
+
+[node name="ChoicePressureController" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("21")
+
+[node name="Interactions" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="SceneCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1100, 360)
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+limit_left = 0
+limit_top = 0
+limit_right = 2200
+limit_bottom = 720
+
+[node name="CameraDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("22")
+
+[node name="TimelineRunner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("23")
+
+[node name="PrologueStageDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1")
+stage_id = "SC06_Cart_Crash_Rain"
+camera_min_x = 640.0
+camera_max_x = 1560.0
+
+[node name="DialogueLayer" parent="." instance=ExtResource("24")]
+unique_name_in_owner = true
+
+[node name="InteractionPrompt" parent="." instance=ExtResource("25")]
+unique_name_in_owner = true
+
+[node name="TransitionLayer" parent="." instance=ExtResource("26")]
+unique_name_in_owner = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="LocationLabel" type="Label" parent="HUD"]
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 500.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.88, 0.9, 0.82, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.025, 0.025, 0.95)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 24
+text = "洛水旧渡 · 雨夜翻车"
+
+[node name="ControlHint" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -510.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.82, 0.86, 0.79, 0.94)
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 16
+text = "移动看见 · 靠近只显示信息 · 按住 E 才锁定"
+horizontal_alignment = 2
+
+[node name="ObjectivePanel" type="Control" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -554.0
+offset_top = 82.0
+offset_right = -34.0
+offset_bottom = 154.0
+grow_horizontal = 0
+
+[node name="Background" type="TextureRect" parent="HUD/ObjectivePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="HUD/ObjectivePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 14
+
+[node name="ObjectiveLabel" type="Label" parent="HUD/ObjectivePanel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.86, 0.68, 1)
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 18
+text = "先看清现场。左是车下孩子，中间是湿简，右是失散的人群。"
+horizontal_alignment = 1
+
+[node name="PressurePanel" type="PanelContainer" parent="HUD"]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 516.0
+offset_right = 694.0
+offset_bottom = 696.0
+
+[node name="Margin" type="MarginContainer" parent="HUD/PressurePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="HUD/PressurePanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="ChoiceTitle" type="Label" parent="HUD/PressurePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.82, 0.62, 1)
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 19
+text = "雨夜翻车现场"
+
+[node name="ChoiceDetail" type="Label" parent="HUD/PressurePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0.88, 0.82, 1)
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 16
+text = "靠近左、中、右三处压力，只会看见更多信息。"
+autowrap_mode = 3
+
+[node name="ChoiceClock" type="Label" parent="HUD/PressurePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.71, 0.78, 0.76, 1)
+theme_override_fonts/font = ExtResource("27")
+theme_override_font_sizes/font_size = 14
+text = "观察时间：0.0 秒。"
+autowrap_mode = 3

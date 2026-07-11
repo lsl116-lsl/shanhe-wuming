@@ -1,0 +1,468 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620">
+<defs>
+<linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#788480"/>
+  <stop offset="1" stop-color="#485b60"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d2b38b"/>
+  <stop offset="1" stop-color="#b68d67"/>
+</linearGradient>
+<pattern id="papergrain" width="13" height="13" patternUnits="userSpaceOnUse">
+  <path d="M1 3 L12 1 M3 10 L11 8" stroke="#e8e1d2" stroke-opacity=".08" stroke-width=".7"/>
+</pattern>
+</defs>
+
+<rect width="1440" height="620" fill="#e8e1d2"/>
+<rect x="24" y="24" width="1392" height="572" rx="10" fill="#d8cfba" stroke="#302c27" stroke-width="3"/>
+<g transform="translate(14 145) scale(.82)">
+<g id="shadow">
+  <ellipse cx="128" cy="293" rx="53" ry="12" fill="#172326" fill-opacity=".32"/>
+  <ellipse cx="128" cy="290" rx="36" ry="6" fill="#26363a" fill-opacity=".28"/>
+</g>
+
+<g id="body_back" stroke="#292724" stroke-width="3" stroke-linejoin="round">
+  <path d="M101 164 Q86 181 84 224 L79 277 Q91 288 108 281 L116 218 Z" fill="#53666a"/>
+  <path d="M155 164 Q173 181 176 222 L182 273 Q168 286 151 278 L141 216 Z" fill="#45575b"/>
+</g>
+<g id="legs" stroke="#292724" stroke-width="3" stroke-linejoin="round">
+  <path d="M102 222 L126 222 L121 284 Q111 296 96 286 Z" fill="#5e625d"/>
+  <path d="M128 222 L153 222 L162 285 Q146 296 136 284 Z" fill="#535954"/>
+  <path d="M93 283 Q108 278 123 285 L122 295 L91 295 Z" fill="#332f2a"/>
+  <path d="M136 284 Q151 279 164 286 L166 295 L135 295 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#292724" stroke-width="3" stroke-linejoin="round">
+  <path d="M99 147 Q128 132 157 148 L162 229 Q130 244 94 229 Z" fill="url(#cloth)"/>
+  <path d="M99 147 Q126 161 157 148" fill="none"/>
+  <path d="M112 151 L145 227" fill="none" stroke="#a8b0aa" stroke-opacity=".45" stroke-width="2"/>
+  <path d="M95 207 Q128 215 162 205" fill="none" stroke="#6b513d" stroke-width="7"/>
+  <path d="M95 207 Q128 215 162 205" fill="none" stroke="#b09a74" stroke-width="2"/>
+  <path d="M98 149 L158 149 L161 229 L94 229 Z" fill="url(#papergrain)" stroke="none"/>
+</g>
+<g id="back_arm" stroke="#292724" stroke-width="3" stroke-linecap="round">
+  <path d="M99 158 Q79 178 88 214 Q95 228 105 214 L112 174 Z" fill="#627075"/>
+  <path d="M90 213 Q91 229 103 230 Q114 222 104 211 Z" fill="url(#skin)"/>
+</g>
+
+<g id="head">
+  <path d="M100 91 Q99 57 128 49 Q163 53 160 94 L154 127 Q143 143 126 143 Q107 139 101 123 Z"
+        fill="url(#skin)" stroke="#292724" stroke-width="3"/>
+  <path d="M99 91 Q92 66 113 49 Q139 29 162 56 Q173 69 159 99
+           Q147 76 127 73 Q114 89 99 91 Z" fill="#292724"/>
+  <path d="M110 54 Q128 35 151 48" fill="none" stroke="#423b34" stroke-width="6" stroke-linecap="round"/>
+  <path d="M113 102 Q119 103 125 102 M139 102 Q145 103 151 102" fill="none" stroke="#292724" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M126 121 Q136 120 144 120" fill="none" stroke="#6b453b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M124 139 L127 150 L143 143 L145 131" fill="#c39f78" stroke="#292724" stroke-width="3"/>
+  <path d="M160 66 Q178 67 178 82 Q172 94 158 91" fill="#2f2a26" stroke="#292724" stroke-width="3"/>
+  <path d="M164 69 Q178 62 183 70" fill="none" stroke="#8a8174" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<g id="held_prop" stroke="#292724" stroke-linejoin="round">
+  <g transform="rotate(-7 174 194)">
+    <rect x="151" y="151" width="46" height="91" rx="4" fill="#765b3d" stroke-width="3"/>
+    <rect x="158" y="158" width="32" height="77" rx="2" fill="#9a7b51" stroke="#4a3828" stroke-width="1.5"/>
+    <path d="M164 171 L184 168 M163 184 L185 181 M162 197 L182 194 M161 211 L180 208"
+          stroke="#4a3828" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+<g id="front_arm" stroke="#292724" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M153 159 Q171 176 166 204 L154 215 Q141 204 142 177 Z" fill="#596b6f"/>
+  <path d="M156 205 Q168 203 174 215 Q171 228 159 226 Q149 218 156 205 Z" fill="url(#skin)"/>
+  <path d="M160 216 Q169 219 174 214" fill="none" stroke="#4f7770" stroke-width="3"/>
+</g>
+<g id="ink_marks" fill="#2a3436" fill-opacity=".7">
+  <circle cx="162" cy="216" r="2.3"/><circle cx="169" cy="218" r="1.4"/>
+</g>
+</g><g transform="translate(206 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="160" cy="338" rx="78" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="160" cy="336" rx="54" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M112 124 Q82 156 89 251
+           Q103 264 119 247 L142 136 Z"
+        fill="#4f4b45"/>
+  <path d="M210 124 Q242 157 235 252
+           Q220 265 205 246 L178 136 Z"
+        fill="#4f4b45"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M118 244 L157 244 L149 327
+           Q129 337 111 327 Z" fill="#4f4b45"/>
+  <path d="M158 244 L202 244 L209 327
+           Q188 337 169 327 Z" fill="#4f4b45"/>
+  <path d="M107 325 Q129 318 152 326
+           L153 336 L104 336 Z" fill="#332f2a"/>
+  <path d="M167 326 Q191 318 214 327
+           L217 336 L167 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M102 115 Q160 100 218 115
+           L210 248 Q160 266 110 248 Z" fill="#77746b"/>
+  <path d="M107 119 Q160 139 213 119"
+        fill="none" stroke="#83969a" stroke-width="5"/>
+  <path d="M108 223 Q160 234 212 223"
+        fill="none" stroke="#83969a" stroke-width="8"/>
+  <path d="M109 120 L208 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M124 60 Q125 33 160 30
+           Q197 33 198 63
+           L191 98 Q160 119 130 98 Z"
+        fill="#c6a178" stroke="#2e2925" stroke-width="3"/>
+  <path d="M123 66 Q127 24 160 21 Q197 26 200 68 Q176 46 154 49 Q138 65 123 66 Z" fill="#302b28"/>
+  <path d="M135 72 q8 -5 16 0 M169 72 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M151 96 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  
+  <path d="M147 108 L150 114 L175 114
+        L176 108" fill="#c6a178" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M211 128 Q236 156 221 240
+           L201 246 Q205 163 188 140 Z"
+        fill="#77746b"/>
+  <path d="M203 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#c6a178"/>
+</g>
+
+<g id="held_prop" stroke="#3c3028" stroke-width="3">
+  <ellipse cx="170" cy="250" rx="61" ry="18" fill="#9a7650"/>
+  <path d="M111 250 Q170 310 228 250"
+        fill="#71543d"/>
+  <ellipse cx="170" cy="248" rx="52" ry="12" fill="#8fa0a0" fill-opacity=".76"/>
+</g>
+</g><g transform="translate(390 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="153" cy="338" rx="68" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="153" cy="336" rx="44" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M115 132 Q85 164 92 251
+           Q106 264 122 247 L135 144 Z"
+        fill="#383a38"/>
+  <path d="M193 132 Q225 165 218 252
+           Q203 265 188 246 L171 144 Z"
+        fill="#383a38"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M111 244 L150 244 L142 327
+           Q122 337 104 327 Z" fill="#383a38"/>
+  <path d="M151 244 L195 244 L202 327
+           Q181 337 162 327 Z" fill="#383a38"/>
+  <path d="M100 325 Q122 318 145 326
+           L146 336 L97 336 Z" fill="#332f2a"/>
+  <path d="M160 326 Q184 318 207 327
+           L210 336 L160 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M105 123 Q153 108 201 123
+           L193 248 Q153 266 113 248 Z" fill="#545552"/>
+  <path d="M110 127 Q153 147 196 127"
+        fill="none" stroke="#3f5958" stroke-width="5"/>
+  <path d="M111 223 Q153 234 195 223"
+        fill="none" stroke="#3f5958" stroke-width="8"/>
+  <path d="M112 128 L191 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M117 68 Q118 41 153 38
+           Q190 41 191 71
+           L184 106 Q153 127 123 106 Z"
+        fill="#b7936f" stroke="#2e2925" stroke-width="3"/>
+  <path d="M116 74 Q120 32 153 29 Q190 34 193 76 Q169 54 147 57 Q131 73 116 74 Z" fill="#6d675f"/>
+  <path d="M128 80 q8 -5 16 0 M162 80 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M144 104 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M133 106 Q153 143 174 106 Q165 151 153 160 Q140 150 133 106 Z" fill="#71685d" fill-opacity=".82" stroke="#2e2925" stroke-width="2"/>
+  <path d="M140 116 L143 122 L168 122
+        L169 116" fill="#b7936f" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M194 136 Q219 164 204 240
+           L184 246 Q188 171 171 148 Z"
+        fill="#545552"/>
+  <path d="M186 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#b7936f"/>
+</g>
+
+<g id="held_prop" stroke="#3b3028" stroke-linejoin="round">
+  <rect x="165" y="139" width="40" height="101" rx="3"
+        fill="#8b6844" stroke-width="3"/>
+  <path d="M131 134 L171 256" stroke="#4c3528" stroke-width="5"/>
+  <path d="M129 129 l7 17" stroke="#202b33" stroke-width="5"/>
+</g>
+</g><g transform="translate(574 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="168" cy="338" rx="69" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="168" cy="336" rx="45" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M129 166 Q99 198 106 261
+           Q120 274 136 257 L150 178 Z"
+        fill="#5b4138"/>
+  <path d="M209 166 Q241 199 234 262
+           Q219 275 204 256 L186 178 Z"
+        fill="#5b4138"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M126 254 L165 254 L157 327
+           Q137 337 119 327 Z" fill="#5b4138"/>
+  <path d="M166 254 L210 254 L217 327
+           Q196 337 177 327 Z" fill="#5b4138"/>
+  <path d="M115 325 Q137 318 160 326
+           L161 336 L112 336 Z" fill="#332f2a"/>
+  <path d="M175 326 Q199 318 222 327
+           L225 336 L175 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M119 157 Q168 142 217 157
+           L209 258 Q168 276 127 258 Z" fill="#945848"/>
+  <path d="M124 161 Q168 181 212 161"
+        fill="none" stroke="#b19b73" stroke-width="5"/>
+  <path d="M125 233 Q168 244 211 233"
+        fill="none" stroke="#b19b73" stroke-width="8"/>
+  <path d="M126 162 L207 256" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M132 102 Q133 75 168 72
+           Q205 75 206 105
+           L199 140 Q168 161 138 140 Z"
+        fill="#cfa87d" stroke="#2e2925" stroke-width="3"/>
+  <path d="M131 108 Q135 66 168 63 Q205 68 208 110 Q184 88 162 91 Q146 107 131 108 Z" fill="#352c29"/><path d="M186 64 q18 -24 34 -4 q-7 18 -26 19" fill="#352c29" stroke="#2e2925" stroke-width="3"/><path d="M196 68 l23 8" stroke="#b19b73" stroke-width="5"/>
+  <path d="M143 114 q8 -5 16 0 M177 114 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M159 138 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  
+  <path d="M155 150 L158 156 L183 156
+        L184 150" fill="#cfa87d" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M210 170 Q235 198 220 250
+           L200 256 Q204 205 187 182 Z"
+        fill="#945848"/>
+  <path d="M202 251 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#cfa87d"/>
+</g>
+
+<g id="held_prop" stroke="#443429" stroke-linecap="round">
+  <g transform="translate(-24 -6)">
+    <path d="M178 175 l92 -38 M175 185 l98 -17
+             M181 195 l91 4 M174 202 l84 24"
+          stroke="#604831" stroke-width="8"/>
+    <path d="M197 158 q26 24 58 42" fill="none" stroke="#9a7a52" stroke-width="4"/>
+  </g>
+  <path d="M171 263 q38 22 73 0 q-8 38 -37 39 q-29 -1 -36 -39 Z"
+        fill="#8a6745" stroke-width="3"/>
+  <path d="M179 263 q29 11 57 0" fill="none" stroke="#d0b279" stroke-width="5"/>
+</g>
+</g><g transform="translate(758 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="165" cy="338" rx="86" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="165" cy="336" rx="62" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M109 114 Q79 146 86 251
+           Q100 264 116 247 L147 126 Z"
+        fill="#354348"/>
+  <path d="M223 114 Q255 147 248 252
+           Q233 265 218 246 L183 126 Z"
+        fill="#354348"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M123 244 L162 244 L154 327
+           Q134 337 116 327 Z" fill="#354348"/>
+  <path d="M163 244 L207 244 L214 327
+           Q193 337 174 327 Z" fill="#354348"/>
+  <path d="M112 325 Q134 318 157 326
+           L158 336 L109 336 Z" fill="#332f2a"/>
+  <path d="M172 326 Q196 318 219 327
+           L222 336 L172 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M99 105 Q165 90 231 105
+           L223 248 Q165 266 107 248 Z" fill="#465e62"/>
+  <path d="M104 109 Q165 129 226 109"
+        fill="none" stroke="#8c7351" stroke-width="5"/>
+  <path d="M105 223 Q165 234 225 223"
+        fill="none" stroke="#8c7351" stroke-width="8"/>
+  <path d="M106 110 L221 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M129 50 Q130 23 165 20
+           Q202 23 203 53
+           L196 88 Q165 109 135 88 Z"
+        fill="#b88863" stroke="#2e2925" stroke-width="3"/>
+  <path d="M128 56 Q132 14 165 11 Q202 16 205 58 Q181 36 159 39 Q143 55 128 56 Z" fill="#2d2926"/>
+  <path d="M140 62 q8 -5 16 0 M174 62 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M156 86 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M145 88 Q165 125 186 88 Q177 133 165 142 Q152 132 145 88 Z" fill="#2d2926" fill-opacity=".82" stroke="#2e2925" stroke-width="2"/>
+  <path d="M152 98 L155 104 L180 104
+        L181 98" fill="#b88863" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M224 118 Q249 146 234 240
+           L214 246 Q218 153 201 130 Z"
+        fill="#465e62"/>
+  <path d="M216 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#b88863"/>
+</g>
+
+<g id="held_prop" stroke="#45362a" stroke-linecap="round" fill="none">
+  <circle cx="207" cy="176" r="35" stroke="#8b714f" stroke-width="9"/>
+  <circle cx="207" cy="176" r="22" stroke="#5e4b39" stroke-width="5"/>
+  <rect x="117" y="136" width="29" height="65" rx="3"
+        fill="#8c6d46" stroke-width="3"/>
+  <path d="M123 149 l18 0 m-18 14 l18 0 m-18 14 l18 0"
+        stroke="#473629" stroke-width="2"/>
+</g>
+</g><g transform="translate(942 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="156" cy="338" rx="94" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="156" cy="336" rx="70" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M92 118 Q62 150 69 251
+           Q83 264 99 247 L138 130 Z"
+        fill="#48443e"/>
+  <path d="M222 118 Q254 151 247 252
+           Q232 265 217 246 L174 130 Z"
+        fill="#48443e"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M114 244 L153 244 L145 327
+           Q125 337 107 327 Z" fill="#48443e"/>
+  <path d="M154 244 L198 244 L205 327
+           Q184 337 165 327 Z" fill="#48443e"/>
+  <path d="M103 325 Q125 318 148 326
+           L149 336 L100 336 Z" fill="#332f2a"/>
+  <path d="M163 326 Q187 318 210 327
+           L213 336 L163 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M82 109 Q156 94 230 109
+           L222 248 Q156 266 90 248 Z" fill="#68645d"/>
+  <path d="M87 113 Q156 133 225 113"
+        fill="none" stroke="#776047" stroke-width="5"/>
+  <path d="M88 223 Q156 234 224 223"
+        fill="none" stroke="#776047" stroke-width="8"/>
+  <path d="M89 114 L220 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M120 54 Q121 27 156 24
+           Q193 27 194 57
+           L187 92 Q156 113 126 92 Z"
+        fill="#b58a64" stroke="#2e2925" stroke-width="3"/>
+  <path d="M119 60 Q123 18 156 15 Q193 20 196 62 Q172 40 150 43 Q134 59 119 60 Z" fill="#312c28"/>
+  <path d="M131 66 q8 -5 16 0 M165 66 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M147 90 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M136 92 Q156 129 177 92 Q168 137 156 146 Q143 136 136 92 Z" fill="#312c28" fill-opacity=".82" stroke="#2e2925" stroke-width="2"/>
+  <path d="M143 102 L146 108 L171 108
+        L172 102" fill="#b58a64" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M223 122 Q248 150 233 240
+           L213 246 Q217 157 200 134 Z"
+        fill="#68645d"/>
+  <path d="M215 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#b58a64"/>
+</g>
+
+<g id="held_prop" stroke="#443529" stroke-linecap="round">
+  <path d="M67 117 Q156 106 256 122"
+        fill="none" stroke="#6e5438" stroke-width="10"/>
+  <path d="M85 120 v101 M240 120 v100"
+        fill="none" stroke="#836a4c" stroke-width="4"/>
+  <path d="M62 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+  <path d="M218 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+</g>
+</g><g transform="translate(1126 105) scale(.56)">
+<g id="shadow">
+  <ellipse cx="164" cy="338" rx="75" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="164" cy="336" rx="51" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M119 130 Q89 162 96 251
+           Q110 264 126 247 L146 142 Z"
+        fill="#434a47"/>
+  <path d="M211 130 Q243 163 236 252
+           Q221 265 206 246 L182 142 Z"
+        fill="#434a47"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M122 244 L161 244 L153 327
+           Q133 337 115 327 Z" fill="#434a47"/>
+  <path d="M162 244 L206 244 L213 327
+           Q192 337 173 327 Z" fill="#434a47"/>
+  <path d="M111 325 Q133 318 156 326
+           L157 336 L108 336 Z" fill="#332f2a"/>
+  <path d="M171 326 Q195 318 218 327
+           L221 336 L171 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M109 121 Q164 106 219 121
+           L211 248 Q164 266 117 248 Z" fill="#5f6c67"/>
+  <path d="M114 125 Q164 145 214 125"
+        fill="none" stroke="#735a47" stroke-width="5"/>
+  <path d="M115 223 Q164 234 213 223"
+        fill="none" stroke="#735a47" stroke-width="8"/>
+  <path d="M116 126 L209 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M128 66 Q129 39 164 36
+           Q201 39 202 69
+           L195 104 Q164 125 134 104 Z"
+        fill="#c19872" stroke="#2e2925" stroke-width="3"/>
+  <path d="M127 72 Q131 30 164 27 Q201 32 204 74 Q180 52 158 55 Q142 71 127 72 Z" fill="#2f2927"/>
+  <path d="M139 78 q8 -5 16 0 M173 78 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M155 102 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  
+  <path d="M151 114 L154 120 L179 120
+        L180 114" fill="#c19872" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M212 134 Q237 162 222 240
+           L202 246 Q206 169 189 146 Z"
+        fill="#5f6c67"/>
+  <path d="M204 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#c19872"/>
+</g>
+
+<g id="held_prop" stroke="#42342a" stroke-width="3">
+  <path d="M181 245 q31 -18 58 0 l-8 17 q20 52 -21 70
+           q-44 -14 -21 -70 Z" fill="#76634d"/>
+  <path d="M192 256 q20 8 38 0" fill="none" stroke="#aa916d" stroke-width="4"/>
+</g>
+</g>
+<text x="52" y="73" font-family="Microsoft YaHei, sans-serif" font-size="31" fill="#292724">序章 P2 人物阵容：主角 / 母亲 / 辛衡 / 禾安 / 船主 / 旧渡人</text>
+<text x="52" y="565" font-family="Microsoft YaHei, sans-serif" font-size="18" fill="#54483e">分层：阴影、身体、头部、前臂、持有物 · seed 286 · generator p2.0</text>
+
+</svg>

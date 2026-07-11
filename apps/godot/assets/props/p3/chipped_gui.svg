@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="280" viewBox="0 0 330 280">
+<defs>
+<linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#71856f"/><stop offset=".45" stop-color="#40584f"/>
+  <stop offset="1" stop-color="#263c39"/>
+</linearGradient>
+</defs>
+
+<ellipse cx="165" cy="250" rx="116" ry="18" fill="#12191a" fill-opacity=".42"/>
+<path d="M62 77 Q165 32 270 77 L247 188 Q165 234 83 188 Z"
+      fill="url(#bronze)" stroke="#1e2928" stroke-width="8"/>
+<path d="M71 94 Q165 127 259 94 M84 155 Q165 188 248 154"
+      fill="none" stroke="#9b8861" stroke-opacity=".42" stroke-width="7"/>
+<path d="M70 104 q-58 18 -19 78 q24 26 55 -4 M260 106 q54 23 16 76 q-24 23 -52 -4"
+      fill="none" stroke="#40584f" stroke-width="15"/>
+<path d="M199 63 l25 23 l-18 22 l-27 -17 Z" fill="#171d1d"/>
+
+</svg>

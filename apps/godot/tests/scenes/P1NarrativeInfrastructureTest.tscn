@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://tests/test_timeline_runner.gd" id="1_test"]
+[ext_resource type="Script" path="res://scripts/narrative/timeline_runner.gd" id="2_runner"]
+[ext_resource type="Script" path="res://scripts/narrative/camera_director.gd" id="3_camera"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueLayer.tscn" id="4_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TransitionLayer.tscn" id="5_transition"]
+[ext_resource type="PackedScene" path="res://scenes/ui/InteractionPrompt.tscn" id="6_prompt"]
+
+[node name="P1NarrativeInfrastructureTest" type="Node2D"]
+script = ExtResource("1_test")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(320, 360)
+
+[node name="ActorContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="InteractionContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CameraDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_camera")
+
+[node name="TimelineRunner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_runner")
+
+[node name="DialogueLayer" parent="." instance=ExtResource("4_dialogue")]
+unique_name_in_owner = true
+
+[node name="TransitionLayer" parent="." instance=ExtResource("5_transition")]
+unique_name_in_owner = true
+
+[node name="InteractionPrompt" parent="." instance=ExtResource("6_prompt")]
+unique_name_in_owner = true
+
+[node name="TimeoutTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 8.0
+one_shot = true

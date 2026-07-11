@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="720" viewBox="0 0 2200 720">
+<defs></defs>
+
+<g id="buildings_back" stroke="#302c28" stroke-width="4">
+  <rect x="38" y="284" width="350" height="214" fill="#554a3f"/>
+  <path d="M2 306 L211 210 L431 306 Z" fill="#403a32"/>
+  <rect x="78" y="344" width="104" height="154" fill="#2d2c29"/>
+  <rect x="235" y="365" width="94" height="72" fill="#80694c" fill-opacity=".55"/>
+  <path d="M450 391 L635 293 L823 391 Z" fill="#403a32" fill-opacity=".82"/>
+  <rect x="482" y="380" width="304" height="120" fill="#554a3f" fill-opacity=".86"/>
+  <rect x="541" y="421" width="62" height="79" fill="#302f2b"/>
+  <path d="M1710 410 L1850 334 L1997 410 Z" fill="#403a32" fill-opacity=".78"/>
+  <rect x="1734" y="401" width="240" height="102" fill="#554a3f" fill-opacity=".74"/>
+</g>
+<g id="landing" stroke="#3b3027" stroke-linejoin="round">
+  <path d="M820 447 L1780 447 L1875 518 L757 518 Z" fill="#755b40" stroke-width="4"/>
+  <path d="M808 463 L1804 463 M786 485 L1835 485 M765 505 L1861 505"
+        fill="none" stroke="#a1845e" stroke-opacity=".55" stroke-width="3"/>
+  <g stroke-width="11">
+    <path d="M878 375 L868 560"/><path d="M1240 373 L1230 559"/>
+    <path d="M1604 374 L1594 558"/><path d="M1860 392 L1845 558"/>
+  </g>
+</g>
+<g id="far_boats" fill="#4d4338" stroke="#302c28" stroke-width="4" opacity=".72">
+  <path d="M405 398 Q520 423 640 395 Q598 442 460 438 Z"/>
+  <path d="M2010 422 Q2084 436 2164 417 Q2138 452 2034 451 Z"/>
+</g>
+
+</svg>

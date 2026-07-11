@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="720" viewBox="0 0 2200 720">
+<defs></defs>
+
+<g id="old_ferry_rain_shelter" stroke="#211d1b" stroke-linejoin="round">
+  <path d="M42 360 L420 286 L790 351 L1180 286 L1520 350 L1970 281 L2190 355
+           L2190 426 L42 426 Z"
+        fill="#3a352f" stroke-width="7"/>
+  <g stroke="#5f503e" stroke-width="16">
+    <path d="M178 322 L172 616"/><path d="M604 326 L598 616"/>
+    <path d="M1020 319 L1014 616"/><path d="M1430 320 L1423 616"/>
+    <path d="M1980 318 L1976 616"/>
+  </g>
+  <path d="M118 423 H2140" stroke="#78644a" stroke-width="9" stroke-opacity=".55"/>
+</g>
+<g id="torches" fill="#da9b4b" fill-opacity=".86">
+  <path d="M418 448 q28 -79 56 0 q-27 38 -56 0"/>
+  <path d="M1766 430 q23 -62 47 0 q-24 30 -47 0"/>
+</g>
+<g id="rain_dark_people" fill="#202828" stroke="#101616" stroke-width="3">
+  <path d="M1700 456 q28 -47 57 0 l-8 107 h-41 Z"/>
+  <path d="M1835 472 q32 -50 64 0 l-10 99 h-45 Z"/>
+  <path d="M1925 455 q27 -42 54 0 l-8 108 h-39 Z"/>
+</g>
+
+</svg>

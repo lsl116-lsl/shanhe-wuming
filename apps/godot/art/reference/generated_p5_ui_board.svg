@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs></defs>
+<rect width="1600" height="900" fill="#11100e"/>
+<text x="54" y="68" font-size="36" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f0d48d">P5 UI 图板 / UI Board</text>
+<rect x="82" y="126" width="620" height="210" rx="12" fill="#171512" stroke="#806846" stroke-width="3"/>
+<text x="112" y="178" font-size="30" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">字幕 / 对话层</text>
+<text x="112" y="224" font-size="21" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">低透明黑底，金褐边，中文字体回退；字幕速度受设置控制。</text>
+<rect x="82" y="396" width="620" height="210" rx="12" fill="#171512" stroke="#806846" stroke-width="3"/>
+<text x="112" y="448" font-size="30" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">按住 E 交互</text>
+<text x="112" y="494" font-size="21" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">靠近只展示信息，环形进度确认承担；不用 A/B/C 菜单。</text>
+<rect x="860" y="126" width="620" height="210" rx="12" fill="#171512" stroke="#806846" stroke-width="3"/>
+<text x="890" y="178" font-size="30" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">暂停 / 设置</text>
+<text x="890" y="224" font-size="21" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">Master、Music、Ambience、SFX、Voice、UI 与全屏/震动。</text>
+<rect x="860" y="396" width="620" height="210" rx="12" fill="#171512" stroke="#806846" stroke-width="3"/>
+<text x="890" y="448" font-size="30" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">章节结束回顾</text>
+<text x="890" y="494" font-size="21" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">从 JSON 读取路线回顾，显示第一选择如何进入第一章。</text>
+<text x="82" y="760" font-size="28" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d2b276">UI 原则：移动负责让玩家看见；互动负责让玩家承担。</text>
+</svg>

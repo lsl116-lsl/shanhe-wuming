@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="720" viewBox="0 0 2200 720">
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#171c1d"/><stop offset="1" stop-color="#252927"/>
+</linearGradient>
+</defs>
+
+<rect width="2200" height="720" fill="url(#wall)"/>
+<path d="M0 165 L410 58 L885 145 L1336 49 L1790 139 L2200 54 L2200 0 L0 0 Z"
+      fill="#0b1012"/>
+<g stroke="#394244" stroke-opacity=".48" stroke-width="5">
+  <path d="M92 75 L92 526 M188 58 L188 530 M296 44 L296 534
+           M1910 66 L1910 538 M2024 48 L2024 537 M2132 40 L2132 538"/>
+</g>
+<path d="M0 175 L2200 175" stroke="#564636" stroke-width="25"/>
+<path d="M242 175 L528 32 M718 175 L1014 24 M1204 175 L1506 22
+         M1690 175 L1988 22" stroke="#3b3028" stroke-width="28"/>
+<path d="M0 390 Q320 360 630 396 T1260 390 T1890 398 T2200 389"
+      fill="none" stroke="#61767c" stroke-opacity=".09" stroke-width="110"/>
+
+</svg>

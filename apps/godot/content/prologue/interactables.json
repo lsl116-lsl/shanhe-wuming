@@ -1,0 +1,366 @@
+{
+  "content_version": "p4.0",
+  "scenes": {
+    "SC01_Home_Morning": [
+      {
+        "interaction_id": "morning.grain",
+        "position": [470, 580],
+        "radius": 82,
+        "prompt": "按 E 查看半袋粟米",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_INSPECT_GRAIN",
+          "state_path": "prologue.inspected_grain",
+          "state_value": true,
+          "auto_duration": 3.6
+        }
+      },
+      {
+        "interaction_id": "morning.pen_box",
+        "position": [305, 580],
+        "radius": 80,
+        "prompt": "按 E 查看父亲旧笔盒",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_INSPECT_PEN_BOX",
+          "state_path": "prologue.inspected_pen_box",
+          "state_value": true,
+          "auto_duration": 3.6
+        }
+      },
+      {
+        "interaction_id": "morning.river",
+        "position": [1110, 560],
+        "radius": 96,
+        "prompt": "按 E 望向河道尽头",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_INSPECT_RIVER",
+          "state_path": "prologue.looked_downriver",
+          "state_value": true,
+          "auto_duration": 3.8,
+          "sfx_id": "sfx.boat_hull"
+        }
+      },
+      {
+        "interaction_id": "morning.mother",
+        "position": [590, 590],
+        "radius": 88,
+        "prompt": "按 E 和母亲说话",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_SPEAK_MOTHER",
+          "state_path": "prologue.spoke_to_mother",
+          "state_value": true,
+          "auto_duration": 3.4,
+          "actor_id": "mother",
+          "animation": "resume_work"
+        }
+      },
+      {
+        "interaction_id": "morning.to_xinheng",
+        "position": [1840, 585],
+        "radius": 105,
+        "prompt": "按 E 前往辛衡书案",
+        "payload": {
+          "action": "scene_change",
+          "target_asset_id": "scene.sc02_xinheng_desk",
+          "checkpoint": "morning_exploration"
+        }
+      }
+    ],
+    "SC02_Xinheng_Desk": [
+      {
+        "interaction_id": "desk.write_name",
+        "position": [1100, 585],
+        "radius": 105,
+        "prompt": "按住 E 写下名字",
+        "hold_duration": 1.2,
+        "payload": {
+          "action": "name_input",
+          "state_path": "prologue.name_ritual_started",
+          "state_value": true,
+          "actor_id": "xinheng",
+          "animation": "pause_pen",
+          "sfx_id": "sfx.brush_lift"
+        }
+      }
+    ],
+    "SC03_Ferry_Day": [
+      {
+        "interaction_id": "news.boat_owner",
+        "position": [1765, 590],
+        "radius": 92,
+        "prompt": "按 E 听船主说路上见闻",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_BOAT_OWNER_FRAGMENT",
+          "state_path": "prologue.heard_boat_owner_fragment",
+          "state_value": true,
+          "auto_duration": 5.0,
+          "actor_id": "boat_owner",
+          "animation": "call_news"
+        }
+      },
+      {
+        "interaction_id": "news.hean",
+        "position": [1290, 590],
+        "radius": 90,
+        "prompt": "按 E 听禾安算水和米",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_HEAN_FRAGMENT",
+          "state_path": "prologue.heard_hean_fragment",
+          "state_value": true,
+          "auto_duration": 4.5,
+          "actor_id": "hean",
+          "animation": "count_jars"
+        }
+      },
+      {
+        "interaction_id": "news.xinheng",
+        "position": [950, 590],
+        "radius": 90,
+        "prompt": "按 E 听辛衡问旧里",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_XINHENG_FRAGMENT",
+          "state_path": "prologue.heard_xinheng_fragment",
+          "state_value": true,
+          "auto_duration": 4.8,
+          "actor_id": "xinheng",
+          "animation": "pause_pen"
+        }
+      },
+      {
+        "interaction_id": "news.ferry_people",
+        "position": [735, 590],
+        "radius": 92,
+        "prompt": "按 E 听旧渡人低声议论",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P2_FERRY_PEOPLE_FRAGMENT",
+          "state_path": "prologue.heard_ferry_people_fragment",
+          "state_value": true,
+          "auto_duration": 4.5,
+          "actor_id": "ferry_woman",
+          "animation": "murmur"
+        }
+      },
+      {
+        "interaction_id": "news.to_refugees",
+        "position": [2050, 590],
+        "radius": 105,
+        "prompt": "按 E 沿东岸去接流民",
+        "initially_enabled": false,
+        "payload": {
+          "action": "scene_change",
+          "target_asset_id": "scene.sc04_refugee_shelter",
+          "checkpoint": "first_refugees_approach"
+        }
+      }
+    ],
+    "SC04_Refugee_Shelter": [
+      {
+        "interaction_id": "shelter.hanning_sleeve",
+        "position": [1260, 590],
+        "radius": 82,
+        "prompt": "按 E 看韩宁按住的袖口",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_HANNING_SLEEVE",
+          "state_path": "prologue.saw_hanning_sleeve",
+          "state_value": true,
+          "auto_duration": 4.5,
+          "actor_id": "hanning",
+          "animation": "press_sleeve",
+          "sfx_id": "sfx.cloth_rustle"
+        }
+      },
+      {
+        "interaction_id": "shelter.hanning_mother",
+        "position": [1375, 590],
+        "radius": 84,
+        "prompt": "按 E 问韩宁母亲从哪里来",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_HANNING_MOTHER_BLOCKS",
+          "state_path": "prologue.hanning_mother_blocked_question",
+          "state_value": true,
+          "auto_duration": 4.2,
+          "actor_id": "hanning_mother",
+          "animation": "block_question"
+        }
+      },
+      {
+        "interaction_id": "shelter.xinheng_pen",
+        "position": [965, 590],
+        "radius": 86,
+        "prompt": "按 E 看辛衡停住的笔",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_XINHENG_PEN_PAUSE",
+          "state_path": "prologue.saw_xinheng_pen_pause",
+          "state_value": true,
+          "auto_duration": 4.8,
+          "actor_id": "xinheng",
+          "animation": "pause_pen",
+          "sfx_id": "sfx.brush_lift"
+        }
+      },
+      {
+        "interaction_id": "shelter.liuniang_song",
+        "position": [650, 590],
+        "radius": 88,
+        "prompt": "按 E 听柳娘停住的旧曲",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_LIUNIANG_SONG_STOPS",
+          "state_path": "prologue.heard_liuniang_song_stop",
+          "state_value": true,
+          "auto_duration": 4.4,
+          "actor_id": "liuniang",
+          "animation": "song_stops"
+        }
+      },
+      {
+        "interaction_id": "shelter.temporary_registry",
+        "position": [1080, 560],
+        "radius": 74,
+        "prompt": "按 E 调查临时名册",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_TEMPORARY_REGISTRY",
+          "state_path": "prologue.inspected_temporary_registry",
+          "state_value": true,
+          "auto_duration": 5.0,
+          "sfx_id": "sfx.tablet_write"
+        }
+      },
+      {
+        "interaction_id": "shelter.to_storehouse",
+        "position": [2080, 590],
+        "radius": 106,
+        "prompt": "按 E 循钟声进入旧礼器库",
+        "initially_enabled": false,
+        "payload": {
+          "action": "event_block",
+          "event_key": "enter_storehouse_events",
+          "state_path": "prologue.followed_bell_to_storehouse",
+          "state_value": true
+        }
+      }
+    ],
+    "SC05_Ritual_Storehouse": [
+      {
+        "interaction_id": "storehouse.broken_ding",
+        "position": [520, 570],
+        "radius": 90,
+        "prompt": "按 E 查看断足鼎",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_BROKEN_DING",
+          "state_path": "prologue.inspected_broken_ding",
+          "state_value": true,
+          "auto_duration": 4.2
+        }
+      },
+      {
+        "interaction_id": "storehouse.chipped_gui",
+        "position": [850, 570],
+        "radius": 82,
+        "prompt": "按 E 查看裂边簋",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_CHIPPED_GUI",
+          "state_path": "prologue.inspected_chipped_gui",
+          "state_value": true,
+          "auto_duration": 4.0
+        }
+      },
+      {
+        "interaction_id": "storehouse.damaged_qing",
+        "position": [1190, 560],
+        "radius": 88,
+        "prompt": "按 E 查看残磬",
+        "payload": {
+          "action": "dialogue",
+          "line_id": "P3_DAMAGED_QING",
+          "state_path": "prologue.inspected_damaged_qing",
+          "state_value": true,
+          "auto_duration": 4.0
+        }
+      },
+      {
+        "interaction_id": "storehouse.cracked_bell",
+        "position": [1660, 555],
+        "radius": 116,
+        "prompt": "按住 E 触碰裂钟",
+        "hold_duration": 1.5,
+        "payload": {
+          "action": "event_block",
+          "event_key": "after_bell_touch_events",
+          "state_path": "prologue.cracked_bell_contact_started",
+          "state_value": true,
+          "sfx_id": "sfx.bell_crack"
+        }
+      }
+    ],
+    "SC06_Cart_Crash_Rain": [
+      {
+        "interaction_id": "cart.rescue_child",
+        "position": [500, 590],
+        "radius": 125,
+        "prompt": "按住 E 抬车救孩子",
+        "hold_duration": 1.25,
+        "payload": {
+          "action": "choice_commit",
+          "choice_id": "rescue_child",
+          "priority_value": "rescue_child",
+          "event_key": "choice_rescue_child_events",
+          "preview_state_path": "prologue.saw_child_cost",
+          "preview_title": "左侧：车辕下的孩子",
+          "preview_detail": "禾安用肩顶住木梁，热水桶倒在一旁，孩子哭声越来越轻。",
+          "preview_costs": ["雨水仍在冲刷湿简", "棚下仍有人喊错名字"],
+          "sfx_id": "sfx.water_bucket_drag"
+        }
+      },
+      {
+        "interaction_id": "cart.save_records",
+        "position": [1095, 590],
+        "radius": 125,
+        "prompt": "按住 E 抢救湿简",
+        "hold_duration": 1.25,
+        "payload": {
+          "action": "choice_commit",
+          "choice_id": "save_records",
+          "priority_value": "save_records",
+          "event_key": "choice_save_records_events",
+          "preview_state_path": "prologue.saw_record_cost",
+          "preview_title": "中间：泥水湿简",
+          "preview_detail": "木牍在泥水中浮沉，墨线像河雾一样散开；韩宁还在往前挣。",
+          "preview_costs": ["车下孩子的哭声断了一下", "人群仍未完成互认"],
+          "sfx_id": "sfx.wet_ink_spread"
+        }
+      },
+      {
+        "interaction_id": "cart.mutual_recognition",
+        "position": [1760, 590],
+        "radius": 135,
+        "prompt": "按住 E 组织互认",
+        "hold_duration": 1.25,
+        "payload": {
+          "action": "choice_commit",
+          "choice_id": "mutual_recognition",
+          "priority_value": "mutual_recognition",
+          "event_key": "choice_mutual_recognition_events",
+          "preview_state_path": "prologue.saw_recognition_cost",
+          "preview_title": "右侧：失散人群",
+          "preview_detail": "柳娘抱着孩子喊名，棚下有人抓住不是自家的袖子，也有人听见旧里就闭嘴。",
+          "preview_costs": ["雨水还在泡湿简", "车下孩子仍被压着"],
+          "sfx_id": "sfx.crowd_call_names"
+        }
+      }
+    ]
+  }
+}

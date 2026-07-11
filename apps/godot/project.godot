@@ -1,0 +1,81 @@
+; Engine configuration file.
+; P0 native Windows vertical-slice bootstrap for 《山河无名》.
+; Edit through Godot where possible; keep story content outside UI scripts.
+
+config_version=5
+
+[application]
+
+config/name="山河无名"
+config/description="《山河无名》序章《雨来之前》Godot 原生垂直切片"
+run/main_scene="res://scenes/ui/TitleScreen.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+GameState="*res://scripts/autoload/game_state.gd"
+SettingsManager="*res://scripts/autoload/settings_manager.gd"
+AudioDirector="*res://scripts/autoload/audio_director.gd"
+SaveManager="*res://scripts/autoload/save_manager.gd"
+SceneRouter="*res://scripts/autoload/scene_router.gd"
+PauseMenu="*res://scripts/ui/pause_menu.gd"
+
+[audio]
+
+default_bus_layout="res://default_bus_layout.tres"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[gui]
+
+theme/custom_font="res://assets/ui/fonts/system_chinese_fallback.tres"
+theme/default_font_multichannel_signed_distance_field=true
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":65), Object(InputEventKey,"physical_keycode":4194311)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":68), Object(InputEventKey,"physical_keycode":4194313)]
+}
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":87), Object(InputEventKey,"physical_keycode":4194320)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":83), Object(InputEventKey,"physical_keycode":4194322)]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":69)]
+}
+advance_dialogue={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":32), Object(InputEventKey,"physical_keycode":4194309)]
+}
+pause_game={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194305)]
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.125, 0.169, 0.2, 1)
+
+[shaders]
+
+shader_compilation/on_demand_compilation=true

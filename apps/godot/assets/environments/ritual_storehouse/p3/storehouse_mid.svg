@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="720" viewBox="0 0 2200 720">
+<defs></defs>
+
+<g id="beams" stroke="#49392d" stroke-width="22">
+  <path d="M250 150 L240 625"/><path d="M695 150 L687 625"/>
+  <path d="M1114 150 L1106 625"/><path d="M1588 150 L1580 625"/>
+  <path d="M2040 150 L2033 625"/>
+</g>
+<g id="shelves" stroke="#302720" stroke-linejoin="round">
+  <rect x="72" y="258" width="480" height="279" fill="#302b27" stroke-width="7"/>
+  <path d="M92 345 h440 M92 435 h440 M1648 257 h460 v285 h-460"
+        fill="none" stroke="#6b513d" stroke-width="15"/>
+  <path d="M1668 347 h420 M1668 438 h420" stroke="#6b513d" stroke-width="15"/>
+</g>
+<path d="M984 215 Q1112 170 1238 216 L1195 552 L1022 552 Z"
+      fill="#263033" fill-opacity=".34" stroke="#4b4238" stroke-width="5"/>
+<g fill="#d89b55" fill-opacity=".55">
+  <path d="M1092 510 q22 -53 45 0 q-22 31 -45 0"/>
+</g>
+
+</svg>

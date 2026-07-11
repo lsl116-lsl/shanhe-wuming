@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="360" viewBox="0 0 320 360">
+<defs>
+<linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#788480"/>
+  <stop offset="1" stop-color="#485b60"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d2b38b"/>
+  <stop offset="1" stop-color="#b68d67"/>
+</linearGradient>
+<pattern id="papergrain" width="13" height="13" patternUnits="userSpaceOnUse">
+  <path d="M1 3 L12 1 M3 10 L11 8" stroke="#e8e1d2" stroke-opacity=".08" stroke-width=".7"/>
+</pattern>
+</defs>
+
+<g id="head">
+  <path d="M129 50 Q130 23 165 20
+           Q202 23 203 53
+           L196 88 Q165 109 135 88 Z"
+        fill="#b88863" stroke="#2e2925" stroke-width="3"/>
+  <path d="M128 56 Q132 14 165 11 Q202 16 205 58 Q181 36 159 39 Q143 55 128 56 Z" fill="#2d2926"/>
+  <path d="M140 62 q8 -5 16 0 M174 62 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M156 86 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M145 88 Q165 125 186 88 Q177 133 165 142 Q152 132 145 88 Z" fill="#2d2926" fill-opacity=".82" stroke="#2e2925" stroke-width="2"/>
+  <path d="M152 98 L155 104 L180 104
+        L181 98" fill="#b88863" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+</svg>

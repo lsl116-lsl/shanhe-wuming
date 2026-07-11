@@ -18,6 +18,8 @@ __pycache__/
 # Temporary exports
 *.tmp
 *.bak
+apps/godot/.godot/
+apps/godot/.import/
 
 # Local notes
 .local/

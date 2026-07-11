@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs></defs>
+<rect width="1600" height="900" fill="#101316"/>
+<text x="54" y="68" font-size="36" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f0d48d">P5 场景色彩脚本 / Scene Color Script</text>
+<rect x="76" y="134" width="58" height="86" rx="6" fill="#9fb5b5" stroke="#211d19" stroke-width="2"/>
+<rect x="140" y="134" width="58" height="86" rx="6" fill="#51696d" stroke="#211d19" stroke-width="2"/>
+<rect x="204" y="134" width="58" height="86" rx="6" fill="#2d3a3b" stroke="#211d19" stroke-width="2"/>
+<rect x="268" y="134" width="58" height="86" rx="6" fill="#b69a61" stroke="#211d19" stroke-width="2"/>
+<text x="76" y="252" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC01 清晨旧渡：雾蓝、湿木、粟米灰</text>
+<rect x="76" y="340" width="58" height="86" rx="6" fill="#b9b07d" stroke="#211d19" stroke-width="2"/>
+<rect x="140" y="340" width="58" height="86" rx="6" fill="#7d876d" stroke="#211d19" stroke-width="2"/>
+<rect x="204" y="340" width="58" height="86" rx="6" fill="#4a5d60" stroke="#211d19" stroke-width="2"/>
+<rect x="268" y="340" width="58" height="86" rx="6" fill="#9c744e" stroke="#211d19" stroke-width="2"/>
+<text x="76" y="458" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC03 午前消息：河雾退、土色显、船声近</text>
+<rect x="76" y="546" width="58" height="86" rx="6" fill="#5f6268" stroke="#211d19" stroke-width="2"/>
+<rect x="140" y="546" width="58" height="86" rx="6" fill="#2b3540" stroke="#211d19" stroke-width="2"/>
+<rect x="204" y="546" width="58" height="86" rx="6" fill="#9a6f3e" stroke="#211d19" stroke-width="2"/>
+<rect x="268" y="546" width="58" height="86" rx="6" fill="#1d2024" stroke="#211d19" stroke-width="2"/>
+<text x="76" y="664" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC04 傍晚转夜：棚火、泥灰、雨意</text>
+<rect x="780" y="134" width="58" height="86" rx="6" fill="#24302f" stroke="#211d19" stroke-width="2"/>
+<rect x="844" y="134" width="58" height="86" rx="6" fill="#4f665e" stroke="#211d19" stroke-width="2"/>
+<rect x="908" y="134" width="58" height="86" rx="6" fill="#87917e" stroke="#211d19" stroke-width="2"/>
+<rect x="972" y="134" width="58" height="86" rx="6" fill="#c0a56a" stroke="#211d19" stroke-width="2"/>
+<text x="780" y="252" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC05 礼器库：青铜暗绿、裂纹冷光</text>
+<rect x="780" y="340" width="58" height="86" rx="6" fill="#111820" stroke="#211d19" stroke-width="2"/>
+<rect x="844" y="340" width="58" height="86" rx="6" fill="#263443" stroke="#211d19" stroke-width="2"/>
+<rect x="908" y="340" width="58" height="86" rx="6" fill="#c16f3d" stroke="#211d19" stroke-width="2"/>
+<rect x="972" y="340" width="58" height="86" rx="6" fill="#5b4a35" stroke="#211d19" stroke-width="2"/>
+<text x="780" y="458" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC06 雨夜翻车：黑雨、火把、湿简墨色</text>
+<rect x="780" y="546" width="58" height="86" rx="6" fill="#14191d" stroke="#211d19" stroke-width="2"/>
+<rect x="844" y="546" width="58" height="86" rx="6" fill="#3c4a51" stroke="#211d19" stroke-width="2"/>
+<rect x="908" y="546" width="58" height="86" rx="6" fill="#8b7143" stroke="#211d19" stroke-width="2"/>
+<rect x="972" y="546" width="58" height="86" rx="6" fill="#d2b276" stroke="#211d19" stroke-width="2"/>
+<text x="780" y="664" font-size="18" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">SC07 第一章标题：雨后余冷、礼崩金褐</text>
+</svg>

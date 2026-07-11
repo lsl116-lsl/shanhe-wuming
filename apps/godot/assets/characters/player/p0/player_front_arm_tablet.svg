@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="320" viewBox="0 0 256 320">
+<defs>
+<linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#788480"/>
+  <stop offset="1" stop-color="#485b60"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d2b38b"/>
+  <stop offset="1" stop-color="#b68d67"/>
+</linearGradient>
+<pattern id="papergrain" width="13" height="13" patternUnits="userSpaceOnUse">
+  <path d="M1 3 L12 1 M3 10 L11 8" stroke="#e8e1d2" stroke-opacity=".08" stroke-width=".7"/>
+</pattern>
+</defs>
+
+<g id="held_prop" stroke="#292724" stroke-linejoin="round">
+  <g transform="rotate(-7 174 194)">
+    <rect x="151" y="151" width="46" height="91" rx="4" fill="#765b3d" stroke-width="3"/>
+    <rect x="158" y="158" width="32" height="77" rx="2" fill="#9a7b51" stroke="#4a3828" stroke-width="1.5"/>
+    <path d="M164 171 L184 168 M163 184 L185 181 M162 197 L182 194 M161 211 L180 208"
+          stroke="#4a3828" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+<g id="front_arm" stroke="#292724" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M153 159 Q171 176 166 204 L154 215 Q141 204 142 177 Z" fill="#596b6f"/>
+  <path d="M156 205 Q168 203 174 215 Q171 228 159 226 Q149 218 156 205 Z" fill="url(#skin)"/>
+  <path d="M160 216 Q169 219 174 214" fill="none" stroke="#4f7770" stroke-width="3"/>
+</g>
+<g id="ink_marks" fill="#2a3436" fill-opacity=".7">
+  <circle cx="162" cy="216" r="2.3"/><circle cx="169" cy="218" r="1.4"/>
+</g>
+
+</svg>

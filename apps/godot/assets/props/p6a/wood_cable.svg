@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="190" viewBox="0 0 620 190">
+<defs></defs>
+
+<path d="M28 42 Q287 175 592 44" fill="none" stroke="#3d332b"
+      stroke-width="21" stroke-linecap="round"/>
+<path d="M31 37 Q290 157 590 39" fill="none" stroke="#b99b70"
+      stroke-opacity=".62" stroke-width="5" stroke-linecap="round"/>
+<g stroke="#2f2924" stroke-opacity=".45" stroke-width="2">
+  <path d="M96 73 q19 11 39 17 M202 121 q23 13 50 18 M376 130 q26 -1 58 -12 M500 88 q24 -4 55 -18"/>
+</g>
+
+</svg>

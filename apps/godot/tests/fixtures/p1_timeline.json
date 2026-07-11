@@ -1,0 +1,78 @@
+{
+  "timeline_id": "P1_NARRATIVE_INFRASTRUCTURE_FLOW",
+  "content_version": "p1-test.1",
+  "dialogue_path": "res://tests/fixtures/p1_dialogue.zh-CN.json",
+  "asset_manifest_path": "res://tests/fixtures/p1_asset_manifest.json",
+  "events": [
+    {
+      "id": "P1-EVT-01-CAMERA",
+      "type": "camera_move",
+      "target": [520, 360],
+      "duration": 0.05
+    },
+    {
+      "id": "P1-EVT-02-ACTOR",
+      "type": "character_enter",
+      "actor_id": "p1_test_actor",
+      "asset_id": "actor.p1_test",
+      "from": [980, 500],
+      "position": [760, 500],
+      "duration": 0.05
+    },
+    {
+      "id": "P1-EVT-03-ANIMATION",
+      "type": "animation_play",
+      "actor_id": "p1_test_actor",
+      "animation": "gesture",
+      "wait_for_finish": true
+    },
+    {
+      "id": "P1-EVT-04-DIALOGUE",
+      "type": "dialogue",
+      "line_id": "P1_INFRA_LINE",
+      "wait_for_input": false,
+      "auto_duration": 0.03
+    },
+    {
+      "id": "P1-EVT-05-CONTROL",
+      "type": "player_control",
+      "enabled": true
+    },
+    {
+      "id": "P1-EVT-06-INTERACTION",
+      "type": "interaction_enable",
+      "trace_step": "interaction",
+      "asset_id": "interaction.default",
+      "interaction_id": "p1_test_tablet",
+      "position": [640, 520],
+      "prompt": "按住 E 检查测试木牍",
+      "hold_duration": 0.15,
+      "payload": {
+        "source": "p1_json_fixture"
+      }
+    },
+    {
+      "id": "P1-EVT-07-STATE",
+      "type": "state_set",
+      "path": "prologue.p1_interacted",
+      "value": true
+    },
+    {
+      "id": "P1-EVT-08-SAVE",
+      "type": "save_checkpoint",
+      "checkpoint": "P1_INFRA_COMPLETE",
+      "save_path": "user://p1_infrastructure_test_save.json"
+    },
+    {
+      "id": "P1-EVT-09-TRANSITION",
+      "type": "transition",
+      "mode": "fade_out",
+      "duration": 0.04
+    },
+    {
+      "id": "P1-EVT-10-SCENE",
+      "type": "scene_change",
+      "asset_id": "scene.p1_destination"
+    }
+  ]
+}

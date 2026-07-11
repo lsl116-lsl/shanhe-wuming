@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs></defs>
+
+<rect width="1280" height="720" fill="#080d10"/>
+<g fill="none" stroke="#536e73" stroke-opacity=".38">
+  <path d="M-80 180 Q180 84 430 178 T940 176 T1360 161" stroke-width="75"/>
+  <path d="M-100 430 Q180 322 470 426 T1040 414 T1400 391" stroke-width="112"/>
+</g>
+<g fill="#d4d5ca" fill-opacity=".12">
+  <ellipse cx="310" cy="295" rx="245" ry="31"/><ellipse cx="916" cy="555" rx="330" ry="39"/>
+</g>
+
+</svg>

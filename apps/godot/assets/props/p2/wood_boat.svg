@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="250" viewBox="0 0 560 250">
+<defs>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8b6b49"/><stop offset="1" stop-color="#4b3a2e"/>
+</linearGradient>
+</defs>
+
+<ellipse cx="282" cy="218" rx="225" ry="18" fill="#1e2e32" fill-opacity=".25"/>
+<path d="M42 118 Q281 163 520 111 Q478 221 280 224 Q88 219 42 118 Z"
+      fill="url(#wood)" stroke="#302720" stroke-width="7"/>
+<path d="M78 138 Q281 174 482 132 M112 165 Q282 192 449 159"
+      fill="none" stroke="#b18a5d" stroke-opacity=".54" stroke-width="5"/>
+<path d="M218 119 Q282 64 348 118" fill="none" stroke="#3c3128" stroke-width="12"/>
+<path d="M224 111 Q281 73 340 111 L332 144 L231 144 Z"
+      fill="#66503b" stroke="#352b24" stroke-width="5"/>
+
+</svg>

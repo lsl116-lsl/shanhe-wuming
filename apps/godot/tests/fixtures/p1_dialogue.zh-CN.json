@@ -1,0 +1,9 @@
+{
+  "content_version": "p1-test.1",
+  "lines": {
+    "P1_INFRA_LINE": {
+      "speaker": "测试角色",
+      "text": "{player_name}，镜头、人物和文字已经由内容数据接上。"
+    }
+  }
+}

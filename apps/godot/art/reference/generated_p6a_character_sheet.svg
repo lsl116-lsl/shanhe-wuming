@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="560" viewBox="0 0 1300 560">
+<defs>
+<linearGradient id="linen" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#cfc4ad"/>
+  <stop offset=".45" stop-color="#8e846f"/>
+  <stop offset="1" stop-color="#514b40"/>
+</linearGradient>
+<linearGradient id="warm_skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d7b58d"/>
+  <stop offset="1" stop-color="#a87858"/>
+</linearGradient>
+<linearGradient id="old_wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9a7a52"/>
+  <stop offset=".55" stop-color="#6d5138"/>
+  <stop offset="1" stop-color="#3d3028"/>
+</linearGradient>
+<linearGradient id="dawn_water" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8da6a5"/>
+  <stop offset=".45" stop-color="#617f82"/>
+  <stop offset="1" stop-color="#334f56"/>
+</linearGradient>
+<pattern id="cloth_threads" width="10" height="10" patternUnits="userSpaceOnUse">
+  <path d="M0 2 H10 M2 0 V10" stroke="#f2ead7" stroke-opacity=".10" stroke-width=".7"/>
+</pattern>
+<pattern id="wood_grain" width="34" height="12" patternUnits="userSpaceOnUse">
+  <path d="M1 7 C9 1 18 12 33 5 M3 11 C13 6 20 16 31 10"
+        fill="none" stroke="#d3b079" stroke-opacity=".20" stroke-width="1.4"/>
+</pattern>
+<pattern id="rice_specks" width="18" height="18" patternUnits="userSpaceOnUse">
+  <circle cx="5" cy="5" r="1.3" fill="#ead89c" fill-opacity=".75"/>
+  <circle cx="13" cy="11" r="1.1" fill="#c9b46e" fill-opacity=".55"/>
+</pattern>
+</defs>
+
+<rect width="1300" height="560" fill="#e8e1d2"/>
+<rect x="28" y="28" width="1244" height="504" rx="12" fill="#d8cfba" stroke="#302c27" stroke-width="3"/>
+<text x="58" y="82" font-family="Microsoft YaHei, sans-serif" font-size="32" fill="#292724">P6-A 序章视觉样片：主角 / 母亲 / 辛衡</text>
+<text x="58" y="115" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#5b4d40">动作差异：主角停顿称量；母亲数米又望河道；辛衡停笔、递牍、墨痕在手。</text>
+<g transform="translate(135 172) scale(.9)">
+<g id="shadow">
+  <ellipse cx="128" cy="294" rx="58" ry="13" fill="#142328" fill-opacity=".34"/>
+  <ellipse cx="128" cy="291" rx="37" ry="6" fill="#2b3d40" fill-opacity=".25"/>
+</g>
+
+<g id="legs" stroke="#29241f" stroke-width="3" stroke-linejoin="round">
+  <path d="M98 220 L124 220 L119 285 Q109 297 94 287 Z" fill="#535952"/>
+  <path d="M128 220 L154 220 L164 286 Q148 297 137 285 Z" fill="#4b534d"/>
+  <path d="M90 284 q17 -8 35 1 l-1 11 h-35 Z" fill="#342f29"/>
+  <path d="M135 285 q18 -8 34 1 l2 10 h-36 Z" fill="#342f29"/>
+</g>
+<g id="torso" stroke="#29241f" stroke-width="3" stroke-linejoin="round">
+  <path d="M94 147 q34 -20 70 0 l8 79 q-40 24 -84 1 Z" fill="#596b68"/>
+  <path d="M99 149 q29 19 61 0" fill="none" stroke="#9aa696" stroke-width="5"/>
+  <path d="M111 151 L150 226" fill="none" stroke="#e9dfc8" stroke-opacity=".25" stroke-width="2"/>
+  <path d="M88 203 q40 18 83 0" fill="none" stroke="#6f4f35" stroke-width="7"/>
+  <path d="M95 147 h68 l8 79 q-40 24 -84 1 Z" fill="url(#cloth_threads)" stroke="none"/>
+</g>
+<g id="back_arm" stroke="#29241f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M96 158 q-23 26 -15 63 q13 16 27 -1 l8 -44 Z" fill="#667571"/>
+  <path d="M83 218 q5 17 20 15 q15 -9 3 -23 Z" fill="url(#warm_skin)"/>
+</g>
+<g id="tablet_strap" stroke="#544331" stroke-width="4" stroke-linecap="round">
+  <path d="M97 158 q35 38 72 68"/>
+</g>
+
+<g id="head">
+  <path d="M99 91 q-1 -34 29 -43 q36 3 35 45 l-7 33 q-12 18 -31 17
+           q-20 -3 -26 -20 Z" fill="url(#warm_skin)" stroke="#29241f" stroke-width="3"/>
+  <path d="M99 91 q-9 -26 11 -43 q26 -25 53 6 q16 20 -3 48
+           q-14 -24 -34 -28 q-15 17 -27 17 Z" fill="#29241f"/>
+  <path d="M111 55 q21 -22 48 -4" fill="none" stroke="#42382f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M112 101 q7 3 15 -1 M139 101 q7 3 14 -1" fill="none" stroke="#29241f" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M124 119 q10 2 22 0" fill="none" stroke="#70463c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M116 137 q13 9 27 0" fill="none" stroke="#d5b78c" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M122 140 L126 151 L145 143 L146 130" fill="#bf9871" stroke="#29241f" stroke-width="3"/>
+  <path d="M160 66 q18 3 18 16 q-6 14 -20 10" fill="#2f2925" stroke="#29241f" stroke-width="3"/>
+  <path d="M162 70 q15 -10 25 -1" fill="none" stroke="#8c8172" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<g id="held_prop" stroke="#29241f" stroke-linejoin="round">
+  <g transform="rotate(-7 176 195)">
+    <rect x="151" y="147" width="50" height="96" rx="4" fill="#74563a" stroke-width="3"/>
+    <rect x="159" y="156" width="34" height="80" rx="2" fill="#a27d50" stroke="#4a3828" stroke-width="1.5"/>
+    <path d="M165 171 L186 168 M164 185 L187 182 M163 199 L184 196 M162 214 L182 211"
+          stroke="#4a3828" stroke-width="2" stroke-linecap="round"/>
+    <path d="M167 231 q12 6 24 0" fill="none" stroke="#d8c191" stroke-opacity=".45" stroke-width="2"/>
+  </g>
+</g>
+<g id="front_arm" stroke="#29241f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M154 160 q21 20 13 49 l-14 8 q-15 -12 -11 -39 Z" fill="#5f706c"/>
+  <path d="M155 207 q14 -4 21 10 q-4 16 -18 12 q-11 -9 -3 -22 Z" fill="url(#warm_skin)"/>
+  <path d="M160 218 q8 5 17 -2" fill="none" stroke="#47746f" stroke-width="3"/>
+</g>
+<g id="ink_marks" fill="#223235" fill-opacity=".75">
+  <circle cx="162" cy="217" r="2.3"/><circle cx="170" cy="219" r="1.5"/>
+</g>
+</g>
+<g transform="translate(455 134) scale(.82)">
+<g id="shadow">
+  <ellipse cx="158" cy="343" rx="83" ry="12" fill="#172629" fill-opacity=".34"/>
+  <ellipse cx="158" cy="340" rx="55" ry="6" fill="#2c3a3b" fill-opacity=".22"/>
+</g>
+
+<g id="body_back" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M109 155 q-30 36 -17 91 q15 18 34 0 l17 -76 Z" fill="#4f4b43"/>
+  <path d="M207 155 q31 37 18 91 q-16 19 -35 0 l-16 -76 Z" fill="#4f4b43"/>
+</g>
+<g id="legs" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M112 254 L154 253 L145 330
+           q-18 12 -39 0 Z" fill="#4f4b43"/>
+  <path d="M156 253 L202 254 L211 330
+           q-21 12 -40 0 Z" fill="#4f4b43"/>
+  <path d="M102 329 q25 -10 50 0 l1 12 h-53 Z" fill="#332f2a"/>
+  <path d="M163 329 q25 -10 54 1 l2 11 h-55 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M101 143 q57 -20 215 0 L207 258
+           q-57 24 -98 0 Z" fill="#747064"/>
+  <path d="M105 151 q53 27 211 0" fill="none"
+        stroke="#839894" stroke-width="5"/>
+  <path d="M108 229 q57 14 207 0" fill="none"
+        stroke="#839894" stroke-width="8"/>
+  <path d="M106 149 L205 256" fill="none"
+        stroke="#efe4c6" stroke-opacity=".20" stroke-width="2"/>
+  <path d="M101 143 q57 -20 215 0 L207 258
+           q-57 24 -98 0 Z" fill="url(#cloth_threads)" stroke="none"/>
+</g>
+
+<g id="head">
+  <path d="M121 84 q1 -29 37 -32 q39 2 39 35
+           l-7 36 q-13 22 -33 21 q-22 -2 -33 -21 Z"
+        fill="#c59a73" stroke="#2c2723" stroke-width="3"/>
+  <path d="M119 90 q5 -44 4 -45 q42 4 43 47 q-25 -26 -47 -20 q-18 17 -36 18 Z" fill="#2d2825"/><path d="M180 55 q34 -24 46 8 q-15 22 -43 11 Z" fill="#2d2825" stroke="#2c2723" stroke-width="3"/><path d="M192 57 l31 6" stroke="#839894" stroke-width="5" stroke-linecap="round"/>
+  <path d="M132 96 q10 -6 20 0 M166 96 q10 -6 20 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M148 120 q10 1 21 0" fill="none" stroke="#714a3d"
+        stroke-width="2" stroke-linecap="round"/>
+  
+  <path d="M144 135 L148 147 L174 147
+        L174 135" fill="#c59a73" stroke="#2c2723" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2c2723" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M209 159 q25 29 9 81 l-20 6 q-13 -28 -4 -76 Z" fill="#747064"/>
+  <path d="M199 252 q23 -10 35 6 q-4 21 -23 19 q-18 -8 -12 -25 Z" fill="#c59a73"/>
+</g>
+
+<g id="held_prop" stroke="#3b3028" stroke-width="3" stroke-linejoin="round">
+  <ellipse cx="166" cy="259" rx="68" ry="20" fill="#aa8559"/>
+  <path d="M100 260 q67 65 134 0 q-13 54 -68 70 q-53 -17 -66 -70 Z"
+        fill="#70523a"/>
+  <ellipse cx="166" cy="256" rx="56" ry="13" fill="#9db0ad" fill-opacity=".78"/>
+  <path d="M119 254 q50 14 96 0" fill="none" stroke="#e9efe1" stroke-opacity=".45" stroke-width="3"/>
+</g>
+</g>
+<g transform="translate(820 134) scale(.82)">
+<g id="shadow">
+  <ellipse cx="160" cy="343" rx="77" ry="12" fill="#172629" fill-opacity=".34"/>
+  <ellipse cx="160" cy="340" rx="49" ry="6" fill="#2c3a3b" fill-opacity=".22"/>
+</g>
+
+<g id="body_back" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M117 147 q-30 36 -17 91 q15 18 34 0 l17 -76 Z" fill="#383936"/>
+  <path d="M203 147 q31 37 18 91 q-16 19 -35 0 l-16 -76 Z" fill="#383936"/>
+</g>
+<g id="legs" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M114 254 L156 253 L147 330
+           q-18 12 -39 0 Z" fill="#383936"/>
+  <path d="M158 253 L204 254 L213 330
+           q-21 12 -40 0 Z" fill="#383936"/>
+  <path d="M104 329 q25 -10 50 0 l1 12 h-53 Z" fill="#332f2a"/>
+  <path d="M165 329 q25 -10 54 1 l2 11 h-55 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2c2723" stroke-width="3" stroke-linejoin="round">
+  <path d="M109 135 q51 -20 211 0 L203 258
+           q-51 24 -86 0 Z" fill="#545550"/>
+  <path d="M113 143 q47 27 207 0" fill="none"
+        stroke="#425d58" stroke-width="5"/>
+  <path d="M116 229 q51 14 203 0" fill="none"
+        stroke="#425d58" stroke-width="8"/>
+  <path d="M114 141 L201 256" fill="none"
+        stroke="#efe4c6" stroke-opacity=".20" stroke-width="2"/>
+  <path d="M109 135 q51 -20 211 0 L203 258
+           q-51 24 -86 0 Z" fill="url(#cloth_threads)" stroke="none"/>
+</g>
+
+<g id="head">
+  <path d="M123 76 q1 -29 37 -32 q39 2 39 35
+           l-7 36 q-13 22 -33 21 q-22 -2 -33 -21 Z"
+        fill="#b99370" stroke="#2c2723" stroke-width="3"/>
+  <path d="M121 82 q5 -44 4 -45 q42 4 43 47 q-25 -26 -47 -20 q-18 17 -36 18 Z" fill="#6b645a"/>
+  <path d="M134 88 q10 -6 20 0 M168 88 q10 -6 20 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M150 112 q10 2 21 0" fill="none" stroke="#714a3d"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M139 114 q21 48 43 0 q-8 54 -22 67 q-15 -13 -21 -67 Z" fill="#6b645a" fill-opacity=".78" stroke="#2c2723" stroke-width="2"/><path d="M130 98 q9 9 20 0 M170 98 q10 9 21 0" fill="none" stroke="#6b645a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M146 127 L150 139 L176 139
+        L176 127" fill="#b99370" stroke="#2c2723" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2c2723" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M205 151 q25 29 9 81 l-20 6 q-13 -28 -4 -76 Z" fill="#545550"/>
+  <path d="M195 252 q23 -10 35 6 q-4 21 -23 19 q-18 -8 -12 -25 Z" fill="#b99370"/>
+</g>
+
+<g id="held_prop" stroke="#3b3028" stroke-linejoin="round">
+  <rect x="172" y="153" width="44" height="108" rx="4"
+        fill="#8b6844" stroke-width="3"/>
+  <path d="M180 173 h28 M180 190 h26 M180 207 h24"
+        stroke="#4c3829" stroke-width="2"/>
+  <path d="M131 143 L177 266" stroke="#4c3528" stroke-width="5" stroke-linecap="round"/>
+  <path d="M128 137 l8 20" stroke="#202b33" stroke-width="5" stroke-linecap="round"/>
+</g>
+</g>
+<text x="174" y="495" font-family="Microsoft YaHei, sans-serif" font-size="20" fill="#292724">十岁主角</text>
+<text x="529" y="495" font-family="Microsoft YaHei, sans-serif" font-size="20" fill="#292724">母亲：不说等，却一直看</text>
+<text x="910" y="495" font-family="Microsoft YaHei, sans-serif" font-size="20" fill="#292724">辛衡：旧书吏，停笔的人</text>
+<text x="58" y="528" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#6a5948">seed 286 · runtime SVG layers · generator P6-A</text>
+
+</svg>

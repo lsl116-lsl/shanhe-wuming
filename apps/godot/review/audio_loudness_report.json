@@ -1,0 +1,260 @@
+{
+  "p2_p3_audio": [
+    {
+      "path": "assets/audio/ambience/river_morning.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 90.0,
+      "peak_dbfs": -17.67
+    },
+    {
+      "path": "assets/audio/ambience/ferry_day.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 90.0,
+      "peak_dbfs": -17.501
+    },
+    {
+      "path": "assets/audio/music/music_old_ferry_morning.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -20.084
+    },
+    {
+      "path": "assets/audio/music/music_name_and_registry.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -23.592
+    },
+    {
+      "path": "assets/audio/music/music_ferry_day_news.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -23.312
+    },
+    {
+      "path": "assets/audio/sfx/ui_confirm.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 0.32,
+      "peak_dbfs": -17.867
+    },
+    {
+      "path": "assets/audio/sfx/basin_water.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 2.0,
+      "peak_dbfs": -27.492
+    },
+    {
+      "path": "assets/audio/sfx/brush_lift.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 0.34,
+      "peak_dbfs": -28.405
+    },
+    {
+      "path": "assets/audio/sfx/grain_pour_small.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 1.4,
+      "peak_dbfs": -23.717
+    },
+    {
+      "path": "assets/audio/sfx/grain_last_scatter.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 0.9,
+      "peak_dbfs": -24.411
+    },
+    {
+      "path": "assets/audio/sfx/boat_dock_impact.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 1.2,
+      "peak_dbfs": -15.331
+    },
+    {
+      "path": "assets/audio/sfx/name_memory_water.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 2.4,
+      "peak_dbfs": -19.547
+    },
+    {
+      "path": "assets/audio/ambience/refugee_shelter_evening.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 90.0,
+      "peak_dbfs": -27.046
+    },
+    {
+      "path": "assets/audio/ambience/ritual_storehouse_rain.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 90.0,
+      "peak_dbfs": -28.567
+    },
+    {
+      "path": "assets/audio/music/music_refugees_evening.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -24.625
+    },
+    {
+      "path": "assets/audio/music/music_cracked_bell_memory.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -24.652
+    },
+    {
+      "path": "assets/audio/sfx/liuniang_old_song_hum.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 6.0,
+      "peak_dbfs": -28.539
+    },
+    {
+      "path": "assets/audio/sfx/shelter_fire_crackle.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 8.0,
+      "peak_dbfs": -34.377
+    },
+    {
+      "path": "assets/audio/sfx/bell_body.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 8.0,
+      "peak_dbfs": -13.927
+    },
+    {
+      "path": "assets/audio/sfx/bell_crack.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 2.2,
+      "peak_dbfs": -19.605
+    },
+    {
+      "path": "assets/audio/sfx/bell_underwater.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 10.0,
+      "peak_dbfs": -23.58
+    },
+    {
+      "path": "assets/audio/sfx/bell_reverse_tail.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 5.0,
+      "peak_dbfs": -27.075
+    },
+    {
+      "path": "assets/audio/sfx/bell_memory_mix.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 27.0,
+      "peak_dbfs": -12.746
+    },
+    {
+      "path": "assets/audio/ambience/rain_night.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 120.0,
+      "peak_dbfs": -29.713
+    },
+    {
+      "path": "assets/audio/music/music_cart_crash_pressure.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 48.0,
+      "peak_dbfs": -23.977
+    },
+    {
+      "path": "assets/audio/sfx/cart_wheel_break.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 1.2,
+      "peak_dbfs": -20.49
+    },
+    {
+      "path": "assets/audio/sfx/cart_impact_mud.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 1.6,
+      "peak_dbfs": -19.467
+    },
+    {
+      "path": "assets/audio/sfx/horse_panic.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 1.8,
+      "peak_dbfs": -25.854
+    },
+    {
+      "path": "assets/audio/sfx/water_bucket_drag.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 2.2,
+      "peak_dbfs": -26.441
+    },
+    {
+      "path": "assets/audio/sfx/wet_ink_spread.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 30.0,
+      "peak_dbfs": -35.889
+    },
+    {
+      "path": "assets/audio/sfx/child_cry_pressure_loop.wav",
+      "channels": 1,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 30.0,
+      "peak_dbfs": -30.431
+    },
+    {
+      "path": "assets/audio/sfx/crowd_call_names_loop.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "bit_depth": 16,
+      "duration_seconds": 30.0,
+      "peak_dbfs": -30.171
+    }
+  ]
+}

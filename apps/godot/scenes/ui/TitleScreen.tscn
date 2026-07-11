@@ -1,0 +1,400 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/title_screen.gd" id="1_title"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_far.svg" id="2_far"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_mid.svg" id="3_mid"]
+[ext_resource type="Texture2D" path="res://assets/environments/old_ferry/p0/old_ferry_near.svg" id="4_near"]
+[ext_resource type="Texture2D" path="res://assets/fx/p0/fog_front.svg" id="5_fog"]
+[ext_resource type="Texture2D" path="res://assets/ui/p0/title_seal.svg" id="6_seal"]
+[ext_resource type="AudioStream" path="res://assets/audio/ambience/river_morning.wav" id="7_ambience"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ui_confirm.wav" id="8_ui"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/system_chinese_fallback.tres" id="9_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_menu"]
+bg_color = Color(0.08, 0.085, 0.078, 0.84)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44, 0.34, 0.21, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_button"]
+bg_color = Color(0.18, 0.16, 0.13, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.43, 0.28, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_button_hover"]
+bg_color = Color(0.29, 0.23, 0.16, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.82, 0.64, 0.32, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_settings"]
+bg_color = Color(0.075, 0.078, 0.072, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.39, 0.24, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Far" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_far")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Mid" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mid")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Near" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_near")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Fog" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.48)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fog")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025, 0.04, 0.045, 0.32)
+mouse_filter = 2
+
+[node name="TitleBlock" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 92.0
+offset_right = 720.0
+offset_bottom = 290.0
+theme_override_constants/separation = 5
+
+[node name="Seal" type="TextureRect" parent="TitleBlock"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_seal")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GameTitle" type="Label" parent="TitleBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.89, 0.78, 1)
+theme_override_colors/font_shadow_color = Color(0.03, 0.04, 0.04, 0.95)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 64
+text = "山河无名"
+
+[node name="Subtitle" type="Label" parent="TitleBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.72, 0.62, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 26
+text = "序章 · 雨来之前"
+
+[node name="MenuPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 142.0
+offset_right = 1200.0
+offset_bottom = 598.0
+theme_override_styles/panel = SubResource("StyleBox_menu")
+
+[node name="MenuMargin" type="MarginContainer" parent="MenuPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 38
+theme_override_constants/margin_bottom = 30
+
+[node name="Menu" type="VBoxContainer" parent="MenuPanel/MenuMargin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="SectionTitle" type="Label" parent="MenuPanel/MenuMargin/Menu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.7, 0.46, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "洛水旧渡"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="MenuPanel/MenuMargin/Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBox_button")
+theme_override_styles/hover = SubResource("StyleBox_button_hover")
+theme_override_styles/pressed = SubResource("StyleBox_button_hover")
+theme_override_styles/focus = SubResource("StyleBox_button_hover")
+text = "新游戏"
+
+[node name="ContinueButton" type="Button" parent="MenuPanel/MenuMargin/Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBox_button")
+theme_override_styles/hover = SubResource("StyleBox_button_hover")
+theme_override_styles/pressed = SubResource("StyleBox_button_hover")
+theme_override_styles/focus = SubResource("StyleBox_button_hover")
+text = "继续游戏"
+
+[node name="SettingsButton" type="Button" parent="MenuPanel/MenuMargin/Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBox_button")
+theme_override_styles/hover = SubResource("StyleBox_button_hover")
+theme_override_styles/pressed = SubResource("StyleBox_button_hover")
+theme_override_styles/focus = SubResource("StyleBox_button_hover")
+text = "设置"
+
+[node name="ExitButton" type="Button" parent="MenuPanel/MenuMargin/Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBox_button")
+theme_override_styles/hover = SubResource("StyleBox_button_hover")
+theme_override_styles/pressed = SubResource("StyleBox_button_hover")
+theme_override_styles/focus = SubResource("StyleBox_button_hover")
+text = "退出"
+
+[node name="StatusLabel" type="Label" parent="MenuPanel/MenuMargin/Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.69, 0.62, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 15
+text = "P0 · 工程启动与资产管线验证"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 350.0
+offset_top = 64.0
+offset_right = 930.0
+offset_bottom = 674.0
+theme_override_styles/panel = SubResource("StyleBox_settings")
+
+[node name="SettingsMargin" type="MarginContainer" parent="SettingsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 38
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 38
+
+[node name="Settings" type="VBoxContainer" parent="SettingsPanel/SettingsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.82, 0.63, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 30
+text = "声音设置"
+horizontal_alignment = 1
+
+[node name="MasterLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "主音量"
+
+[node name="MasterSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "音乐"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 70.0
+
+[node name="AmbienceLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "环境"
+
+[node name="AmbienceSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 80.0
+
+[node name="SFXLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "音效"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+
+[node name="VoiceLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "Voice"
+
+[node name="VoiceSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+
+[node name="UILabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "UI"
+
+[node name="UISlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 100.0
+value = 90.0
+
+[node name="SubtitleSpeedLabel" type="Label" parent="SettingsPanel/SettingsMargin/Settings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "Subtitle Speed"
+
+[node name="SubtitleSpeedSlider" type="HSlider" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 50.0
+max_value = 200.0
+value = 100.0
+
+[node name="FullscreenCheck" type="CheckButton" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "Fullscreen"
+
+[node name="ScreenShakeCheck" type="CheckButton" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "Camera Shake"
+button_pressed = true
+
+[node name="CloseSettingsButton" type="Button" parent="SettingsPanel/SettingsMargin/Settings"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBox_button")
+theme_override_styles/hover = SubResource("StyleBox_button_hover")
+theme_override_styles/focus = SubResource("StyleBox_button_hover")
+text = "返回"
+
+[node name="RiverAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ambience")
+volume_db = -7.0
+bus = &"Ambience"
+
+[node name="UIAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_ui")
+volume_db = -4.0
+bus = &"UI"

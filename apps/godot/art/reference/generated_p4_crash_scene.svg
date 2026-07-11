@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380">
+<defs></defs>
+
+<rect width="1100" height="380" fill="#10181d"/>
+<g transform="translate(0 10) scale(.5)">
+  <image href="../../assets/environments/old_ferry/p4/crash_rain_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p4/crash_rain_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p4/crash_rain_near.svg" width="2200" height="720"/>
+</g>
+<text x="24" y="362" font-family="Microsoft YaHei, sans-serif" font-size="18" fill="#e8e1d2">
+P4 雨夜翻车：左=车辕下孩子 / 中=泥水湿简 / 右=失散人群；暖火只作方向引导
+</text>
+
+</svg>

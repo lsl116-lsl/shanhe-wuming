@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="72" viewBox="0 0 520 72">
+<defs></defs>
+
+<path d="M8 8 H500 L512 36 L500 64 H8 L20 36 Z" fill="#171512"
+      fill-opacity=".88" stroke="#806846" stroke-width="2"/>
+<path d="M34 22 H486 M34 50 H486" stroke="#b28a4a" stroke-opacity=".25"/>
+
+</svg>

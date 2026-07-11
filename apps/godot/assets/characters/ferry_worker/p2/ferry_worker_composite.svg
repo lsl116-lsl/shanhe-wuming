@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="360" viewBox="0 0 320 360">
+<defs>
+<linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#788480"/>
+  <stop offset="1" stop-color="#485b60"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d2b38b"/>
+  <stop offset="1" stop-color="#b68d67"/>
+</linearGradient>
+<pattern id="papergrain" width="13" height="13" patternUnits="userSpaceOnUse">
+  <path d="M1 3 L12 1 M3 10 L11 8" stroke="#e8e1d2" stroke-opacity=".08" stroke-width=".7"/>
+</pattern>
+</defs>
+
+<g id="shadow">
+  <ellipse cx="156" cy="338" rx="94" ry="10" fill="#182326" fill-opacity=".34"/>
+  <ellipse cx="156" cy="336" rx="70" ry="5" fill="#2a3637" fill-opacity=".2"/>
+</g>
+
+<g id="body_back" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M92 118 Q62 150 69 251
+           Q83 264 99 247 L138 130 Z"
+        fill="#48443e"/>
+  <path d="M222 118 Q254 151 247 252
+           Q232 265 217 246 L174 130 Z"
+        fill="#48443e"/>
+</g>
+<g id="legs" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M114 244 L153 244 L145 327
+           Q125 337 107 327 Z" fill="#48443e"/>
+  <path d="M154 244 L198 244 L205 327
+           Q184 337 165 327 Z" fill="#48443e"/>
+  <path d="M103 325 Q125 318 148 326
+           L149 336 L100 336 Z" fill="#332f2a"/>
+  <path d="M163 326 Q187 318 210 327
+           L213 336 L163 336 Z" fill="#332f2a"/>
+</g>
+<g id="torso" stroke="#2e2925" stroke-width="3" stroke-linejoin="round">
+  <path d="M82 109 Q156 94 230 109
+           L222 248 Q156 266 90 248 Z" fill="#68645d"/>
+  <path d="M87 113 Q156 133 225 113"
+        fill="none" stroke="#776047" stroke-width="5"/>
+  <path d="M88 223 Q156 234 224 223"
+        fill="none" stroke="#776047" stroke-width="8"/>
+  <path d="M89 114 L220 246" fill="none"
+        stroke="#e8e1d2" stroke-opacity=".2" stroke-width="2"/>
+</g>
+
+<g id="head">
+  <path d="M120 54 Q121 27 156 24
+           Q193 27 194 57
+           L187 92 Q156 113 126 92 Z"
+        fill="#b58a64" stroke="#2e2925" stroke-width="3"/>
+  <path d="M119 60 Q123 18 156 15 Q193 20 196 62 Q172 40 150 43 Q134 59 119 60 Z" fill="#312c28"/>
+  <path d="M131 66 q8 -5 16 0 M165 66 q8 -5 16 0" fill="none" stroke="#5d4a3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M147 90 q9 5 19 0" fill="none" stroke="#6e493e"
+        stroke-width="2" stroke-linecap="round"/>
+  <path d="M136 92 Q156 129 177 92 Q168 137 156 146 Q143 136 136 92 Z" fill="#312c28" fill-opacity=".82" stroke="#2e2925" stroke-width="2"/>
+  <path d="M143 102 L146 108 L171 108
+        L172 102" fill="#b58a64" stroke="#2e2925" stroke-width="3"/>
+</g>
+
+<g id="front_arm" stroke="#2e2925" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M223 122 Q248 150 233 240
+           L213 246 Q217 157 200 134 Z"
+        fill="#68645d"/>
+  <path d="M215 241 q20 -9 31 7 q-2 20 -21 19 q-16 -8 -10 -26 Z"
+        fill="#b58a64"/>
+</g>
+
+<g id="held_prop" stroke="#443529" stroke-linecap="round">
+  <path d="M67 117 Q156 106 256 122"
+        fill="none" stroke="#6e5438" stroke-width="10"/>
+  <path d="M85 120 v101 M240 120 v100"
+        fill="none" stroke="#836a4c" stroke-width="4"/>
+  <path d="M62 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+  <path d="M218 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+</g>
+
+</svg>

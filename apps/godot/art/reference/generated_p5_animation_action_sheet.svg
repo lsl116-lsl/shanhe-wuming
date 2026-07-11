@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs></defs>
+<rect width="1600" height="900" fill="#11100e"/>
+<text x="54" y="68" font-size="36" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f0d48d">P5 动画动作表 / Animation Action Sheet</text>
+<rect x="54" y="90" width="1480" height="86" rx="8" fill="#161b1f" stroke="#3f3428"/>
+<text x="82" y="126" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">主角</text>
+<text x="250" y="126" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">walk / write / choice_scan / push_lift / kneel_pickup / organize_crowd</text>
+<rect x="54" y="194" width="1480" height="86" rx="8" fill="#171512" stroke="#3f3428"/>
+<text x="82" y="230" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">母亲</text>
+<text x="250" y="230" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">wash_basin / count_grain / count_wood / look_river / resume_work</text>
+<rect x="54" y="298" width="1480" height="86" rx="8" fill="#161b1f" stroke="#3f3428"/>
+<text x="82" y="334" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">辛衡</text>
+<text x="250" y="334" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">write / pause_pen / hand_tablet / look_over_tablet</text>
+<rect x="54" y="402" width="1480" height="86" rx="8" fill="#171512" stroke="#3f3428"/>
+<text x="82" y="438" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">禾安</text>
+<text x="250" y="438" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">carry_firewood / place_porridge / count_jars / drag_bucket / brace_cart</text>
+<rect x="54" y="506" width="1480" height="86" rx="8" fill="#161b1f" stroke="#3f3428"/>
+<text x="82" y="542" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">韩宁</text>
+<text x="250" y="542" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">press_sleeve / rush_records / struggle / kneel_records</text>
+<rect x="54" y="610" width="1480" height="86" rx="8" fill="#171512" stroke="#3f3428"/>
+<text x="82" y="646" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">柳娘</text>
+<text x="250" y="646" font-size="20" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d8cfba">song_stops / hold_child / call_names</text>
+<text x="82" y="812" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#d2b276">验收重点：动作不替代选择菜单；动作先让玩家看见代价，再让按住 E 承担。</text>
+</svg>

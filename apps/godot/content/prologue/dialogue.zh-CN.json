@@ -1,0 +1,186 @@
+{
+  "content_version": "p4.0",
+  "locale": "zh-CN",
+  "lines": {
+    "P2_MORNING_RIVER": {
+      "speaker": "",
+      "text": "洛水旧渡的早晨，总是先从河声开始。雾压在水面，木船被水纹推回岸边，木缆细细地响。"
+    },
+    "P2_MORNING_COUNTS": {
+      "speaker": "",
+      "text": "你的母亲洗净木盆，又数米、数柴、数布。每一件都要算到明日。"
+    },
+    "P2_MORNING_WAIT": {
+      "speaker": "",
+      "text": "船声一近，她便看向河道尽头。你的父亲随官运粮后没有回来；他答应带回的新笔，也没有回来。"
+    },
+    "P2_INSPECT_GRAIN": {
+      "speaker": "",
+      "text": "半袋粟米扎得很紧。母亲方才数了两遍——不是怕忘，是怕明日少一口。"
+    },
+    "P2_INSPECT_PEN_BOX": {
+      "speaker": "",
+      "text": "父亲留下的旧笔盒磨白了角。空出的那一格，本来等着一支新笔。"
+    },
+    "P2_INSPECT_RIVER": {
+      "speaker": "",
+      "text": "河道向东隐进雾里。官粮车队从这里走，回来的船却从来没有带回父亲的消息。"
+    },
+    "P2_SPEAK_MOTHER": {
+      "speaker": "母亲",
+      "text": "醒了就去辛衡先生那儿。笔要自己握，名字也要自己认。"
+    },
+    "P2_XINHENG_WRITE_NAME": {
+      "speaker": "辛衡",
+      "text": "写。写你的名字。"
+    },
+    "P2_NAME_MEMORY": {
+      "speaker": "",
+      "text": "笔尖停住。更长的案，更暗的灯，更冷的水——一只陌生的手按住名册，不让你把某个名字写完。下一瞬，一切又回到旧屋檐下。"
+    },
+    "P2_XINHENG_THIS_LIFE": {
+      "speaker": "辛衡",
+      "text": "本世的名字，不能也让旁人替你省掉。"
+    },
+    "P2_HEAN_BREAKFAST": {
+      "speaker": "禾安",
+      "text": "还写呢？再写下去，早饭真要冷了。"
+    },
+    "P2_HEAN_PORRIDGE": {
+      "speaker": "禾安",
+      "text": "别误会，是你母亲让我端的。碗放这儿了，碰翻了你自己擦。"
+    },
+    "P2_BOAT_OWNER_CALL": {
+      "speaker": "船主",
+      "text": "宋地乱了！"
+    },
+    "P2_NEWS_OLD_FERRY_STOPS": {
+      "speaker": "",
+      "text": "旧渡上的人陆续停下手里的活。没有城墙在眼前塌下，只有一条东来的船，正把亡国的消息推上岸。"
+    },
+    "P2_BOAT_OWNER_FRAGMENT": {
+      "speaker": "船主",
+      "text": "宋地乱了，关验换了三种。旧印有人认，新戳也有人认——我说不清哪边才算数。后头还有二十三户往洛水来。"
+    },
+    "P2_HEAN_FRAGMENT": {
+      "speaker": "禾安",
+      "text": "二十三户？水要烧到后半夜。米袋也得再数一遍。先别问我够不够，我还没数完。"
+    },
+    "P2_XINHENG_FRAGMENT": {
+      "speaker": "辛衡",
+      "text": "他们不肯说旧里？……宋地可以写，哪一邑、哪一里、哪一户，却会牵出后面的人。"
+    },
+    "P2_FERRY_PEOPLE_FRAGMENT": {
+      "speaker": "旧渡人",
+      "text": "宋也亡了。可船上的人总得下船——谁来验，谁来记，今晚又睡在哪儿？"
+    },
+    "P3_REFUGEES_APPROACH": {
+      "speaker": "",
+      "text": "午后的亮水一点点暗下去。船主说的二十三户还没到齐，第一批脚步已经从东岸的泥里传来。"
+    },
+    "P3_FIRST_REFUGEES_ENTER": {
+      "speaker": "",
+      "text": "老者被人架着下岸，抱着发热孩子的妇人不敢松手，湿粮袋压弯了另一个人的肩。韩宁把袖口按得更紧；他母亲往前半步，替他挡住所有视线。"
+    },
+    "P3_LIUNIANG_OPENING_SONG": {
+      "speaker": "柳娘",
+      "text": "东风过睢水，旧月照——"
+    },
+    "P3_HANNING_SLEEVE": {
+      "speaker": "",
+      "text": "韩宁的袖口沾满泥水，手却一直压在同一个位置。里面有一小片硬物；你刚看过去，他便把手按得更紧。"
+    },
+    "P3_HANNING_MOTHER_BLOCKS": {
+      "speaker": "韩宁母亲",
+      "text": "孩子烧得糊涂，认不得路。旧里旧邑，等他醒了再说。"
+    },
+    "P3_XINHENG_PEN_PAUSE": {
+      "speaker": "",
+      "text": "辛衡的笔停在“宋地”二字后。再往下写是哪一邑、哪一里、哪一户，就可能把他们身后没有上岸的人也牵进名册。"
+    },
+    "P3_LIUNIANG_SONG_STOPS": {
+      "speaker": "",
+      "text": "柳娘唱到“睢水”便停了。她把手按在旧琴箱上，没有改词，也没有把那句唱完。"
+    },
+    "P3_TEMPORARY_REGISTRY": {
+      "speaker": "",
+      "text": "临时名册上只有“宋地来人”四字，后面空着邑、里、户和亲属。空白既护住了人，也让今晚的粮、水和睡处无从核对。"
+    },
+    "P3_HEAN_LAST_RICE": {
+      "speaker": "禾安",
+      "text": "别看我。就这么多。"
+    },
+    "P3_NIGHT_RAIN_BUILDS": {
+      "speaker": "",
+      "text": "碎米落进锅底。傍晚退到棚外，雨线越过河面，打在芦席和湿衣上。没有人宣布夜来了，灶火只是显得更亮。"
+    },
+    "P3_BELL_FROM_STOREHOUSE": {
+      "speaker": "",
+      "text": "雨声深处，一记低沉的钟音从东边旧礼器库传来。不是召集，也不像报时；声音裂在尾端，像沉进了很深的水。"
+    },
+    "P3_HEAN_WHERE_ARE_YOU_GOING": {
+      "speaker": "禾安",
+      "text": "你去哪？"
+    },
+    "P3_STOREHOUSE_FIRST_LOOK": {
+      "speaker": "",
+      "text": "旧礼器库里没有神光。断足鼎靠木楔支着，裂边簋积着灰，残磬歪在朽架上；雨从板缝里漏进来。"
+    },
+    "P3_CRACKED_BELL_WAITS": {
+      "speaker": "",
+      "text": "裂钟挂在最里面。铜绿盖住旧纹，裂口从下沿向上伸去。它没有再响，只把方才那一声留在你的胸口。"
+    },
+    "P3_BROKEN_DING": {
+      "speaker": "",
+      "text": "断足鼎少了一足，旧渡人用普通木楔将它撑住。它曾盛过什么已经无人知道，现在只接屋顶漏下的雨。"
+    },
+    "P3_CHIPPED_GUI": {
+      "speaker": "",
+      "text": "簋沿缺了一块，缺口没有新伤的亮色。灰尘沿着旧纹沉下去，像许多年都没有人再摆正它。"
+    },
+    "P3_DAMAGED_QING": {
+      "speaker": "",
+      "text": "残磬裂成两道，绳结换过几次。你没有敲它；雨滴偶尔落上去，只发出很轻的石声。"
+    },
+    "P3_CRACKED_BELL_TOUCH": {
+      "speaker": "",
+      "text": "铜面冰冷。裂口没有发光，也没有回应你的名字。"
+    },
+    "P3_MOUNTAINS_AND_RIVERS_CHANGE": {
+      "speaker": "",
+      "text": "这不是你第一次看见山河改色。"
+    },
+    "P4_CART_CRASH_HARD_CUT": {
+      "speaker": "",
+      "text": "木轮断裂，马嘶撕开雨声。有人在棚外喊：“车翻了！”你从旧礼器库冲出，雨已经落成线。"
+    },
+    "P4_SCAN_CHILD": {
+      "speaker": "禾安",
+      "text": "搭把手！车辕还压着他！"
+    },
+    "P4_SCAN_RECORDS": {
+      "speaker": "韩宁",
+      "text": "别踩！那不是废木头！"
+    },
+    "P4_SCAN_CROWD": {
+      "speaker": "柳娘",
+      "text": "谁家少了人？先喊名字！别把活人又领丢了！"
+    },
+    "P4_XINHENG_SEE_FIRST": {
+      "speaker": "辛衡",
+      "text": "先看眼前的人。看清楚，再落笔。"
+    },
+    "P4_FEEDBACK_RESCUE_CHILD": {
+      "speaker": "",
+      "text": "你和禾安一同顶住车辕。孩子终于被拖出来，呼吸还乱，却没有再往下沉。雨水仍从中间的泥坑冲过，几片湿简上的字已经散成墨痕；棚下有人还在喊错亲属。"
+    },
+    "P4_FEEDBACK_SAVE_RECORDS": {
+      "speaker": "",
+      "text": "你跪进泥水里，和韩宁一起捞起更多木简。有几行名字还能辨认。禾安和旁人稍后抬开车辕，孩子仍活着，伤却更重；棚下短暂错认又多拖了一会儿。"
+    },
+    "P4_FEEDBACK_MUTUAL_RECOGNITION": {
+      "speaker": "",
+      "text": "你接过空木牍，跟着柳娘一遍遍喊名。失散者先按同行和亲属站到一起，哭声终于有了回应。车下孩子稍后被救出，伤势更重；更多湿简在雨里失了字。"
+    }
+  }
+}

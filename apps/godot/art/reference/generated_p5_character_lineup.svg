@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs></defs>
+<rect width="1600" height="900" fill="#0f1214"/>
+<text x="54" y="70" font-size="36" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f0d48d">P5 人物阵容图 / Prologue Cast Lineup</text>
+
+<rect x="54" y="120" width="330" height="244" rx="12" fill="#171512" stroke="#85745a" stroke-width="3"/>
+<rect x="68" y="134" width="302" height="72" rx="8" fill="#85745a" fill-opacity=".22"/>
+<text x="82" y="174" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">主角</text>
+<text x="82" y="226" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">初醒、观察、承担</text>
+
+<ellipse cx="219" cy="304" rx="64" ry="34" fill="#85745a" fill-opacity=".65"/>
+<path d="M184 288 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="428" y="120" width="330" height="244" rx="12" fill="#171512" stroke="#7d6957" stroke-width="3"/>
+<rect x="442" y="134" width="302" height="72" rx="8" fill="#7d6957" fill-opacity=".22"/>
+<text x="456" y="174" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">母亲</text>
+<text x="456" y="226" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">等人归来、不说满</text>
+
+<ellipse cx="593" cy="304" rx="64" ry="34" fill="#7d6957" fill-opacity=".65"/>
+<path d="M558 288 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="802" y="120" width="330" height="244" rx="12" fill="#171512" stroke="#8b7952" stroke-width="3"/>
+<rect x="816" y="134" width="302" height="72" rx="8" fill="#8b7952" fill-opacity=".22"/>
+<text x="830" y="174" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">辛衡</text>
+<text x="830" y="226" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">笔停、递牍、怕漏名</text>
+
+<ellipse cx="967" cy="304" rx="64" ry="34" fill="#8b7952" fill-opacity=".65"/>
+<path d="M932 288 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="1176" y="120" width="330" height="244" rx="12" fill="#171512" stroke="#9b7a3e" stroke-width="3"/>
+<rect x="1190" y="134" width="302" height="72" rx="8" fill="#9b7a3e" fill-opacity=".22"/>
+<text x="1204" y="174" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">禾安</text>
+<text x="1204" y="226" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">数米、倒粥、顶车辕</text>
+
+<ellipse cx="1341" cy="304" rx="64" ry="34" fill="#9b7a3e" fill-opacity=".65"/>
+<path d="M1306 288 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="54" y="430" width="330" height="244" rx="12" fill="#171512" stroke="#6c7890" stroke-width="3"/>
+<rect x="68" y="444" width="302" height="72" rx="8" fill="#6c7890" fill-opacity=".22"/>
+<text x="82" y="484" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">韩宁</text>
+<text x="82" y="536" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">按袖口、抢湿简</text>
+
+<ellipse cx="219" cy="614" rx="64" ry="34" fill="#6c7890" fill-opacity=".65"/>
+<path d="M184 598 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="428" y="430" width="330" height="244" rx="12" fill="#171512" stroke="#8b6471" stroke-width="3"/>
+<rect x="442" y="444" width="302" height="72" rx="8" fill="#8b6471" fill-opacity=".22"/>
+<text x="456" y="484" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">柳娘</text>
+<text x="456" y="536" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">旧曲、喊名互认</text>
+
+<ellipse cx="593" cy="614" rx="64" ry="34" fill="#8b6471" fill-opacity=".65"/>
+<path d="M558 598 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="802" y="430" width="330" height="244" rx="12" fill="#171512" stroke="#795f45" stroke-width="3"/>
+<rect x="816" y="444" width="302" height="72" rx="8" fill="#795f45" fill-opacity=".22"/>
+<text x="830" y="484" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">船主</text>
+<text x="830" y="536" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">带来宋亡消息</text>
+
+<ellipse cx="967" cy="614" rx="64" ry="34" fill="#795f45" fill-opacity=".65"/>
+<path d="M932 598 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+
+<rect x="1176" y="430" width="330" height="244" rx="12" fill="#171512" stroke="#6f6b5c" stroke-width="3"/>
+<rect x="1190" y="444" width="302" height="72" rx="8" fill="#6f6b5c" fill-opacity=".22"/>
+<text x="1204" y="484" font-size="24" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#f1dfaf">流民母子</text>
+<text x="1204" y="536" font-size="17" font-family="Microsoft YaHei, SimSun, sans-serif" fill="#cfc7b6">被追问、先活下去</text>
+
+<ellipse cx="1341" cy="614" rx="64" ry="34" fill="#6f6b5c" fill-opacity=".65"/>
+<path d="M1306 598 q35 -72 70 0" stroke="#d8cfba" stroke-width="6" fill="none" opacity=".72"/>
+</svg>

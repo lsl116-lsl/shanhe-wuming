@@ -1,0 +1,231 @@
+[gd_scene load_steps=24 format=3]
+
+[ext_resource type="Script" path="res://scripts/prologue/prologue_stage_director.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environments/ritual_storehouse/p3/storehouse_far.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/environments/ritual_storehouse/p3/storehouse_mid.svg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/environments/ritual_storehouse/p3/storehouse_near.svg" id="4"]
+[ext_resource type="Texture2D" path="res://assets/props/p3/broken_ding.svg" id="5"]
+[ext_resource type="Texture2D" path="res://assets/props/p3/chipped_gui.svg" id="6"]
+[ext_resource type="Texture2D" path="res://assets/props/p3/damaged_qing.svg" id="7"]
+[ext_resource type="Texture2D" path="res://assets/props/p3/cracked_bell.svg" id="8"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/water_mask.svg" id="9"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/city_fire.svg" id="10"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/broken_rituals.svg" id="11"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/scraped_registry.svg" id="12"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/wet_hand.svg" id="13"]
+[ext_resource type="Texture2D" path="res://assets/fx/p3/memory/bell_sinking.svg" id="14"]
+[ext_resource type="Script" path="res://scripts/fx/bell_memory_actor.gd" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Player.tscn" id="16"]
+[ext_resource type="Script" path="res://scripts/narrative/camera_director.gd" id="17"]
+[ext_resource type="Script" path="res://scripts/narrative/timeline_runner.gd" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueLayer.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/ui/InteractionPrompt.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TransitionLayer.tscn" id="21"]
+[ext_resource type="Font" path="res://assets/ui/fonts/system_chinese_fallback.tres" id="22"]
+[ext_resource type="Texture2D" path="res://assets/ui/p2/objective_panel.svg" id="23"]
+
+[node name="SC05_Ritual_Storehouse" type="Node2D"]
+
+[node name="StorehouseFar" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("2")
+z_index = -40
+
+[node name="StorehouseMid" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("3")
+z_index = -30
+
+[node name="StorehouseNear" type="Sprite2D" parent="."]
+position = Vector2(1100, 360)
+texture = ExtResource("4")
+z_index = -20
+
+[node name="BrokenDingVisual" type="Sprite2D" parent="."]
+position = Vector2(520, 460)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("5")
+z_index = 1
+
+[node name="ChippedGuiVisual" type="Sprite2D" parent="."]
+position = Vector2(850, 500)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6")
+z_index = 1
+
+[node name="DamagedQingVisual" type="Sprite2D" parent="."]
+position = Vector2(1190, 430)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("7")
+z_index = 1
+
+[node name="Actors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="cracked_bell" type="Node2D" parent="Actors"]
+position = Vector2(1660, 414)
+z_index = 2
+
+[node name="Visual" type="Sprite2D" parent="Actors/cracked_bell"]
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("8")
+
+[node name="bell_memory" type="CanvasLayer" parent="Actors"]
+layer = 30
+script = ExtResource("15")
+
+[node name="Black" type="ColorRect" parent="Actors/bell_memory"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.015, 0.022, 0.025, 1)
+mouse_filter = 2
+modulate = Color(1, 1, 1, 0)
+
+[node name="Water" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("9")
+modulate = Color(1, 1, 1, 0)
+
+[node name="CityFire" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("10")
+modulate = Color(1, 1, 1, 0)
+
+[node name="BrokenRituals" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("11")
+modulate = Color(1, 1, 1, 0)
+
+[node name="ScrapedRegistry" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("12")
+modulate = Color(1, 1, 1, 0)
+
+[node name="WetHand" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("13")
+modulate = Color(1, 1, 1, 0)
+
+[node name="BellSinking" type="Sprite2D" parent="Actors/bell_memory"]
+position = Vector2(640, 360)
+texture = ExtResource("14")
+modulate = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Actors/bell_memory"]
+
+[node name="Player" parent="." instance=ExtResource("16")]
+unique_name_in_owner = true
+position = Vector2(350, 607)
+z_index = 7
+min_bounds = Vector2(250, 525)
+max_bounds = Vector2(2030, 635)
+
+[node name="Interactions" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="SceneCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(800, 360)
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+limit_left = 0
+limit_top = 0
+limit_right = 2200
+limit_bottom = 720
+
+[node name="CameraDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("17")
+
+[node name="TimelineRunner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("18")
+
+[node name="PrologueStageDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1")
+stage_id = "SC05_Ritual_Storehouse"
+camera_min_x = 640.0
+camera_max_x = 1560.0
+
+[node name="DialogueLayer" parent="." instance=ExtResource("19")]
+unique_name_in_owner = true
+
+[node name="InteractionPrompt" parent="." instance=ExtResource("20")]
+unique_name_in_owner = true
+
+[node name="TransitionLayer" parent="." instance=ExtResource("21")]
+unique_name_in_owner = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="LocationLabel" type="Label" parent="HUD"]
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 500.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.82, 0.84, 0.81, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.025, 0.025, 0.95)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("22")
+theme_override_font_sizes/font_size = 24
+text = "旧礼器库 · 雨夜"
+
+[node name="ControlHint" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -470.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.78, 0.81, 0.77, 0.94)
+theme_override_fonts/font = ExtResource("22")
+theme_override_font_sizes/font_size = 16
+text = "移动查看旧器 · 裂钟需按住 E"
+horizontal_alignment = 2
+
+[node name="ObjectivePanel" type="Control" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -554.0
+offset_top = 82.0
+offset_right = -34.0
+offset_bottom = 154.0
+grow_horizontal = 0
+
+[node name="Background" type="TextureRect" parent="HUD/ObjectivePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="HUD/ObjectivePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 14
+
+[node name="ObjectiveLabel" type="Label" parent="HUD/ObjectivePanel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.82, 0.7, 1)
+theme_override_fonts/font = ExtResource("22")
+theme_override_font_sizes/font_size = 18
+text = "在旧礼器库中看清四件旧器。"
+horizontal_alignment = 1

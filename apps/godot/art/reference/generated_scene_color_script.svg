@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760">
+<defs></defs>
+
+<rect width="1100" height="760" fill="#202b33"/>
+<g transform="translate(0 20) scale(.5)">
+  <image href="../../assets/environments/old_ferry/p2/morning_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p2/morning_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p2/morning_near.svg" width="2200" height="720"/>
+</g>
+<g transform="translate(0 390) scale(.5)">
+  <image href="../../assets/environments/old_ferry/p2/day_far.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p2/day_mid.svg" width="2200" height="720"/>
+  <image href="../../assets/environments/old_ferry/p2/day_near.svg" width="2200" height="720"/>
+</g>
+<text x="24" y="375" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#e8e1d2">P2 清晨：冷雾 / 旧木 / 湿泥</text>
+<text x="24" y="746" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#e8e1d2">P2 午前：亮水 / 商船 / 停下的旧渡人</text>
+
+</svg>

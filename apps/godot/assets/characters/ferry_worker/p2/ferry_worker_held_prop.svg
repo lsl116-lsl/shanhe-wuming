@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="360" viewBox="0 0 320 360">
+<defs>
+<linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#788480"/>
+  <stop offset="1" stop-color="#485b60"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#d2b38b"/>
+  <stop offset="1" stop-color="#b68d67"/>
+</linearGradient>
+<pattern id="papergrain" width="13" height="13" patternUnits="userSpaceOnUse">
+  <path d="M1 3 L12 1 M3 10 L11 8" stroke="#e8e1d2" stroke-opacity=".08" stroke-width=".7"/>
+</pattern>
+</defs>
+
+<g id="held_prop" stroke="#443529" stroke-linecap="round">
+  <path d="M67 117 Q156 106 256 122"
+        fill="none" stroke="#6e5438" stroke-width="10"/>
+  <path d="M85 120 v101 M240 120 v100"
+        fill="none" stroke="#836a4c" stroke-width="4"/>
+  <path d="M62 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+  <path d="M218 265 q24 -18 47 0 l-8 43 h-31 Z"
+        fill="#70533a" stroke-width="3"/>
+</g>
+
+</svg>

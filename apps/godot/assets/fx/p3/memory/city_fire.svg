@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs></defs>
+
+<rect width="1280" height="720" fill="#0b1012"/>
+<path d="M83 590 V202 H281 V132 H476 V232 H652 V109 H850 V217 H1054 V171 H1211 V590 Z"
+      fill="#272624" stroke="#4a3b31" stroke-width="8"/>
+<path d="M486 590 V379 Q640 287 794 379 V590 Z" fill="#080b0c"/>
+<g fill="#a63e28" fill-opacity=".8">
+  <path d="M137 590 q70 -183 140 0"/><path d="M809 590 q94 -265 188 0"/>
+  <path d="M1027 590 q56 -155 112 0"/>
+</g>
+<g fill="#552c27">
+  <path d="M214 141 l160 44 l-160 55 Z"/><path d="M902 118 l191 55 l-191 48 Z"/>
+</g>
+<g fill="#2c3332" fill-opacity=".8">
+  <ellipse cx="283" cy="205" rx="178" ry="96"/><ellipse cx="938" cy="224" rx="231" ry="116"/>
+</g>
+
+</svg>
