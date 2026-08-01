@@ -157,6 +157,13 @@ theme_override_fonts/font = ExtResource("9_font")
 theme_override_font_sizes/font_size = 26
 text = "序章 · 雨来之前"
 
+[node name="ConceptLine" type="Label" parent="TitleBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.65, 0.57, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 17
+text = "从许多人的眼睛里，重新看见一段历史"
+
 [node name="MenuPanel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 848.0

@@ -7,7 +7,7 @@ config_version=5
 [application]
 
 config/name="山河无名"
-config/description="《山河无名》序章《雨来之前》Godot 原生垂直切片"
+config/description="《山河无名》——从多种普通人视角认识中国历史的章节式叙事游戏；序章《雨来之前》Godot 原生垂直切片"
 run/main_scene="res://scenes/ui/TitleScreen.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
