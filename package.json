@@ -2,7 +2,7 @@
   "name": "shanhe-wuming",
   "version": "0.7.0",
   "private": true,
-  "description": "山河无名：中文历史叙事游戏。苏醒者、跨朝代因果、无名者到人民。",
+  "description": "山河无名：通过不同普通人视角逐步理解中国历史的章节式叙事游戏。",
   "scripts": {
     "start": "vite --host 127.0.0.1",
     "dev": "vite --host 127.0.0.1",
